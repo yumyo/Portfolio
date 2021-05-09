@@ -4,6 +4,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import NavLink from "../components/NavLink"
 import Logo from "../components/Logo"
 import GridBg from "../components/GridBg";
+import ThemeToggle from "../components/themeToggle"
 
 export default function Interface(props) {
 
@@ -14,23 +15,32 @@ export default function Interface(props) {
     `
   ]);
 
-  const CtrlTR = styled(NavLink)([
-    css`
-      ${tw`absolute right-k1 top-k1 z-50 -translate-y-k100`}
-    `
-  ]);
+  // const CtrlTR = styled(NavLink)([
+  //   css`
+  //     ${tw`absolute right-k1 top-k1 z-50 -translate-y-k100`}
+  //   `
+  // ]);
 
-  const CtrlBR = styled(NavLink)([
-    css`
-      ${tw`absolute right-k1 bottom-k1 z-50`}
-    `
-  ]);
+  const CtrlTR = tw.div`
+  absolute right-k1 top-k1 z-50 -translate-y-k100`;
 
-  const CtrlBL = styled(NavLink)([
-    css`
-      ${tw`absolute left-k1 bottom-k1 z-50`}
-    `
-  ]);
+  // const CtrlBR = styled(NavLink)([
+  //   css`
+  //     ${tw`absolute right-k1 bottom-k1 z-50`}
+  //   `
+  // ]);
+
+
+  const CtrlBR = tw.div`
+  absolute right-k1 bottom-k1 z-50`;
+
+  const CtrlBL = tw.div`
+  absolute left-k1 bottom-k1 z-50`;
+  // const CtrlBL = styled(NavLink)([
+  //   css`
+  //     ${tw`absolute left-k1 bottom-k1 z-50`}
+  //   `
+  // ]);
 
   const svgString = encodeURIComponent(renderToStaticMarkup(<GridBg />));
 
@@ -46,9 +56,20 @@ export default function Interface(props) {
       <NavLink to="/">
         <KKLogo></KKLogo>
       </NavLink>
-      <CtrlBL to="/cv/">CV</CtrlBL>
-      <CtrlTR to="/about/">About</CtrlTR>
-      <CtrlBR to="/case-histories/">Case Histories</CtrlBR>
+      <CtrlBL>
+        <ThemeToggle />
+        <NavLink to="/about/">About</NavLink>
+        <NavLink to="/cv/">CV</NavLink>
+      </CtrlBL>
+      <CtrlTR>
+        <NavLink to="/posts/">Posts</NavLink>
+        <NavLink to="/cases/">Case Histories</NavLink>
+        <NavLink to="/works/">Works</NavLink>
+      </CtrlTR>
+      <CtrlBR>
+        <NavLink to="/archive/">Archive</NavLink>
+        <NavLink to="/style-guide/">Style Guide</NavLink>
+      </CtrlBR>
       <GridBgContainer></GridBgContainer>
     </>
   )

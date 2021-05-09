@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   purge: ['./src/**/*.js'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
       sans: ['IBM Plex Sans'],
@@ -20,15 +20,15 @@ module.exports = {
       '5xl': ['3.82353rem', { lineHeight: '1.618' }],
       '6xl': ['4.7647rem', { lineHeight: '1.618' }],
     },
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: '#111111',
-      white: '#fff',
-      primary: '#cf5c78',
-      secondary: '#596dd8',
-      neutral: '#333',
-    },
+    // colors: {
+    //   transparent: 'transparent',
+    //   current: 'currentColor',
+    //   black: '#111111',
+    //   white: '#fff',
+    //   primary: '#cf5c78',
+    //   secondary: '#596dd8',
+    //   neutral: '#333',
+    // },
     spacing: {
       px: '1px',
       0: '0px',
@@ -68,6 +68,13 @@ module.exports = {
     },
     extend: {
       colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        black: '#111111',
+        white: '#fff',
+        primary: '#cf5c78',
+        secondary: '#596dd8',
+        neutral: '#333',
         blush: {
           '50':  '#fdfcfb',
           '100': '#fbf0ee',

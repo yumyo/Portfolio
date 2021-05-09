@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { graphql, Link } from 'gatsby'
 import PostTemplate from '../../templates/post-template'
 import ProjectTemplate from '../../templates/project-template'
+import WorkTemplate from '../../templates/work-template'
 import ArchiveTemplate from '../../templates/archive-template'
 
 const MdxPage = ({
@@ -14,8 +15,9 @@ const MdxPage = ({
 }) => {
   const templates = {
     posts: <PostTemplate data={data} />,
-    projects: <ProjectTemplate data={data} />,
-    archives: <ArchiveTemplate data={data} />,
+    works: <WorkTemplate data={data} />,
+    archive: <ArchiveTemplate data={data} />,
+    cases: <ProjectTemplate data={data} />,
   }
   return (
     <Fragment>

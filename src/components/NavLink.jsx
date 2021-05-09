@@ -7,12 +7,12 @@ const Ctrl = styled(GatsbyLink)([
   &.active {
     color: red;
   }
-    ${tw`transform leading-none text-sm font-medium`}
+    ${tw`transform leading-none text-base font-medium`}
   `
 ]);
 
 const NavLink = ({ children, ...props }) => (
-  <Ctrl activeClassName='active' {...props}>
+  <Ctrl className="nav-link" activeClassName='active' {...props}>
     {children}
   </Ctrl>
 )

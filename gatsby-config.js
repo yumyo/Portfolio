@@ -16,22 +16,29 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/blog`,
+        path: `${__dirname}/src/posts`,
         name: `posts`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/projects`,
-        name: `projects`,
+        path: `${__dirname}/src/cases`,
+        name: `cases`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/works`,
+        name: `works`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/archive`,
-        name: `archives`,
+        name: `archive`,
       },
     },
     `gatsby-plugin-mdx`,
@@ -77,6 +84,7 @@ module.exports = {
         // purgeOnly: ['node_modules/bootstrap']
       },
     },
+    `gatsby-plugin-dark-mode`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-manifest',

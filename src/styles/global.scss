@@ -28,3 +28,7 @@
     @apply text-sm;
   }
 }
+
+.nav-link + .nav-link {
+  margin-left: 1em;
+}
