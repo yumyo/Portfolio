@@ -1,7 +1,8 @@
 import React from "react"
-import Layout from "../components/Layout"
+
 import { graphql, Link as GatsbyLink } from 'gatsby'
-import tw, { styled, css } from 'twin.macro'
+import tw from 'twin.macro'
+import Layout from "../components/Layout"
 
 const ListItem = tw.div`
 mb-4
@@ -19,12 +20,12 @@ const Tag = tw.li`
 text-sm font-medium uppercase inline-block mr-4
 `;
 
+const PostsLayout = tw.div`mx-auto w-6/12 mt-k2v`;
 
-
-export default function Blog({ data }) {
+const Blog = ({ data }) => {
   console.log(data.allFile.nodes);
   return (
-    <Layout>
+    <PostsLayout>
       {data.allFile.nodes.map(({ childMdx }) => (
       <ListItem key={ childMdx.id }>
         <Title>{ childMdx.frontmatter.title }</Title>
@@ -36,10 +37,10 @@ export default function Blog({ data }) {
               return <Tag key={index}>{tag}</Tag>;
             })
           : null}
-      </List>
+        </List>
       </ListItem>
       ))}
-    </Layout>
+    </PostsLayout>
   )
 }
 
@@ -60,3 +61,7 @@ export const query = graphql`
     } 
   }
 `
+
+Blog.Layout = Layout
+
+export default Blog

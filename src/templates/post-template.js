@@ -1,8 +1,9 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
+
+import tw from 'twin.macro'
 import Layout from "../components/Layout"
-import tw, { styled, css } from 'twin.macro'
 
 const List = tw.ul`
 list-none
@@ -20,8 +21,11 @@ const PostTemplate = ({
     }
   }
 }) => {
+  const ItemLayout = tw.div`
+  mx-auto w-6/12 mt-k3v
+`;
   return (
-    <Layout>
+    <ItemLayout>
       <h1>{`${title}`}</h1>
       <h2>{`variant: ${template}`}</h2>
       <List>
@@ -34,8 +38,10 @@ const PostTemplate = ({
       <MDXProvider>
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
-    </Layout>
+    </ItemLayout>
   );
 };
+
+// PostTemplate.Layout = Layout
 
 export default PostTemplate;

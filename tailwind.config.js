@@ -236,6 +236,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
-// "IBM Plex Sans"
+// "IBM Plex Sans"  

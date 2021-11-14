@@ -1,6 +1,8 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
+
+import tw from 'twin.macro'
 import Layout from "../components/Layout"
 
 const ArchiveTemplate = ({
@@ -11,15 +13,22 @@ const ArchiveTemplate = ({
     }
   }
 }) => {
+  const ItemLayout = tw.div`
+    mx-auto w-6/12 mt-k3v
+  `;
   return (
-    <Layout>
-      <h1>{`title - ${title}`}</h1>
-      <h2>{`template - ${template}`}</h2>
-      <MDXProvider>
-        <MDXRenderer>{body}</MDXRenderer>
-      </MDXProvider>
-    </Layout>
+
+      <ItemLayout>
+        <h1>{`title - ${title}`}</h1>
+        <h2>{`template - ${template}`}</h2>
+        <MDXProvider>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
+      </ItemLayout>
+
   );
 };
+
+// ArchiveTemplate.Layout = Layout
 
 export default ArchiveTemplate;

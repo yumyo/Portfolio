@@ -1,13 +1,25 @@
 import React from "react"
 import Layout from "../components/Layout"
+import { Link as GatsbyLink } from "gatsby"
+import tw from 'twin.macro'
 
-export default function About() {
+const AboutLayout = tw.div`mx-auto w-6/12 mt-k2v`;
+
+const AboutPage = () => {
   return (
-    <Layout>
-      <div>
-        <h1>About Gatsby</h1>
-        <p>Such wow. Very React.</p>
-      </div>
-    </Layout>
+
+      <AboutLayout>
+        <div>
+          <h1>About me.</h1>
+          <p>I am a passionate, highly motivated, experienced and organised full stack designer currently living in london.</p>
+          <p>The full stack title stands for the sum of the various abilities developed during 20 years of work in the creative field. These cross-disciplinary skills have made me able to take care of the whole process and life cycle of a product, from concept to design to the development of working prototypes and everyday problem solving. It also stands for the ability to speak the native language of every member of the team. I deeply love my job in all of its shades and different aspects, from marketing research to information architecture, branding, print and web design, production processes, data-driven ux, ui, content management systems and front-end development. As a team player i highly value meetings, challenges motivate me, i am meticulous, focused on details, enthusiastic in making relevant contributions with measurable results and i always play to win clients satisfaction and loyalty. Also, in my daily workflow as a digital designer, i regularly use git to maintain and collaborate on code, i am confident with the cli, use preprocessors and common node tools to ease the front-end development process, slack for team communication, moqups for wireframing, invision for design iteration and reviews. I constantly advance myself through learning, to be in the know of the latest trends, technologies, skills, and practices. Thus, i can easily switch to your design software/ tool/workflow of choice.</p>
+          <p>Occasionally I also write about my work <GatsbyLink to="/posts/">here</GatsbyLink></p>
+        </div>
+      </AboutLayout>
+
   )
 }
+
+// AboutPage.Layout = Layout
+
+export default AboutPage

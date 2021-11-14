@@ -89,8 +89,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `alan. PWA PoC`,
-        short_name: `alan.PWA`,
+        name: `Nicola Giuia Pernice Portfolio`,
+        short_name: `Studio Pernice`,
         start_url: `/`,
         background_color: `#3A3A3B`,
         theme_color: `#fab62d`,
@@ -109,5 +109,12 @@ module.exports = {
         }
       },
     },
+    {
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+          layout: require.resolve(`./src/components/Layout.js`)
+        }
+    }
   ],
 }
+

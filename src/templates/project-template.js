@@ -1,6 +1,8 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
+
+import tw from 'twin.macro'
 import Layout from "../components/Layout"
 
 const ProjectTemplate = ({
@@ -11,15 +13,22 @@ const ProjectTemplate = ({
     }
   }
 }) => {
+  const ProjectLayout = tw.div`
+  mx-auto w-6/12 mt-k3v
+`;
   return (
-    <Layout>
-      <h1>{`title - ${title}`}</h1>
-      <h2>{`template - ${template}`}</h2>
-      <MDXProvider>
-        <MDXRenderer>{body}</MDXRenderer>
-      </MDXProvider>
-    </Layout>
+
+      <ProjectLayout>
+        <h1>{`titles - ${title}`}</h1>
+        <h2>{`template - ${template}`}</h2>
+        <MDXProvider>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
+      </ProjectLayout>
+
   );
 };
+
+// ProjectTemplate.Layout = Layout
 
 export default ProjectTemplate;

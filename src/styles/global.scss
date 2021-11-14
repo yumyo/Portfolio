@@ -3,6 +3,9 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
+  html {
+    height: 100%;
+  }
   h1 {
     @apply text-4xl;
   }
@@ -31,4 +34,14 @@
 
 .nav-link + .nav-link {
   margin-left: 1em;
+}
+
+body.dark {
+  @apply text-white;
+  @apply bg-black;
+}
+
+body.light {
+  @apply text-black;
+  @apply bg-white
 }

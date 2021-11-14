@@ -1,37 +1,55 @@
 
 import React from "react"
-import { useSiteMetadata } from "../hooks/use-site-metadata";
-import '../styles/global.scss';
-import Interface from "../components/Interface";
+import { useSiteMetadata } from "../hooks/use-site-metadata"
+import '../styles/global.scss'
+import Header from "./Header"
+import Footer from "./Footer"
+import Middle from "./Middle"
+import GridBg from "./GridBg";
 
 import "@fontsource/ibm-plex-sans/400.css" // Weight 500.
 import "@fontsource/ibm-plex-sans/500.css" // Weight 500.
 import "@fontsource/ibm-plex-sans/700.css" // Weight 500.
 import tw, { styled, css } from 'twin.macro'
+import { renderToStaticMarkup } from 'react-dom/server';
 
+const ContentWrapper = tw.div`
+relative z-40 
+`;
+// w-6/12  z-50 
 
-export default function Layout({ children }) {
+const MainContainer = tw.div`
+ w-screen h-full  
+`;
 
-  const ContentWrapper = tw.div`
-   mx-auto w-6/12 mt-k3v relative z-50
-  `;
+const Title = tw.div`
+ sr-only 
+`;
 
-  const MainContainer = tw.div`
-    w-screen h-full dark:bg-gray-900 
-  `;
+const svgString = encodeURIComponent(renderToStaticMarkup(<GridBg />));
 
-  const Title = tw.div`
-    sr-only 
-  `;
+const GridBgContainer = styled.div([
+ css`
+   ${tw`w-screen h-screen fixed top-0 left-0 z-0`}
+   background-image: url("data:image/svg+xml,${svgString}");
+ `
+])
+
+const Layout = ({ children }) => {
 
   const { title } = useSiteMetadata();
   return (
     <MainContainer>
-      <Interface />
+      <Header />
       <ContentWrapper>
         <Title>{title}</Title>
         {children}
       </ContentWrapper>
+      <Middle />
+      <Footer />
+      <GridBgContainer></GridBgContainer>
     </MainContainer>
   )
 }
+
+export default Layout

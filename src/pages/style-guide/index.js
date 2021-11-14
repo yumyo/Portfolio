@@ -1,11 +1,18 @@
 import React from "react"
+import tw from 'twin.macro'
 import Layout from "../../components/Layout"
 
-export default function StyleGuide() {
+const SmallCenter = tw.div`
+w-k5 aspect-w-16 aspect-h-9 mx-auto bg-green-500
+`;
+
+const SGLayout = tw.div`mx-auto w-6/12 mt-k2v`;
+
+const StyleGuide = () => {
   return (
-    <Layout>
+    <SGLayout>
       <h1>Style Guide</h1>
-      <p>Hello Giulia</p>
+      <SmallCenter></SmallCenter>
       <pre>{`
       spacing: {
         'k0' : '3.125%',
@@ -22,6 +29,10 @@ export default function StyleGuide() {
         'k100' : '100%',
       }`}
       </pre>
-    </Layout>
+    </SGLayout>
   )
 }
+
+// StyleGuide.Layout = Layout
+
+export default StyleGuide;

@@ -5,14 +5,14 @@ import tw, { styled, css } from 'twin.macro'
 const Ctrl = styled(GatsbyLink)([
   css`
   &.active {
-    color: red;
+    ${tw`text-purple-900`}
   }
-    ${tw`transform leading-none text-base font-medium`}
+    
   `
 ]);
 
 const NavLink = ({ children, ...props }) => (
-  <Ctrl className="nav-link" activeClassName='active' {...props}>
+  <Ctrl className="nav-link leading-none font-medium transition-colors text-base duration-500 hover:text-purple-900" activeClassName='active' {...props}>
     {children}
   </Ctrl>
 )

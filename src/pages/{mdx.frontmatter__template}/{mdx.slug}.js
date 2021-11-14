@@ -4,6 +4,8 @@ import PostTemplate from '../../templates/post-template'
 import ProjectTemplate from '../../templates/project-template'
 import WorkTemplate from '../../templates/work-template'
 import ArchiveTemplate from '../../templates/archive-template'
+import PropTypes from "prop-types"
+import Layout from "../../components/Layout"
 
 const MdxPage = ({
   data,
@@ -37,4 +39,21 @@ export const query = graphql`
     }
   }
 `
+
+MdxPage.propTypes = {
+  data: PropTypes.shape({
+    mdx: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        template: PropTypes.string.isRequired,
+        tags: PropTypes.array.isRequired,
+      }),
+      body: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+}
+
+
+// MdxPage.Layout = Layout
+
 export default MdxPage
