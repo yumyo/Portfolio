@@ -46,7 +46,7 @@
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-mdx": "^1.2.0",
     "gatsby-transformer-sharp": "^3.1.0",
-    "gsap": "npm:@gsap/simply",
+    "gsap": "npm:@gsap/simply@^3.8.0",
     "postcss": "^8.2.13",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.1",
