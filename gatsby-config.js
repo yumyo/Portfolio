@@ -99,16 +99,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    {
-      resolve: 'gatsby-plugin-pdf',
-      options: {
-        paths: ['/'],
-        outputPath: '/public/pdf',
-        pdfOptions: {
-          'printBackground': true,
-        }
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-pdf',
+    //   options: {
+    //     paths: ['/'],
+    //     outputPath: '/public/pdf',
+    //     pdfOptions: {
+    //       'printBackground': true,
+    //     }
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-transition-link",
       options: {
