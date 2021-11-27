@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import { graphql, Link as GatsbyLink } from 'gatsby'
+import { gsap } from "gsap"
 import tw from 'twin.macro'
-import Layout from "../components/Layout"
 
 const ListItem = tw.div`
 mb-4
@@ -21,11 +21,31 @@ text-sm font-medium uppercase inline-block mr-4
 
 const WorksLayout = tw.div`mx-auto w-6/12 mt-k2v`;
 
-const Works = ({ data }) => {
-  console.log(data.allFile.nodes);
+const Works = ({ data, transitionStatus }) => {
+  useEffect(() => {
+    console.log('Works Page', transitionStatus);
+  }, [transitionStatus]);
+  // console.log(data.allFile.nodes);
+  useEffect(() => {
+    gsap.to('.anim-works', {
+      autoAlpha: 1,
+      duration: .3,
+    });
+  }, []); //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
+  useEffect(() => {
+    if (transitionStatus === 'entering') {
+      gsap.to('.anim-works', {
+        autoAlpha: 1, 
+        duration: .3, 
+      });
+    }
+    if (transitionStatus === 'exiting') {
+      gsap.to('.anim-works', { autoAlpha: 0, duration: .3 });
+    }
+  }, [transitionStatus]);
   return (
 
-      <WorksLayout>
+      <WorksLayout className="anim-works opacity-0">
         {data.allFile.nodes.map(({ childMdx }) => (
         <ListItem key={ childMdx.id }>
           <Title>{ childMdx.frontmatter.title }</Title>

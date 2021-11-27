@@ -1,8 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { gsap } from "gsap";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import tw from 'twin.macro'
-import { navigate } from "gatsby"
+// import { navigate } from "gatsby"
 
 export const logoMaskArray = [
 	{
@@ -45,22 +44,19 @@ gsap.registerPlugin(DrawSVGPlugin);
 
 
 const toggleDraw = () => {
-  const url = typeof window !== 'undefined' ? window.location.pathname : '';
-  console.log(url)
+  // const url = typeof window !== 'undefined' ? window.location.pathname : '';
+  // console.log(url)
   tl.restart();
-  if (url !== "/") {
-    console.log(url)
-    navigate("/")
-  }
+  // if (url !== "/") {
+  //   console.log(url)
+  //   navigate("/")
+  // }
   
 };
 
 export default function Logo(props) {
-  
-  let intro = useRef(null);
 
   useEffect(() => {
-
     
   tl
     .from(pathArray[0], {drawSVG:"0%", duration: dur * 0.355})
@@ -78,7 +74,7 @@ export default function Logo(props) {
       className="prefix__logo dark:text-white"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 155 111.1"
-      onClick={toggleDraw} 
+      onMouseEnter={toggleDraw} 
       {...props}
     >
       <defs>

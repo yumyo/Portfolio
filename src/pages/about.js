@@ -1,14 +1,34 @@
-import React from "react"
-import Layout from "../components/Layout"
+import React, { useRef, useEffect } from "react"
 import { Link as GatsbyLink } from "gatsby"
+import { gsap } from "gsap"
 import tw from 'twin.macro'
 
 const AboutLayout = tw.div`mx-auto w-6/12 mt-k2v`;
 
-const AboutPage = () => {
+const AboutPage = ({ transitionStatus }) => {
+  useEffect(() => {
+    console.log('About Page', transitionStatus);
+  }, [transitionStatus]);
+  useEffect(() => {
+    gsap.to('.anim-about', {
+      autoAlpha: 1,
+      duration: .3,
+    });
+  }, []); //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
+  useEffect(() => {
+    if (transitionStatus === 'entering') {
+      gsap.to('.anim-about', {
+        autoAlpha: 1, 
+        duration: .3, 
+      });
+    }
+    if (transitionStatus === 'exiting') {
+      gsap.to('.anim-about', { autoAlpha: 0, duration: .3 });
+    }
+  }, [transitionStatus]);
   return (
 
-      <AboutLayout>
+      <AboutLayout className="anim-about opacity-0">
         <div>
           <h1>About me.</h1>
           <p>I am a passionate, highly motivated, experienced and organised full stack designer currently living in london.</p>

@@ -1,7 +1,6 @@
 import * as React from "react"
 import tw, { styled, css } from 'twin.macro'
-// import NavLink from "./NavLink"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import TransitionLink from 'gatsby-plugin-transition-link';
 import Logo from "./Logo"
 
 import ThemeToggle from "./themeToggle"
@@ -20,17 +19,13 @@ absolute right-k1 mt-9  -translate-y-k100`;
 const CtrlTC = tw.div`
 absolute right-1/2 mt-8  transform translate-x-1/2`;
 
+/*
 const CtrlBR = tw.div`
 absolute right-k1 bottom-k1`;
 
 const CtrlBL = tw.div`
 absolute left-k1 bottom-k1`;
-// const CtrlBL = styled(NavLink)([
-//   css`
-//     ${tw`absolute left-k1 bottom-k1 z-50`}
-//   `
-// ]);
-
+*/
 const HeaderWrapper = tw.div`
 fixed z-50 top-k0 left-0 w-full`;
 
@@ -38,11 +33,32 @@ export default function Header(props) {
 
   return (
     <HeaderWrapper>
-      <KKLogo />
+      <TransitionLink to="/"
+        exit={{
+          length: .3,
+        }}
+        entry={{ length: .3 }}
+        >
+        <KKLogo />
+      </TransitionLink>
       <CtrlTC> <ThemeToggle /></CtrlTC>
       <CtrlTR>
-        <AniLink cover to="/cases/">Case Histories</AniLink>
-        <AniLink cover to="/works/">Works</AniLink>
+        <TransitionLink to="/cases"
+        exit={{
+          length: .3,
+        }}
+        entry={{ length: .3 }}
+        className="hover:text-gray-600"
+        activeClassName="border-b-2 border-gray-600"
+        >Case Histories</TransitionLink>
+        <TransitionLink to="/works/"
+        exit={{
+          length: .3,
+        }}
+        entry={{}}
+        className="hover:text-gray-600"
+        activeClassName="border-b-2 border-gray-600"
+        >Works</TransitionLink>
       </CtrlTR>
     </HeaderWrapper>
   )

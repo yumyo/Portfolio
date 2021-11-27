@@ -1,12 +1,32 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
+import { gsap } from "gsap"
 import tw from 'twin.macro'
-import Layout from "../components/Layout"
 
 const CVLayout = tw.div`mx-auto w-6/12 mt-k2v`;
 
-const Cv = () => {
+const Cv = ({transitionStatus}) => {
+  useEffect(() => {
+    console.log('CV Page', transitionStatus);
+  }, [transitionStatus]);
+  useEffect(() => {
+    gsap.to('.anim-cv', {
+      autoAlpha: 1,
+      duration: .3,
+    });
+  }, []); //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
+  useEffect(() => {
+    if (transitionStatus === 'entering') {
+      gsap.to('.anim-cv', {
+        autoAlpha: 1, 
+        duration: .3, 
+      });
+    }
+    if (transitionStatus === 'exiting') {
+      gsap.to('.anim-cv', { autoAlpha: 0, duration: .3 });
+    }
+  }, [transitionStatus]);
   return (
-      <CVLayout>
+      <CVLayout className="anim-cv opacity-0">
         <h1>CV</h1>
         <h2>PROFILE</h2>
         <p>Digital Designer and Front-End Developer, passionate about publishing and taking part in innovative projects spanning a wide range of media and devices. Research, design and development from master-plan to small details.</p>

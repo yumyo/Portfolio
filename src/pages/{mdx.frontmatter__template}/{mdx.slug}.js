@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import { gsap } from "gsap"
 import PostTemplate from '../../templates/post-template'
 import ProjectTemplate from '../../templates/project-template'
 import WorkTemplate from '../../templates/work-template'
 import ArchiveTemplate from '../../templates/archive-template'
 import PropTypes from "prop-types"
-import Layout from "../../components/Layout"
 
 const MdxPage = ({
   data,

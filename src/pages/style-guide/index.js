@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
+import { gsap } from "gsap"
 import tw from 'twin.macro'
-import Layout from "../../components/Layout"
 
 const SmallCenter = tw.div`
 w-k5 aspect-w-16 aspect-h-9 mx-auto bg-green-500
@@ -8,9 +8,29 @@ w-k5 aspect-w-16 aspect-h-9 mx-auto bg-green-500
 
 const SGLayout = tw.div`mx-auto w-6/12 mt-k2v`;
 
-const StyleGuide = () => {
+const StyleGuide = ({ transitionStatus }) => {
+  useEffect(() => {
+    console.log('Style Guide Page', transitionStatus);
+  }, [transitionStatus]);
+  useEffect(() => {
+    gsap.to('.anim-sg', {
+      autoAlpha: 1,
+      duration: .3,
+    });
+  }, []); //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
+  useEffect(() => {
+    if (transitionStatus === 'entering') {
+      gsap.to('.anim-sg', {
+        autoAlpha: 1, 
+        duration: .3, 
+      });
+    }
+    if (transitionStatus === 'exiting') {
+      gsap.to('.anim-sg', { autoAlpha: 0, duration: .3 });
+    }
+  }, [transitionStatus]);
   return (
-    <SGLayout>
+    <SGLayout className="anim-sg opacity-0">
       <h1>Style Guide</h1>
       <SmallCenter></SmallCenter>
       <pre>{`

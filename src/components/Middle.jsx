@@ -1,9 +1,6 @@
 import React from "react"
 import tw, { styled, css } from 'twin.macro'
-import NavLink from "./NavLink"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-
-import { Link } from "gatsby"
+import TransitionLink from "gatsby-plugin-transition-link/AniLink"
 
   // const CtrlMR = tw.div`
   // absolute right-k1 top-1/2 z-50`;
@@ -32,10 +29,24 @@ export default function Middle(props) {
   return (
     <>
       <CtrlML>   
-        <AniLink fade to="/about/">About</AniLink>
+        <TransitionLink to="/about/"
+        exit={{
+          length: .3,
+        }}
+        entry={{ length: .3 }}
+        className="hover:text-gray-600"
+        activeClassName="border-b-2 border-gray-600"
+        >About</TransitionLink>
       </CtrlML>
       <CtrlMR>
-        <AniLink fade to="/archive/">Archive</AniLink>
+        <TransitionLink to="/archive/"
+        exit={{
+          length: .3,
+        }}
+        entry={{ length: .3 }}
+        className="hover:text-gray-600"
+        activeClassName="border-b-2 border-gray-600"
+        >Archive</TransitionLink>
       </CtrlMR>
     </>
   )

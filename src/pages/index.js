@@ -1,26 +1,46 @@
-import React from "react"
-
+import React, { useEffect } from "react"
+import { gsap } from "gsap"
 import { Link } from "gatsby"
 import tw from 'twin.macro'
 
-import Layout from "../components/Layout"
+const IndexPage = ({ transitionStatus }) => {
+  useEffect(() => {
+    console.log('Home Page', transitionStatus);
+  }, [transitionStatus]);
+  useEffect(() => {
+    gsap.to('.anim-home', {
+      autoAlpha: 1,
+      duration: .3,
+    });
+  }, []); //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
+  useEffect(() => {
+    if (transitionStatus === 'entered') {
+      gsap.to('.anim-home', {
+        autoAlpha: 1, 
+        duration: .3, 
+      });
+    }
+    if (transitionStatus === 'exiting') {
+      gsap.to('.anim-home', { 
+        autoAlpha: 0, 
+        duration: .3 
+      });
+    }
+  }, [transitionStatus]);
+  const Title = tw.h2`
+    text-3xl
+  `;
 
-const IndexPage = () => {
-// { data, path }
-const Title = tw.h2`
-  text-3xl
-`;
+  const SubTitle = tw.p`
+    text-lg
+  `;
 
-const SubTitle = tw.p`
-  text-lg
-`;
-
-const Intro = tw.div`
-  mx-auto w-6/12 mt-k3v
-`;
+  const Intro = tw.div`
+    mx-auto w-6/12 mt-k3v
+  `;
 
   return (
-      <Intro>
+      <Intro className="anim-home">
         <Title>
           Hi, I am Nicola Giulia Pernice <br /> a Creative Developer and Product Designer.
         </Title>

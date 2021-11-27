@@ -1,8 +1,6 @@
 import React from "react"
-
 import { graphql, Link as GatsbyLink } from 'gatsby'
 import tw from 'twin.macro'
-import Layout from "../components/Layout"
 
 const ListItem = tw.div`
 mb-4
@@ -62,6 +60,6 @@ export const query = graphql`
   }
 `
 
-Blog.Layout = Layout
+// Blog.Layout = Layout
 
 export default Blog

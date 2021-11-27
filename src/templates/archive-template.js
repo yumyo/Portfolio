@@ -3,7 +3,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 
 import tw from 'twin.macro'
-import Layout from "../components/Layout"
 
 const ArchiveTemplate = ({
   data: {
