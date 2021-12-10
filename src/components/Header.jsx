@@ -17,7 +17,7 @@ const CtrlTR = tw.div`
 absolute right-k1 mt-9  -translate-y-k100`;
 
 const CtrlTC = tw.div`
-absolute right-1/2 mt-8 transform translate-x-1/2`;
+`;
 
 const MenuLink = tw(TransitionLink)`
 leading-none font-medium text-base
@@ -45,7 +45,7 @@ export default function Header(props) {
         >
         <KKLogo />
       </TransitionLink>
-      <CtrlTC> <ThemeToggle /></CtrlTC>
+      <CtrlTC className="absolute right-1/2 mt-8 transform translate-x-1/2"><ThemeToggle /></CtrlTC>
       <CtrlTR>
         <MenuLink to="/cases"
         exit={{
