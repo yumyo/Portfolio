@@ -28,21 +28,25 @@ const IndexPage = ({ transitionStatus }) => {
     }
   }, [transitionStatus]);
   const Title = tw.h2`
-    text-3xl
+    text-2xl
+    2xl:text-3xl
+    mb-2
+    2xl:mb-3
   `;
 
   const SubTitle = tw.p`
-    text-lg
+    text-base
+    2xl:text-lg
   `;
 
   const Intro = tw.div`
-    mx-auto w-6/12 mt-k3v
+    mx-auto w-6/12 mt-auto
   `;
 
   return (
       <Intro className="anim-home">
         <Title>
-          Hi, I am Nicola Giulia Pernice <br /> a Creative Developer and Product Designer.
+          Hi, my name is Nicola Giulia Pernice <br /> I am a Product Designer and Creative Developer.
         </Title>
         <SubTitle>Here you can scroll through my <Link to="/cases">case-histories</Link>, know more <Link to="/about">about me</Link> and get in touch to discuss your awesome idea! </SubTitle>
       </Intro>

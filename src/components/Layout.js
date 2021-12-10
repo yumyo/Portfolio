@@ -14,7 +14,7 @@ import tw, { styled, css } from 'twin.macro'
 import { renderToStaticMarkup } from 'react-dom/server';
 
 const ContentWrapper = tw.div`
-relative z-40 
+relative z-40 flex min-h-screen flex-col justify-center
 `;
 // w-6/12  z-50 
 
@@ -35,6 +35,10 @@ const GridBgContainer = styled.div([
  `
 ])
 
+const GeometriCBG = tw(GridBg)`
+w-screen h-screen fixed top-0 left-0 z-0 text-black-shade-100 dark:text-black-shade-900
+`
+
 const Layout = ({ children }) => {
 
   const { title } = useSiteMetadata();
@@ -47,7 +51,8 @@ const Layout = ({ children }) => {
       </ContentWrapper>
       <Middle />
       <Footer />
-      <GridBgContainer></GridBgContainer>
+      <GeometriCBG />
+      {/* <GridBgContainer></GridBgContainer> */}
     </MainContainer>
   )
 }

@@ -13,12 +13,12 @@ function GridBg(props) {
     >
       <path
         vectorEffect="non-scaling-stroke"
-        stroke={lineColor}
+        stroke="currentColor"
         fill="none"
         d="M50 100L0 0l100 100L50 0v100L100 0 0 100 50 0 0 50l50 50 50-50L50 0"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="0%"
         y1="6.25%"
@@ -26,7 +26,7 @@ function GridBg(props) {
         y2="6.25%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="0%"
         y1="3.125%"
@@ -34,7 +34,7 @@ function GridBg(props) {
         y2="3.125%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="0%"
         y1="12.5%"
@@ -42,7 +42,7 @@ function GridBg(props) {
         y2="12.5%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="0%"
         y1="25%"
@@ -50,7 +50,7 @@ function GridBg(props) {
         y2="25%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="0%"
         y1="75%"
@@ -58,7 +58,7 @@ function GridBg(props) {
         y2="75%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="0%"
         y1="87.5%"
@@ -66,7 +66,7 @@ function GridBg(props) {
         y2="87.5%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="0%"
         y1="93.75%"
@@ -74,7 +74,7 @@ function GridBg(props) {
         y2="93.75%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="0%"
         y1="96.875%"
@@ -82,7 +82,7 @@ function GridBg(props) {
         y2="96.875%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="0%"
         y1="50%"
@@ -90,7 +90,7 @@ function GridBg(props) {
         y2="50%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="25%"
         y1="0%"
@@ -98,7 +98,7 @@ function GridBg(props) {
         y2="100%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="12.5%"
         y1="0%"
@@ -106,7 +106,7 @@ function GridBg(props) {
         y2="100%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="3.125%"
         y1="0%"
@@ -114,7 +114,7 @@ function GridBg(props) {
         y2="100%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="96.875%"
         y1="0%"
@@ -122,7 +122,7 @@ function GridBg(props) {
         y2="100%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="6.25%"
         y1="0%"
@@ -130,7 +130,7 @@ function GridBg(props) {
         y2="100%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="93.75%"
         y1="0%"
@@ -138,7 +138,7 @@ function GridBg(props) {
         y2="100%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="87.5%"
         y1="0%"
@@ -146,7 +146,7 @@ function GridBg(props) {
         y2="100%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="33.333%"
         y1="0%"
@@ -154,7 +154,7 @@ function GridBg(props) {
         y2="100%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="66.667%"
         y1="0%"
@@ -162,7 +162,7 @@ function GridBg(props) {
         y2="100%"
       />
       <line
-        stroke={lineColor}
+        stroke="currentColor"
         vectorEffect="non-scaling-stroke"
         x1="75%"
         y1="0%"

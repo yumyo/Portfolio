@@ -9,7 +9,7 @@ const CtrlMR = styled.div([
   css`
     /* writing-mode: vertical-rl; */
     /* text-orientation: upright; */
-    ${tw`absolute right-k1 top-1/2 z-50 transform rotate-90 translate-x-1/2`}
+    ${tw`fixed right-k1 top-1/2 z-50 transform rotate-90 translate-x-1/2`}
     
   `
 ]);
@@ -19,34 +19,38 @@ const CtrlML = styled.div([
   css`
     /* writing-mode: vertical-rl; */
     /* text-orientation: upright; */
-    ${tw`absolute left-k1 top-1/2 z-50 transform -rotate-90 -translate-x-1/2`}
+    ${tw`fixed left-k1 top-1/2 z-50 transform -rotate-90 -translate-x-1/2`}
     
   `
 ]);
+
+const MenuLink = tw(TransitionLink)`
+leading-none font-medium text-base
+`
 
 export default function Middle(props) {
 
   return (
     <>
       <CtrlML>   
-        <TransitionLink to="/about/"
+        <MenuLink to="/about/"
         exit={{
           length: .3,
         }}
         entry={{ length: .3 }}
-        className="hover:text-gray-600"
+        className="nav-link hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
-        >About</TransitionLink>
+        >About</MenuLink>
       </CtrlML>
       <CtrlMR>
-        <TransitionLink to="/archive/"
+        <MenuLink to="/archive/"
         exit={{
           length: .3,
         }}
         entry={{ length: .3 }}
-        className="hover:text-gray-600"
+        className="nav-link hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
-        >Archive</TransitionLink>
+        >Archive</MenuLink>
       </CtrlMR>
     </>
   )

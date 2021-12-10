@@ -75,6 +75,19 @@ module.exports = {
         primary: '#cf5c78',
         secondary: '#596dd8',
         neutral: '#333',
+        'black-shade': {
+          DEFAULT: '#9E9E9E',
+          '50': '#EEEEEE',
+          '100': '#E6E6E6',
+          '200': '#D4D4D4',
+          '300': '#C2C2C2',
+          '400': '#B0B0B0',
+          '500': '#9E9E9E',
+          '600': '#7D7D7D',
+          '700': '#5C5C5C',
+          '800': '#3B3B3B',
+          '900': '#1c1c1c'
+        },
         blush: {
           '50':  '#fdfcfb',
           '100': '#fbf0ee',

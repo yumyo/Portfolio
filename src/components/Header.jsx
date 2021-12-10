@@ -6,7 +6,7 @@ import Logo from "./Logo"
 import ThemeToggle from "./themeToggle"
 
 const KKLogo = styled(Logo)([
-  tw`absolute top-k0 z-50 cursor-pointer`,
+  tw`absolute top-k0 z-50 cursor-pointer text-black-shade-900 dark:text-black-shade-50`,
   css`
     width: 171px;
     left: 1.325%;
@@ -17,7 +17,11 @@ const CtrlTR = tw.div`
 absolute right-k1 mt-9  -translate-y-k100`;
 
 const CtrlTC = tw.div`
-absolute right-1/2 mt-8  transform translate-x-1/2`;
+absolute right-1/2 mt-8 transform translate-x-1/2`;
+
+const MenuLink = tw(TransitionLink)`
+leading-none font-medium text-base
+`
 
 /*
 const CtrlBR = tw.div`
@@ -43,22 +47,22 @@ export default function Header(props) {
       </TransitionLink>
       <CtrlTC> <ThemeToggle /></CtrlTC>
       <CtrlTR>
-        <TransitionLink to="/cases"
+        <MenuLink to="/cases"
         exit={{
           length: .3,
         }}
         entry={{ length: .3 }}
-        className="hover:text-gray-600"
+        className="nav-link hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
-        >Case Histories</TransitionLink>
-        <TransitionLink to="/works/"
+        >Case Histories</MenuLink>
+        <MenuLink to="/works/"
         exit={{
           length: .3,
         }}
         entry={{}}
-        className="hover:text-gray-600"
+        className="nav-link hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
-        >Works</TransitionLink>
+        >Works</MenuLink>
       </CtrlTR>
     </HeaderWrapper>
   )

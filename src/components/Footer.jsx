@@ -3,34 +3,38 @@ import tw from 'twin.macro'
 import TransitionLink from "gatsby-plugin-transition-link/AniLink";
 
 const CtrlBR = tw.div`
-absolute right-k1 bottom-k1 z-50`;
+fixed right-k1 bottom-k1 z-50`;
 
 const CtrlBL = tw.div`
-absolute left-k1 bottom-k1 z-50`;
+fixed left-k1 bottom-k1 z-50`;
+
+const MenuLink = tw(TransitionLink)`
+leading-none font-medium text-base
+`
 
 export default function Header(props) {
 
   return (
     <>
       <CtrlBL>   
-        <TransitionLink to="/cv/"
+        <MenuLink to="/cv/"
         exit={{
           length: .3,
         }}
         entry={{ length: .3 }}
-        className="hover:text-gray-600"
+        className="nav-link hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
-        >CV</TransitionLink>
+        >CV</MenuLink>
       </CtrlBL>
       <CtrlBR>
-        <TransitionLink to="/style-guide/"
+        <MenuLink to="/style-guide/"
         exit={{
           length: .3,
         }}
         entry={{ length: .3 }}
-        className="hover:text-gray-600"
+        className="nav-link hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
-        >Style Guide</TransitionLink>
+        >Style Guide</MenuLink>
       </CtrlBR>
     </>
   )

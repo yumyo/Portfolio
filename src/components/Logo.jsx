@@ -71,7 +71,7 @@ export default function Logo(props) {
   }, [])
   return (
     <svg
-      className="prefix__logo dark:text-white"
+      className="prefix__logo"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 155 111.1"
       onMouseEnter={toggleDraw} 

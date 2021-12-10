@@ -30,6 +30,15 @@
   pre {
     @apply text-sm;
   }
+  a {
+    @apply text-violet-600;
+    @apply font-medium;
+  }
+  .dark {
+    a {
+      @apply text-violet-400;
+    }
+  }
 }
 
 .nav-link + .nav-link {
@@ -37,11 +46,11 @@
 }
 
 body.dark {
-  @apply text-white;
+  @apply text-black-shade-50;
   @apply bg-black;
 }
 
 body.light {
-  @apply text-black;
+  @apply text-black-shade-900;
   @apply bg-white
 }
