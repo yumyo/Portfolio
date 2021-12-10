@@ -6,15 +6,17 @@ import Logo from "./Logo"
 import ThemeToggle from "./themeToggle"
 
 const KKLogo = styled(Logo)([
-  tw`absolute top-k0 z-50 cursor-pointer text-black-shade-900 dark:text-black-shade-50`,
   css`
-    width: 171px;
+    width: 121px;
     left: 1.325%;
+    @media screen and (min-width:640px) {
+      width: 171px;
+    }
   `
 ]);
 
 const CtrlTR = tw.div`
-absolute right-k1 mt-9  -translate-y-k100`;
+`;
 
 const CtrlTC = tw.div`
 `;
@@ -43,10 +45,10 @@ export default function Header(props) {
         }}
         entry={{ length: .3 }}
         >
-        <KKLogo />
+        <KKLogo className="absolute top-k0 z-50 cursor-pointer text-black-shade-900 dark:text-black-shade-50" />
       </TransitionLink>
-      <CtrlTC className="absolute right-1/2 mt-8 transform translate-x-1/2"><ThemeToggle /></CtrlTC>
-      <CtrlTR>
+      <CtrlTC className="absolute right-1/2 mt-5 2xl:mt-8 transform translate-x-1/2 -translate-y-1/2"><ThemeToggle /></CtrlTC>
+      <CtrlTR className="hidden sm:block absolute right-k1 lg:right-k0 2xl:right-k1 mt-2 2xl:mt-5 -translate-y-k100">
         <MenuLink to="/cases"
         exit={{
           length: .3,

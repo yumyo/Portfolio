@@ -9,7 +9,7 @@ const CtrlMR = styled.div([
   css`
     /* writing-mode: vertical-rl; */
     /* text-orientation: upright; */
-    ${tw`fixed right-k1 top-1/2 z-50 transform rotate-90 translate-x-1/2`}
+    ${tw``}
     
   `
 ]);
@@ -19,7 +19,7 @@ const CtrlML = styled.div([
   css`
     /* writing-mode: vertical-rl; */
     /* text-orientation: upright; */
-    ${tw`fixed left-k1 top-1/2 z-50 transform -rotate-90 -translate-x-1/2`}
+    ${tw``}
     
   `
 ]);
@@ -32,7 +32,7 @@ export default function Middle(props) {
 
   return (
     <>
-      <CtrlML>   
+      <CtrlML className="hidden md:block fixed ml-2 left-k1 lg:left-k0 2xl:left-k1 top-1/2 z-50 transform -rotate-90 -translate-x-1/2 -translate-y-1/2">   
         <MenuLink to="/about/"
         exit={{
           length: .3,
@@ -42,7 +42,7 @@ export default function Middle(props) {
         activeClassName="border-b-2 border-gray-600"
         >About</MenuLink>
       </CtrlML>
-      <CtrlMR>
+      <CtrlMR className="hidden md:block fixed mr-2 right-k1 lg:right-k0 2xl:right-k1 top-1/2 z-50 transform rotate-90 translate-x-1/2 -translate-y-1/2">
         <MenuLink to="/archive/"
         exit={{
           length: .3,

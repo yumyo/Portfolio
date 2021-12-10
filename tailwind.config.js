@@ -20,6 +20,14 @@ module.exports = {
       '5xl': ['3.82353rem', { lineHeight: '1.618' }],
       '6xl': ['4.7647rem', { lineHeight: '1.618' }],
     },
+    screens: {
+      'xs': '480px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     // colors: {
     //   transparent: 'transparent',
     //   current: 'currentColor',
@@ -243,7 +251,7 @@ module.exports = {
         'k9v' : '93.75vh',
         'k10v' : '96.875vh',
         'k100v' : '100vh',
-      },
+      }
     },
   },
   variants: {
@@ -254,3 +262,8 @@ module.exports = {
   ],
 }
 // "IBM Plex Sans"  
+/*
+      screens: {
+        'xs': '1600px',
+      },
+*/
