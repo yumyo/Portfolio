@@ -2,16 +2,19 @@
 import React from "react"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import '../styles/global.scss'
+// Components
 import Header from "./Header"
 import Footer from "./Footer"
 import Middle from "./Middle"
 import GridBg from "./GridBg";
-
+// Fonts
 import "@fontsource/ibm-plex-sans/400.css" // Weight 500.
 import "@fontsource/ibm-plex-sans/500.css" // Weight 500.
 import "@fontsource/ibm-plex-sans/700.css" // Weight 500.
 import tw, { styled, css } from 'twin.macro'
 import { renderToStaticMarkup } from 'react-dom/server';
+// Context
+
 
 const ContentWrapper = tw.div`
 relative z-40 flex min-h-screen flex-col justify-center
@@ -42,9 +45,11 @@ w-screen h-screen fixed top-0 left-0 z-0 text-black-shade-100 dark:text-black da
 const Layout = ({ children }) => {
 
   const { title } = useSiteMetadata();
+
+
   return (
     <MainContainer>
-      <Header />
+        <Header />
       <ContentWrapper>
         <Title>{title}</Title>
         {children}

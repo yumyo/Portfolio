@@ -1,12 +1,15 @@
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useEffect, useContext } from "react"
 import { gsap } from "gsap"
 import tw from 'twin.macro'
+
 
 const CVLayout = tw.div`mx-auto w-6/12 mt-k2v`;
 
 const Cv = ({transitionStatus}) => {
+
   useEffect(() => {
-    console.log('CV Page', transitionStatus);
+    // console.log('CV Page', transitionStatus);
+    
   }, [transitionStatus]);
   useEffect(() => {
     gsap.to('.anim-cv', {
@@ -25,6 +28,8 @@ const Cv = ({transitionStatus}) => {
       gsap.to('.anim-cv', { autoAlpha: 0, duration: .3 });
     }
   }, [transitionStatus]);
+  const ref = useRef(null);
+
   return (
       <CVLayout className="anim-cv opacity-0">
         <h1>CV</h1>

@@ -2,8 +2,8 @@ import * as React from "react"
 import tw, { styled, css } from 'twin.macro'
 import TransitionLink from 'gatsby-plugin-transition-link';
 import Logo from "./Logo"
-
 import ThemeToggle from "./themeToggle"
+// import { InView } from 'react-intersection-observer'
 
 const KKLogo = styled(Logo)([
   css`
@@ -36,7 +36,7 @@ const HeaderWrapper = tw.div`
 fixed z-50 top-k0 left-0 w-full`;
 
 export default function Header(props) {
-
+  
   return (
     <HeaderWrapper>
       <TransitionLink to="/"
