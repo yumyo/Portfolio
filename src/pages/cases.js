@@ -28,14 +28,14 @@ const Cases = ({ data, transitionStatus  }) => {
   useEffect(() => {
     gsap.to('.anim-case', {
       autoAlpha: 1,
-      duration: .3,
+      duration: .6,
     });
   }, []); //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
     if (transitionStatus === 'entering') {
       gsap.to('.anim-case', {
         autoAlpha: 1, 
-        duration: .3, 
+        duration: .6, 
       });
     }
     if (transitionStatus === 'exiting') {

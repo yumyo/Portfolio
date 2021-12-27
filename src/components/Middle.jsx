@@ -1,9 +1,10 @@
 import React from "react"
 import tw, { styled, css } from 'twin.macro'
 import TransitionLink from "gatsby-plugin-transition-link/AniLink"
+import { RightPos, LeftPos } from "../components/theme" 
 
   // const CtrlMR = tw.div`
-  // absolute right-k1 top-1/2 z-50`;
+  // absolute right-k1 top-1/2 z-40`;
 
 const CtrlMR = styled.div([
   css`
@@ -32,7 +33,7 @@ export default function Middle(props) {
 
   return (
     <>
-      <CtrlML className="hidden md:block fixed ml-2 left-k1 lg:left-k0 2xl:left-k1 top-1/2 z-50 transform -rotate-90 -translate-x-1/2 -translate-y-1/2">   
+      <CtrlML className={`hidden md:block fixed ml-2 top-1/2 z-30 transform -rotate-90 -translate-x-1/2 -translate-y-1/2 ${LeftPos}`}>   
         <MenuLink to="/about/"
         exit={{
           length: .3,
@@ -42,7 +43,7 @@ export default function Middle(props) {
         activeClassName="border-b-2 border-gray-600"
         >About</MenuLink>
       </CtrlML>
-      <CtrlMR className="hidden md:block fixed mr-2 right-k1 lg:right-k0 2xl:right-k1 top-1/2 z-50 transform rotate-90 translate-x-1/2 -translate-y-1/2">
+      <CtrlMR className={`hidden md:block fixed mr-2 top-1/2 z-30 transform rotate-90 translate-x-1/2 -translate-y-1/2 ${RightPos}`}>
         <MenuLink to="/archive/"
         exit={{
           length: .3,

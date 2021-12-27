@@ -19,7 +19,9 @@ mx-auto w-6/12 mt-k3v
 const PostTemplate = ({
   data: {
     mdx: {
-      frontmatter: { title, template, tags },
+      excerpt,
+      embeddedImagesRemote,
+      frontmatter: { title, template, tags, date, embeddedImagesLocal },
       body
     }
   }

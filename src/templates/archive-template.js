@@ -7,7 +7,9 @@ import tw from 'twin.macro'
 const ArchiveTemplate = ({
   data: {
     mdx: {
-      frontmatter: { title, template },
+      excerpt,
+      embeddedImagesRemote,
+      frontmatter: { title, template, date, embeddedImagesLocal },
       body
     }
   }

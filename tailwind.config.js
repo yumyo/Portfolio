@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  purge: ['./src/**/*.js'],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
@@ -230,11 +230,13 @@ module.exports = {
         'k0' : '3.125%',
         'k1' : '6.25%',
         'k2' : '12.5%',
+        'k25' : '17%',
         'k3' : '25%',
         'k4' : '33.3333%',
         'k5' : '50%',
         'k6' : '66.6666%',
         'k7' : '75%',
+        'k75' : '83%',
         'k8' : '87.5%',
         'k9' : '93.75%',
         'k10' : '96.875%',

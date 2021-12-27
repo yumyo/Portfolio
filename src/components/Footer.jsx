@@ -1,6 +1,7 @@
 import React from "react"
 import tw from 'twin.macro'
 import TransitionLink from "gatsby-plugin-transition-link/AniLink";
+import { BottomPos, RightPos, LeftPos } from "../components/theme" 
 
 const CtrlBR = tw.div`
 `;
@@ -16,7 +17,7 @@ export default function Header(props) {
 
   return (
     <>
-      <CtrlBL className="fixed left-k2 xs:left-k1 lg:left-k0 2xl:left-k1 mb-4 2xl:mb-0 bottom-k0 2xl:bottom-k1 z-50">   
+      <CtrlBL className={`fixed mb-4 ${BottomPos} z-40 ${LeftPos}`}>   
         <MenuLink to="/cv/"
         exit={{
           length: .3,
@@ -26,7 +27,7 @@ export default function Header(props) {
         activeClassName="border-b-2 border-gray-600"
         >CV</MenuLink>
       </CtrlBL>
-      <CtrlBR className="fixed right-k2 xs:right-k1 lg:right-k0 2xl:right-k1 mb-4 2xl:mb-0 bottom-k0 2xl:bottom-k1 z-50">
+      <CtrlBR className={`fixed mb-4 ${BottomPos} z-30 ${RightPos}`}>
         <MenuLink className="leading-none font-medium text-base" to="/style-guide/"
         exit={{
           length: .3,

@@ -9,8 +9,19 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `Nicola Giulia Pernice`,
-    description: `Product Designer and Front-end Developer`,
-    downloadCTA: `Download Curriculum Vitae`,
+    description: `Product Designer and Full Stack Developer`,
+    lastBuildDate: new Date(Date.now()).toISOString(),
+    siteUrl: `https://nicolapernice.com`,
+    authorName: `Nicola Giulia Pernice`,
+    socialimage: `/exness_cover_social.jpeg`,
+    twitterNick: `@kdsign`,
+    githubNick: `@kdsign`,
+    stackoverflowNick: `@kdsign`,
+    signalNick: `@kdsign`,
+    behanceNick: `@kdsign`,
+    dribbleNick: `@kdsign`,
+    siteLanguage: `en-GB`,
+    siteLocale: `en_gb`,
   },
   plugins: [
     {
@@ -76,7 +87,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        printRejected: false, // Print removed selectors and processed file names
+        printRejected: true, // Print removed selectors and processed file names
         // develop: true, // Enable while using `gatsby develop`
         tailwind: true, // Enable tailwindcss support
         // whitelist: ['whitelist'], // Don't remove this selector
@@ -99,16 +110,22 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    // {
-    //   resolve: 'gatsby-plugin-pdf',
-    //   options: {
-    //     paths: ['/'],
-    //     outputPath: '/public/pdf',
-    //     pdfOptions: {
-    //       'printBackground': true,
-    //     }
-    //   },
-    // },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: `Exness: Psychology of Trading`,
+        short_name: `Exness`,
+        description: `Psychology of Trading`,
+        start_url: `/`,
+        background_color: `#000000`,
+        theme_color: `#FFCF01`,
+        display: `standalone`,
+        icon: `./src/images/icons/icon-512x512.png`
+        // https://www.simicart.com/manifest-generator.html/
+        // https://github.com/onderceylan/pwa-asset-generator
+      },
+    },
     {
       resolve: "gatsby-plugin-transition-link",
       options: {

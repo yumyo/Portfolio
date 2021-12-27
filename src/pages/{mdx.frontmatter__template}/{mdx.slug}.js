@@ -34,6 +34,22 @@ export const query = graphql`
         title
         template
         tags
+        banner {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: FULL_WIDTH
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+        embeddedImagesLocal {
+          childImageSharp {
+            gatsbyImageData(
+              layout: FULL_WIDTH
+            )
+          }
+        }
       }
       body
     }

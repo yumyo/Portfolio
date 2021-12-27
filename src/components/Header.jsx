@@ -1,22 +1,27 @@
-import * as React from "react"
+import React, { useRef, useEffect, useState } from "react"
 import tw, { styled, css } from 'twin.macro'
 import TransitionLink from 'gatsby-plugin-transition-link';
 import Logo from "./Logo"
 import ThemeToggle from "./themeToggle"
+
+
+import { TopPos, RightPos } from "../components/theme" 
 // import { InView } from 'react-intersection-observer'
+import { MenuAltLeft } from '@styled-icons/boxicons-regular/MenuAltLeft'
+// import { Sling as Hamburger } from 'hamburger-react'
+// import Slider from './hamburger/types/slider'
+// import SliderReverse from './types/slider-reverse'
 
 const KKLogo = styled(Logo)([
   css`
     width: 121px;
     left: 1.325%;
+    transform: translate(calc(-50% + 16px));
     @media screen and (min-width:640px) {
       width: 171px;
     }
   `
 ]);
-
-const CtrlTR = tw.div`
-`;
 
 const CtrlTC = tw.div`
 `;
@@ -25,6 +30,8 @@ const MenuLink = tw(TransitionLink)`
 leading-none font-medium text-base
 `
 
+
+
 /*
 const CtrlBR = tw.div`
 absolute right-k1 bottom-k1`;
@@ -32,40 +39,57 @@ absolute right-k1 bottom-k1`;
 const CtrlBL = tw.div`
 absolute left-k1 bottom-k1`;
 */
-const HeaderWrapper = tw.div`
-fixed z-50 top-k0 left-0 w-full`;
+const HeaderWrapper = tw.div`w-full`;
 
 export default function Header(props) {
-  
+  const [small, setSmall] = useState(false);
+
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () =>
+        setSmall(window.pageYOffset > 20)
+      );
+    }
+  }, [setSmall]);
   return (
     <HeaderWrapper>
       <TransitionLink to="/"
         exit={{
-          length: .3,
+          length: .6,
         }}
-        entry={{ length: .3 }}
+        entry={{ length: .6 }}
         >
-        <KKLogo className="absolute top-k0 z-50 cursor-pointer text-black-shade-900 dark:text-black-shade-50" />
+        <KKLogo className=" fixed top-k0 left-k1 z-50 cursor-pointer text-black-shade-900 dark:text-black-shade-800 xl:dark:text-violet-400" />
+        <h1 className="block xl:hidden nav-link text-base fixed top-k1 left-k1 z-50 cursor-pointer text-black-shade-900 dark:text-violet-400">Nicola Giulia<br />Pernice</h1>
       </TransitionLink>
-      <CtrlTC className="absolute right-1/2 mt-5 2xl:mt-8 transform translate-x-1/2 -translate-y-1/2"><ThemeToggle /></CtrlTC>
-      <CtrlTR className="hidden sm:block absolute right-k1 lg:right-k0 2xl:right-k1 mt-2 2xl:mt-5 -translate-y-k100">
+      <CtrlTC className={`fixed z-40 top-k0 right-1/2 ${TopPos} transition-opacity transform translate-x-1/2 -translate-y-k3 ${
+          small ? "opacity-0" : "opacity-1"
+        }`}><ThemeToggle /></CtrlTC>
+      {/* <CtrlTR className={`hidden fixed top-k0 sm:block z-40 ${TopPos} -translate-y-k100 ${RightPos}`}>
         <MenuLink to="/cases"
         exit={{
-          length: .3,
+          length: .6,
         }}
-        entry={{ length: .3 }}
+        entry={{ length: .6 }}
         className="nav-link hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
         >Case Histories</MenuLink>
         <MenuLink to="/works/"
+        
         exit={{
-          length: .3,
+          length: .6,
         }}
-        entry={{}}
+        entry={{ length: .6 }}
         className="nav-link hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
         >Works</MenuLink>
-      </CtrlTR>
+      </CtrlTR> */}
+      
+      {/* <button className={`hidden fixed top-k0 sm:block z-50 text-white ${RightPos}`} onClick={handleToggle}>
+        <span className="mr-2">Menu</span><MenuIcon size="32" />
+      </button> */}
+      
     </HeaderWrapper>
   )
 }

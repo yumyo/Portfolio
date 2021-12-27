@@ -15,7 +15,9 @@ text-sm font-medium uppercase inline-block mr-4
 const PostTemplate = ({
   data: {
     mdx: {
-      frontmatter: { title, template, tags },
+      excerpt,
+      embeddedImagesRemote,
+      frontmatter: { title, template, tags, date, embeddedImagesLocal },
       body
     }
   }
