@@ -39,6 +39,8 @@ const Navigation = styled(FullNav)([
 
 const ContentWrapper = tw.div`
 relative z-30 
+flex-grow
+flex-shrink-0
 `;
 // w-6/12  z-50 
 

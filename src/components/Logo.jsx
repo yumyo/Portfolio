@@ -74,7 +74,7 @@ export default function Logo(props) {
       className="prefix__logo"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 155 111.1"
-      onMouseEnter={toggleDraw} 
+      // onMouseEnter={toggleDraw} 
       {...props}
     >
       <defs>

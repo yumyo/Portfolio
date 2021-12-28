@@ -13,9 +13,9 @@ export const Label = "text-xs 2xl:text-sm uppercase tracking-widest";
 export const PageTitle = "text-lg sm:text-2xl 2xl:text-3xl";
 // INterface
 export const TopPos = "mt-5 2xl:mt-8";
-export const LeftPos = "left-k2 xs:left-k1 lg:left-k0 2xl:left-k1";
+export const LeftPos = "left-k2 xs:left-k1 "; // lg:left-k0 2xl:left-k1
 export const MidPos = "top-1/2";
-export const RightPos = "right-k2 xs:right-k1 lg:right-k0 2xl:right-k1";
+export const RightPos = "right-k2 xs:right-k1 "; // lg:right-k0 2xl:right-k1
 export const BottomPos = "2xl:mb-0 bottom-k0 2xl:bottom-k1";
 // Grid
 export const LeftSide = "block w-k25";
