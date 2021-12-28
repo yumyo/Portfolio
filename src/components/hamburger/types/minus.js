@@ -54,7 +54,7 @@ export default class Minus extends React.Component{
     `
 
 		return (
-			<Base typeClassName='BurgerMinus' {...this.props}>
+			<Base typeClassName='BurgerMinus mt-k1' {...this.props}>
 				<GlobalStyle />
 			</Base>
 		)

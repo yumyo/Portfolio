@@ -12,7 +12,7 @@ export const Lead = "text-base xl:text-lg";
 export const Label = "text-xs 2xl:text-sm uppercase tracking-widest";
 export const PageTitle = "text-lg sm:text-2xl 2xl:text-3xl";
 // INterface
-export const TopPos = "mt-5 2xl:mt-8";
+export const TopPos = "top-k1 mt-0";
 export const LeftPos = "left-k2 xs:left-k1 "; // lg:left-k0 2xl:left-k1
 export const MidPos = "top-1/2";
 export const RightPos = "right-k2 xs:right-k1 "; // lg:right-k0 2xl:right-k1

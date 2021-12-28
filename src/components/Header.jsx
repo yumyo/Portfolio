@@ -5,7 +5,7 @@ import Logo from "./Logo"
 import ThemeToggle from "./themeToggle"
 
 
-import { TopPos, RightPos } from "../components/theme" 
+import { TopPos, RightPos, LeftPos } from "../components/theme" 
 // import { InView } from 'react-intersection-observer'
 import { MenuAltLeft } from '@styled-icons/boxicons-regular/MenuAltLeft'
 // import { Sling as Hamburger } from 'hamburger-react'
@@ -14,7 +14,7 @@ import { MenuAltLeft } from '@styled-icons/boxicons-regular/MenuAltLeft'
 
 const KKLogo = styled(Logo)([
   css`
-    width: 121px;
+    width: 171px;
     /* left: 1.325%; */
     /* margin-left: -16px; */
     /* transform: translate(calc(-50% + 16px)); */
@@ -26,7 +26,7 @@ const KKLogo = styled(Logo)([
 
 const LogoLink = styled(TransitionLink)([
   css`
-    width: 121px;
+    width: 171px;
     /* left: 1.325%; */
     /* transform: translate(calc(-50% + 16px)); */
     @media screen and (min-width:640px) {
@@ -73,18 +73,20 @@ export default function Header(props) {
         entry={{ length: .6 }}
         >
         <KKLogo className="transform block fixed top-k left-k z-50 cursor-pointer text-black-shade-900 dark:text-black-shade-800" />
-        <h1 className="nav-link text-base leading-tight fixed top-k1 left-k1 md:-ml-4 z-50 cursor-pointer text-black-shade-900 dark:text-violet-400">Nicola Giulia<br />Pernice</h1>
+        <h1 className={`nav-link text-base leading-tight fixed top-k1 ${LeftPos} md:-ml-4 z-50 cursor-pointer text-black-shade-900 dark:text-violet-400`}>Nicola Giulia<br />Pernice</h1>
       </LogoLink>
-      <CtrlTC className={`fixed z-40 top-k right-1/2 ${TopPos} transition-opacity transform translate-x-1/2 -translate-y-k3 ${
+      <CtrlTC className={`hidden xs:block fixed z-40 right-1/2 ${TopPos} transition-opacity translate-x-1/2  ${
           small ? "opacity-0" : "opacity-1"
-        }`}><ThemeToggle /></CtrlTC>
-      {/* <CtrlTR className={`hidden fixed top-k0 sm:block z-40 ${TopPos} -translate-y-k100 ${RightPos}`}>
+        }`}>
+        <ThemeToggle />
+      </CtrlTC>
+      <div className={`hidden fixed lg:block z-40 text-right md:-mr-4 ${TopPos} ${RightPos}`}>
         <MenuLink to="/cases"
         exit={{
           length: .6,
         }}
         entry={{ length: .6 }}
-        className="nav-link hover:text-gray-600"
+        className="block hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
         >Case Histories</MenuLink>
         <MenuLink to="/works/"
@@ -93,14 +95,10 @@ export default function Header(props) {
           length: .6,
         }}
         entry={{ length: .6 }}
-        className="nav-link hover:text-gray-600"
+        className="block hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
         >Works</MenuLink>
-      </CtrlTR> */}
-      
-      {/* <button className={`hidden fixed top-k0 sm:block z-50 text-white ${RightPos}`} onClick={handleToggle}>
-        <span className="mr-2">Menu</span><MenuIcon size="32" />
-      </button> */}
+      </div>
       
     </HeaderWrapper>
   )

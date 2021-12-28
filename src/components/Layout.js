@@ -39,8 +39,6 @@ const Navigation = styled(FullNav)([
 
 const ContentWrapper = tw.div`
 relative z-30 
-flex-grow
-flex-shrink-0
 `;
 // w-6/12  z-50 
 
@@ -91,14 +89,14 @@ const Layout = ({ children }) => {
 
   return (
     
-    <MainContainer className={`${isActive ? "is-locked" : ""} `}>
+    <MainContainer className={`${isActive ? "is-locked" : ""} flex flex-col`}>
         <Header />
-        <div className={`flex flex-row fixed top-k1 z-50 text-violet-400 ${RightPos}`}>
-          <Minus active={isActive} onClick={handleToggle} width="40"/>
+        <div className={`flex lg:hidden flex-row fixed top-k1 z-50 text-violet-400 right-k1 md:-mr-4`}>
+          <Minus active={isActive} onClick={handleToggle} width={40} lineHeight={3} borderRadius={3} />
           {/* <Hamburger toggled={isActive} toggle={handleToggle} /> */}
         </div>
         <Navigation className={`${isActive ? "" : "is-active"} `}/>
-      <ContentWrapper>
+      <ContentWrapper className="grow shrink-0 basis-auto">
         <Title>{title}</Title>
         {children}
       </ContentWrapper>
