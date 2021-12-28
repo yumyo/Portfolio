@@ -37,9 +37,10 @@ const IndexPage = ({ transitionStatus }) => {
   `;
 
   // const Intro = tw.div``;
+  // min-h-screen 
 
   return (
-    <div className="flex min-h-screen flex-col justify-center">
+    <div className="flex flex-col justify-center mt-k5v -translate-y-1/2">
       <div className="anim-home opacity-0 mx-auto w-k7 xs:w-k8 md:w-k5">
         <Title>
           Hi, my name is Nicola&nbsp;Giulia&nbsp;Pernice <br /> I am a Product Designer and Creative&nbsp;Developer.

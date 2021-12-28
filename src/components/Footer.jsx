@@ -7,10 +7,10 @@ const Footer = tw.div`
 `;
 
 export default function Header(props) {
-
+  // md:-ml-4 md:-mr-4
   return (
-    <Footer className="shrink-0">
-      <div className={`fixed mb-4 ${BottomPos} z-40 md:-ml-4 ${LeftPos}`}>   
+    <Footer className="shrink-0 w-full flex justify-between pl-k1 pr-k1 pb-k1v leading-none">
+      <div className={`z-40  ${LeftPos}`}>   
         <TransitionLink to="/cv/"
         exit={{
           length: .3,
@@ -20,7 +20,7 @@ export default function Header(props) {
         activeClassName="border-b-2 border-gray-600"
         >CV</TransitionLink>
       </div>
-      <div className={`fixed mb-4 ${BottomPos} z-30 md:-mr-4 ${RightPos}`}>
+      <div className={`z-30  ${RightPos}`}>
         <TransitionLink className="leading-none font-medium text-base" to="/style-guide/"
         exit={{
           length: .3,

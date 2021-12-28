@@ -89,7 +89,7 @@ const Layout = ({ children }) => {
 
   return (
     
-    <MainContainer className={`${isActive ? "is-locked" : ""} flex flex-col`}>
+    <MainContainer className={`${isActive ? "is-locked" : ""} flex flex-col min-h-screen`}>
         <Header />
         <div className={`flex lg:hidden flex-row fixed top-k1 z-50 text-violet-400 right-k1 md:-mr-4`}>
           <Minus active={isActive} onClick={handleToggle} width={40} lineHeight={3} borderRadius={3} />
@@ -97,7 +97,7 @@ const Layout = ({ children }) => {
         </div>
         <Navigation className={`${isActive ? "" : "is-active"} `}/>
       <ContentWrapper className="grow shrink-0 basis-auto">
-        <Title>{title}</Title>
+      {/* <Title>{title}</Title> */}
         {children}
       </ContentWrapper>
       <Middle />
