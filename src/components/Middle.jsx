@@ -33,17 +33,18 @@ export default function Middle(props) {
 
   return (
     <>
-      <CtrlML className={`hidden md:block fixed ml-2 top-1/2 z-30 transform -rotate-90 -translate-x-full -translate-y-1/2 ${LeftPos}`}>   
-        <MenuLink to="/about/"
+      <CtrlML className={`hidden md:block fixed top-1/2 z-30 transform -rotate-90 -translate-x-1/2 -translate-y-1/2 ${LeftPos}`}>   
+      <MenuLink to="/works/"
+        
         exit={{
-          length: .3,
+          length: .6,
         }}
-        entry={{ length: .3 }}
-        className="nav-link hover:text-gray-600"
+        entry={{ length: .6 }}
+        className="block hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
-        >About</MenuLink>
+        >Work Archive</MenuLink>
       </CtrlML>
-      <CtrlMR className={`hidden md:block fixed mr-2 top-1/2 z-30 transform rotate-90 translate-x-full -translate-y-1/2 ${RightPos}`}>
+      <CtrlMR className={`hidden md:block fixed top-1/2 z-30 ml-2 transform rotate-90 translate-x-1/2 -translate-y-1/2 ${RightPos}`}>
         <MenuLink to="/archive/"
         exit={{
           length: .3,

@@ -73,14 +73,14 @@ export default function Header(props) {
         entry={{ length: .6 }}
         >
         <KKLogo className="transform block fixed top-k left-k z-50 cursor-pointer text-black-shade-900 dark:text-black-shade-800" />
-        <h1 className={`nav-link text-base leading-tight fixed top-k1 ${LeftPos} md:-ml-4 z-50 cursor-pointer text-black-shade-900 dark:text-violet-400`}>Nicola Giulia<br />Pernice</h1>
+        <h1 className={`nav-link text-base leading-tight fixed top-k1 ${LeftPos} md:-ml-2 z-50 cursor-pointer text-black-shade-900 dark:text-violet-400`}>Nicola Giulia<br />Pernice</h1>
       </LogoLink>
       <CtrlTC className={`hidden xs:block fixed z-40 right-1/2 ${TopPos} transition-opacity translate-x-1/2  ${
           small ? "opacity-0" : "opacity-1"
         }`}>
         <ThemeToggle />
       </CtrlTC>
-      <div className={`hidden fixed lg:block z-40 text-right md:-mr-4 ${TopPos} ${RightPos}`}>
+      <div className={`hidden fixed lg:block z-40 text-right md:-mr-2 ${TopPos} ${RightPos}`}>
         <MenuLink to="/cases"
         exit={{
           length: .6,
@@ -89,15 +89,22 @@ export default function Header(props) {
         className="block hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
         >Case Histories</MenuLink>
-        <MenuLink to="/works/"
-        
+        <MenuLink to="/about/"
         exit={{
-          length: .6,
+          length: .3,
         }}
-        entry={{ length: .6 }}
+        entry={{ length: .3 }}
         className="block hover:text-gray-600"
         activeClassName="border-b-2 border-gray-600"
-        >Works</MenuLink>
+        >About</MenuLink>
+        <TransitionLink to="/cv/"
+        exit={{
+          length: .3,
+        }}
+        entry={{ length: .3 }}
+        className="block hover:text-gray-600"
+        activeClassName="border-b-2 border-gray-600"
+        >CV</TransitionLink>
       </div>
       
     </HeaderWrapper>
