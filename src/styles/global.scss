@@ -41,6 +41,27 @@
   a.active {
     @apply text-sky-700;
   }
+
+  form {
+    [type='text'],
+    [type='email'],
+    textarea {
+      // @apply bg-black;
+      @apply border-t-0;
+      @apply border-l-0;
+      @apply border-r-0;
+      @apply px-0;
+      // @apply border-black-shade-800;
+    }
+    label {
+      @apply text-xxs;
+      @apply leading-none;
+      @apply mt-2;
+      @apply uppercase;
+      @apply tracking-wide;
+    }
+  }
+  
   .dark {
     a {
       @apply text-violet-400;
@@ -50,6 +71,17 @@
     }
     a.active {
       @apply text-yellow-500;
+    }
+    form {
+      [type='text'],
+      [type='email'],
+      textarea {
+        @apply bg-black;
+        @apply border-black-shade-800;
+      }
+      label {
+        @apply text-black-shade-400;
+      }
     }
   }
 }
