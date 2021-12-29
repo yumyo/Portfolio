@@ -16,18 +16,18 @@ export default function Header(props) {
           length: .3,
         }}
         entry={{ length: .3 }}
-        className="nav-link hover:text-gray-600 md:-ml-2"
-        activeClassName="border-b-2 border-gray-600"
+        className="md:-ml-2"
+        activeClassName=""
         >Creative Labs</TransitionLink>
       </div>
       <div className={`z-30  ${RightPos}`}>
-        <TransitionLink to="/style-guide/"
+        <TransitionLink to="/contact/"
         exit={{
           length: .3,
         }}
         entry={{ length: .3 }}
-        className="nav-link hover:text-gray-600 md:-mr-2"
-        activeClassName="border-b-2 border-gray-600"
+        className="md:-mr-2"
+        activeClassName=""
         >Contact</TransitionLink>
       </div>
     </Footer>
