@@ -67,7 +67,7 @@ const GridBgContainer = styled.div([
 ])
 
 const GeometriCBG = tw(GridBg)`
-w-screen h-screen fixed top-0 left-0 z-0 text-black-shade-100 dark:text-black dark:sm:text-black-shade-900
+w-screen h-screen fixed top-0 left-0 z-0 text-white dark:text-black dark:sm:text-black-shade-900
 `
 
 const Layout = ({ children }) => {

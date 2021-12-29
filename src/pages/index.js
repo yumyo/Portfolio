@@ -45,7 +45,7 @@ const IndexPage = ({ transitionStatus }) => {
         <Title>
           Hi, my name is Nicola&nbsp;Giulia&nbsp;Pernice <br /> I am a Product Designer and Creative&nbsp;Developer.
         </Title>
-        <div className={Lead}>Here you can scroll through my <Link to="/cases">case-histories</Link>, know more <Link to="/about">about me</Link> and get in touch to discuss your awesome idea! </div>
+        <div className={Lead}>Here you can scroll through my <Link to="/cases">case-histories</Link>, know more <Link to="/about">about me</Link> and <Link to="/cases">get&nbsp;in&nbsp;touch</Link> to discuss your awesome idea! </div>
       </div>
     </div>
   )

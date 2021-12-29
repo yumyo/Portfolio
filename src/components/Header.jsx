@@ -3,7 +3,7 @@ import tw, { styled, css } from 'twin.macro'
 import TransitionLink from 'gatsby-plugin-transition-link';
 import Logo from "./Logo"
 import ThemeToggle from "./themeToggle"
-
+// import {KeyboardArrowLeft} from "@styled-icons/material/KeyboardArrowLeft"
 
 import { TopPos, RightPos, LeftPos } from "../components/theme" 
 // import { InView } from 'react-intersection-observer'
@@ -11,6 +11,11 @@ import { MenuAltLeft } from '@styled-icons/boxicons-regular/MenuAltLeft'
 // import { Sling as Hamburger } from 'hamburger-react'
 // import Slider from './hamburger/types/slider'
 // import SliderReverse from './types/slider-reverse'
+
+// const ActiveIcon = tw(KeyboardArrowLeft)`
+//   text-yellow-500 translate-x-4
+// `
+// <ActiveIcon size="24" />
 
 const KKLogo = styled(Logo)([
   css`
@@ -39,7 +44,7 @@ const CtrlTC = tw.div`
 `;
 
 const MenuLink = tw(TransitionLink)`
-leading-none font-medium text-base
+leading-none font-medium text-base transition-all
 `
 
 
@@ -72,8 +77,8 @@ export default function Header(props) {
         }}
         entry={{ length: .6 }}
         >
-        <KKLogo className="transform block fixed top-k left-k z-50 cursor-pointer text-black-shade-900 dark:text-black-shade-800" />
-        <h1 className={`nav-link text-base leading-tight fixed top-k1 ${LeftPos} md:-ml-2 z-50 cursor-pointer text-black-shade-900 dark:text-violet-400`}>Nicola Giulia<br />Pernice</h1>
+        <KKLogo className="transform block fixed top-k left-k z-50 cursor-pointer text-black-shade-200 dark:text-black-shade-800" />
+        <h1 className={`nav-link text-base leading-tight fixed top-k1 ${LeftPos} md:-ml-2 z-50 cursor-pointer transition-colors text-violet-600 hover:text-yellow-600 dark:text-violet-400 dark:hover:text-yellow-500`}>Nicola Giulia<br />Pernice</h1>
       </LogoLink>
       <CtrlTC className={`hidden xs:block fixed z-40 right-1/2 ${TopPos} transition-opacity translate-x-1/2  ${
           small ? "opacity-0" : "opacity-1"
@@ -86,24 +91,24 @@ export default function Header(props) {
           length: .6,
         }}
         entry={{ length: .6 }}
-        className="block hover:text-gray-600"
-        activeClassName="border-b-2 border-gray-600"
+        className="block"
+        activeClassName="active"
         >Case Histories</MenuLink>
         <MenuLink to="/about/"
         exit={{
           length: .3,
         }}
         entry={{ length: .3 }}
-        className="block hover:text-gray-600"
-        activeClassName="border-b-2 border-gray-600"
+        className="block"
+        activeClassName="active"
         >About</MenuLink>
         <TransitionLink to="/cv/"
         exit={{
           length: .3,
         }}
         entry={{ length: .3 }}
-        className="block hover:text-gray-600"
-        activeClassName="border-b-2 border-gray-600"
+        className="block"
+        activeClassName="active"
         >CV</TransitionLink>
       </div>
       

@@ -34,9 +34,9 @@ export default function ThemeToggle() {
               />{' '}  
           
           {theme === 'dark' ? (
-            <Sun size="24"/>
+            <Sun size="24" className="transition-colors hover:text-yellow-500"/>
             ) : (
-              <Moon size="24"/>
+              <Moon size="24" className="transition-colors hover:text-violet-600" />
             )}         
         </LabelIcon>    
         

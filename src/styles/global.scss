@@ -33,10 +33,23 @@
   a {
     @apply text-violet-600;
     @apply font-medium;
+    @apply transition-colors;
+  }
+  a:hover {
+    @apply text-yellow-500;
+  }
+  a.active {
+    @apply text-sky-700;
   }
   .dark {
     a {
       @apply text-violet-400;
+    }
+    a:hover {
+      @apply text-yellow-500;
+    }
+    a.active {
+      @apply text-yellow-500;
     }
   }
 }
