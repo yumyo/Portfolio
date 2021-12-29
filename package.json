@@ -25,6 +25,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@tailwindcss/aspect-ratio": "^0.2.0",
+    "@tailwindcss/forms": "^0.4.0",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.5.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
