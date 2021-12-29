@@ -5,6 +5,7 @@ import PostTemplate from '../../templates/post-template'
 import ProjectTemplate from '../../templates/project-template'
 import WorkTemplate from '../../templates/work-template'
 import ArchiveTemplate from '../../templates/archive-template'
+import LabsTemplate from '../../templates/labs-template'
 import PropTypes from "prop-types"
 
 const MdxPage = ({
@@ -20,6 +21,7 @@ const MdxPage = ({
     works: <WorkTemplate data={data} />,
     archive: <ArchiveTemplate data={data} />,
     cases: <ProjectTemplate data={data} />,
+    labs: <LabsTemplate data={data} />,
   }
   return (
     <Fragment>
@@ -34,6 +36,7 @@ export const query = graphql`
         title
         template
         tags
+        date
         banner {
           childImageSharp {
             gatsbyImageData(

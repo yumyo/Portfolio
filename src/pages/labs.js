@@ -19,9 +19,9 @@ const Tag = tw.li`
 text-sm font-medium uppercase inline-block mr-4
 `;
 
-const WorksLayout = tw.div`mx-auto w-6/12 mt-k2v`;
+const LabsLayout = tw.div`mx-auto w-6/12 mt-k2v`;
 
-const Works = ({ data, transitionStatus }) => {
+const Labs = ({ data, transitionStatus }) => {
   let nodes = data.allFile.nodes;
   // console.log('nodes before');
   // console.log(nodes);
@@ -30,29 +30,29 @@ const Works = ({ data, transitionStatus }) => {
   // console.log('bananas after');
   // console.log(bananas);
   useEffect(() => {
-    console.log('Works Page', transitionStatus);
+    console.log('Labs Page', transitionStatus);
   }, [transitionStatus]);
   // console.log(data.allFile.nodes);
   useEffect(() => {
-    gsap.to('.anim-works', {
+    gsap.to('.anim-labs', {
       autoAlpha: 1,
       duration: .3,
     });
   }, []); //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
     if (transitionStatus === 'entering') {
-      gsap.to('.anim-works', {
+      gsap.to('.anim-labs', {
         autoAlpha: 1, 
         duration: .3, 
       });
     }
     if (transitionStatus === 'exiting') {
-      gsap.to('.anim-works', { autoAlpha: 0, duration: .3 });
+      gsap.to('.anim-labs', { autoAlpha: 0, duration: .3 });
     }
   }, [transitionStatus]);
   return (
 
-      <WorksLayout className="anim-works opacity-0">
+      <LabsLayout className="anim-labs opacity-0">
         {nodes.map(({ childMdx }) => (
         <ListItem key={ childMdx.id }>
           <Title>{ childMdx.frontmatter.title }</Title>
@@ -67,14 +67,14 @@ const Works = ({ data, transitionStatus }) => {
         </List>
         </ListItem>
         ))}
-      </WorksLayout>
+      </LabsLayout>
 
   )
 }
 
 export const query = graphql`
   query {
-    allFile(filter: { sourceInstanceName: { eq: "works" } }) {
+    allFile(filter: { sourceInstanceName: { eq: "labs" } }) {
       nodes {
         childMdx {
           id
@@ -93,4 +93,4 @@ export const query = graphql`
 
 // Works.Layout = Layout
 
-export default Works;
+export default Labs;

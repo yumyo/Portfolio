@@ -22,6 +22,8 @@ text-sm font-medium uppercase inline-block mr-4
 const CasesLayout = tw.div`mx-auto w-6/12 mt-k2v`;
 
 const Cases = ({ data, transitionStatus  }) => {
+  let nodes = data.allFile.nodes;
+  nodes.sort((d1, d2) => new Date(d2.childMdx.frontmatter.date).getTime() - new Date(d1.childMdx.frontmatter.date).getTime());
   useEffect(() => {
     console.log('Cases Page', transitionStatus);
   }, [transitionStatus]);
@@ -45,7 +47,7 @@ const Cases = ({ data, transitionStatus  }) => {
   return (
 
       <CasesLayout className="anim-case opacity-0">
-        {data.allFile.nodes.map(({ childMdx }) => (
+        {nodes.map(({ childMdx }) => (
         <ListItem key={ childMdx.id }>
           <Title>{ childMdx.frontmatter.title }</Title>
           <p>{ childMdx.frontmatter.description }</p>
@@ -75,6 +77,7 @@ export const query = graphql`
             title
             description
             tags
+            date(formatString: "YYYY MM DD")
           }
         }
       }

@@ -52,6 +52,13 @@ module.exports = {
         name: `archive`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/labs`,
+        name: `labs`,
+      },
+    },
     `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,

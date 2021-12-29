@@ -23,6 +23,8 @@ const ArchiveLayout = tw.div`mx-auto w-6/12 mt-k2v`;
 
 
 const Archive = ({ data, transitionStatus }) => {
+  let nodes = data.allFile.nodes;
+  nodes.sort((d1, d2) => new Date(d2.childMdx.frontmatter.date).getTime() - new Date(d1.childMdx.frontmatter.date).getTime());
   useEffect(() => {
     console.log('Archive Page', transitionStatus);
   }, [transitionStatus]);
@@ -47,7 +49,7 @@ const Archive = ({ data, transitionStatus }) => {
   return (
 
       <ArchiveLayout className="anim-archive opacity-0">
-        {data.allFile.nodes.map(({ childMdx }) => (
+        {nodes.map(({ childMdx }) => (
         <ListItem key={ childMdx.id }>
           <Title>{ childMdx.frontmatter.title }</Title>
           <p>{ childMdx.frontmatter.description }</p>
@@ -77,6 +79,7 @@ export const query = graphql`
             title
             description
             tags
+            date(formatString: "YYYY MM DD")
           }
         }
       }
