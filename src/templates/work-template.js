@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
+import { PageDefault } from "../components/theme"
 
 import tw from 'twin.macro'
 
@@ -27,7 +28,7 @@ const PostTemplate = ({
   }
 }) => {
   return (
-      <ItemLayout>
+      <div className={PageDefault}>
         <h1>{`${title}`}</h1>
         <h2>{`variant: ${template}`}</h2>
         <List>
@@ -40,7 +41,7 @@ const PostTemplate = ({
         <MDXProvider>
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
-      </ItemLayout>
+      </div>
   );
 };
 

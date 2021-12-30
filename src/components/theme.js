@@ -1,15 +1,13 @@
 // Tailwind reusable class compositions
 
-/*
-export const ButtonSize = {
-sm: "py-2 px-4 text-xs",
-lg: "py-3 px-6 text-lg"
-}
-*/
-
+// Layout
+export const PageDefault = "mx-auto w-k7 xs:w-k8 md:w-k5 mt-k3v"
+// Menu
 export const LayoutLinks = "py-2 px-4 text-xs";
 export const Lead = "text-base xl:text-lg";
 export const Label = "text-xs 2xl:text-sm uppercase tracking-widest";
+export const MenuLabel = `text-xxs 2xl:text-xs uppercase leading-none tracking-widest block text-black-shade-600`;
+// export const MenuLabel = `text-xs 2xl:text-sm uppercase tracking-widest block ${Label}`;
 export const PageTitle = "text-lg sm:text-2xl 2xl:text-3xl";
 // INterface
 export const TopPos = "top-k1 mt-0";

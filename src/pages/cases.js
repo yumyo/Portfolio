@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react"
 import { graphql, Link as GatsbyLink } from 'gatsby'
 import { gsap } from "gsap"
 import tw from 'twin.macro'
+import { PageDefault, Lead } from "../components/theme" 
 
 const ListItem = tw.div`
 mb-4
@@ -46,7 +47,7 @@ const Cases = ({ data, transitionStatus  }) => {
   }, [transitionStatus]);
   return (
 
-      <CasesLayout className="anim-case opacity-0">
+      <CasesLayout className={`anim-case opacity-0 ${PageDefault}`}>
         {nodes.map(({ childMdx }) => (
         <ListItem key={ childMdx.id }>
           <Title>{ childMdx.frontmatter.title }</Title>

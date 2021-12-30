@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { gsap } from "gsap"
 import { Link } from "gatsby"
 import tw from 'twin.macro'
-import { Lead } from "../components/theme" 
+import { PageDefault, Lead } from "../components/theme" 
 
 const IndexPage = ({ transitionStatus }) => {
   useEffect(() => {
@@ -40,8 +40,8 @@ const IndexPage = ({ transitionStatus }) => {
   // min-h-screen 
 
   return (
-    <div className="flex flex-col justify-center mt-k5v -translate-y-1/2">
-      <div className="anim-home opacity-0 mx-auto w-k7 xs:w-k8 md:w-k5">
+    <div className="flex flex-col justify-center  ">
+      <div className="anim-home opacity-0 mx-auto w-k7 xs:w-k8 md:w-k5 mt-k5v -translate-y-1/2">
         <Title>
           Hi, my name is Nicola&nbsp;Giulia&nbsp;Pernice <br /> I am a Product Designer and Creative&nbsp;Developer.
         </Title>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
-
+import { PageDefault } from "../components/theme"
 import tw from 'twin.macro'
 
 const List = tw.ul`
@@ -27,7 +27,7 @@ const LabsTemplate = ({
   }
 }) => {
   return (
-      <ItemLayout>
+      <div className={PageDefault}>
         <h1>{`${title}`}</h1>
         <h2>{`variant: ${template}`}</h2>
         <List>
@@ -40,7 +40,7 @@ const LabsTemplate = ({
         <MDXProvider>
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
-      </ItemLayout>
+      </div>
   );
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
-
+import { PageDefault } from "../components/theme"
 import tw from 'twin.macro'
 
 const ProjectTemplate = ({
@@ -19,13 +19,13 @@ const ProjectTemplate = ({
 `;
   return (
 
-      <ProjectLayout>
+      <div className={PageDefault}>
         <h1>{`titles - ${title}`}</h1>
         <h2>{`template - ${template}`}</h2>
         <MDXProvider>
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
-      </ProjectLayout>
+      </div>
 
   );
 };
