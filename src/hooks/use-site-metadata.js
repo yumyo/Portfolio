@@ -7,6 +7,13 @@ export const useSiteMetadata = () => {
           siteMetadata {
             title
             description
+            twitter
+            github
+            stackoverflow
+            secureEmail
+            behance
+            pinterest
+            tumblrJournal
           }
         }
       }
