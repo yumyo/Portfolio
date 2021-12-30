@@ -39,8 +39,8 @@ export default function Middle(props) {
           length: .6,
         }}
         entry={{ length: .6 }}
-        className="block hover:text-gray-600"
-        activeClassName="border-b-2 border-gray-600"
+        className="block"
+        activeClassName="active"
         >Style Guide</MenuLink>
       </CtrlML>
       <CtrlMR className={`hidden md:block fixed top-1/2 z-30 ml-2 transform rotate-90 translate-x-1/2 -translate-y-1/2 ${RightPos}`}>
@@ -49,8 +49,8 @@ export default function Middle(props) {
           length: .3,
         }}
         entry={{ length: .3 }}
-        className="nav-link hover:text-gray-600"
-        activeClassName="border-b-2 border-gray-600"
+        className="nav-link"
+        activeClassName="active"
         >Work Archive</MenuLink>
       </CtrlMR>
     </>

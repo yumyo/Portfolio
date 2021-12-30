@@ -20,22 +20,24 @@ import { MenuAltLeft } from '@styled-icons/boxicons-regular/MenuAltLeft'
 const KKLogo = styled(Logo)([
   css`
     width: 171px;
+    height: 122.56px
     /* left: 1.325%; */
     /* margin-left: -16px; */
     /* transform: translate(calc(-50% + 16px)); */
     @media screen and (min-width:640px) {
-      width: 171px;
+      /* width: 171px;
+      height: 122.56px */
     }
   `
 ]);
 
 const LogoLink = styled(TransitionLink)([
   css`
-    width: 171px;
+    /* width: 171px; */
     /* left: 1.325%; */
     /* transform: translate(calc(-50% + 16px)); */
     @media screen and (min-width:640px) {
-      width: 171px;
+      /* width: 171px; */
     }
   `
 ]);
@@ -76,10 +78,11 @@ export default function Header(props) {
           length: .6,
         }}
         entry={{ length: .6 }}
+        className="dark:text-white"
         activeClassName="text-violet-600 dark:text-violet-400"
         >
-        <KKLogo className="transform block fixed top-k left-k z-50 cursor-pointer text-black-shade-200 dark:text-black-shade-800" />
-        <h1 className={`nav-link text-base leading-tight fixed top-k1 ${LeftPos} md:-ml-2 z-50 cursor-pointer transition-colors text-black hover:text-violet-600 dark:text-white dark:hover:text-violet-400`}>Nicola Giulia<br />Pernice</h1>
+        <KKLogo className="transform block fixed top-k left-k 2xl:left-k0 z-50 cursor-pointer  text-black-shade-200 dark:text-black-shade-800" />
+        <h1 className={`nav-link text-base leading-tight fixed top-k1 ${LeftPos} md:-ml-2 z-50 cursor-pointer transition-colors hover:text-violet-600 dark:hover:text-violet-400`}>Nicola Giulia<br />Pernice</h1>
       </LogoLink>
       <CtrlTC className={`hidden xs:block fixed z-40 right-1/2 ${TopPos} transition-opacity translate-x-1/2  ${
           small ? "opacity-0" : "opacity-1"
