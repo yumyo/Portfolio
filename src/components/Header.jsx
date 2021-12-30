@@ -78,7 +78,7 @@ export default function Header(props) {
           length: .6,
         }}
         entry={{ length: .6 }}
-        className="dark:text-white"
+        className=""
         activeClassName="text-violet-600 dark:text-violet-400"
         >
         <KKLogo className="transform block fixed top-k left-k 2xl:left-k0 z-50 cursor-pointer  text-black-shade-200 dark:text-black-shade-800" />

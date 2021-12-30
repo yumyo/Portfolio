@@ -97,6 +97,18 @@
         @apply text-black-shade-400;
       }
     }
+    .content {
+      a {
+        @apply text-violet-400;
+        @apply underline;
+      }
+      a:hover {
+        
+      }
+      a.active {
+        
+      }
+    }
   }
 }
 
