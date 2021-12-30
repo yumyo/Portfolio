@@ -1,26 +1,51 @@
 import React from "react"
-// import TransitionLink from "gatsby-plugin-transition-link"
 import { Link } from "gatsby"
-import ContactForm from './ContactForm'
+// import ContactForm from './ContactForm'
 import tw, { styled, css } from "twin.macro"
 
 const MenuLink = tw(Link)`
-  text-lg leading-loose
+  text-xl leading-loose font-light
 `
 
 const SubLink = tw.p`
-  italic text-xs block 
+   text-sm block ml-4 text-black-shade-400
 `
 
-export default function Fullnav( props ) {
+const Navigation = styled.div([
+  css`
+    /* display:none; */
+    opacity:0;
+    visibility:hidden;
+    nav {
+      li {
+        transform: translateX(-10px);
+        opacity:0;
+      }
+    }
+  &.is-active {
+    /* display: flex; */
+    opacity:1;
+    visibility:visible;
+    transition-duration: 500ms;
+    nav {
+      li {
+        opacity:1;
+        transform: translateX(0);
+      }
+    }
+  }
+  `
+])
 
+export default function Fullnav( props ) {
+  // <div className="flex flex-col md:flex-row gap-k1 w-k7 xs:w-k8">
   return (
-    <div className={`2xl:hidden inset-0 absolute w-screen h-screen bg-white dark:bg-black z-40 flex justify-center items-center flex-col  ${props.className}}`}>
-      <div className="flex flex-col md:flex-row gap-k1 w-k7 xs:w-k8">
+    <Navigation className={`2xl:hidden transition-all duration-700 inset-0 absolute w-screen h-screen bg-white dark:bg-black z-40 flex justify-center items-center flex-col  ${props.className}`}>
+      <div className="flex flex-col items-center w-k7">
         <nav className="md:w-1/2 mb-8 md:mb-0">
           {/* <h2 className="text-xxs leading-none uppercase">Menu</h2> */}
           <ul>
-            <li>
+            <li className="transition-all transform-gpu duration-500 delay-500">
               <MenuLink
                 to="/cases"
                 className=""
@@ -30,7 +55,7 @@ export default function Fullnav( props ) {
               </MenuLink>
               <SubLink className="">A selection of large diverse projects</SubLink>
             </li>
-            <li>
+            <li className="transition-all transform-gpu duration-500 delay-700">
               <MenuLink
                 to="/works/"
                 className=""
@@ -40,7 +65,7 @@ export default function Fullnav( props ) {
               </MenuLink>
               <SubLink className="">A non-exhaustive collection of work created for businesses and indiduals</SubLink>
             </li>
-            <li>
+            <li className="transition-all transform-gpu duration-500 delay-[900ms]">
               <MenuLink
                 to="/labs/"
                 className=""
@@ -50,7 +75,7 @@ export default function Fullnav( props ) {
               </MenuLink>
               <SubLink className="">Side projects, research and experiments in design and development</SubLink>
             </li>
-            <li>
+            <li className="transition-all transform-gpu duration-500 delay-[1100ms]">
               <MenuLink
                 to="/about/"
                 className=""
@@ -60,7 +85,7 @@ export default function Fullnav( props ) {
               </MenuLink>
               <SubLink className="">All about me )</SubLink>
             </li>
-            <li>
+            <li className="transition-all transform-gpu duration-500 delay-[1300ms]">
               <MenuLink
                 to="/cv/"
                 className=""
@@ -70,29 +95,10 @@ export default function Fullnav( props ) {
               </MenuLink>
               <SubLink className="">The interactive versiob of my CV</SubLink>
             </li>
-            {/* <li>
-              <MenuLink
-                to="/archive/"
-                className=""
-                activeClassName=""
-              >
-                Social Signals
-              </MenuLink>
-            </li>
-            <li>
-              <MenuLink
-                className="leading-none font-medium text-base"
-                to="/style-guide/"
-                className=""
-                activeClassName=""
-              >
-                Style Guide
-              </MenuLink>
-            </li> */}
           </ul>
         </nav>
-        <ContactForm className="flex flex-col w-full md:w-1/2"/>
+        {/* <ContactForm className="flex flex-col w-full md:w-1/2"/> */}
       </div>
-    </div>
+    </Navigation>
   )
 }

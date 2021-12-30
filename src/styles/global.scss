@@ -31,15 +31,28 @@
     @apply text-sm;
   }
   a {
-    @apply text-violet-600;
+    @apply text-black;
     @apply font-medium;
     @apply transition-colors;
   }
   a:hover {
-    @apply text-yellow-500;
+    @apply text-violet-600;
   }
   a.active {
-    @apply text-sky-700;
+    @apply text-violet-600;
+  }
+
+  .content {
+    a {
+      @apply text-violet-600;
+      @apply underline;
+    }
+    a:hover {
+      
+    }
+    a.active {
+      
+    }
   }
 
   form {
@@ -64,13 +77,14 @@
   
   .dark {
     a {
-      @apply text-violet-400;
+      // @apply text-violet-400;
+      @apply text-white;
     }
     a:hover {
-      @apply text-yellow-500;
+      @apply text-violet-400;
     }
     a.active {
-      @apply text-yellow-500;
+      @apply text-violet-400;
     }
     form {
       [type='text'],

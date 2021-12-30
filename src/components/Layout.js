@@ -28,14 +28,17 @@ const usePrevious = (value) => {
   return ref.current;
 };
 
-const Navigation = styled(FullNav)([
-  css`
-  display: flex;
-  &.is-active {
-    display: none;
-  }
-  `
-])
+// const Navigation = styled(FullNav)([
+//   css`
+//   display: flex;
+//   &.is-active {
+//     display: none;
+//     nav {
+//       background-color:red;
+//     }
+//   }
+//   `
+// ])
 
 const ContentWrapper = tw.div`
 relative z-30 
@@ -95,8 +98,8 @@ const Layout = ({ children }) => {
           <Minus active={isActive} onClick={handleToggle} width={40} lineHeight={3} borderRadius={3} />
           {/* <Hamburger toggled={isActive} toggle={handleToggle} /> */}
         </div>
-        <Navigation className={`${isActive ? "" : "is-active"} `}/>
-      <ContentWrapper className="grow shrink-0 basis-auto">
+        <FullNav className={`${isActive ? "is-active" : ""} `}/>
+      <ContentWrapper className="grow shrink-0 basis-auto content">
       {/* <Title>{title}</Title> */}
         {children}
       </ContentWrapper>
