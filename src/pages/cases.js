@@ -52,7 +52,10 @@ const Cases = ({ data, transitionStatus  }) => {
         <ListItem key={ childMdx.id }>
           <Title>{ childMdx.frontmatter.title }</Title>
           <p>{ childMdx.frontmatter.description }</p>
-          <GatsbyLink to={`${childMdx.slug}`}>Read More</GatsbyLink>
+          <GatsbyLink 
+            partiallyActive={true} 
+            activeClassName="active"
+            to={`${childMdx.slug}`}>Read More</GatsbyLink>
           <List>
           {childMdx.frontmatter.tags
             ? childMdx.frontmatter.tags.map((tag, index) => {

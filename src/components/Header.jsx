@@ -97,6 +97,7 @@ export default function Header(props) {
         entry={{ length: .6 }}
         className="block"
         activeClassName="active"
+        partiallyActive={true} 
         >Case Histories</MenuLink>
          <MenuLink to="/works"
         exit={{
