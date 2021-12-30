@@ -98,6 +98,22 @@ export default function Header(props) {
         className="block"
         activeClassName="active"
         >Case Histories</MenuLink>
+         <MenuLink to="/works"
+        exit={{
+          length: .6,
+        }}
+        entry={{ length: .6 }}
+        className="block"
+        activeClassName="active"
+        >Works Archive</MenuLink>
+         <MenuLink to="/labs"
+        exit={{
+          length: .6,
+        }}
+        entry={{ length: .6 }}
+        className="block"
+        activeClassName="active"
+        >Creative Labs</MenuLink>
         <MenuLink to="/about/"
         exit={{
           length: .3,
@@ -114,6 +130,14 @@ export default function Header(props) {
         className="block"
         activeClassName="active"
         >CV</TransitionLink>
+        {/* <MenuLink to="/contact/"
+        exit={{
+          length: .3,
+        }}
+        entry={{ length: .3 }}
+        className="block"
+        activeClassName="active"
+        >Contact</MenuLink> */}
       </div>
       
     </HeaderWrapper>
