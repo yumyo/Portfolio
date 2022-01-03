@@ -14,7 +14,11 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       description: String
       date: Date! @dateformat(formatString: "DD-MM-YYYY")
       template: String!
+      services: String
+      mission: String
       tags: [String]
+      client: String
+      profile: String
       published: Boolean
       banner: File @fileByRelativePath
       embeddedImagesLocal: [File] @fileByRelativePath

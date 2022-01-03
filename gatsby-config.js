@@ -16,6 +16,7 @@ module.exports = {
     socialimage: `/exness_cover_social.jpeg`,
     twitter: `https://twitter.com/KdSign`,
     github: `https://github.com/yumyo`,
+    gitlab: `https://gitlab.com/k30`,
     stackoverflow: `https://stackoverflow.com/story/nicola-giulia-pernice`,
     secureEmail: `ekrypt@mailfence.com`,
     behance: `https://www.behance.net/kairos`,

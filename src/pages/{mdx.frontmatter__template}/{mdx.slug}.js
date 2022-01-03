@@ -37,6 +37,11 @@ export const query = graphql`
         template
         tags
         date
+        profile,
+        description,
+        services,
+        mission,
+        client,
         banner {
           childImageSharp {
             gatsbyImageData(
