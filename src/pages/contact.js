@@ -34,10 +34,11 @@ const ContactPage = ({ transitionStatus }) => {
       gsap.to('.anim-about', {
         autoAlpha: 1, 
         duration: .3, 
+        delay: 0.6
       });
     }
     if (transitionStatus === 'exiting') {
-      gsap.to('.anim-about', { autoAlpha: 0, duration: .3 });
+      gsap.to('.anim-about', { autoAlpha: 0, duration: .3, delay: 0.6 });
     }
   }, [transitionStatus]);
   return (

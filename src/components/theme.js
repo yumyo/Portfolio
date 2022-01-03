@@ -1,12 +1,14 @@
 // Tailwind reusable class compositions
 
 // Layout
-export const PageDefault = "mx-auto w-k7 xs:w-k8 md:w-k5 mt-k3v"
+export const PageDefault = ""
 // Menu
 export const LayoutLinks = "py-2 px-4 text-xs";
 export const Lead = "text-base xl:text-lg";
 export const Label = "text-xs 2xl:text-sm uppercase tracking-widest";
-export const MenuLabel = `text-xxs 2xl:text-xs uppercase leading-none tracking-widest block text-black-shade-600`;
+export const MenuLabel = `text-xxs 2xl:text-xs uppercase leading-none tracking-widest block 
+text-black-shade-600`;
+export const GhostButton = `button px-4 mt-4 leading-none py-3 border text-violet-600 dark:text-violet-400 border-violet-600 dark:border-violet-400 hover:bg-violet-600 hover:text-white dark:hover:bg-violet-400 dark:hover:text-black`;
 // export const MenuLabel = `text-xs 2xl:text-sm uppercase tracking-widest block ${Label}`;
 export const PageTitle = "text-lg sm:text-2xl 2xl:text-3xl";
 // INterface

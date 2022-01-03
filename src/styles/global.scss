@@ -43,15 +43,13 @@
   }
 
   .content {
-    a {
+    a:not(.button) {
       @apply text-violet-600;
       @apply underline;
-    }
-    a:hover {
-      
-    }
-    a.active {
-      
+      &:hover {
+      }
+      &.active {
+      }
     }
   }
 
@@ -76,15 +74,15 @@
   }
   
   .dark {
-    a {
+    a:not(.button) {
       // @apply text-violet-400;
       @apply text-white;
-    }
-    a:hover {
-      @apply text-violet-400;
-    }
-    a.active {
-      @apply text-violet-400;
+      &:hover {
+        @apply text-violet-400;
+      }
+      &.active {
+        @apply text-violet-400;
+      }
     }
     form {
       [type='text'],
@@ -98,15 +96,13 @@
       }
     }
     .content {
-      a {
+      a:not(.button) {
         @apply text-violet-400;
         @apply underline;
-      }
-      a:hover {
-        
-      }
-      a.active {
-        
+        &:hover {
+        }
+        &.active {
+        }
       }
     }
   }
