@@ -1,39 +1,36 @@
 import React, { useRef, useEffect } from "react"
 import { gsap } from "gsap"
-import tw from 'twin.macro'
+import tw from "twin.macro"
 
 const SmallCenter = tw.div`
 w-k5 aspect-w-16 aspect-h-9 mx-auto bg-green-500
-`;
+`
 
-const SGLayout = tw.div`mx-auto w-6/12 mt-k2v`;
+const SGLayout = tw.div`mx-auto w-6/12 mt-k2v`
 
 const StyleGuide = ({ transitionStatus }) => {
   useEffect(() => {
-    console.log('Style Guide Page', transitionStatus);
-  }, [transitionStatus]);
+    console.log("Style Guide Page", transitionStatus)
+  }, [transitionStatus])
   useEffect(() => {
-    gsap.to('.anim-sg', {
+    gsap.to(".anim-sg", {
       autoAlpha: 1,
-      duration: .3,
-    });
-  }, []); //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
+      duration: 0.5,
+      ease: "sine.inOut",
+      delay: 0.5,
+    })
+  }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === 'entering') {
-      gsap.to('.anim-sg', {
-        autoAlpha: 1, 
-        duration: .3, 
-      });
+    if (transitionStatus === "exiting") {
+      gsap.to(".anim-sg", { autoAlpha: 0, duration: 0.25, delay: 0 })
     }
-    if (transitionStatus === 'exiting') {
-      gsap.to('.anim-sg', { autoAlpha: 0, duration: .3 });
-    }
-  }, [transitionStatus]);
+  }, [transitionStatus])
   return (
     <SGLayout className="anim-sg opacity-0">
       <h1>Style Guide</h1>
       <SmallCenter></SmallCenter>
-      <pre>{`
+      <pre>
+        {`
       spacing: {
         'k0' : '3.125%',
         'k1' : '6.25%',
@@ -55,4 +52,4 @@ const StyleGuide = ({ transitionStatus }) => {
 
 // StyleGuide.Layout = Layout
 
-export default StyleGuide;
+export default StyleGuide

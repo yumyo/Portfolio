@@ -1,7 +1,7 @@
-const { createRemoteFileNode } = require('gatsby-source-filesystem');
+const { createRemoteFileNode } = require("gatsby-source-filesystem")
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
-  const { createTypes, printTypeDefinitions } = actions;
+  const { createTypes, printTypeDefinitions } = actions
 
   createTypes(`
     type Mdx implements Node {
@@ -12,37 +12,38 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     type Frontmatter @dontInfer {
       title: String!
       description: String
-      date: Date! @dateformat(formatString: "DD-MM-YYYY")
+      date: Date! @dateformat(formatString: "YYYY-MM-DD")
       template: String!
-      services: String
+      services: [String]
       mission: String
       tags: [String]
       client: String
       profile: String
       published: Boolean
       banner: File @fileByRelativePath
+      video: String
       embeddedImagesLocal: [File] @fileByRelativePath
       embeddedImagesRemote: [String]
     }
-    `);
+    `)
 
   // printTypeDefinitions({ path: './typeDefs.txt' });
-};
+}
 
 exports.onCreateNode = async ({
   node,
   createNodeId,
   actions: { createNodeField, createNode },
   cache,
-  store
+  store,
 }) => {
   if (
-    node.internal.type === 'Mdx' &&
+    node.internal.type === "Mdx" &&
     node.frontmatter &&
     node.frontmatter.embeddedImagesRemote
   ) {
     let embeddedImagesRemote = await Promise.all(
-      node.frontmatter.embeddedImagesRemote.map((url) => {
+      node.frontmatter.embeddedImagesRemote.map(url => {
         try {
           return createRemoteFileNode({
             url,
@@ -50,21 +51,21 @@ exports.onCreateNode = async ({
             createNode,
             createNodeId,
             cache,
-            store
-          });
+            store,
+          })
         } catch (error) {
-          console.error(error);
+          console.error(error)
         }
       })
-    );
+    )
     if (embeddedImagesRemote) {
       createNodeField({
         node,
-        name: 'embeddedImagesRemote',
-        value: embeddedImagesRemote.map((image) => {
-          return image.id;
-        })
-      });
+        name: "embeddedImagesRemote",
+        value: embeddedImagesRemote.map(image => {
+          return image.id
+        }),
+      })
     }
   }
-};
+}

@@ -1,51 +1,50 @@
 import React, { useEffect } from "react"
 import { gsap } from "gsap"
 import { Link } from "gatsby"
-import tw from 'twin.macro'
-import { PageDefault, Lead } from "../components/theme" 
+import tw from "twin.macro"
+import { PageDefault, Lead } from "../components/theme"
 
 const IndexPage = ({ transitionStatus }) => {
   useEffect(() => {
-    console.log('Home Page', transitionStatus);
-  }, [transitionStatus]);
+    console.log("Home Page", transitionStatus)
+  }, [transitionStatus])
   useEffect(() => {
-    gsap.to('.anim-home', {
+    gsap.to(".anim-home", {
       autoAlpha: 1,
-      duration: .6,
-    });
-  }, []); //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
+      duration: 0.5,
+      ease: "sine.inOut",
+      delay: 0.5,
+    })
+  }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === 'entered') {
-      gsap.to('.anim-home', {
-        autoAlpha: 1, 
-        duration: .6, 
-      });
+    if (transitionStatus === "exiting") {
+      gsap.to(".anim-home", { autoAlpha: 0, duration: 0.25, delay: 0 })
     }
-    if (transitionStatus === 'exiting') {
-      gsap.to('.anim-home', { 
-        autoAlpha: 0, 
-        duration: .6 
-      });
-    }
-  }, [transitionStatus]);
+  }, [transitionStatus])
   const Title = tw.h2`
     text-lg
     sm:text-2xl
     2xl:text-3xl
     mb-2
     2xl:mb-3
-  `;
+  `
 
   // const Intro = tw.div``;
-  // min-h-screen 
+  // min-h-screen
 
   return (
     <div className="flex flex-col justify-center  ">
       <div className="anim-home opacity-0 mx-auto w-k7 xs:w-k8 md:w-k5 mt-k5v -translate-y-1/2">
         <Title>
-          Hi, my name is Nicola&nbsp;Giulia&nbsp;Pernice <br /> I am a Product Designer and Creative&nbsp;Developer.
+          Hi, my name is Nicola&nbsp;Giulia&nbsp;Pernice <br /> I am a Product
+          Designer and Creative&nbsp;Developer.
         </Title>
-        <div className={Lead}>Here you can scroll through my <Link to="/cases">case-histories</Link>, know more <Link to="/about">about me</Link> and <Link to="/cases">get&nbsp;in&nbsp;touch</Link> to discuss your awesome idea! </div>
+        <div className={Lead}>
+          Here you can scroll through my <Link to="/cases">case-histories</Link>
+          , know more <Link to="/about">about me</Link> and{" "}
+          <Link to="/cases">get&nbsp;in&nbsp;touch</Link> to discuss your
+          awesome idea!{" "}
+        </div>
       </div>
     </div>
   )
