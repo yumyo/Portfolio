@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react"
+import React, { useEffect } from "react"
 import { graphql, Link as GatsbyLink } from "gatsby"
 import { gsap } from "gsap"
 import tw from "twin.macro"

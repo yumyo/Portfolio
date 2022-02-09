@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react"
-import { graphql, Link as GatsbyLink } from "gatsby"
+import React, { useEffect } from "react"
+import { graphql } from "gatsby"
 import { gsap } from "gsap"
 import tw from "twin.macro"
-import { CasesLayout, GhostButton, Lead } from "../components/theme"
+import { CasesLayout, GhostButton } from "../components/theme"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
 
@@ -12,14 +12,6 @@ mb-20
 
 const Title = tw.p`
 text-2xl font-medium mt-2
-`
-
-const List = tw.ul`
-list-none
-`
-
-const Tag = tw.li`
-text-sm font-medium uppercase inline-block mr-4 text-black-shade-500
 `
 
 // const CasesLayout = tw.div``

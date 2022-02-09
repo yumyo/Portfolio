@@ -1,8 +1,7 @@
-import React, { useRef, useEffect } from "react"
-import { Link as GatsbyLink } from "gatsby"
+import React, { useEffect } from "react"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { gsap } from "gsap"
-import tw from "twin.macro"
+// import tw from "twin.macro"
 import ContactForm from "../components/ContactForm"
 import { Pinterest } from "@styled-icons/entypo-social/Pinterest"
 import { StackOverflow } from "@styled-icons/boxicons-logos/StackOverflow"
@@ -11,11 +10,11 @@ import { Github } from "@styled-icons/boxicons-logos/Github"
 import { Behance } from "@styled-icons/boxicons-logos/Behance"
 import { Tumblr } from "@styled-icons/boxicons-logos/Tumblr"
 import { ShieldCheckmark } from "@styled-icons/fluentui-system-regular/ShieldCheckmark"
-import { PageDefault } from "../components/theme"
+// import { PageDefault } from "../components/theme"
 // Assets
 // import selfie from "../../about.png"
 
-const ContactLayout = tw.div`mx-auto w-k5 mt-k3v`
+// const ContactLayout = tw.div`mx-auto w-k5 mt-k3v`
 
 const ContactPage = ({ transitionStatus }) => {
   const {
@@ -45,12 +44,13 @@ const ContactPage = ({ transitionStatus }) => {
     }
   }, [transitionStatus])
   return (
+    // h-k100v t-0  ${PageDefault}
     <div
-      className={`anim-about opacity-0 mb-14 mx-auto w-k5 mt-k2v ${PageDefault}`}
+      className={`anim-about opacity-0 mb-14 mx-auto w-k75 md:w-k6 lg:w-k5 mt-k2v  `}
     >
       <div>
         <div className="">
-          <h1>Let's get in touch!</h1>
+          <h1 className="leading-snug pt-16">Let's get in touch!</h1>
         </div>
         <div className="">
           <ContactForm className="flex flex-col w-full" />
@@ -60,46 +60,48 @@ const ContactPage = ({ transitionStatus }) => {
             For an encrypted service you can send your message at my Mailfence
             account:{" "}
             <a
-              className="block mt-2 font-normal whitespace-nowrap"
+              className="block mt-2 mb-2 font-normal whitespace-nowrap"
               href={`mailto:${secureEmail}?subject=Message from the portfolio website`}
               title=""
             >
               <ShieldCheckmark size="36" /> {secureEmail}
             </a>
-            OpenPGP key:{" "}
-            <strong>78C7EC3BEF2627F387CD523C868EFEEEBAB47896</strong>
+            OpenPGP key: <br />
+            <strong className="break-all">
+              78C7EC3BEF2627F387CD523C868EFEEEBAB47896
+            </strong>
           </p>
         </div>
         <div className="mt-8">
           <h2 className="text-base mb-2">Social networks</h2>
           <ul className="flex flex-row gap-6">
             <li>
-              <a href={twitter} target="_blank" title="">
+              <a href={twitter} target="_blank" rel="noreferrer" title="">
                 <Twitter size="32" />
               </a>
             </li>
             <li>
-              <a href={github} target="_blank" title="">
+              <a href={github} target="_blank" rel="noreferrer" title="">
                 <Github size="32" />
               </a>
             </li>
             <li>
-              <a href={stackoverflow} target="_blank" title="">
+              <a href={stackoverflow} target="_blank" rel="noreferrer" title="">
                 <StackOverflow size="32" />
               </a>
             </li>
             <li>
-              <a href={behance} target="_blank" title="">
+              <a href={behance} target="_blank" rel="noreferrer" title="">
                 <Behance size="32" />
               </a>
             </li>
             <li>
-              <a href={pinterest} target="_blank" title="">
+              <a href={pinterest} target="_blank" rel="noreferrer" title="">
                 <Pinterest size="32" />
               </a>
             </li>
             <li>
-              <a href={tumblrJournal} target="_blank" title="">
+              <a href={tumblrJournal} target="_blank" rel="noreferrer" title="">
                 <Tumblr size="32" />
               </a>
             </li>

@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from "react"
-import { graphql, Link as GatsbyLink } from "gatsby"
+import React, { useEffect } from "react"
+import { graphql } from "gatsby"
 import { gsap } from "gsap"
 import tw from "twin.macro"
-import { CasesLayout, GhostButton, Lead } from "../components/theme"
+import { GhostButton } from "../components/theme"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
 
@@ -12,14 +12,6 @@ mb-20
 
 const Title = tw.p`
 text-2xl font-medium mt-2
-`
-
-const List = tw.ul`
-list-none
-`
-
-const Tag = tw.li`
-text-sm font-medium uppercase inline-block mr-4
 `
 
 const WorksLayout = tw.div`mx-auto w-6/12 mt-k2v`
@@ -32,7 +24,6 @@ const Works = ({ data, transitionStatus }) => {
       new Date(d1.childMdx.frontmatter.date).getTime()
   )
   useEffect(() => {
-    console.log("Works Initial", transitionStatus)
     gsap.to(".anim-works", {
       autoAlpha: 1,
       duration: 0.5,

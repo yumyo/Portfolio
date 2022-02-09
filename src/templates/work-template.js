@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
-import { TransitionState } from "gatsby-plugin-transition-link"
 import { gsap } from "gsap"
 import tw from "twin.macro"
 
@@ -13,9 +12,9 @@ const Tag = tw.li`
 text-sm font-medium uppercase inline-block mr-4
 `
 
-const ItemLayout = tw.div`
-mx-auto w-6/12 mt-k3v
-`
+// const ItemLayout = tw.div`
+// mx-auto w-6/12 mt-k3v
+// `
 
 const PostTemplate = ({
   transitionStatus,
@@ -28,9 +27,8 @@ const PostTemplate = ({
     },
   },
 }) => {
-  const year = date.slice(-4)
+  // const year = date.slice(-4)
   useEffect(() => {
-    console.log("WORK Initial", transitionStatus)
     gsap.to(".work-project", {
       autoAlpha: 1,
       duration: 0.5,
@@ -39,16 +37,7 @@ const PostTemplate = ({
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "entering") {
-      console.log("WORK entering", transitionStatus)
-      // gsap.to(".work-project", {
-      //   autoAlpha: 1,
-      //   duration: 0.5,
-      //   delay: 0.5,
-      // })
-    }
     if (transitionStatus === "exiting") {
-      console.log("WORK exiting", transitionStatus)
       gsap.to(".work-project", { autoAlpha: 0, duration: 0.25, delay: 0 })
     }
   }, [transitionStatus])

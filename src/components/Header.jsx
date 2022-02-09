@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import tw, { styled, css } from "twin.macro"
 import TransitionLink from "gatsby-plugin-transition-link"
 import Logo from "./Logo"
@@ -7,15 +7,7 @@ import ThemeToggle from "./themeToggle"
 
 import { TopPos, RightPos, LeftPos } from "../components/theme"
 // import { InView } from 'react-intersection-observer'
-import { MenuAltLeft } from "@styled-icons/boxicons-regular/MenuAltLeft"
-// import { Sling as Hamburger } from 'hamburger-react'
-// import Slider from './hamburger/types/slider'
-// import SliderReverse from './types/slider-reverse'
-
-// const ActiveIcon = tw(KeyboardArrowLeft)`
-//   text-yellow-500 translate-x-4
-// `
-// <ActiveIcon size="24" />
+// import { MenuAltLeft } from "@styled-icons/boxicons-regular/MenuAltLeft"
 
 const KKLogo = styled(Logo)([
   css`
@@ -29,16 +21,16 @@ const KKLogo = styled(Logo)([
   `,
 ])
 
-const LogoLink = styled(TransitionLink)([
-  css`
-    /* width: 171px; */
-    /* left: 1.325%; */
-    /* transform: translate(calc(-50% + 16px)); */
-    @media screen and (min-width: 640px) {
-      /* width: 171px; */
-    }
-  `,
-])
+// const LogoLink = styled(TransitionLink)([
+//   css`
+//     /* width: 171px; */
+//     /* left: 1.325%; */
+//     /* transform: translate(calc(-50% + 16px)); */
+//     @media screen and (min-width: 640px) {
+//       /* width: 171px; */
+//     }
+//   `,
+// ])
 
 const CtrlTC = tw.div`
 `
@@ -66,7 +58,7 @@ export default function Header(props) {
   }, [setSmall])
   return (
     <HeaderWrapper>
-      <LogoLink
+      <TransitionLink
         to="/"
         exit={{
           length: 0.5,
@@ -77,13 +69,13 @@ export default function Header(props) {
       >
         <KKLogo className="transform block fixed top-k left-k 2xl:left-k0 z-50 cursor-pointer  text-black-shade-200 dark:text-black-shade-800" />
         <h1
-          className={`nav-link text-base leading-tight fixed top-k1 ${LeftPos} md:-ml-2 z-50 cursor-pointer transition-colors hover:text-violet-600 dark:hover:text-violet-400`}
+          className={`nav-link text-base leading-tight fixed top-k1 ${LeftPos} md:-ml-2 z-50 cursor-pointer transition-colors hover:text-violet-600 dark:hover:text-violet-400 transform -translate-x-1`}
         >
           Nicola Giulia
           <br />
           Pernice
         </h1>
-      </LogoLink>
+      </TransitionLink>
       <CtrlTC
         className={`hidden xs:block fixed z-40 right-1/2 ${TopPos} transition-opacity translate-x-1/2  ${
           small ? "opacity-0" : "opacity-1"
@@ -128,6 +120,7 @@ export default function Header(props) {
           entry={{ length: 0.5 }}
           className="block"
           activeClassName="active"
+          partiallyActive={true}
         >
           Creative Labs
         </MenuLink>

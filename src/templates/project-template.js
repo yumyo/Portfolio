@@ -3,8 +3,8 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import { gsap } from "gsap"
 import ReactHtmlParser from "react-html-parser"
-import { PageDefault } from "../components/theme"
-import tw from "twin.macro"
+// import { PageDefault } from "../components/theme"
+// import tw from "twin.macro"
 
 const ProjectTemplate = ({
   transitionStatus,
@@ -28,9 +28,9 @@ const ProjectTemplate = ({
     },
   },
 }) => {
-  const ProjectLayout = tw.div`
-  mx-auto w-6/12 mt-k3v
-  `
+  // const ProjectLayout = tw.div`
+  // mx-auto w-6/12 mt-k3v
+  // `
   const year = date.slice(-4)
   useEffect(() => {
     gsap.to(".anim-project", {
@@ -41,13 +41,6 @@ const ProjectTemplate = ({
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "entering") {
-      // gsap.to('.anim-project', {
-      //   autoAlpha: 1,
-      //   duration: .3,
-      //   delay: 0.6
-      // });
-    }
     if (transitionStatus === "exiting") {
       gsap.to(".anim-project", { autoAlpha: 0, duration: 0.25, delay: 0 })
     }

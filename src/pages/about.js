@@ -1,12 +1,12 @@
-import React, { useRef, useEffect } from "react"
+import React, { useEffect } from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { gsap } from "gsap"
 import tw from "twin.macro"
 import { StaticImage } from "gatsby-plugin-image"
 // Assets
 // import selfie from "../../about.png"
-
-const AboutLayout = tw.div`mx-auto w-k7 mt-k2v`
+// mt-k3v md:
+const AboutLayout = tw.div`mx-auto w-k75 xl:w-k7 mt-k2v`
 
 const AboutPage = ({ transitionStatus }) => {
   useEffect(() => {
@@ -26,24 +26,26 @@ const AboutPage = ({ transitionStatus }) => {
     }
   }, [transitionStatus])
   return (
-    <AboutLayout className="anim-about opacity-0  mb-14">
+    <AboutLayout className="anim-about opacity-0 mb-k1v">
       <div className="">
         <div className="">
-          <StaticImage
-            className="ml-k2 w-k35 float-left mt-16 mr-8 mb-4"
-            src="https://res.cloudinary.com/yumyo/image/upload/v1640539607/media/about-g.png"
-            alt="A kitten"
-          />
           {/* <img src={'https://res.cloudinary.com/yumyo/image/upload/v1640539607/k%20media/about-g.png'} alt="Nicola Giulia glitchy picture" /> */}
         </div>
         <div className="">
           <div className="bio">
-            <h1 className="ml-k4 w-k5">Nicola Giulia Pernice</h1>
-            <p className="text-lg mb-4 mb-4  ml-k4 w-k5">
+            <h1 className="md:ml-k2 lg:ml-k4 md:w-k75 lg:w-k5 leading-tight mb-3 pt-16">
+              Nicola Giulia Pernice
+            </h1>
+            <p className="text-lg mb-4 mb-4  md:ml-k2 lg:ml-k4 md:w-k75 lg:w-k5">
               I am a passionate, highly motivated, experienced and organised
               full stack designer currently living in london.
             </p>
-            <p className="mb-4 mt-4 ml-k4 w-k5">
+            <StaticImage
+              className="md:ml-k2 sm:w-k5 md:w-k35 sm:float-left mt-4 sm:mt-8 sm:mr-8 mb-4"
+              src="https://res.cloudinary.com/yumyo/image/upload/v1640539607/media/about-g.png"
+              alt="A kitten"
+            />
+            <p className="mb-4 mt-4 md:ml-k2 lg:ml-k4 md:w-k75 lg:w-k5">
               The full stack title stands for the sum of the various abilities
               developed during 20 years of work in the creative field. These
               cross-disciplinary skills have made me able to take care of the
@@ -52,7 +54,8 @@ const AboutPage = ({ transitionStatus }) => {
               solving. It also stands for the ability to speak the native
               language of every member of the team.
             </p>
-            <div className="mt-4 ml-k4 w-k5">
+
+            <div className="mt-4 md:ml-k2 lg:ml-k4 md:w-k75 lg:w-k5">
               <p className="mb-4">
                 I deeply love my job in all of its shades and different aspects,
                 from marketing research to information architecture, branding,

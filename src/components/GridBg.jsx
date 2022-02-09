@@ -1,9 +1,8 @@
 import * as React from "react"
 
-const lineColor = '#ddd';
+// const lineColor = '#ddd';
 
 function GridBg(props) {
-  
   return (
     <svg
       viewBox="0 0 100 100"

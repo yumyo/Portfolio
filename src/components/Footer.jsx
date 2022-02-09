@@ -1,15 +1,15 @@
 import React from "react"
 import tw from "twin.macro"
 import TransitionLink from "gatsby-plugin-transition-link/AniLink"
-import { BottomPos, RightPos, LeftPos, MenuLabel } from "../components/theme"
-
+import { RightPos, LeftPos, MenuLabel } from "../components/theme"
+// BottomPos
 const Footer = tw.div`
 `
 
 export default function Header(props) {
   //
   return (
-    <Footer className="shrink-0 w-full flex justify-between items-end pl-k2 xs:pl-k1 pr-k2 xs:pr-k1 leading-none static md:fixed md:z-50 bottom-k md:bottom md:pb-k0v transform-gpu md:-translate-y-1/2">
+    <Footer className="shrink-0 w-full flex justify-between items-end pl-k1 xs:pl-k1 pr-k1 xs:pr-k1 leading-none static md:fixed md:z-50 bottom-k md:bottom pb-k1v md:pb-k0v transform-gpu md:-translate-y-1/2">
       <div className={`z-40  ${LeftPos} flex`}>
         <TransitionLink
           to="/labs/"

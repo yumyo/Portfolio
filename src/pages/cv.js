@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useContext } from "react"
+import React, { useEffect } from "react"
 import { gsap } from "gsap"
-import tw from "twin.macro"
+// import tw from "twin.macro"
 import {
   Lead,
   Label,
@@ -24,11 +24,14 @@ const Cv = ({ transitionStatus }) => {
       gsap.to(".anim-cv", { autoAlpha: 0, duration: 0.25, delay: 0 })
     }
   }, [transitionStatus])
-  const ref = useRef(null)
+  // const ref = useRef(null)
 
   return (
-    <div className="ml-k2 2xl:ml-k3 w-k7 xl:w-k7 2xl:w-k6 mt-k2v anim-cv opacity-0 flex min-h-screen flex-row flex-wrap items-baseline mb-14">
-      <h1 className={`${PageTitle} w-full pl-k25 mb-7`}>Curriculum Vitae</h1>
+    <div className="m-auto md:ml-k2 2xl:ml-k3 w-k75 xl:w-k7 2xl:w-k6 mt-k2v anim-cv opacity-0 flex min-h-screen flex-row flex-wrap items-baseline mb-k1v">
+      <div className={LeftSide}></div>
+      <div className={LeftContent}>
+        <h1 className={`${PageTitle} mb-2 pt-16`}>Curriculum Vitae</h1>
+      </div>
       <div className={LeftSide}>
         <h2 className={Label}>PROFILE</h2>
       </div>
@@ -232,7 +235,7 @@ const Cv = ({ transitionStatus }) => {
           </li>
           <li>
             LinkedIn:{" "}
-            <a href="https://linkedin.com/in/nico-pernice" alt="">
+            <a href="https://linkedin.com/in/nicola-pernice" alt="">
               linkedin.com/in/nico-pernice
             </a>
           </li>
@@ -338,7 +341,7 @@ const Cv = ({ transitionStatus }) => {
       <div className={LeftSide}>
         <h2 className={Label}>PERSONAL INTERESTS</h2>
       </div>
-      <div className={LeftContent}>
+      <div className={`${LeftContent} mb-0`}>
         <p>
           Typography, Calligraphy, Music, Photography Art, Theater, Cinema,
           Novels and Literary Essays, Travelling, Buddhism, Philosophy, Martial

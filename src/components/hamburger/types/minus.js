@@ -1,15 +1,22 @@
-import React from 'react'
-import { createGlobalStyle } from 'styled-components'
-import Base from '../base'
-import defaultProps from '../default-props'
+import React from "react"
+import { createGlobalStyle } from "styled-components"
+import Base from "../base"
 
-export default class Minus extends React.Component{
-	render() {
-    let {
-			width,
-		} = this.props;
+let defaultProps = {
+  width: 40,
+  lineHeight: 4,
+  lineSpacing: 6,
+  color: "#000",
+  borderRadius: 0,
+  active: false,
+  padding: "15px",
+}
 
-    const widthFraction = width / 3;
+export default class Minus extends React.Component {
+  render() {
+    let { width } = this.props
+
+    const widthFraction = width / 3
 
     const GlobalStyle = createGlobalStyle`
     .BurgerMinus {
@@ -19,10 +26,10 @@ export default class Minus extends React.Component{
         &:after {
         }
         &:before {
-          width: ${ width }px;
+          width: ${width}px;
         }
         &:after {
-          width: ${ width - (widthFraction * 2) }px;
+          width: ${width - widthFraction * 2}px;
         }
       }
 
@@ -33,13 +40,13 @@ export default class Minus extends React.Component{
           &:after {
             transition: all 0.3s ease-out;
           }
-          /* width: ${ width }px;
+          /* width: ${width}px;
           
           &:before,
           &:after {
             opacity: 0;
             transition: all 0.3s ease-out;
-                    width: ${ width }px;
+                    width: ${width}px;
           }
           */
           &:before {
@@ -53,12 +60,15 @@ export default class Minus extends React.Component{
     }
     `
 
-		return (
-			<Base typeClassName='BurgerMinus mt-k1' {...this.props}>
-				<GlobalStyle />
-			</Base>
-		)
-	}
+    return (
+      <Base
+        typeClassName="BurgerMinus mt-k1 translate -translate-y-2"
+        {...this.props}
+      >
+        <GlobalStyle />
+      </Base>
+    )
+  }
 }
 
 Minus.defaultProps = defaultProps

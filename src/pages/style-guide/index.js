@@ -1,12 +1,14 @@
-import React, { useRef, useEffect } from "react"
+import React, { useEffect } from "react"
 import { gsap } from "gsap"
 import tw from "twin.macro"
+// import { Label } from "../../components/theme"
 
-const SmallCenter = tw.div`
-w-k5 aspect-w-16 aspect-h-9 mx-auto bg-green-500
-`
+// const SmallCenter = tw.div`
+// w-k5 aspect-w-16 aspect-h-9 mx-auto bg-green-500
+// `
+const SGLabel = tw.div`text-xs 2xl:text-sm uppercase tracking-widest text-black-shade-600`
 
-const SGLayout = tw.div`mx-auto w-6/12 mt-k2v`
+const SGLayout = tw.div`mx-auto w-k75 md:w-k6 lg:w-6/12 mt-k3v md:mt-k2v`
 
 const StyleGuide = ({ transitionStatus }) => {
   useEffect(() => {
@@ -26,26 +28,68 @@ const StyleGuide = ({ transitionStatus }) => {
     }
   }, [transitionStatus])
   return (
-    <SGLayout className="anim-sg opacity-0">
-      <h1>Style Guide</h1>
-      <SmallCenter></SmallCenter>
-      <pre>
-        {`
-      spacing: {
-        'k0' : '3.125%',
-        'k1' : '6.25%',
-        'k2' : '12.5%',
-        'k3' : '25%',
-        'k4' : '33.3333%',
-        'k5' : '50%',
-        'k6' : '66.6666%',
-        'k7' : '75%',
-        'k8' : '87.5%',
-        'k9' : '93.75%',
-        'k10' : '96.875%',
-        'k100' : '100%',
-      }`}
-      </pre>
+    <SGLayout className="anim-sg opacity-0 mb-k1v">
+      <SGLabel>Logo</SGLabel>
+      <div>
+        <SGLabel>Typography</SGLabel>
+        <div className="mt-8 mb-8">
+          <SGLabel>Typeface</SGLabel>
+          <p className="mt-4 text-3xl leading-normal max-w-prose break-all">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+            <br />
+            abcdefghijklmnopqrstuvwxyz
+            <br />
+            1234567890 ?!()[]
+            {}&*^%$#@~
+          </p>
+        </div>
+        {/* <SmallCenter></SmallCenter> */}
+        <SGLabel>Type scale</SGLabel>
+        <h1 className="text-6xl">Display Heading</h1>
+        <h1 className="text-5xl">Heading One</h1>
+        <h2 className="text-4xl">Heading Two</h2>
+        <h3 className="text-3xl">Heading Three</h3>
+        <h4 className="text-2xl">Heading Four</h4>
+        <h5 className="text-xl">Heading Five</h5>
+        <h6 className="text-lg uppercase">Heading Six</h6>
+        <p className="text-lg">Text Leading</p>
+        <p className="text-base">Text Base</p>
+        <p className="text-sm">Text Small</p>
+        <p className="text-xs">Text Nano</p>
+        <p className="text-xxs">Text Micro</p>
+        <hr className="mb-8 mt-8 bg-black-shade-600" />
+        <h1 className="text-6xl leading-tight">
+          Cwm fjord bank glyphs vext quiz
+        </h1>
+        <h1 className="text-5xl leading-snug">
+          Cwm fjord bank glyphs vext quiz
+        </h1>
+        <h2 className="text-4xl leading-snug">
+          Cwm fjord bank glyphs vext quiz
+        </h2>
+        <h3 className="text-3xl leading-snug">
+          Cwm fjord bank glyphs vext quiz
+        </h3>
+        <h4 className="text-2xl leading-snug">
+          Cwm fjord bank glyphs vext quiz
+        </h4>
+        <h5 className="text-xl leading-snug">
+          Cwm fjord bank glyphs vext quiz
+        </h5>
+        <h6 className="text-lg uppercase leading-snug">
+          Cwm fjord bank glyphs vext quiz
+        </h6>
+        <p className="text-lg leading-normal">
+          Cwm fjord bank glyphs vext quiz
+        </p>
+        <p className="text-base">Cwm fjord bank glyphs vext quiz</p>
+        <p className="text-sm">Cwm fjord bank glyphs vext quiz</p>
+        <p className="text-xs">Cwm fjord bank glyphs vext quiz</p>
+        <p className="text-xxs">Cwm fjord bank glyphs vext quiz</p>
+      </div>
+      <div>
+        <SGLabel>Typography</SGLabel>
+      </div>
     </SGLayout>
   )
 }

@@ -11,14 +11,14 @@ export default function ContactForm(props) {
       action={FORMSPARK_ACTION_URL}
     >
       {/* <h2 className="text-xxs leading-none uppercase mb-4 ">Contact</h2> */}
-      <div className="gap-8 columns-2 mt-4 ">
+      <div className="xs:gap-8 xs:columns-2 mt-4 ">
         <div className="flex flex-col">
           <label htmlFor="first-name" className="required mb-2">
             First name
           </label>
           <input id="first-name" className="first-name" type="text" required />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-4 xs:mt-0">
           <label htmlFor="last-name" className="required mb-2">
             Last name
           </label>

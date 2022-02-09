@@ -2,8 +2,8 @@ import React, { useEffect } from "react"
 import { gsap } from "gsap"
 import { Link } from "gatsby"
 import tw from "twin.macro"
-import { PageDefault, Lead } from "../components/theme"
-
+import { Lead } from "../components/theme"
+// PageDefault
 const IndexPage = ({ transitionStatus }) => {
   useEffect(() => {
     console.log("Home Page", transitionStatus)

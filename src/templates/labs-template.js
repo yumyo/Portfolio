@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
-import { PageDefault } from "../components/theme"
+// import { PageDefault } from "../components/theme"
 import tw from "twin.macro"
 import { gsap } from "gsap"
 
@@ -13,9 +13,10 @@ const Tag = tw.li`
 text-sm font-medium uppercase inline-block mr-4
 `
 
-const ItemLayout = tw.div`
-mx-auto w-6/12 mt-k3v
-`
+// const ItemLayout = tw.div`
+// mx-auto w-6/12 mt-k3v
+// `
+const ItemLayout = tw.div`mx-auto w-6/12 mt-k2v`
 
 const LabsTemplate = ({
   transitionStatus,
@@ -37,19 +38,12 @@ const LabsTemplate = ({
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "entering") {
-      // gsap.to('.anim-project', {
-      //   autoAlpha: 1,
-      //   duration: .3,
-      //   delay: 0.6
-      // });
-    }
     if (transitionStatus === "exiting") {
       gsap.to(".lab-project", { autoAlpha: 0, duration: 0.25, delay: 0 })
     }
   }, [transitionStatus])
   return (
-    <div className={`lab-project opacity-0 ${PageDefault}`}>
+    <ItemLayout className={`lab-project opacity-0`}>
       <h1>{`${title}`}</h1>
       <h2>{`variant: ${template}`}</h2>
       <List>
@@ -62,7 +56,7 @@ const LabsTemplate = ({
       <MDXProvider>
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
-    </div>
+    </ItemLayout>
   )
 }
 
