@@ -112,8 +112,18 @@ export const query = graphql`
         childMdx {
           id
           slug
+          embeddedImagesRemote {
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FIXED)
+            }
+          }
           frontmatter {
             title
+            embeddedImagesLocal {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+            }
             description
             tags
             date(formatString: "YYYY-MM-DD")

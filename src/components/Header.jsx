@@ -85,6 +85,7 @@ export default function Header(props) {
       </CtrlTC>
       <div
         className={`hidden fixed lg:block z-40 text-right md:-mr-2 ${TopPos} ${RightPos}`}
+        // fixed
       >
         <MenuLink
           to="/cases"

@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from "react"
 // import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { useLocation } from "@reach/router"
+
+// global styles
 import "../styles/global.scss"
 // Components
 // import { TopPos, RightPos } from "../components/theme"
@@ -97,17 +99,17 @@ const Layout = ({ children }) => {
           lineHeight={3}
           borderRadius={3}
         />
-        {/* <Hamburger toggled={isActive} toggle={handleToggle} /> */}
       </div>
-      <FullNav className={`${isActive ? "is-active" : ""} `} />
+      <FullNav
+        // className={`${isActive ? "is-active" : ""} `}
+        isActive={isActive}
+      />
       <ContentWrapper className="grow shrink-0 basis-auto content">
-        {/* <Title>{title}</Title> */}
         {children}
       </ContentWrapper>
-      <Middle />
+      {/* <Middle /> */}
       <Footer />
       <GeometriCBG />
-      {/* <GridBgContainer></GridBgContainer> */}
     </MainContainer>
   )
 }

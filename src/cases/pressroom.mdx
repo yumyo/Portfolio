@@ -2,18 +2,53 @@
 title: PressRoom
 slug: pressroom
 description: PressRoom is a platform and suite of tools designed to let publishers focus and experiment with digital editions and business models.
-services: [Concept, Design and Front-end Development]
+mission: A multi-output digital platform to enable lean and agile newsrooms to submit curated content on large product portfolios. A system that could dynamically adapt to market requests driven by deep behaviour analytics. Modular and scalable to serve publishers of any size.
+services: [Concept, Brand Identity, UI Design and Full-stack Development]
 tags: [Full Stack, Brand Identity, Web Design, UX]
 template: cases
 date: "2018-06-03"
 client: The PrintLabs
-profile: Digital Publishing Agency established in London in 2011, with the unique aim to help journalist, storytellers and publishers make a sustainable transition to the liquid and free-flowing digital age.
+profile: ThePrintLabs is a startup I co-founded in 2011 with the unique aim to "help journalist, storytellers and publishers make a sustainable transition to the liquid and free-flowing digital age".
 published: true
 banner: ../images/media/wide-banner-pr-poster.jpg
 video: https://res.cloudinary.com/yumyo/video/upload/v1642589252/media/folio/prj/pr/video/newspaper-press.mp4
 embeddedImagesLocal:
 embeddedImagesRemote:
-  - https://res.cloudinary.com/yumyoshojin/image/upload/v1638353859/b2b/exness/exness_PWA_icon-1.svg
+  - https://res.cloudinary.com/yumyo/image/upload/v1645457314/media/folio/prj/pr/PR-github.png
 ---
 
-Archive content here.
+import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
+
+<GatsbyImage
+  alt="green doggo"
+  placeholder="blurred"
+  layout="fixed"
+  image={getImage(props.remoteImages[0])}
+/>
+
+## Process and Insight
+
+PressRoom is the result of three years of experience obtained through research and development about technologies, content structures, management, distribution and metrics.
+Experimenting with new business models and still optimizing legacy revenue sources
+Help editorial teams evolve toward an editorial process where structured content is delivered to the audience across multiple channels and multiple reading routines from one central source.
+Gain a greater, unprecedented understanding of the “customer” and his habits.
+Having an agile approach to conceiving and launching new editorial products
+
+Although the development of PressRoon ended in 2016, I firmly believe much of its core concepts and motivations behind its development are still highly relevant today.
+
+Solution
+A tool for modern storytellers.
+PressRoom is a simple, elegant solution for publishers of any size desiring to experiment with new business models and engage readers with diverse reading habits, better understand their audiences, meet them wherever they are and offer a beautiful, uninterrupted reading experience.
+
+Although its core concepts and architecture are modular, agnostic, and portative, we chose to bring PressRoom to work with the WordPress CMS for its ease of use, widespread adoption, and ability to scale.
+
+The system is essentially condensed in a WordPress plugin, a set of themes and a hybrid iOS and Android client built on top of the Baker Framework.
+
+Everything is structured around the concept of Editorial Projects; they are containers for an unlimited number of issues, which are containers for any kind of content that you can add and manage in WordPress.
+
+Issues can be exported at the same time to native clients, to the web as a standalone microsite, to ePub, Amazon’s Mobi or plain old paper as pdf files. Issues will also be available as a structured feed.
+
+PressRoom is a WordPress plugin that frees publishers to focus on their content. It allows them to publish to iOS and Android\* Apps, the Web and even plain old paper — all at the same time and from within a single WordPress site. That means small- and mid-size publishers can experiment with new business models, engage readers with diverse reading habits, and gain a better understanding of the audience to meet them wherever they are. Readers benefit from a beautiful, uninterrupted reading experience.
+
+Who is PressRoom for?
+Pressroom is perfect for indie publishers and bloggers with a large following seeking an innovative monetization tool. It is also great for corporate brands and retailers; PressRoom enables in-app e-commerce, straight from your catalogue or content marketing. But most importantly, PressRoom is for readers. PressRoom provides a simple, uninterrupted reading experience.

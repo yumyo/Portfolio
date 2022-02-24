@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { gsap } from "gsap"
 import tw from "twin.macro"
-import { GhostButton } from "../components/theme"
+import { CasesLayout, GhostButton } from "../components/theme"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
 
@@ -33,12 +33,12 @@ const Works = ({ data, transitionStatus }) => {
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
     if (transitionStatus === "exiting") {
-      console.log("Works", transitionStatus)
+      // console.log("Works", transitionStatus)
       gsap.to(".anim-works", { autoAlpha: 0, duration: 0.25, delay: 0 })
     }
   }, [transitionStatus])
   return (
-    <WorksLayout className="anim-works opacity-0">
+    <div className={`anim-works opacity-0 ${CasesLayout}`}>
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink
@@ -50,7 +50,7 @@ const Works = ({ data, transitionStatus }) => {
               length: 0.5,
             }}
             to={`${childMdx.slug}`}
-            preventScrollJump
+            // preventScrollJump
           >
             <GatsbyImage
               image={getImage(childMdx.frontmatter.banner)}
@@ -78,7 +78,7 @@ const Works = ({ data, transitionStatus }) => {
           </List> */}
         </ListItem>
       ))}
-    </WorksLayout>
+    </div>
   )
 }
 

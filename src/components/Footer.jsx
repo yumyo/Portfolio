@@ -7,12 +7,12 @@ const Footer = tw.div`
 `
 
 export default function Header(props) {
-  //
+  // md:fixed md:pb-k0v md:-translate-y-1/2
   return (
-    <Footer className="shrink-0 w-full flex justify-between items-end pl-k1 xs:pl-k1 pr-k1 xs:pr-k1 leading-none static md:fixed md:z-50 bottom-k md:bottom pb-k1v md:pb-k0v transform-gpu md:-translate-y-1/2">
+    <Footer className="shrink-0 w-full flex justify-between items-end pl-k1 xs:pl-k1 pr-k1 xs:pr-k1 leading-none static  md:z-50 bottom-k md:bottom pb-k1v transform-gpu ">
       <div className={`z-40  ${LeftPos} flex`}>
         <TransitionLink
-          to="/labs/"
+          to="/style-guide/"
           exit={{
             length: 0.5,
           }}

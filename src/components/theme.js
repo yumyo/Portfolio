@@ -2,7 +2,7 @@
 
 // Layout
 export const PageDefault = ""
-export const CasesLayout = "mx-auto md:w-k7 2xl:w-6/12 mt-k3v md:mt-k2v"
+export const CasesLayout = "mx-auto md:w-k6 3xl:w-6/12 mt-k3v md:mt-k2v"
 // Menu
 export const LayoutLinks = "py-2 px-4 text-xs"
 export const Lead = "text-base xl:text-lg"

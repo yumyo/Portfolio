@@ -31,6 +31,11 @@ const MdxPage = ({
 export const query = graphql`
   query($id: String) {
     mdx(id: { eq: $id }) {
+      embeddedImagesRemote {
+        childImageSharp {
+          gatsbyImageData(webpOptions: { quality: 100 })
+        }
+      }
       frontmatter {
         title
         template
