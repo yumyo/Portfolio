@@ -27,7 +27,7 @@ const Cv = ({ transitionStatus }) => {
   // const ref = useRef(null)
 
   return (
-    <div className="m-auto md:ml-k2 2xl:ml-k3 w-k75 xl:w-k7 2xl:w-k6 mt-k2v anim-cv opacity-0 flex min-h-screen flex-row flex-wrap items-baseline mb-k1v">
+    <div className="anim-cv m-auto md:ml-k2 2xl:ml-k3 w-k75 xl:w-k7 2xl:w-k6 mt-k2v  opacity-0 flex min-h-screen flex-row flex-wrap items-baseline mb-k1v">
       <div className={LeftSide}></div>
       <div className={LeftContent}>
         <h1 className={`${PageTitle} mb-2 pt-16`}>Curriculum Vitae</h1>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { gsap } from "gsap"
-import { Link } from "gatsby"
+import TransitionLink from "gatsby-plugin-transition-link"
 import tw from "twin.macro"
 import { Lead } from "../components/theme"
 // PageDefault
@@ -36,14 +36,47 @@ const IndexPage = ({ transitionStatus }) => {
     <div className="flex flex-col justify-center  ">
       <div className="anim-home opacity-0 mx-auto w-k7 xs:w-k8 md:w-k5 mt-k5v -translate-y-1/2">
         <Title>
-          Hi, my name is Nicola&nbsp;Giulia&nbsp;Pernice <br /> I am a Product
-          Designer and Creative&nbsp;Developer.
+          Hi, my name is Nicola&nbsp;Giulia&nbsp;Pernice <br /> I am a Digital
+          Product Designer and Creative&nbsp;Developer.
         </Title>
         <div className={Lead}>
-          Here you can scroll through my <Link to="/cases">case-histories</Link>
-          , know more <Link to="/about">about me</Link> and{" "}
-          <Link to="/cases">get&nbsp;in&nbsp;touch</Link> to discuss your
-          awesome idea!{" "}
+          Here you can scroll through my{" "}
+          <TransitionLink
+            to="/cases"
+            exit={{
+              length: 0.5,
+            }}
+            entry={{ length: 0.5 }}
+            className=""
+            activeClassName="text-violet-600 dark:text-violet-400"
+          >
+            case-histories
+          </TransitionLink>
+          , know more{" "}
+          <TransitionLink
+            to="/about"
+            exit={{
+              length: 0.5,
+            }}
+            entry={{ length: 0.5 }}
+            className=""
+            activeClassName="text-violet-600 dark:text-violet-400"
+          >
+            about me{" "}
+          </TransitionLink>
+          and{" "}
+          <TransitionLink
+            to="/contact"
+            exit={{
+              length: 0.5,
+            }}
+            entry={{ length: 0.5 }}
+            className=""
+            activeClassName="text-violet-600 dark:text-violet-400"
+          >
+            get&nbsp;in&nbsp;touch{" "}
+          </TransitionLink>
+          to discuss your awesome idea!
         </div>
       </div>
     </div>

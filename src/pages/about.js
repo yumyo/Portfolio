@@ -3,10 +3,8 @@ import { Link as GatsbyLink } from "gatsby"
 import { gsap } from "gsap"
 import tw from "twin.macro"
 import { StaticImage } from "gatsby-plugin-image"
-// Assets
-// import selfie from "../../about.png"
-// mt-k3v md:
-const AboutLayout = tw.div`mx-auto w-k75 xl:w-k7 mt-k2v`
+import { PageTitle } from "../components/theme"
+const AboutLayout = tw.div``
 
 const AboutPage = ({ transitionStatus }) => {
   useEffect(() => {
@@ -26,22 +24,23 @@ const AboutPage = ({ transitionStatus }) => {
     }
   }, [transitionStatus])
   return (
-    <AboutLayout className="anim-about opacity-0 mb-k1v">
+    // min-h-screen
+    <AboutLayout className="anim-about m-auto md:ml-k2 2xl:ml-k3 w-k75 xl:w-k7 2xl:w-k6 mt-k2v opacity-0 flex  flex-row flex-wrap items-baseline mb-k1v">
       <div className="">
         <div className="">
           {/* <img src={'https://res.cloudinary.com/yumyo/image/upload/v1640539607/k%20media/about-g.png'} alt="Nicola Giulia glitchy picture" /> */}
         </div>
         <div className="">
           <div className="bio">
-            <h1 className="md:ml-k2 lg:ml-k4 md:w-k75 lg:w-k5 leading-tight mb-3 pt-16">
+            <h1 className={` mb-2 pl-14 md:ml-k2 leading-tight mb-8 pt-16`}>
               Nicola Giulia Pernice
             </h1>
-            <p className="text-lg mb-4 mb-4  md:ml-k2 lg:ml-k4 md:w-k75 lg:w-k5">
+            <p className="text-lg mb-4 mb-4  md:ml-k3  md:w-k75 lg:w-k5">
               I am a passionate, highly motivated, experienced and organised
               full stack designer currently living in london.
             </p>
             <StaticImage
-              className="md:ml-k2 sm:w-k5 md:w-k35 sm:float-left mt-4 sm:mt-8 sm:mr-8 mb-4"
+              className="sm:w-k5 md:w-k35 sm:float-left mt-4 sm:mt-8 sm:mr-8 mb-4"
               src="https://res.cloudinary.com/yumyo/image/upload/v1640539607/media/about-g.png"
               alt="A kitten"
             />
@@ -52,9 +51,8 @@ const AboutPage = ({ transitionStatus }) => {
               whole process and life cycle of a product, from concept to design
               to the development of working prototypes and everyday problem
               solving. It also stands for the ability to speak the native
-              language of every member of the team.
+              language of every member of the teams.
             </p>
-
             <div className="mt-4 md:ml-k2 lg:ml-k4 md:w-k75 lg:w-k5">
               <p className="mb-4">
                 I deeply love my job in all of its shades and different aspects,

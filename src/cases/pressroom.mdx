@@ -18,6 +18,7 @@ embeddedImagesRemote:
 ---
 
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import ProjectDetail from "../components/ProjectDetail"
 
 <GatsbyImage
   alt="green doggo"
@@ -26,29 +27,31 @@ import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
   image={getImage(props.remoteImages[0])}
 />
 
-## Process and Insight
-
-PressRoom is the result of three years of experience obtained through research and development about technologies, content structures, management, distribution and metrics.
+<ProjectDetail
+  label="Process and Insight"
+  content="PressRoom is the result of three years of experience obtained through research and development about technologies, content structures, management, distribution and metrics.
 Experimenting with new business models and still optimizing legacy revenue sources
 Help editorial teams evolve toward an editorial process where structured content is delivered to the audience across multiple channels and multiple reading routines from one central source.
 Gain a greater, unprecedented understanding of the “customer” and his habits.
-Having an agile approach to conceiving and launching new editorial products
+Having an agile approach to conceiving and launching new editorial products"
+/>
 
-Although the development of PressRoon ended in 2016, I firmly believe much of its core concepts and motivations behind its development are still highly relevant today.
+<ProjectDetail
+  label=""
+  content="Although the development of PressRoon ended in 2016, I firmly believe much of its core concepts and motivations behind its development are still highly relevant today."
+/>
 
-Solution
-A tool for modern storytellers.
-PressRoom is a simple, elegant solution for publishers of any size desiring to experiment with new business models and engage readers with diverse reading habits, better understand their audiences, meet them wherever they are and offer a beautiful, uninterrupted reading experience.
+<ProjectDetail
+  label="Solution"
+  content="A tool for modern storytellers.<br /><br />PressRoom is a simple, elegant solution for publishers of any size desiring to experiment with new business models and engage readers with diverse reading habits, better understand their audiences, meet them wherever they are and offer a beautiful, uninterrupted reading experience."
+/>
 
-Although its core concepts and architecture are modular, agnostic, and portative, we chose to bring PressRoom to work with the WordPress CMS for its ease of use, widespread adoption, and ability to scale.
+<ProjectDetail
+  label=""
+  content="Although its core concepts and architecture are modular, agnostic, and portative, we chose to bring PressRoom to work with the WordPress CMS for its ease of use, widespread adoption, and ability to scale.<br /><br />The system is essentially condensed in a WordPress plugin, a set of themes and a hybrid iOS and Android client built on top of the Baker Framework.<br /><br />Everything is structured around the concept of Editorial Projects; they are containers for an unlimited number of issues, which are containers for any kind of content that you can add and manage in WordPress.<br /><br />Issues can be exported at the same time to native clients, to the web as a standalone microsite, to ePub, Amazon’s Mobi or plain old paper as pdf files. Issues will also be available as a structured feed.<br /><br />PressRoom is a WordPress plugin that frees publishers to focus on their content. It allows them to publish to iOS and Android\* Apps, the Web and even plain old paper — all at the same time and from within a single WordPress site. That means small- and mid-size publishers can experiment with new business models, engage readers with diverse reading habits, and gain a better understanding of the audience to meet them wherever they are. Readers benefit from a beautiful, uninterrupted reading experience."
+/>
 
-The system is essentially condensed in a WordPress plugin, a set of themes and a hybrid iOS and Android client built on top of the Baker Framework.
-
-Everything is structured around the concept of Editorial Projects; they are containers for an unlimited number of issues, which are containers for any kind of content that you can add and manage in WordPress.
-
-Issues can be exported at the same time to native clients, to the web as a standalone microsite, to ePub, Amazon’s Mobi or plain old paper as pdf files. Issues will also be available as a structured feed.
-
-PressRoom is a WordPress plugin that frees publishers to focus on their content. It allows them to publish to iOS and Android\* Apps, the Web and even plain old paper — all at the same time and from within a single WordPress site. That means small- and mid-size publishers can experiment with new business models, engage readers with diverse reading habits, and gain a better understanding of the audience to meet them wherever they are. Readers benefit from a beautiful, uninterrupted reading experience.
-
-Who is PressRoom for?
-Pressroom is perfect for indie publishers and bloggers with a large following seeking an innovative monetization tool. It is also great for corporate brands and retailers; PressRoom enables in-app e-commerce, straight from your catalogue or content marketing. But most importantly, PressRoom is for readers. PressRoom provides a simple, uninterrupted reading experience.
+<ProjectDetail
+  label="Who is PressRoom for?"
+  content="Pressroom is perfect for indie publishers and bloggers with a large following seeking an innovative monetization tool. It is also great for corporate brands and retailers; PressRoom enables in-app e-commerce, straight from your catalogue or content marketing. But most importantly, PressRoom is for readers. PressRoom provides a simple, uninterrupted reading experience."
+/>

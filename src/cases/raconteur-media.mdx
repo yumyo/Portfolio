@@ -14,91 +14,152 @@ banner: ../images/media/wide-banner-raconteur.jpg
 video:
 embeddedImagesLocal:
 embeddedImagesRemote:
-  - https://res.cloudinary.com/yumyo/image/upload/v1645457314/media/folio/prj/pr/PR-github.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1646741663/media/folio/prj/rac/raconteur-mindmap.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1647279419/media/folio/prj/rac/screens/all-screens.jpg
+  - https://res.cloudinary.com/yumyo/image/upload/v1646758491/media/folio/prj/rac/screens/desktop-adapted_0005_Layer_9.jpg
+  - https://res.cloudinary.com/yumyo/image/upload/v1647034109/media/folio/prj/rac/desktop-wireframes-2560.jpg
+  - https://res.cloudinary.com/yumyo/image/upload/v1647034104/media/folio/prj/rac/desktop-qireframes-1920.png
+  - https://res.cloudinary.com/yumyo/image/upload/media/folio/prj/rac/mobile-qireframes-1920.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1647280085/media/folio/prj/rac/screens/mobile/mobile-screen-2.jpg
+  - https://res.cloudinary.com/yumyo/image/upload/v1647279421/media/folio/prj/rac/screens/home-1440.png
 ---
 
-## Context and Challenge
+import ProjectDetail from "../components/ProjectDetail"
+import { DeviceFrameset } from "../components/DeviceFrameSet/DeviceFrameset"
 
-Raconteur' hired me with the initial objective to redesign the main website away and move it away from any external provider. The long term vision was to develop an internal development team and offer digital products to their clients alongside their traditional printed products lineup.
+<img
+  className="mt-8 inline-image pl-8 pr-8 opacity-20"
+  src={"/thetimes-symbol-ill.svg"}
+  alt="Logo"
+/>
 
-## Process and Insight
+<img
+  className="mt-8 inline-image pl-8 pr-8"
+  src={"/focus-areas.svg"}
+  alt="Logo"
+/>
 
-My work started by identifying three main areas or critical aspects of raconteur.net to be placed at the bottom of the redesign: Content, Design, and Technology.
+<ProjectDetail
+  label="Process and Insight"
+  content="<p>My work started by identifying three main areas or critical aspects of raconteur.net to be placed at the bottom of the redesign: Content, Design, and Technology. <br /><br />We explored issues, possible solutions, and general considerations on the related topics for each aspect: Content, Design and Technology.</p>"
+/>
 
-We explored issues, possible solutions, and general considerations on the related topics for each aspect:
+<ProjectDetail
+  label="Content"
+  content="<ul><li>Analyse the content structure and define a new information architecture.</li><li>Leverage the power of storytelling.</li><li>Define clear goals for each significant target group.</li></ul>"
+/>
 
-### Content
+<div className=" pr-4 pl-4 ml-4 mt-16 text-center">
+  <DeviceFrameset device="iPhone 5s" color="black" className="">
+    <GatsbyImage
+      alt="green doggo"
+      placeholder="blurred"
+      layout="fixed"
+      image={getImage(props.remoteImages[6])}
+    />
+  </DeviceFrameset>
+</div>
 
-Issues
-Chaotic content presentation.
-No straightforward user journey.
-Blurred storyline to follow.
-Proposals
-Analyse the content structure and define a new information architecture.
-Leverage the full power of storytelling.
-Define goals/audience for each significant content group.
+<div className=" pr-4 pl-4 ml-4 mt-16 text-center">
+  <DeviceFrameset device="MacBook Pro" color="black">
+    <GatsbyImage
+      alt="green doggo"
+      placeholder="blurred"
+      layout="fixed"
+      image={getImage(props.remoteImages[7])}
+    />
+  </DeviceFrameset>
+</div>
 
-### Design
+<ProjectDetail
+  label="Design"
+  content="<ul><li>Channel the value of the design found in the printed products lineup</li><li>Account for subtle variation according to audience/objectives</li><li>Build Design System, to act asd shared vocabulary and living library of Raconteur styles &amp; patterns</li></ul>"
+/>
 
-One of the striking aspects of Raconteur and a cornerstone to their success is the incredibly talented graphic design team.
-It appeared immediately clear the need to channel the value of the design found in the printed products lineup, helping build a shared vocabulary for consistency, engagement and effectiveness.
-Problem
-Undifferentiated content (every page looks the same regardless of any editorial or structural difference)
-Proposals
-Reflect the visual style of the related digital or printed product
-Account for subtle variation according to audience/objectives
-Build Design System, a living library of Raconteur styles & patterns
+<ProjectDetail
+  label="Technology"
+  content="<ul><li>Rebuild for high performance and mobile-first</li><li>Progressively enhance the experience for desktop and modern browsers</li><li>Move to a cloud infrastructure and define an efficient DevOps workflow</li></ul>"
+/>
 
-### Technology
+<div className="pr-4 pl-4">
+  <GatsbyImage
+    alt="green doggo"
+    placeholder="blurred"
+    layout="fixed"
+    image={getImage(props.remoteImages[0])}
+  />
+</div>
 
-Problem
-Website poorly optimised
-Low page speed scoring
-Broken mobile experience
-Proposals
-Rebuild for high performance and mobile-first
-Progressively enhance the experience for desktop and modern browsers.
+<ProjectDetail
+  label="A Reader Oriented IA"
+  content="<p>I used Google Analytics to identify the best performing content, common entrance and exit pages and, recurring patterns in the user navigation flow.<br /><br />Together with the head of marketing, we later compared the evidence gathered with the current data on the website. This process led to deciding to shift the pivot from 'products' to 'content' to develop a structure around our reader's interests.<br /><br />We then merged our findings with an Extensive Competitive analysis to gather valuable insights on content and features and better understand Raconteur's unique selling proposition.</p>"
+/>
 
-## Process
+<div className="mt-16">
+  <GatsbyImage
+    alt="green doggo"
+    placeholder="blurred"
+    layout="fixed"
+    image={getImage(props.remoteImages[4])}
+  />
+</div>
 
-### A Reader Oriented IA
+<ProjectDetail
+  label="Wireframings"
+  content="<p>The wireframes were created in Sketch and then shared in InVision, to gather comments and further iterate each board.</p><p>I decided to use a monochrome style (one colour against white) to obtain a straightforward form of wireframing that matches its function. You can read more about it on the UX Movement website at this link: <a href='https://uxmovement.com/wireframes/why-the-best-wireframe-style-is-no-style/' target='_blank' title='UX Movement: “Why the Best Wireframe Style Is No Style'>“Why the Best Wireframe Style Is No Style.”</a></p>"
+/>
 
-I used Google Analytics to identify the best performing content, common entrance and exit pages and, recurring patterns in the user navigation flow.
-Together with the head of marketing, we later compared the evidence gathered with the current data on the website. This process led to deciding to shift the pivot from "products" to "content" to develop a structure around our reader's interests.
-We then merged our findings with an Extensive Competitive analysis to gather valuable insights on content and features and better understand Raconteur's unique selling proposition.
+<div className="mt-16">
+  <GatsbyImage
+    alt="green doggo"
+    placeholder="blurred"
+    layout="fixed"
+    image={getImage(props.remoteImages[5])}
+  />
+</div>
 
-## Solution
+<ProjectDetail
+  label=""
+  content="<p> The next step was moving to “wireframing in the browser” to continue the process of outlining the website's structure, content and features, with actual code and live dynamic data. At this stage, I started adding semantics, ARIA rules and schema metadata relevant to search engines and assistive devices. These steps are crucial to ensure compliance with content discovery, consumption and syndication's web services.</p>"
+/>
 
-### Wireframing
+<ProjectDetail
+  label="Meaningful Colors"
+  content="<p>
+  Slicing the spectrum into eight hues to differentiate the primary topics with distinctive colours, loosely following some basic principles of colour psychology common to our European/Western heritage:
+  The last colour iteration aimed to address visual imparities, with rich tonal variations and correction for UI design.
+</p>"
+/>
 
-The wireframes were created in Sketch and then shared in InVision, to gather comments and further iterate each board.
+<div className="mx-auto w-k7 block mt-8 mb-8">
+  <div>
+    <GatsbyImage
+      alt="green doggo"
+      placeholder="blurred"
+      layout="fixed"
+      image={getImage(props.remoteImages[2])}
+    />
+  </div>
+</div>
 
-I decided to use a monochrome style (one colour against white) to obtain a straightforward form of wireframing that matches its function.
-You can read more about it on the UX Movement website at this link: "Why the Best Wireframe Style Is No Style."
+<ProjectDetail
+  label="Final Design"
+  content="<p>
+</p>"
+/>
 
-The next step was moving to "wireframing in the browser" to continue the process of outlining the website's structure, content and features, with actual code and live dynamic data.
-At this stage, I started adding semantics, ARIA rules and schema metadata relevant to search engines and assistive devices. These steps are crucial to ensure compliance with content discovery, consumption and syndication's web services.
+<ProjectDetail
+  label="Hosting and Dev Ops"
+  content="<ul><li>Infrastructure based on Docker containers to gain:</li><li>Continuous Deployment and Testing</li><li>Multi-Cloud Platforms</li><li>Environment Standardisation and Version Control</li><li>Isolation and Security</li><li>Virtually unlimited scalability.</li></ul>"
+/>
 
-### Hi-fidelity design
-
-Slicing the spectrum into eight hues to differentiate the primary topics with distinctive colours, loosely following some basic principles of colour psychology common to our European/Western heritage:
-The last colour iteration aimed to address visual imparities, with rich tonal variations and correction for UI design.
-
-The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectives.
-
-### Hosting and Dev Ops
-
-Infrastructure based on Docker containers to gain:
-Continuous Deployment and Testing
-Multi-Cloud Platforms
-Environment Standardisation and Version Control
-Isolation and Security
-Virtually unlimited scalability.
-
-## Outcome
-
-The main site was published in Jan 2017 and served the business up until September 2020.
+<ProjectDetail
+  label="Outcome"
+  content="<p>
+  The main site was published in Jan 2017 and served the business up until September 2020.
 Live for three years, seven months, and 22 days, gathered tremendous positive feedback and almost doubled its audience, getting closer to 250k/monthly users.
+</p>"
+/>
 
 Performance
 
@@ -120,3 +181,5 @@ New Users
 | 2020 | 243,369\* |
 
 \*projection for the entire year based on data from Jan 2020 to Sept 2020
+
+The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.

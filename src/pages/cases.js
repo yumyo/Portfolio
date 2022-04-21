@@ -7,11 +7,11 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
 
 const ListItem = tw.div`
-mb-20
+mb-24
 `
 
 const Title = tw.p`
-text-2xl font-medium mt-2
+text-xl font-medium mt-2
 `
 
 // const CasesLayout = tw.div``
@@ -45,7 +45,7 @@ const Cases = ({ data, transitionStatus }) => {
   }, [transitionStatus])
 
   return (
-    <div className={`anim-case opacity-0 ${CasesLayout}`}>
+    <div className={`anim-case opacity-0 ${CasesLayout} lg:mt-k3v`}>
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink
@@ -66,11 +66,13 @@ const Cases = ({ data, transitionStatus }) => {
               alt={childMdx.frontmatter.title}
             />
           </TransitionLink>
-          <div className="mx-auto w-k8 md:w-full">
-            <Title>{childMdx.frontmatter.title}</Title>
-            <p className="mb-2 max-w-prose">
-              {childMdx.frontmatter.description}
-            </p>
+          <div className="mx-auto w-k8 md:w-full flex flex-row justify-between items-center">
+            <div className="">
+              <Title>{childMdx.frontmatter.title}</Title>
+              <p className="max-w-prose mb-0">
+                {childMdx.frontmatter.description}
+              </p>
+            </div>
             {/* <List>
             {childMdx.frontmatter.tags
               ? childMdx.frontmatter.tags.map((tag, index) => {
@@ -83,21 +85,23 @@ const Cases = ({ data, transitionStatus }) => {
                 })
               : null}
           </List> */}
-            <TransitionLink
-              className={`mt-4 inline-block ${GhostButton}`}
-              partiallyActive={true}
-              activeClassName="active"
-              to={`${childMdx.slug}`}
-              exit={{
-                length: 0.5,
-              }}
-              entry={{
-                appearAfter: 0.5,
-                length: 0.5,
-              }}
-            >
-              View Case
-            </TransitionLink>
+            <div className="">
+              <TransitionLink
+                className={`mt-4 inline-block ${GhostButton}`}
+                partiallyActive={true}
+                activeClassName="active"
+                to={`${childMdx.slug}`}
+                exit={{
+                  length: 0.5,
+                }}
+                entry={{
+                  appearAfter: 0.5,
+                  length: 0.5,
+                }}
+              >
+                View Case
+              </TransitionLink>
+            </div>
           </div>
         </ListItem>
       ))}

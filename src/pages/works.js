@@ -7,11 +7,11 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
 
 const ListItem = tw.div`
-mb-20
+mb-24
 `
 
 const Title = tw.p`
-text-2xl font-medium mt-2
+text-xl font-medium mt-2
 `
 
 const WorksLayout = tw.div`mx-auto w-6/12 mt-k2v`
@@ -38,7 +38,7 @@ const Works = ({ data, transitionStatus }) => {
     }
   }, [transitionStatus])
   return (
-    <div className={`anim-works opacity-0 ${CasesLayout}`}>
+    <div className={`anim-works opacity-0 ${CasesLayout} lg:mt-k3v`}>
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink
@@ -57,25 +57,34 @@ const Works = ({ data, transitionStatus }) => {
               alt={childMdx.frontmatter.title}
             />
           </TransitionLink>
-          <Title>{childMdx.frontmatter.title}</Title>
-          <p>{childMdx.frontmatter.description}</p>
-          <TransitionLink
-            exit={{
-              length: 0.5,
-            }}
-            entry={{ length: 0.5, appearAfter: 0.5 }}
-            className={`mt-4 inline-block ${GhostButton}`}
-            to={`${childMdx.slug}`}
-          >
-            View Project
-          </TransitionLink>
-          {/* <List>
+          <div className="mx-auto w-k8 md:w-full flex flex-row justify-between items-center">
+            <div className="">
+              <Title>{childMdx.frontmatter.title}</Title>
+              <p className="max-w-prose mb-0">
+                {childMdx.frontmatter.description}
+              </p>
+            </div>
+            <div className="">
+              <TransitionLink
+                exit={{
+                  length: 0.5,
+                }}
+                entry={{ length: 0.5, appearAfter: 0.5 }}
+                partiallyActive={true}
+                className={`mt-4 inline-block ${GhostButton}`}
+                to={`${childMdx.slug}`}
+              >
+                View Project
+              </TransitionLink>
+            </div>
+            {/* <List>
             {childMdx.frontmatter.tags
               ? childMdx.frontmatter.tags.map((tag, index) => {
                   return <Tag key={index}>{tag}</Tag>
                 })
               : null}
           </List> */}
+          </div>
         </ListItem>
       ))}
     </div>

@@ -5,8 +5,13 @@ import { gsap } from "gsap"
 import ReactHtmlParser from "react-html-parser"
 import moment from "moment"
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
-// import { PageDefault } from "../components/theme"
-// import tw from "twin.macro"
+// Custom Component
+
+import {
+  Project_Detail,
+  Project_Detail_Label,
+  Project_Detail_Content,
+} from "../components/theme"
 
 const ProjectTemplate = ({
   transitionStatus,
@@ -16,6 +21,7 @@ const ProjectTemplate = ({
       embeddedImagesRemote,
       frontmatter: {
         title,
+        embeddedImagesLocal,
         template,
         profile,
         services,
@@ -29,15 +35,12 @@ const ProjectTemplate = ({
     },
   },
 }) => {
-  // const CSVServices = services.split(",").join(", ")
-  // const ProjectLayout = tw.div`
-  // mx-auto w-6/12 mt-k3v
-  // `
-  // const year = date.slice(-4)
   let projectDate = moment(date).format("MMM YYYY")
   const shortcodes = { getImage, GatsbyImage, StaticImage }
-  // console.log("embeddedImagesRemote")
-  // console.log(embeddedImagesRemote)
+  console.log("embeddedImagesRemote")
+  console.log(embeddedImagesRemote)
+  console.log("embeddedImagesLocal")
+  console.log(embeddedImagesLocal)
   useEffect(() => {
     gsap.to(".anim-project", {
       autoAlpha: 1,
@@ -51,47 +54,44 @@ const ProjectTemplate = ({
       gsap.to(".anim-project", { autoAlpha: 0, duration: 0.25, delay: 0 })
     }
   }, [transitionStatus])
+  // 2xl:w-k6
   return (
-    // ${PageDefault}
     <div className={`anim-project opacity-0 mb-k1v`}>
       <GatsbyImage
-        className="mx-auto md:w-k7 lg:w-k6 mt-k2v"
+        className="mx-auto md:w-k8 lg:w-k7 xl:w-k7  mt-k2v md:mt-k2v lg:mt-k3v"
         image={getImage(banner)}
         alt={title}
       />
-      <div className="mx-auto w-k7 xs:w-k8 md:w-k5 mt-k1 flex flex-row items-baseline">
-        <div className="mt-0 w-k25 pl-4">Project</div>
-        <div className=" w-k7">
+      <div className={`${Project_Detail} mt-k1`}>
+        <div className={`${Project_Detail_Label}`}>Project</div>
+        <div className={`${Project_Detail_Content}`}>
           <h1 className="leading-none text-2xl pl-4 ">{`${title}`}</h1>
-          <p className=" mt-8 pl-4 pr-4">{`${mission}`}</p>
+          <p className="text-base mt-8 pl-4 pr-4">{`${mission}`}</p>
         </div>
       </div>
-      <div className="mx-auto w-k7 xs:w-k8 md:w-k5 mt-10 flex flex-row items-baseline">
-        <div className="mt-0 w-k25 pl-4">Year</div>
-        <div className=" w-k7">
-          {" "}
-          <p className=" mt-4 pl-4">{`${projectDate}`}</p>
+      <div className={`${Project_Detail} mt-10`}>
+        <div className={`${Project_Detail_Label}`}>Year</div>
+        <div className={`${Project_Detail_Content}`}>
+          <p className="text-base mt-4 pl-4">{`${projectDate}`}</p>
         </div>
       </div>
-      <div className="mx-auto w-k7 xs:w-k8 md:w-k5 mt-16 flex flex-row items-baseline">
-        <div className="mt-0 w-k25 pl-4">Activities</div>
-        <div className=" w-k7">
+      <div className={`${Project_Detail} mt-16`}>
+        <div className={`${Project_Detail_Label}`}>Activities</div>
+        <div className={`${Project_Detail_Content}`}>
           <p className="text-base pl-4 pr-4">{`${services.join(", ")}`}</p>
         </div>
       </div>
-      <div className="mx-auto w-k7 xs:w-k8 md:w-k5 mt-16 flex flex-row items-baseline">
-        <div className="mt-0 w-k25 pl-4">Client</div>
-        <div className=" w-k7 pl-4 pr-4">
-          {/* <p className="text-base">{`${client}`}</p> */}
+      <div className={`${Project_Detail} mt-16`}>
+        <div className={`${Project_Detail_Label}`}>Client</div>
+        <div className={`${Project_Detail_Content} pl-4 pr-4`}>
           <p className="text-base">{ReactHtmlParser(profile)}</p>
         </div>
       </div>
-
-      <div className="mx-auto w-k7 xs:w-k8 md:w-k5 mt-k1 pl-4 pr-4">
+      <div className=" mt-k1 project-content">
         <MDXProvider components={shortcodes}>
           <MDXRenderer
             remoteImages={embeddedImagesRemote}
-            // localImages={embeddedImagesLocal}
+            localImages={embeddedImagesLocal}
           >
             {body}
           </MDXRenderer>

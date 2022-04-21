@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react"
 import { Link } from "gatsby"
 // import ContactForm from './ContactForm'
 import tw, { styled, css } from "twin.macro"
-import { gsap, Power4 } from "gsap"
+import { gsap, Power4, Power2 } from "gsap"
 
 const MenuLink = tw(Link)`
   text-xl leading-loose font-light
@@ -14,9 +14,6 @@ const SubLink = tw.p`
 
 const Navigation = styled.div([
   css`
-    /* display:none; */
-    /* opacity: 1;
-    visibility: hidden; */
     opacity: 0;
     visibility: hidden;
     nav {
@@ -25,28 +22,15 @@ const Navigation = styled.div([
         opacity: 0;
       }
     }
-    /*
-    &.is-active {
-      opacity: 1;
-      visibility: visible;
-
-      nav {
-        li {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-    }
-    */
   `,
 ])
 
 export default function Fullnav(props) {
   const menuTL = useRef(null)
   const navRef = useRef(null)
-  const m = gsap.utils.selector(navRef)
 
   useEffect(() => {
+    const m = gsap.utils.selector(navRef)
     // console.log("props.isActive")
     // console.log(props.isActive)
     // console.log("navRef")
@@ -66,7 +50,7 @@ export default function Fullnav(props) {
         stagger: {
           each: 0.1,
           from: 0,
-          grid: "auto",
+          ease: Power2.inOut,
         },
       })
       .reverse()

@@ -7,6 +7,7 @@ module.exports = {
     fontFamily: {
       sans: ["IBM Plex Sans"],
     },
+
     fontSize: {
       xxs: ["0.7058rem", { lineHeight: "1.618" }],
       xs: ["0.8235rem", { lineHeight: "1.618" }],
@@ -29,6 +30,27 @@ module.exports = {
       "2xl": "1536px",
       "3xl": "1920px",
     },
+    // aspectRatio: {
+    //   auto: "auto",
+    //   square: "1 / 1",
+    //   video: "16 / 9",
+    //   1: "1",
+    //   2: "2",
+    //   3: "3",
+    //   4: "4",
+    //   5: "5",
+    //   6: "6",
+    //   7: "7",
+    //   8: "8",
+    //   9: "9",
+    //   10: "10",
+    //   11: "11",
+    //   12: "12",
+    //   13: "13",
+    //   14: "14",
+    //   15: "15",
+    //   16: "16",
+    // },
     // colors: {
     //   transparent: 'transparent',
     //   current: 'currentColor',
@@ -267,9 +289,15 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require("@tailwindcss/aspect-ratio"),
+    // require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/forms"),
   ],
+  purge: {
+    options: {
+      safelist: ["text-center"],
+    },
+    // ...
+  },
 }
 // "IBM Plex Sans"
 /*

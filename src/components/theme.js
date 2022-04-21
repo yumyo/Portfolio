@@ -2,7 +2,8 @@
 
 // Layout
 export const PageDefault = ""
-export const CasesLayout = "mx-auto md:w-k6 3xl:w-6/12 mt-k3v md:mt-k2v"
+// 3xl:w-6/1
+export const CasesLayout = "mx-auto md:w-k8 lg:w-k7 xl:w-k6 2 mt-k3v md:mt-k2v"
 // Menu
 export const LayoutLinks = "py-2 px-4 text-xs"
 export const Lead = "text-base xl:text-lg"
@@ -22,5 +23,10 @@ export const BottomPos = "2xl:mb-0 bottom-k0 2xl:bottom-k1"
 export const LeftSide = "block w-full md:w-k2"
 export const LeftContent =
   "block md:pl-8 xl:pl-16 2xl:pl-4 w-full md:w-k75 2xl:pr-k1 mb-7"
-// COntent
+// Content
 export const Job = "mb-7"
+// Project Page
+export const Project_Detail =
+  "flex flex-row items-baseline mx-auto w-k7 xs:w-k8 md:w-k7 lg:w-k6 xl:w-k5"
+export const Project_Detail_Label = "mt-0 w-k25 pl-4"
+export const Project_Detail_Content = "w-k100 "
