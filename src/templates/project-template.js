@@ -5,7 +5,6 @@ import { gsap } from "gsap"
 import ReactHtmlParser from "react-html-parser"
 import moment from "moment"
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
-// Custom Component
 
 import {
   Project_Detail,
@@ -54,11 +53,12 @@ const ProjectTemplate = ({
       gsap.to(".anim-project", { autoAlpha: 0, duration: 0.25, delay: 0 })
     }
   }, [transitionStatus])
+
   // 2xl:w-k6
   return (
     <div className={`anim-project opacity-0 mb-k1v`}>
       <GatsbyImage
-        className="mx-auto md:w-k8 lg:w-k7 xl:w-k7  mt-k2v md:mt-k2v lg:mt-k3v"
+        className="mx-auto md:w-k8 lg:w-k7 xl:w-k7 mt-k2v md:mt-k2v lg:mt-k3v"
         image={getImage(banner)}
         alt={title}
       />

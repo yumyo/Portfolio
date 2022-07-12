@@ -9,79 +9,91 @@ template: cases
 date: "2019-06-03"
 client: Raconteur Media Ltd.
 profile: "<strong>Raconteur Media</strong> is an award-winning publishing house and content marketing agency based in London with the freshest ideas and most decisive momentum in the market. <br /><br />From printed reports in The Times and The Sunday Times to digital publishing and demand generation solutions, Raconteur helps B2B brands stand out as thought leaders, differentiate themselves from the competition and deliver results."
-published: true
 banner: ../images/media/wide-banner-raconteur.jpg
 video:
 embeddedImagesLocal:
+  - ../images/media/about-g.png
 embeddedImagesRemote:
-  - https://res.cloudinary.com/yumyo/image/upload/v1646741663/media/folio/prj/rac/raconteur-mindmap.png
-  - https://res.cloudinary.com/yumyo/image/upload/v1647279419/media/folio/prj/rac/screens/all-screens.jpg
-  - https://res.cloudinary.com/yumyo/image/upload/v1646758491/media/folio/prj/rac/screens/desktop-adapted_0005_Layer_9.jpg
+  - https://res.cloudinary.com/yumyo/image/upload/c_scale,w_1920/v1646741663/media/folio/prj/rac/raconteur-mindmap.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1651059777/media/folio/prj/rac/screens/all-screens-1920-1140.jpg
+  - https://res.cloudinary.com/yumyo/image/upload/v1654444012/media/folio/prj/rac/screens/cp-cover-opt.jpg
   - https://res.cloudinary.com/yumyo/image/upload/v1647034109/media/folio/prj/rac/desktop-wireframes-2560.jpg
-  - https://res.cloudinary.com/yumyo/image/upload/v1647034104/media/folio/prj/rac/desktop-qireframes-1920.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1647034104/media/folio/prj/rac/desktop-qireframes-1920-5-4.png
   - https://res.cloudinary.com/yumyo/image/upload/media/folio/prj/rac/mobile-qireframes-1920.png
   - https://res.cloudinary.com/yumyo/image/upload/v1647280085/media/folio/prj/rac/screens/mobile/mobile-screen-2.jpg
   - https://res.cloudinary.com/yumyo/image/upload/v1647279421/media/folio/prj/rac/screens/home-1440.png
+  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/v1647279421/media/folio/prj/rac/screens/home-1440.png
+  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/media/folio/prj/rac/screens/single-art-1440.png
+  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/media/folio/prj/rac/screens/Report-D_I.jpg
+  - https://res.cloudinary.com/yumyo/image/upload/v1650987786/media/folio/prj/rac/newspaper-2022-1024.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1647279417/media/folio/prj/rac/screens/all-home.png
+  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/v1651513345/media/folio/prj/rac/screens/author.png
+  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/v1651513377/media/folio/prj/rac/screens/Screen_Shot_2022-05-01_at_19.58.12-fullpage.png
+  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/v1651513345/media/folio/prj/rac/screens/author.png
+published: true
 ---
 
 import ProjectDetail from "../components/ProjectDetail"
 import { DeviceFrameset } from "../components/DeviceFrameSet/DeviceFrameset"
+import { ParallaxRouteUpdate } from "../components/parallax-route-update"
+import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-parallax"
 
-<img
-  className="mt-8 inline-image pl-8 pr-8 opacity-20"
-  src={"/thetimes-symbol-ill.svg"}
-  alt="Logo"
+<ParallaxRouteUpdate />
+
+<Parallax speed={-15}>
+  <img
+    className="inline-image pl-8 pr-8 opacity-50 text-center max-w-4xl"
+    src={"/thetimes-symbol-ill.svg"}
+    alt="Logo"
+  />
+</Parallax>
+
+<Parallax speed={15}>
+  <div className="pr-4 pl-4 ml-4 text-center">
+    <GatsbyImage
+      alt="Raconteur Special Reports in thr Times and Sunday Times"
+      layout="fixed"
+      className="pippo"
+      formats={["png"]}
+      image={getImage(props.remoteImages[11])}
+    />
+  </div>
+</Parallax>
+
+<ProjectDetail label="" content="" />
+
+<ProjectDetail
+  label="Process and Insights"
+  content="<p>My work started by identifying three main areas or critical aspects of raconteur.net to be placed at the bottom of the redesign: Content, Design, and Technology:</p>
+  <br />
+  <br />
+  <p>Content</p>
+  <br /><ul><li>Analyse the content structure and define a new information architecture.</li><li>Leverage the power of storytelling.</li><li>Define clear goals for each significant target group.</li></ul>
+  <br />
+  <br />
+  <p>Design</p>
+  <br />
+  <ul><li>Channel the value of the design found in the printed products lineup</li><li>Account for subtle variation according to audience/objectives</li><li>Build Design System, to act asd shared vocabulary and living library of Raconteur styles &amp; patterns</li></ul>
+  <br />
+  <br />
+  <p>Technology</p>
+  <br />
+  <ul><li>Rebuild for high performance and mobile-first</li><li>Progressively enhance the experience for desktop and modern browsers</li><li>Move to a cloud infrastructure and define an efficient DevOps workflow</li></ul>"
 />
 
 <img
-  className="mt-8 inline-image pl-8 pr-8"
+  className="mt-32 mb-24 inline-image pl-8 pr-8 text-center max-w-2xl"
   src={"/focus-areas.svg"}
-  alt="Logo"
+  alt="Focus Area"
 />
 
 <ProjectDetail
-  label="Process and Insight"
-  content="<p>My work started by identifying three main areas or critical aspects of raconteur.net to be placed at the bottom of the redesign: Content, Design, and Technology. <br /><br />We explored issues, possible solutions, and general considerations on the related topics for each aspect: Content, Design and Technology.</p>"
+  label="A Reader Oriented IA"
+  className="banana"
+  content="<p>I used Google Analytics to identify the best performing content, common entrance and exit pages and, recurring patterns in the user navigation flow.<br /><br />Together with the head of marketing, we later compared the evidence gathered with the current data on the website. This process led to deciding to shift the pivot from 'products' to 'content' to develop a structure around our reader's interests.<br /><br />We then merged our findings with an Extensive Competitive analysis to gather valuable insights on content and features and better understand Raconteur's unique selling proposition.s</p>"
 />
 
-<ProjectDetail
-  label="Content"
-  content="<ul><li>Analyse the content structure and define a new information architecture.</li><li>Leverage the power of storytelling.</li><li>Define clear goals for each significant target group.</li></ul>"
-/>
-
-<div className=" pr-4 pl-4 ml-4 mt-16 text-center">
-  <DeviceFrameset device="iPhone 5s" color="black" className="">
-    <GatsbyImage
-      alt="green doggo"
-      placeholder="blurred"
-      layout="fixed"
-      image={getImage(props.remoteImages[6])}
-    />
-  </DeviceFrameset>
-</div>
-
-<div className=" pr-4 pl-4 ml-4 mt-16 text-center">
-  <DeviceFrameset device="MacBook Pro" color="black">
-    <GatsbyImage
-      alt="green doggo"
-      placeholder="blurred"
-      layout="fixed"
-      image={getImage(props.remoteImages[7])}
-    />
-  </DeviceFrameset>
-</div>
-
-<ProjectDetail
-  label="Design"
-  content="<ul><li>Channel the value of the design found in the printed products lineup</li><li>Account for subtle variation according to audience/objectives</li><li>Build Design System, to act asd shared vocabulary and living library of Raconteur styles &amp; patterns</li></ul>"
-/>
-
-<ProjectDetail
-  label="Technology"
-  content="<ul><li>Rebuild for high performance and mobile-first</li><li>Progressively enhance the experience for desktop and modern browsers</li><li>Move to a cloud infrastructure and define an efficient DevOps workflow</li></ul>"
-/>
-
-<div className="pr-4 pl-4">
+<div className="pr-4 pl-4 mt-24 mb-32 text-center">
   <GatsbyImage
     alt="green doggo"
     placeholder="blurred"
@@ -90,63 +102,123 @@ import { DeviceFrameset } from "../components/DeviceFrameSet/DeviceFrameset"
   />
 </div>
 
-<ProjectDetail
-  label="A Reader Oriented IA"
-  content="<p>I used Google Analytics to identify the best performing content, common entrance and exit pages and, recurring patterns in the user navigation flow.<br /><br />Together with the head of marketing, we later compared the evidence gathered with the current data on the website. This process led to deciding to shift the pivot from 'products' to 'content' to develop a structure around our reader's interests.<br /><br />We then merged our findings with an Extensive Competitive analysis to gather valuable insights on content and features and better understand Raconteur's unique selling proposition.</p>"
-/>
-
-<div className="mt-16">
-  <GatsbyImage
-    alt="green doggo"
-    placeholder="blurred"
-    layout="fixed"
-    image={getImage(props.remoteImages[4])}
+<Parallax speed={5}>
+  <ProjectDetail
+    label="Wireframings"
+    content="<p>The wireframes were created in Sketch and then shared in InVision, to gather comments and further iterate each board.<br />I decided to use a monochrome style (one colour against white) to obtain a straightforward form of wireframing that matches its function. You can read more about it on the UX Movement website at this link: <a href='https://uxmovement.com/wireframes/why-the-best-wireframe-style-is-no-style/' target='_blank' title='UX Movement: “Why the Best Wireframe Style Is No Style'>“Why the Best Wireframe Style Is No Style.”</a></p>
+    <p> The process continued “wireframing in the browser”, outlining the website's structure, content and features, with actual code and live dynamic data. Then progressively starting to add semantics, ARIA rules and schema metadata relevant to search engines and assistive devices. A crucial step to ensure compliance with content discovery, consumption and syndication's web services.</p>"
   />
-</div>
+</Parallax>
 
-<ProjectDetail
-  label="Wireframings"
-  content="<p>The wireframes were created in Sketch and then shared in InVision, to gather comments and further iterate each board.</p><p>I decided to use a monochrome style (one colour against white) to obtain a straightforward form of wireframing that matches its function. You can read more about it on the UX Movement website at this link: <a href='https://uxmovement.com/wireframes/why-the-best-wireframe-style-is-no-style/' target='_blank' title='UX Movement: “Why the Best Wireframe Style Is No Style'>“Why the Best Wireframe Style Is No Style.”</a></p>"
-/>
-
-<div className="mt-16">
-  <GatsbyImage
-    alt="green doggo"
-    placeholder="blurred"
-    layout="fixed"
-    image={getImage(props.remoteImages[5])}
-  />
-</div>
-
-<ProjectDetail
-  label=""
-  content="<p> The next step was moving to “wireframing in the browser” to continue the process of outlining the website's structure, content and features, with actual code and live dynamic data. At this stage, I started adding semantics, ARIA rules and schema metadata relevant to search engines and assistive devices. These steps are crucial to ensure compliance with content discovery, consumption and syndication's web services.</p>"
-/>
-
-<ProjectDetail
-  label="Meaningful Colors"
-  content="<p>
-  Slicing the spectrum into eight hues to differentiate the primary topics with distinctive colours, loosely following some basic principles of colour psychology common to our European/Western heritage:
-  The last colour iteration aimed to address visual imparities, with rich tonal variations and correction for UI design.
-</p>"
-/>
-
-<div className="mx-auto w-k7 block mt-8 mb-8">
-  <div>
-    <GatsbyImage
-      alt="green doggo"
-      placeholder="blurred"
-      layout="fixed"
-      image={getImage(props.remoteImages[2])}
-    />
+<div class="flex flex-wrap overflow-hidden w-full max-w-screen-3xl items-center mx-auto my-32">
+  <div class="w-full overflow-hidden sm:my-5 sm:px-5 xl:w-1/2 ">
+    <Parallax speed={5}>
+      <div>
+        <div className="text-center aspect-w-16 aspect-h-9">
+          <img
+            className="h-auto"
+            src="https://res.cloudinary.com/yumyo/image/upload/c_crop,g_center,h_1440,y_0/c_scale,w_920/v1650963563/media/folio/prj/rac/desktop-qireframes-1920-5-4.png"
+          />
+        </div>
+      </div>
+    </Parallax>
+  </div>
+  <div class="w-full overflow-hidden sm:my-5 sm:px-5 sm:w-1/2 ">
+    <Parallax speed={10}>
+      <div>
+        <div className="text-center aspect-w-16 aspect-h-9">
+         
+          <img
+            className="h-auto"
+            src="https://res.cloudinary.com/yumyo/image/upload/c_crop,g_center,h_1440,y_0/c_scale,w_920/v1650963562/media/folio/prj/rac/mobile-qireframes-192-5-4.png"
+          />
+        </div>
+      </div>
+    </Parallax>
   </div>
 </div>
 
 <ProjectDetail
   label="Final Design"
   content="<p>
+  Slicing the spectrum into eight hues to differentiate the primary topics with distinctive colours, loosely following some basic principles of colour psychology common to our European/Western heritage:
+  The last colour iteration aimed to address visual imparities, with rich tonal variations and correction for UI design.
 </p>"
 />
+
+<div className="mx-auto w-k7 block mt-32 mb-8 text-center">
+  <div className="text-center  overflow-hidden aspect-w-16 aspect-h-9">
+    <div>
+      <Parallax speed={-15}>
+        <GatsbyImage
+          alt="All site templates"
+          layout="fixed"
+          image={getImage(props.remoteImages[1])}
+        />
+      </Parallax>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-wrap  w-full max-w-screen-3xl items-center mx-auto mt-16 mb-32">
+  <div class="w-full  lg:w-1/3">
+    <div className=" sm:my-5 sm:px-5">
+      <Parallax speed={30}>
+        <GatsbyImage
+          alt="Home Page"
+          placeholder="blurred"
+          layout="fixed"
+          className=""
+          image={getImage(props.remoteImages[8])}
+        />
+      </Parallax>
+    </div>
+  </div>
+  <div class="w-full  lg:w-1/3">
+    <div className=" sm:my-5 sm:px-5">
+      <Parallax speed={22}>
+        <GatsbyImage
+          alt="A Special Report"
+          placeholder="blurred"
+          layout="fixed"
+          className=""
+          image={getImage(props.remoteImages[10])}
+        />
+      </Parallax>
+    </div>
+  </div>
+  <div class="w-full  lg:w-1/3">
+    <div className=" sm:my-5 sm:px-5">
+      <Parallax speed={14}>
+        <GatsbyImage
+          alt="An article"
+          placeholder="blurred"
+          layout="fixed"
+          className=""
+          image={getImage(props.remoteImages[9])}
+        />
+      </Parallax>
+    </div>
+  </div>
+</div>
+
+<ProjectDetail
+  label="A different Home every day"
+  content="<p>
+  Slicing the spectrum into eight hues to differentiate the primary topics with distinctive colours, loosely following some basic principles of colour psychology common to our European/Western heritage:
+  The last colour iteration aimed to address visual imparities, with rich tonal variations and correction for UI design.
+</p>"
+/>
+
+<div className="mx-auto w-k7 block mt-32 mb-8 text-center">
+  <Parallax speed={15}>
+    <GatsbyImage
+      alt="All site templates"
+      layout="fixed"
+      image={getImage(props.remoteImages[12])}
+    />
+  </Parallax>
+</div>
 
 <ProjectDetail
   label="Hosting and Dev Ops"
@@ -169,7 +241,7 @@ HotJar
 Total Pageviews
 12,765,007
 
-New Users
+New Users -
 7,038,019
 
 | Year | Users     |
@@ -180,6 +252,22 @@ New Users
 | 2019 | 201,774   |
 | 2020 | 243,369\* |
 
-\*projection for the entire year based on data from Jan 2020 to Sept 2020
+projection for the entire year based on data from Jan 2020 to Sept 2020
+
+The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
+
+The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
+
+The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
+
+The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
+
+The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
+
+The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
+
+The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
+
+The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
 
 The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.

@@ -49,7 +49,7 @@ export const query = graphql`
         banner {
           childImageSharp {
             gatsbyImageData(
-              placeholder: BLURRED
+              placeholder: DOMINANT_COLOR
               layout: FULL_WIDTH
               formats: [AUTO, WEBP, AVIF]
             )
@@ -57,7 +57,7 @@ export const query = graphql`
         }
         embeddedImagesLocal {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
           }
         }
         video

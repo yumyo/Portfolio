@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
-const path = require('path')
+const path = require("path")
 
 module.exports = {
   siteMetadata: {
@@ -80,15 +80,24 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          webpOptions: {
+            lossless: true,
+          },
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
         postCssPlugins: [
           require("tailwindcss"),
-          require("./tailwind.config.js"), 
+          require("./tailwind.config.js"),
         ],
         sassOptions: {
           precision: 6,
@@ -99,18 +108,21 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        printRejected: true, // Print removed selectors and processed file names
-        // develop: true, // Enable while using `gatsby develop`
-        tailwind: true, // Enable tailwindcss support
-        // whitelist: ['whitelist'], // Don't remove this selector
-        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+        printRejected: true,
+        content: [
+          path.join(process.cwd(), "src/**/!(*.d).{ts,js,jsx,tsx,md,mdx}"),
+        ],
+        // develop: true,
+        tailwind: true,
+        whitelist: ["aspect-[8/5]", "max-w-2xl", "max-w-4xl"],
+        // ignore: ["styles/"],
         // purgeOnly: ['node_modules/bootstrap']
       },
     },
     `gatsby-plugin-dark-mode`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: `Nicola Giuia Pernice Portfolio`,
         short_name: `Studio Pernice`,
@@ -118,13 +130,13 @@ module.exports = {
         background_color: `#3A3A3B`,
         theme_color: `#fab62d`,
         display: `standalone`,
-        icon: `./src/images/icons/icon-512x512.png`
+        icon: `./src/images/icons/icon-512x512.png`,
       },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: `Exness: Psychology of Trading`,
         short_name: `Exness`,
@@ -133,7 +145,7 @@ module.exports = {
         background_color: `#000000`,
         theme_color: `#FFCF01`,
         display: `standalone`,
-        icon: `./src/images/icons/icon-512x512.png`
+        icon: `./src/images/icons/icon-512x512.png`,
         // https://www.simicart.com/manifest-generator.html/
         // https://github.com/onderceylan/pwa-asset-generator
       },
@@ -141,9 +153,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-transition-link",
       options: {
-          layout: require.resolve(`./src/components/Layout.js`)
-        }
-    }
+        layout: require.resolve(`./src/components/Layout.js`),
+      },
+    },
   ],
 }
-

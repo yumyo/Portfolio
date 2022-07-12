@@ -1,7 +1,8 @@
 const colors = require("tailwindcss/colors")
 
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx,mdx}"],
+  safelist: ["aspect-[8/5]", "max-w-2xl", "max-w-4xl"],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     fontFamily: {
@@ -30,27 +31,28 @@ module.exports = {
       "2xl": "1536px",
       "3xl": "1920px",
     },
-    // aspectRatio: {
-    //   auto: "auto",
-    //   square: "1 / 1",
-    //   video: "16 / 9",
-    //   1: "1",
-    //   2: "2",
-    //   3: "3",
-    //   4: "4",
-    //   5: "5",
-    //   6: "6",
-    //   7: "7",
-    //   8: "8",
-    //   9: "9",
-    //   10: "10",
-    //   11: "11",
-    //   12: "12",
-    //   13: "13",
-    //   14: "14",
-    //   15: "15",
-    //   16: "16",
-    // },
+    aspectRatio: {
+      auto: "auto",
+      square: "1 / 1",
+      video: "16 / 9",
+      1: "1",
+      2: "2",
+      3: "3",
+      4: "4",
+      5: "5",
+      6: "6",
+      7: "7",
+      8: "8",
+      9: "9",
+      10: "10",
+      11: "11",
+      12: "12",
+      13: "13",
+      14: "14",
+      15: "15",
+      16: "16",
+      21: "21",
+    },
     // colors: {
     //   transparent: 'transparent',
     //   current: 'currentColor',
@@ -119,7 +121,7 @@ module.exports = {
           500: "#9E9E9E",
           600: "#7D7D7D",
           700: "#5C5C5C",
-          800: "#3B3B3B",
+          800: "#333333",
           900: "#1c1c1c",
         },
         blush: {
@@ -283,25 +285,41 @@ module.exports = {
         k10v: "96.875vh",
         k100v: "100vh",
       },
+      fluidType: {
+        settings: {
+          fontSizeMin: 1,
+          fontSizeMax: 1.1875,
+          ratioMin: 1.125,
+          ratioMax: 1.33,
+          screenMin: 20,
+          screenMax: 96,
+          unit: "rem",
+          prefix: "fluid-",
+        },
+        values: {
+          xs: [-2, 1.6],
+          sm: [-1, 1.6],
+          base: [0, 1.6],
+          lg: [1, 1.6],
+          xl: [2, 1.5],
+          "2xl": [3, 1.4],
+          "3xl": [4, 1.4],
+          "4xl": [5, 1.4],
+          "5xl": [6, 1.3],
+          "6xl": [7, 1.3],
+          "7xl": [8, 1.25],
+          "8xl": [9, 1.25],
+          "9xl": [10, 1.2],
+        },
+      },
     },
   },
   variants: {
     extend: {},
   },
   plugins: [
-    // require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/forms"),
+    require("tailwindcss-fluid-type"),
   ],
-  purge: {
-    options: {
-      safelist: ["text-center"],
-    },
-    // ...
-  },
 }
-// "IBM Plex Sans"
-/*
-      screens: {
-        'xs': '1600px',
-      },
-*/

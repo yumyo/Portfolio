@@ -49,14 +49,13 @@
     "hamburger-react": "^2.4.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.1",
-    "react-bootstrap": "^1.5.1",
     "react-css-burger": "^0.2.0",
-    "react-device-frameset": "^1.3.1",
     "react-dom": "^17.0.1",
     "react-gsap": "^3.2.1",
     "react-helmet": "^6.1.0",
     "react-html-parser": "^2.0.2",
     "react-intersection-observer": "^8.33.1",
+    "react-scroll-parallax": "^3.0.6",
     "sass": "^1.32.8",
     "styled-components": "^5.2.3",
     "styled-icons": "^10.33.0",
@@ -73,7 +72,8 @@
     "postcss": "^8.4.5",
     "prettier": "2.2.1",
     "react-test-renderer": "^17.0.2",
-    "tailwindcss": "^3.0.7"
+    "tailwindcss": "^3.0.7",
+    "tailwindcss-fluid-type": "^1.3.3"
   },
   "repository": {
     "type": "git",
