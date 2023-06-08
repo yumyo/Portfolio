@@ -36,23 +36,7 @@ const IndexPage = ({ transitionStatus }) => {
     <div className="flex flex-col justify-center  ">
       <div className="anim-home opacity-0 mx-auto w-k7 xs:w-k8 md:w-k5 mt-k5v -translate-y-1/2">
         <Title>
-          Hi, my name is Nicola&nbsp;Giulia&nbsp;Pernice <br /> I am a Digital
-          Product Designer and Creative&nbsp;Developer.
-        </Title>
-        <div className={Lead}>
-          Here you can scroll through my{" "}
-          <TransitionLink
-            to="/cases"
-            exit={{
-              length: 0.5,
-            }}
-            entry={{ length: 0.5 }}
-            className=""
-            activeClassName="text-violet-600 dark:text-violet-400"
-          >
-            case-histories
-          </TransitionLink>
-          , know more{" "}
+          Hi, my name is{" "}
           <TransitionLink
             to="/about"
             exit={{
@@ -62,9 +46,36 @@ const IndexPage = ({ transitionStatus }) => {
             className=""
             activeClassName="text-violet-600 dark:text-violet-400"
           >
-            about me{" "}
+            Giulia&nbsp;Nicola&nbsp;Pernice
           </TransitionLink>
+          <br /> I am a Digital Product Engineer currently based in London.
+        </Title>
+        <div className={Lead}>
+          Please take a look at a collection of{" "}
+          <TransitionLink
+            to="/cases"
+            exit={{
+              length: 0.5,
+            }}
+            entry={{ length: 0.5 }}
+            className=""
+            activeClassName="text-violet-600 dark:text-violet-400"
+          >
+            my recent work
+          </TransitionLink>{" "}
           and{" "}
+          <TransitionLink
+            to="/cases"
+            exit={{
+              length: 0.5,
+            }}
+            entry={{ length: 0.5 }}
+            className=""
+            activeClassName="text-violet-600 dark:text-violet-400"
+          >
+            case histories,
+          </TransitionLink>
+          or feel free to{" "}
           <TransitionLink
             to="/contact"
             exit={{
@@ -75,8 +86,8 @@ const IndexPage = ({ transitionStatus }) => {
             activeClassName="text-violet-600 dark:text-violet-400"
           >
             get&nbsp;in&nbsp;touch{" "}
-          </TransitionLink>
-          to discuss your awesome idea!
+          </TransitionLink>{" "}
+          if you want to discuss your next project.
         </div>
       </div>
     </div>

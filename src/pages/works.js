@@ -38,7 +38,7 @@ const Works = ({ data, transitionStatus }) => {
     }
   }, [transitionStatus])
   return (
-    <div className={`anim-works opacity-0 ${CasesLayout} lg:mt-k3v`}>
+    <div className={`anim-works opacity-0 ${CasesLayout} lg:mt-k3v mb-k2v`}>
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink

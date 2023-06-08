@@ -2,11 +2,12 @@ import React, { useEffect } from "react"
 import { graphql, Link as GatsbyLink } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
+import { GhostButton } from "../components/theme"
 import { gsap } from "gsap"
 import tw from "twin.macro"
 
 const ListItem = tw.div`
-mb-4
+mb-24
 `
 
 const Title = tw.p`
@@ -44,7 +45,7 @@ const Labs = ({ data, transitionStatus }) => {
     }
   }, [transitionStatus])
   return (
-    <LabsLayout className="anim-labs opacity-0">
+    <LabsLayout className="anim-labs opacity-0 lg:mt-k3v mb-k2v">
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink
@@ -65,16 +66,39 @@ const Labs = ({ data, transitionStatus }) => {
               alt={childMdx.frontmatter.title}
             />
           </TransitionLink>
-          <Title>{childMdx.frontmatter.title}</Title>
-          <p>{childMdx.frontmatter.description}</p>
-          <GatsbyLink to={`${childMdx.slug}`}>Read More</GatsbyLink>
-          <List>
-            {childMdx.frontmatter.tags
-              ? childMdx.frontmatter.tags.map((tag, index) => {
-                  return <Tag key={index}>{tag}</Tag>
-                })
-              : null}
-          </List>
+          <div className="mx-auto w-k8 md:w-full flex flex-row justify-between items-center">
+            <div className="">
+              <Title>{childMdx.frontmatter.title}</Title>
+              <p className="mb-0">
+                {childMdx.frontmatter.description}{" "}
+                {/* <List>
+                  {childMdx.frontmatter.tags
+                    ? childMdx.frontmatter.tags.map((tag, index) => {
+                        return (
+                          <Tag key={index}>
+                            <span className="text-gray-500">#</span>
+                            {tag}
+                          </Tag>
+                        )
+                      })
+                    : null}
+                </List> */}
+              </p>
+            </div>
+            <div className="">
+              <TransitionLink
+                exit={{
+                  length: 0.5,
+                }}
+                entry={{ length: 0.5, appearAfter: 0.5 }}
+                partiallyActive={true}
+                className={`mt-4 inline-block ${GhostButton}`}
+                to={`${childMdx.slug}`}
+              >
+                View Project
+              </TransitionLink>
+            </div>
+          </div>
         </ListItem>
       ))}
     </LabsLayout>

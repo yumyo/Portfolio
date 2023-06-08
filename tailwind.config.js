@@ -312,6 +312,9 @@ module.exports = {
           "9xl": [10, 1.2],
         },
       },
+      maxWidth: {
+        readability: "75ch",
+      },
     },
   },
   variants: {

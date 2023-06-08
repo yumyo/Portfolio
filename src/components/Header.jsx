@@ -81,7 +81,7 @@ export default function Header(props) {
           small ? "opacity-0" : "opacity-1"
         }`}
       >
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </CtrlTC>
       <div
         className={`hidden fixed lg:block z-40 text-right md:-mr-2 ${TopPos} ${RightPos}`}
@@ -103,7 +103,7 @@ export default function Header(props) {
         <MenuLink
           to="/works"
           exit={{
-            length: 0.5,
+            length: 0,
           }}
           entry={{ length: 0.5 }}
           className="block"
@@ -113,7 +113,7 @@ export default function Header(props) {
         >
           Works Archive
         </MenuLink>
-        <MenuLink
+        {/* <MenuLink
           to="/labs"
           exit={{
             length: 0.5,
@@ -122,28 +122,31 @@ export default function Header(props) {
           className="block"
           activeClassName="active"
           partiallyActive={true}
+          preventScrollJump
         >
           Creative Labs
-        </MenuLink>
+        </MenuLink> */}
         <MenuLink
           to="/about/"
           exit={{
-            length: 0.5,
+            length: 0,
           }}
           entry={{ length: 0.5 }}
           className="block"
           activeClassName="active"
+          preventScrollJump
         >
           About
         </MenuLink>
         <TransitionLink
           to="/cv/"
           exit={{
-            length: 0.5,
+            length: 0,
           }}
           entry={{ length: 0.5 }}
           className="block"
           activeClassName="active"
+          preventScrollJump
         >
           CV
         </TransitionLink>

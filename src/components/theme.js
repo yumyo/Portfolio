@@ -20,9 +20,9 @@ export const MidPos = "top-1/2"
 export const RightPos = "right-k2 xs:right-k1 " // lg:right-k0 2xl:right-k1
 export const BottomPos = "2xl:mb-0 bottom-k0 2xl:bottom-k1"
 // Grid
-export const LeftSide = "block w-full md:w-k2"
+export const LeftSide = "block w-full md:w-k25"
 export const LeftContent =
-  "block md:pl-8 xl:pl-16 2xl:pl-4 w-full md:w-k75 2xl:pr-k1 mb-7"
+  "block md:pl-8 xl:pl-16 2xl:pl-4 w-full md:w-k75 2xl:w-k75 2xl:pr-0 mb-7"
 // Content
 export const Job = "mb-7"
 // Project Page

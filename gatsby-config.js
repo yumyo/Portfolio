@@ -8,7 +8,7 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    title: `Nicola Giulia Pernice`,
+    title: `Giulia Nicola Pernice`,
     description: `Product Designer and Full Stack Developer`,
     lastBuildDate: new Date(Date.now()).toISOString(),
     siteUrl: `https://nicolapernice.com`,
@@ -17,10 +17,11 @@ module.exports = {
     twitter: `https://twitter.com/KdSign`,
     github: `https://github.com/yumyo`,
     gitlab: `https://gitlab.com/k30`,
+    linkedin: `https://www.linkedin.com/in/pernice/`,
     stackoverflow: `https://stackoverflow.com/story/nicola-giulia-pernice`,
     secureEmail: `ekrypt@mailfence.com`,
     behance: `https://www.behance.net/kairos`,
-    pinterest: `https://www.pinterest.co.uk/kdsig`,
+    pinterest: `https://www.pinterest.co.uk/kdsign`,
     flickr: `https://www.flickr.com/photos/k_d_sign`,
     tumblrJournal: `https://yumyo-journal.tumblr.com`,
     tumblrDesign: `https://designengine.tumblr.com/`,

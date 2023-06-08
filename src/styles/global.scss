@@ -141,7 +141,9 @@ body.light {
     @apply pl-4;
     @apply pr-4;
   }
-  p + p {
+  p + p,
+  p + ul,
+  p + ol {
     @apply mt-4;
   }
   .inline-image {
