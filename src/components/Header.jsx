@@ -71,7 +71,7 @@ export default function Header(props) {
         <h1
           className={`nav-link text-base leading-tight fixed top-k1 ${LeftPos} md:-ml-2 z-50 cursor-pointer transition-colors hover:text-violet-600 dark:hover:text-violet-400 transform -translate-x-1`}
         >
-          Nicola Giulia
+          Giulia Nicole 
           <br />
           Pernice
         </h1>
@@ -103,7 +103,7 @@ export default function Header(props) {
         <MenuLink
           to="/works"
           exit={{
-            length: 0,
+            length: 0.5,
           }}
           entry={{ length: 0.5 }}
           className="block"
@@ -129,7 +129,7 @@ export default function Header(props) {
         <MenuLink
           to="/about/"
           exit={{
-            length: 0,
+            length: 0.5,
           }}
           entry={{ length: 0.5 }}
           className="block"
@@ -141,7 +141,7 @@ export default function Header(props) {
         <TransitionLink
           to="/cv/"
           exit={{
-            length: 0,
+            length: 0.5,
           }}
           entry={{ length: 0.5 }}
           className="block"

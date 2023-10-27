@@ -39,7 +39,9 @@ const Archive = ({ data, transitionStatus }) => {
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
     if (transitionStatus === "exiting") {
-      gsap.to(".anim-archive", { autoAlpha: 0, duration: 0.25, delay: 0 })
+      gsap.to(".anim-archive", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
+        window.scrollTo(0, 0)
+      } })
     }
   }, [transitionStatus])
   return (

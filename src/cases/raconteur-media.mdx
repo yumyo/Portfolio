@@ -22,14 +22,8 @@ embeddedImagesRemote:
   - https://res.cloudinary.com/yumyo/image/upload/media/folio/prj/rac/mobile-qireframes-1920.png
   - https://res.cloudinary.com/yumyo/image/upload/v1647280085/media/folio/prj/rac/screens/mobile/mobile-screen-2.jpg
   - https://res.cloudinary.com/yumyo/image/upload/v1647279421/media/folio/prj/rac/screens/home-1440.png
-  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/v1647279421/media/folio/prj/rac/screens/home-1440.png
-  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/media/folio/prj/rac/screens/single-art-1440.png
-  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/media/folio/prj/rac/screens/Report-D_I.jpg
   - https://res.cloudinary.com/yumyo/image/upload/v1650987786/media/folio/prj/rac/newspaper-2022-1024.png
-  - https://res.cloudinary.com/yumyo/image/upload/v1647279417/media/folio/prj/rac/screens/all-home.png
-  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/v1651513345/media/folio/prj/rac/screens/author.png
-  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/v1651513377/media/folio/prj/rac/screens/Screen_Shot_2022-05-01_at_19.58.12-fullpage.png
-  - https://res.cloudinary.com/yumyo/image/upload/c_fill,g_north,w_600,h_1680,q_100/v1651513345/media/folio/prj/rac/screens/author.png
+
 published: true
 ---
 
@@ -55,7 +49,7 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
       layout="fixed"
       className="pippo"
       formats={["png"]}
-      image={getImage(props.remoteImages[11])}
+      image={getImage(props.remoteImages[8])}
     />
   </div>
 </Parallax>
@@ -89,7 +83,7 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
 
 <ProjectDetail
   label="A Reader Oriented IA"
-  className="banana"
+  className=""
   content="<p>I used Google Analytics to identify the best performing content, common entrance and exit pages and, recurring patterns in the user navigation flow.<br /><br />Together with the head of marketing, we later compared the evidence gathered with the current data on the website. This process led to deciding to shift the pivot from 'products' to 'content' to develop a structure around our reader's interests.<br /><br />We then merged our findings with an Extensive Competitive analysis to gather valuable insights on content and features and better understand Raconteur's unique selling proposition.s</p>"
 />
 
@@ -112,7 +106,6 @@ We kept using WordPress to reduce the complexity of this redesing iteration but 
 - Isolation and Security
 - Virtually unlimited scalability
 
-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Pantheon</title><path d="M7.604 0L9.75 5.171H7.018l.904 2.276h5.535zm4.202 7.973l.724 1.752h3.09c.066 0 .223-.086.223-.877 0-.79-.157-.875-.224-.875zm-4.367 0c-.306 0-.474 0-.612.456-.166.544-.185 1.571-.185 3.57 0 2 .02 3.028.185 3.572.138.456.306.456.612.456h3.486l-1.727-4.202v.014l-.816-2.116h1.912l.884 2.119 1.826-.016-1.591-3.853zm5.235 2.1l.724 1.753h2.562c.068 0 .223-.086.223-.876s-.156-.876-.223-.876zm-3.742.076l2.633 6.403H8.346L14.297 24l-2.146-5.172h2.731l-.913-2.276H12.7l-2.634-6.403zm2.374 2.026l.724 1.752h3.93c.067 0 .223-.086.223-.876s-.155-.876-.223-.876zm.868 2.1l.723 1.752h2.722c.067 0 .223-.085.223-.875s-.156-.876-.223-.876zm4.624 1.2v.511h.103v-.391l.129.391h.096l.125-.391v.391h.107v-.511h-.15l-.127.394-.127-.394zm-.466 0v.092h.144v.42h.117v-.42h.144v-.092z"/></svg>
 
 <ProjectDetail
   label="Wireframings"
@@ -165,45 +158,6 @@ We kept using WordPress to reduce the complexity of this redesing iteration but 
   </div>
 </div>
 
-<div class="w-k7 mx-auto mt-8 mb-32">
-  <div class="flex flex-row flex-wrap items-center overflow-hidden xl:-mx-8">
-    <div class="w-full overflow-hidden md:my-4 md:px-4 md:w-1/2 xl:my-8 xl:px-8 xl:w-1/3">
-      <p></p>
-      <div className="">
-        <GatsbyImage
-          alt="Home Page"
-          placeholder="blurred"
-          layout="fluid"
-          className="w-full"
-          image={getImage(props.remoteImages[8])}
-        />
-      </div>
-    </div>
-    <div class="w-full overflow-hidden md:my-4 md:px-4 md:w-1/2 xl:my-8 xl:px-8 xl:w-1/3">
-      <div className="">
-          <GatsbyImage
-            alt="A Special Report"
-            placeholder="blurred"
-            layout="fluid"
-            className="w-full"
-            image={getImage(props.remoteImages[10])}
-          />
-      </div>
-    </div>
-    <div class="w-full overflow-hidden md:my-4 md:px-4 md:w-1/2 xl:my-8 xl:px-8 xl:w-1/3">
-      <div className="">
-          <GatsbyImage
-            alt="An article"
-            placeholder="blurred"
-            layout="fluid"
-            className="w-full"
-            image={getImage(props.remoteImages[9])}
-          />
-      </div>
-    </div>
-  </div>
-</div>
-
 <ProjectDetail
   label="A different Home every day"
   content="<p>
@@ -211,14 +165,6 @@ We kept using WordPress to reduce the complexity of this redesing iteration but 
   The last colour iteration aimed to address visual imparities, with rich tonal variations and correction for UI design.
 </p>"
 />
-
-<div className="mx-auto w-k7 block mt-32 mb-8 text-center">
-    <GatsbyImage
-      alt="All site templates"
-      layout="fixed"
-      image={getImage(props.remoteImages[12])}
-    />
-</div>
 
 <ProjectDetail
   label="Outcome"

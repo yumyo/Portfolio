@@ -5,6 +5,9 @@ import tw from "twin.macro"
 import { CasesLayout, GhostButton } from "../components/theme"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+// gsap.registerPlugin(ScrollToPlugin);
 
 const ListItem = tw.div`
 mb-24
@@ -31,16 +34,14 @@ const Cases = ({ data, transitionStatus }) => {
       ease: "sine.inOut",
       delay: 0.5,
     })
+    
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    // if (transitionStatus === "entering") {
-    //   gsap.to(".anim-case", {
-    //     autoAlpha: 1,
-    //     duration: 0.6,
-    //   })
-    // }
     if (transitionStatus === "exiting") {
-      gsap.to(".anim-case", { autoAlpha: 0, duration: 0.25, delay: 0 })
+      gsap.to(".anim-case", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
+        window.scrollTo(0, 0)
+      }});
+      
     }
   }, [transitionStatus])
 

@@ -34,7 +34,9 @@ const Works = ({ data, transitionStatus }) => {
   useEffect(() => {
     if (transitionStatus === "exiting") {
       // console.log("Works", transitionStatus)
-      gsap.to(".anim-works", { autoAlpha: 0, duration: 0.25, delay: 0 })
+      gsap.to(".anim-works", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
+        window.scrollTo(0, 0)
+      } })
     }
   }, [transitionStatus])
   return (
@@ -42,6 +44,8 @@ const Works = ({ data, transitionStatus }) => {
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink
+            
+            to={`${childMdx.slug}`}
             exit={{
               length: 0.5,
             }}
@@ -49,8 +53,6 @@ const Works = ({ data, transitionStatus }) => {
               appearAfter: 0.5,
               length: 0.5,
             }}
-            to={`${childMdx.slug}`}
-            // preventScrollJump
           >
             <GatsbyImage
               image={getImage(childMdx.frontmatter.banner)}

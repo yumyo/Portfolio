@@ -46,7 +46,7 @@
   .content {
     a:not(.button) {
       @apply text-violet-600;
-      @apply underline;
+      // @apply underline;
       &:hover {
       }
       &.active {
@@ -99,7 +99,7 @@
     .content {
       a:not(.button) {
         @apply text-violet-400;
-        @apply underline;
+        // @apply underline;
         &:hover {
         }
         &.active {

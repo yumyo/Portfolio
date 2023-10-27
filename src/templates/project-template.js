@@ -50,7 +50,9 @@ const ProjectTemplate = ({
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
     if (transitionStatus === "exiting") {
-      gsap.to(".anim-project", { autoAlpha: 0, duration: 0.25, delay: 0 })
+      gsap.to(".anim-project", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
+        window.scrollTo(0, 0)
+      } })
     }
   }, [transitionStatus])
 
@@ -58,7 +60,7 @@ const ProjectTemplate = ({
   return (
     <div className={`anim-project opacity-0 mb-k1v`}>
       <GatsbyImage
-        className="mx-auto md:w-k8 lg:w-k7 xl:w-k7 mt-k2v md:mt-k2v lg:mt-k3v"
+        className="mx-auto md:w-k8 lg:w-k7 xl:w-k7 mt-k5 md:mt-k2v lg:mt-k3v"
         image={getImage(banner)}
         alt={title}
       />
