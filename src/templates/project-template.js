@@ -5,6 +5,17 @@ import { gsap } from "gsap"
 import ReactHtmlParser from "react-html-parser"
 import moment from "moment"
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
+// import { Navigation, Pagination, A11y } from 'swiper/modules';
+// import { Swiper, SwiperSlide } from 'swiper/react'
+// import 'swiper/css'
+// import 'swiper/css/navigation'
+// import 'swiper/css/pagination'
+// import 'swiper/css/a11y'
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+// import { TransitionState } from "gatsby-plugin-transition-link";
+// import Chart from '../components/Chart.jsx'
 
 import {
   Project_Detail,
@@ -35,11 +46,13 @@ const ProjectTemplate = ({
   },
 }) => {
   let projectDate = moment(date).format("MMM YYYY")
-  const shortcodes = { getImage, GatsbyImage, StaticImage }
-  console.log("embeddedImagesRemote")
-  console.log(embeddedImagesRemote)
-  console.log("embeddedImagesLocal")
-  console.log(embeddedImagesLocal)
+  const shortcodes = { getImage, GatsbyImage, StaticImage, Slider }
+  // console.log("embeddedImagesRemote")
+  // console.log(embeddedImagesRemote)
+  // console.log("embeddedImagesLocal")
+  // console.log(embeddedImagesLocal)
+  // console.log("transitionStatus 1st")
+  // console.log(transitionStatus)
   useEffect(() => {
     gsap.to(".anim-project", {
       autoAlpha: 1,
@@ -50,6 +63,7 @@ const ProjectTemplate = ({
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
     if (transitionStatus === "exiting") {
+      console.log('exiting')
       gsap.to(".anim-project", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)
       } })
@@ -59,31 +73,48 @@ const ProjectTemplate = ({
   // 2xl:w-k6
   return (
     <div className={`anim-project opacity-0 mb-k1v`}>
+      {/* <TransitionState>
+      {({ mount, transitionStatus }) => {
+        console.log('transitionStatus last resort', transitionStatus)
+      }}
+</TransitionState> */}
       <GatsbyImage
         className="mx-auto md:w-k8 lg:w-k7 xl:w-k7 mt-k5 md:mt-k2v lg:mt-k3v"
         image={getImage(banner)}
         alt={title}
       />
-      <div className={`${Project_Detail} mt-k1`}>
+      <div 
+      data-sal="fade" 
+      data-sal-duration={900} 
+      className={`${Project_Detail} mt-k1`}>
         <div className={`${Project_Detail_Label}`}>Project</div>
         <div className={`${Project_Detail_Content}`}>
           <h1 className="leading-none text-2xl pl-4 ">{`${title}`}</h1>
           <p className="text-base mt-8 pl-4 pr-4">{`${mission}`}</p>
         </div>
       </div>
-      <div className={`${Project_Detail} mt-10`}>
+      <div 
+      data-sal="fade" 
+      data-sal-duration={900} 
+      className={`${Project_Detail} mt-10`}>
         <div className={`${Project_Detail_Label}`}>Year</div>
         <div className={`${Project_Detail_Content}`}>
           <p className="text-base mt-4 pl-4">{`${projectDate}`}</p>
         </div>
       </div>
-      <div className={`${Project_Detail} mt-16`}>
+      <div 
+      data-sal="fade" 
+      data-sal-duration={900} 
+      className={`${Project_Detail} mt-16`}>
         <div className={`${Project_Detail_Label}`}>Activities</div>
         <div className={`${Project_Detail_Content}`}>
           <p className="text-base pl-4 pr-4">{`${services.join(", ")}`}</p>
         </div>
       </div>
-      <div className={`${Project_Detail} mt-16`}>
+      <div 
+      data-sal="fade" 
+      data-sal-duration={900} 
+      className={`${Project_Detail} mt-16`}>
         <div className={`${Project_Detail_Label}`}>Client</div>
         <div className={`${Project_Detail_Content} pl-4 pr-4`}>
           <p className="text-base">{ReactHtmlParser(profile)}</p>

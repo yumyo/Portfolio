@@ -10,7 +10,7 @@ export default function Header(props) {
   const today = new Date()
   const year = today.getFullYear()
   return (
-    <Footer className="shrink-0 w-full flex justify-between items-end pl-k1 xs:pl-k1 pr-k1 xs:pr-k1 leading-none static  md:z-50 bottom-k md:bottom md:fixed pb-k1v md:pb-k0 transform-gpu ">
+    <Footer className="shrink-0 bottom-0 w-full flex justify-between items-end pl-k1 xs:pl-k1 pr-k1 xs:pr-k1 leading-none static  md:z-50 md:bottom md:fixed pb-k1v md:pb-k0 transform-gpu ">
       <div className={`z-40  ${LeftPos} flex`}>
         ©{year}
         {/* <TransitionLink

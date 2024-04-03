@@ -19,7 +19,6 @@ import "@fontsource/ibm-plex-sans/500.css" // Weight 500.
 import "@fontsource/ibm-plex-sans/700.css" // Weight 500.
 import tw, { styled, css } from "twin.macro"
 // import { renderToStaticMarkup } from "react-dom/server"
-// Context
 
 const usePrevious = value => {
   const ref = useRef()

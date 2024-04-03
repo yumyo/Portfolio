@@ -7,8 +7,9 @@
 
 import React from "react"
 import { ParallaxProvider } from "react-scroll-parallax"
+import { TransitionState } from "gatsby-plugin-transition-link"
 
-export const wrapRootElement = ({ element }) => {
+export const wrapRootElement = ({ element, props }) => {
   return (
     <ParallaxProvider>
       {/* <ParallaxRouteUpdate /> */}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import { gsap } from "gsap"
 import tw from "twin.macro"
@@ -6,7 +6,6 @@ import { CasesLayout, GhostButton } from "../components/theme"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
 // import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
 // gsap.registerPlugin(ScrollToPlugin);
 
 const ListItem = tw.div`
@@ -19,9 +18,11 @@ text-xl font-medium mt-2
 
 // const CasesLayout = tw.div``
 
-const Cases = ({ data, transitionStatus }) => {
+const Cases = ({ data, transitionStatus, entry, exit }) => {
+  console.log('transitionStatus cases', transitionStatus)
   let nodes = data.allFile.nodes
-  console.log(nodes)
+  // const [currentTransitionStatus, setCurrentTransitionStatus] = useState('');
+  // console.log(nodes)
   nodes.sort(
     // prettier-ignore
     (d1, d2) =>
@@ -39,12 +40,13 @@ const Cases = ({ data, transitionStatus }) => {
   useEffect(() => {
     if (transitionStatus === "exiting") {
       gsap.to(".anim-case", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        window.scrollTo(0, 0)
+        // window.scrollTo(0, 0)
+        console.log('fuck')
       }});
       
     }
   }, [transitionStatus])
-
+  
   return (
     <div className={`anim-case opacity-0 ${CasesLayout} lg:mt-k3v mb-k2v`}>
       {nodes.map(({ childMdx }) => (

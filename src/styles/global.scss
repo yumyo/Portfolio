@@ -211,3 +211,12 @@ body,
   align-items: center;
   justify-content: center;
 }
+
+
+.slick-list {
+  margin: 0 -20px;
+}
+.slick-slide > div {
+  margin: 0 20px;
+  text-align: center;
+}
