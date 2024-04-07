@@ -173,5 +173,11 @@ module.exports = {
         layout: require.resolve(`./src/components/Layout.js`),
       },
     },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: false,
+      },
+    },
   ],
 }
