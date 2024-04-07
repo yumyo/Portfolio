@@ -10,8 +10,8 @@ export default function Header(props) {
   const today = new Date()
   const year = today.getFullYear()
   return (
-    <Footer className="md:bottom static bottom-0 flex w-full shrink-0 transform-gpu items-end justify-between pl-k1 pr-k1 pb-k1v  leading-none xs:pl-k1 xs:pr-k1 lg:fixed md:z-50 md:pb-k1v ">
-      <div className={`z-40  ${LeftPos} flex`}>
+    <Footer className="md:bottom static bottom-0 mx-auto flex w-k8 shrink-0 transform-gpu items-end justify-between pb-k1v leading-none md:z-50 md:pb-k1v lg:fixed lg:w-full">
+      <div className={`static left-k1 z-40 flex lg:fixed`}>
         ©{year}
         {/* <TransitionLink
           to="/style-guide/"
@@ -26,14 +26,14 @@ export default function Header(props) {
           <span className={`mt-1 ml-4 -mb-4 ${MenuLabel}`}>w/Love</span>
         </TransitionLink> */}
       </div>
-      <div className={`z-30 text-right ${RightPos} flex`}>
+      <div className={`z-30 text-right right-k1 flex static lg:fixed`}>
         <TransitionLink
           to="/contact/"
           exit={{
             length: 0.5,
           }}
           entry={{ length: 0.5 }}
-          className="md:-mr-2 "
+          className=" "
           activeClassName=""
         >
           Contact

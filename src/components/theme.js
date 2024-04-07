@@ -3,10 +3,10 @@
 // Layout
 export const PageDefault = ""
 // 3xl:w-6/1
-export const CasesLayout = "mx-auto md:w-k8 lg:w-k7 xl:w-k6 2 mt-k3v md:mt-k2v"
+export const CasesLayout = "mx-auto md:w-k8 lg:w-k7 xl:w-k7 2 mt-k3v"
 // Menu
 export const LayoutLinks = "py-2 px-4 text-xs"
-export const Lead = "text-base xl:text-lg"
+export const Lead = "fluid-text-base"
 export const Label = "text-xs 2xl:text-sm uppercase tracking-widest"
 export const MenuLabel = `text-xxs 2xl:text-xs uppercase leading-none tracking-widest block 
 text-black-shade-600`
@@ -15,7 +15,7 @@ export const GhostButton = `button px-4 mt-4 leading-none py-3 border text-viole
 export const PageTitle = "text-xl sm:text-2xl lg:text-3xl"
 // INterface
 export const TopPos = "top-k1 mt-0"
-export const LeftPos = "left-k1 ml-k0 md:ml-0 xs:left-k1 " // lg:left-k0 2xl:left-k1
+export const LeftPos = "left-k1v  " // lg:left-k0 2xl:left-k1
 export const MidPos = "top-1/2"
 export const RightPos = "right-k2 xs:right-k1 " // lg:right-k0 2xl:right-k1
 export const BottomPos = "2xl:mb-0 bottom-k0 2xl:bottom-k1"

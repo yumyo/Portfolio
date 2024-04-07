@@ -61,6 +61,7 @@ export default class Base extends React.Component {
         height: ${formattedHeight};
         display: inline-block;
         position: relative;
+        top: 3px;
       }
 
       .BurgerInner{

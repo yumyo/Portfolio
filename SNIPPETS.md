@@ -90,3 +90,67 @@ export const RevealParallax = () => {
   </div>
 </div>
 ```
+
+## An alternative to the Case History Slides
+
+```js
+<ListItem key={childMdx.id}>
+  <TransitionLink
+    className={`relative mx-auto block w-full  h-[50vh] md:w-k8 lg:w-k7 xl:w-k7 overflow-hidden`}
+    partiallyActive={true}
+    activeClassName="active"
+    to={`${childMdx.slug}`}
+    exit={{
+      length: 0.5,
+    }}
+    entry={{
+      appearAfter: 0.5,
+      length: 0.5,
+    }}
+  >
+    <GatsbyImage
+      image={getImage(childMdx.frontmatter.banner)}
+      alt={childMdx.frontmatter.title}
+      className={`absolute bottom-0 w-full`}
+      objectFit='contain'
+    />
+  </TransitionLink>
+  <div className="mx-auto w-full lg:w-k7 xl:w-k7 flex flex-row justify-between items-center">
+    <div className="">
+      <Title>{childMdx.frontmatter.title}</Title>
+      <p className="max-w-prose mb-0">
+        {childMdx.frontmatter.description}
+      </p>
+    </div>
+    {/* <List>
+    {childMdx.frontmatter.tags
+      ? childMdx.frontmatter.tags.map((tag, index) => {
+          return (
+            <Tag key={index}>
+              <span className="text-black-shade-500">#</span>
+              {tag}
+            </Tag>
+          )
+        })
+      : null}
+  </List> */}
+    <div className="">
+      <TransitionLink
+        className={`mt-4 inline-block ${GhostButton}`}
+        partiallyActive={true}
+        activeClassName="active"
+        to={`${childMdx.slug}`}
+        exit={{
+          length: 0.5,
+        }}
+        entry={{
+          appearAfter: 0.5,
+          length: 0.5,
+        }}
+      >
+        View Case
+      </TransitionLink>
+    </div>
+  </div>
+</ListItem>
+```

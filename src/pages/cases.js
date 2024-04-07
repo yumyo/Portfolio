@@ -9,7 +9,7 @@ import TransitionLink from "gatsby-plugin-transition-link"
 // gsap.registerPlugin(ScrollToPlugin);
 
 const ListItem = tw.div`
-mb-24
+mb-24 mt-k3v
 `
 
 const Title = tw.p`
@@ -48,11 +48,11 @@ const Cases = ({ data, transitionStatus, entry, exit }) => {
   }, [transitionStatus])
   
   return (
-    <div className={`anim-case opacity-0 ${CasesLayout} lg:mt-k3v mb-k2v`}>
+    <div className={`anim-case opacity-0  mb-k2v`}>
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink
-            className={`block`}
+            className={`relative mx-auto block w-full md:w-k8 lg:w-k7 xl:w-k7`}
             partiallyActive={true}
             activeClassName="active"
             to={`${childMdx.slug}`}
@@ -67,9 +67,11 @@ const Cases = ({ data, transitionStatus, entry, exit }) => {
             <GatsbyImage
               image={getImage(childMdx.frontmatter.banner)}
               alt={childMdx.frontmatter.title}
+              className={``}
+              objectFit='contain'
             />
           </TransitionLink>
-          <div className="mx-auto w-k8 md:w-full flex flex-row justify-between items-center">
+          <div className="mx-auto w-full lg:w-k7 xl:w-k7 flex flex-row justify-between items-center">
             <div className="">
               <Title>{childMdx.frontmatter.title}</Title>
               <p className="max-w-prose mb-0">
