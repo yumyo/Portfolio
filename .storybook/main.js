@@ -1,16 +1,25 @@
-module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
-  core: {
-    builder: "webpack5",
+/** @type { import('@storybook/react-webpack5').StorybookConfig } */
+const config = {
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  addons: [
+    'storybook-addon-gatsby',
+    "@storybook/addon-webpack5-compiler-swc",
+    "@storybook/addon-onboarding",
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@chromatic-com/storybook",
+    "@storybook/addon-interactions",
+    '@storybook/addon-docs',
+  ],
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
   },
-  webpackFinal: async config => {
-    // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
-    config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
-    // Use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
-    config.module.rules[0].use[0].options.plugins.push(
-      require.resolve("babel-plugin-remove-graphql-queries")
-    )
-    return config
+  docs: {
+    autodocs: "tag",
+  },
+  core: {
+    builder: '@storybook/builder-webpack5',
   },
 }
+export default config
