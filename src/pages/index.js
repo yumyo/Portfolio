@@ -49,7 +49,7 @@ const IndexPage = ({ transitionStatus }) => {
           >
             Giulia&nbsp;Nicole&nbsp;Pernice
           </TransitionLink>
-          <br /> welcome to my portfolio as a Design&nbsp;Engineer
+          <br /> welcome to my Design&nbsp;Engineering portfolio
         </Title>
         <div className={`md:ml-k1v ${Lead}`}>
         Within these pages lies a curated selection of {" "}
