@@ -20,11 +20,11 @@ jobs:
           scope: "@gsap"
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Run install
+      - name: Install Gatsby CLI
         uses: borales/actions-yarn@v4
         with:
           cmd: add gatsby-cli@3.5.0
-      - name: Install Gatsby CLI
+      - name: Install All Deoendencies
         uses: borales/actions-yarn@v4
         with:
           cmd: install 
@@ -34,3 +34,13 @@ jobs:
           cmd: build
       - name: Verify build
         run: ls -la public
+      - name: Deploying to SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 164.90.233.208
+          username: admin_giulianicola
+          password: ${{ secrets.SS_FTP }}
+          port: ${{ secrets.SS_PORT }}
+          dry-run: true
+          local-dir: './public/'
+          server-dir: 'public_html'
