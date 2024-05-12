@@ -40,6 +40,6 @@ jobs:
           host: 164.90.233.208
           user: admin_giulianicola
           password: ${{ secrets.SS_FTP }}
-          options: '--dry-run'
+          options: '--delete'
           localDir: './public/'
           remoteDir: '/home/nicolapernice.com/public_html/'
