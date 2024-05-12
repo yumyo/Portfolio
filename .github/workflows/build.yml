@@ -16,7 +16,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '16.18.1'
-          token: ${{ secrets.NPM_TOKEN }}
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Run install
         uses: borales/actions-yarn@v4
         with:
