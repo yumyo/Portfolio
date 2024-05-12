@@ -34,7 +34,7 @@ jobs:
           cmd: build
       - name: Verify build
         run: ls -la public
-      - name: Deploying to SFTP
+      - name: Deploying via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: 164.90.233.208
@@ -43,4 +43,4 @@ jobs:
           port: ${{ secrets.SS_PORT }}
           dry-run: true
           local-dir: './public/'
-          server-dir: 'public_html'
+          server-dir: 'public_html/'
