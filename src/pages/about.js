@@ -8,10 +8,10 @@ import { PageTitle } from "../components/theme"
 const AboutLayout = tw.div``
 
 const About_Title =
-  `mb-2 pl-0 mb-8 pt-16 md:ml-k1 lg:ml-k3 xl:ml-k2 md:w-k75 lg:w-k8  text-2xl xs:text-4xl leading-tight xs:leading-tight`
+  `mb-12 fluid-text-3xl -mt-14 leading-tight xs:leading-tight font-extralight`
 const About_SF =
-  "relative z-10 mb-4 mb-4 pl-0 lg:pl-k2 xl:pl-k1 2xl:pl-k lg:pr-k1 3xl:pr-0 md:ml-k1 lg:ml-k2 lg:ml-k25  md:w-k75 lg:w-k75 xl:w-k6 2xl:w-k6 3xl:w-k5 text-lg xs:text-xl"
-const About_P = "mb-4 mb-4 pl-0 sm:pr-k2"
+  "relative z-10 mb-12 fluid-text-lg  max-w-[25em]"
+const About_P = "mb-4 mb-4 fluid-text-base max-w-[34em]"
 
 const AboutPage = ({ transitionStatus }) => {
   useEffect(() => {
@@ -34,38 +34,36 @@ const AboutPage = ({ transitionStatus }) => {
   }, [transitionStatus])
   return (
     // min-h-screen
-    <AboutLayout className="anim-about m-auto 
-     w-k75 lg:w-k8 lg:w-k9 2xl:w-k6 3xl:w-k6 
-     xl:ml-k2 2xl:ml-k3
-     3xl:pr-k0 mt-k2v mb-k2v opacity-0 flex flex-row flex-wrap items-baseline">
+    <div className="anim-about mx-auto mt-k5v mb-k3v flex w-k8 sm:w-k8 flex-row flex-wrap items-baseline opacity-0 lg:w-k7  xl:w-k5 xl:pl-0 ">
       <div className="bio">
         <h1 className={`${About_Title}`}>Giulia Nicole Pernice</h1>
+        </div>
+        <div className="sm:ml-k1 md:ml-k25 mb-k3v flex flex-row flex-wrap items-baseline">
         <p className={`${About_SF}`}>
-          I'm a multidisciplinary Digital Product Engineer working at the
-          intersection of design and technology.
+          I'm a multidisciplinary Digital Product Engineer working at the intersection of design&nbsp;and&nbsp;technology.
         </p>
         <div className={`flex flex-col md:flex-row`}>
-          <div className="z-0 w-full mt-8 md:mt-2 sm:w-k6 sm:pl-k2 md:pl-0 md:-ml-k lg:pl-k2 md:w-k4  lg:w-k4 lg:-ml-k0 xl:-ml-k2 order-2 md:order-1">
+          {/* <div className="z-0 w-full mt-8 md:mt-2 sm:w-k6 sm:pl-k2 md:pl-0 md:-ml-k lg:pl-k2 md:w-k4  lg:w-k4 lg:-ml-k0 xl:-ml-k2 order-2 md:order-1">
             <StaticImage
               className=""
               src="https://res.cloudinary.com/yumyo/image/upload/v1640539607/media/about-g.png"
               alt="A kitten"
             />
-          </div>
-          <div className={`w-full md:w-k75 lg:w-k5 xl:w-k5 3xl:w-k5 3xl:pr-k1 md:ml-8 lg:mr-k1  order-1 md:order-2 sm:pl-k2 md:pl-0`}>
+          </div> */}
+          <div className={`w-full md:w-k75 order-1 md:order-2`}>
             <p className={`${About_P}`}>
-              My career began with a formal education in graphic design, moving
-              from print to the early adoption of the web. Being inquisitive
-              about every aspect of the craft, I've undertaken formal training
-              in various disciplines while constantly advancing through
-              self-learning. Today, I'm a full-stack developer and designer with
-              a passionate product mindset.
+              My career began with a formal education in graphic design in the mid 90s, moving
+              from print, to the early adoption of the web. Inquisitive about every aspect of the craft, I started undertakening formal training in various disciplines while constantly advancing through
+              self-learning.<br /> Over time, driven by passion and desidere to understand every part of the process, I evolved a full-stack developer and designer with a passionate product mindset.
             </p>
             <p className={`${About_P}`}>
-              Thanks to my diverse skillsets, I can contribute to a digital
-              product's entire process and lifecycle, from idea generation to
-              design concept, technology selection, production and deployment.
-              For the same reason, I often act as a bridge between stakeholders,
+              I often act as a bridge between stakeholders,
+              teams and business units, and have years of experience working
+              within and across these teams to foster communication and
+              collaboration.
+            </p>
+            <p className={`${About_P}`}>
+              I often act as a bridge between stakeholders,
               teams and business units, and have years of experience working
               within and across these teams to foster communication and
               collaboration.
@@ -88,7 +86,7 @@ const AboutPage = ({ transitionStatus }) => {
           </div>
         </div>
       </div>
-    </AboutLayout>
+    </div>
   )
 }
 

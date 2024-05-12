@@ -28,6 +28,7 @@ const IndexPage = ({ transitionStatus }) => {
     mb-2
     2xl:mb-3
     font-light
+    -mt-12
   `
 
   // const Intro = tw.div``;
@@ -35,7 +36,7 @@ const IndexPage = ({ transitionStatus }) => {
 
   return (
     <div className="flex flex-col justify-center  ">
-      <div className="anim-home opacity-0 mx-auto w-k8 md:w-k7 2xl:w-k5 mt-k5v -translate-y-1/2">
+      <div className="anim-home opacity-0 mx-auto w-k8 md:w-k7 2xl:w-k5 mt-k5v">
         <Title>
           Hi, my name is{" "}
           <TransitionLink
@@ -51,8 +52,8 @@ const IndexPage = ({ transitionStatus }) => {
           </TransitionLink>
           <br /> welcome to my Design&nbsp;Engineering portfolio
         </Title>
-        <div className={`md:ml-k1v ${Lead}`}>
-        Within these pages lies a curated selection of {" "}
+        <div className={`md:ml-k2v ${Lead}`}>
+        {/* Within these pages lies a curated selection of {" "}
           <TransitionLink
             to="/cases"
             exit={{
@@ -88,8 +89,8 @@ const IndexPage = ({ transitionStatus }) => {
           >
             creative&nbsp;explorations.
           </TransitionLink>{" "}
-          <br />
-          <div className='xs:ml-k1v mt-3'>
+          <br /> */}
+          <div className='pl-8 mt-12'>
             Have an inspiring project in mind? <br />
             <TransitionLink
               to="/contact"

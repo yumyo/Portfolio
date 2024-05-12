@@ -26,7 +26,8 @@
     @apply text-base;
   }
   p {
-    @apply text-base;
+    @apply fluid-text-base;
+    @apply mb-6;
   }
   pre {
     @apply text-sm;

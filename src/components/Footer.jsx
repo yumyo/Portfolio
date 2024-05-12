@@ -1,16 +1,13 @@
 import React from "react"
 import tw from "twin.macro"
 import TransitionLink from "gatsby-plugin-transition-link/AniLink"
-import { RightPos, LeftPos, MenuLabel } from "../components/theme"
-// BottomPos
-const Footer = tw.div`
-`
+// import { RightPos, LeftPos, MenuLabel } from "../components/theme"
 
-export default function Header(props) {
+export default function Footer(props) {
   const today = new Date()
   const year = today.getFullYear()
   return (
-    <Footer className="md:bottom static bottom-0 mx-auto flex w-k8 shrink-0 transform-gpu items-end justify-between pb-k1v leading-none md:z-50 md:pb-k1v lg:fixed lg:w-full">
+    <div className="md:bottom static bottom-0 mx-auto flex w-k8 shrink-0 transform-gpu items-end justify-between pb-k1v leading-none md:z-50 md:pb-k1v lg:fixed lg:w-full">
       <div className={`static left-k1 z-40 flex lg:fixed`}>
         ©{year}
         {/* <TransitionLink
@@ -42,6 +39,6 @@ export default function Header(props) {
           </span> */}
         </TransitionLink>
       </div>
-    </Footer>
+    </div>
   )
 }

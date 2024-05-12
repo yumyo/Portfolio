@@ -1,6 +1,15 @@
 import React, { useEffect } from "react"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { gsap } from "gsap"
 import TransitionLink from "gatsby-plugin-transition-link"
+import ContactForm from "../components/ContactForm"
+import { Pinterest } from "@styled-icons/entypo-social/Pinterest"
+import { StackOverflow } from "@styled-icons/boxicons-logos/StackOverflow"
+import { Twitter } from "@styled-icons/boxicons-logos/Twitter"
+import { Github } from "@styled-icons/boxicons-logos/Github"
+import { Behance } from "@styled-icons/boxicons-logos/Behance"
+import { Tumblr } from "@styled-icons/boxicons-logos/Tumblr"
+import { ShieldCheckmark } from "@styled-icons/fluentui-system-regular/ShieldCheckmark"
 // import tw from "twin.macro"
 import {
   Lead,
@@ -12,6 +21,16 @@ import {
 } from "../components/theme"
 
 const Cv = ({ transitionStatus }) => {
+  const {
+    twitter,
+    github,
+    stackoverflow,
+    secureEmail,
+    behance,
+    pinterest,
+    tumblrJournal,
+  } = useSiteMetadata()
+
   useEffect(() => {
     gsap.to(".anim-cv", {
       autoAlpha: 1,
@@ -22,27 +41,34 @@ const Cv = ({ transitionStatus }) => {
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
     if (transitionStatus === "exiting") {
-      gsap.to(".anim-cv", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        window.scrollTo(0, 0)
-      } })
+      gsap.to(".anim-cv", {
+        autoAlpha: 0,
+        duration: 0.25,
+        delay: 0,
+        onComplete: () => {
+          window.scrollTo(0, 0)
+        },
+      })
     }
   }, [transitionStatus])
   // const ref = useRef(null)
 
   return (
-    <div className="anim-cv m-auto md:ml-k2 2xl:ml-k3  w-k75 xl:w-k7 2xl:w-k5 mt-k2v  opacity-0 flex min-h-screen flex-row flex-wrap items-baseline mb-k2v">
-      <div className={LeftSide}></div>
-      <div className={LeftContent}>
-        <h1 className={`${PageTitle} mb-2 pt-16`}>Curriculum Vitae</h1>
+    <div className="anim-cv m-auto mt-k5v mb-k3v flex min-h-screen w-k8 flex-row flex-wrap items-baseline opacity-0 xl:ml-k2 xl:w-k7 2xl:ml-k3 2xl:w-k5">
+      <div className="w-full mb-8">
+        <div className={LeftSide}></div>
+        <div className={LeftContent}>
+          <h1 className={`${PageTitle} mb-2 -mt-16 font-extralight`}>Curriculum Vitae</h1>
+        </div>
       </div>
-      <div className={LeftSide}>
-        <h2 className={Label}>PROFILE</h2>
-      </div>
+      <div className={LeftSide}>{/* <h2 className={Label}>PROFILE</h2> */}</div>
       <div className={LeftContent}>
-        <p className={` ${Lead}`}>
+        <p className={` ${Lead} 2xl:pr-k25`}>
           I'm a Digital Product Designer and Front-End Developer, passionate
           about the publishing industry and innovative projects spanning a wide
           range of media, platforms and devices. <br />
+        </p>
+        <p className="2xl:pr-k25">
           From strategic master plans to the finer details, I have a wealth of
           experience across all research, design and development phases.
         </p>
@@ -51,51 +77,54 @@ const Cv = ({ transitionStatus }) => {
         <h2 className={Label}>Location</h2>
       </div>
       <div className={LeftContent}>
-        <p>
-          I love to travel around the world, but I spend most of my time between
-          the UK, Spain and Italy.
-        </p>
-        <p>I am currently based in London.</p>
+        <p>I am currently based in London, UK.</p>
       </div>
       <div className={LeftSide}>
-        <h2 className={Label}>STRATEGIC Skills</h2>
+        <h2 className={Label}>
+          Strategic
+          <br /> Skills
+        </h2>
       </div>
       <div className={`${LeftContent} `}>
         <div className="">
-          <ul className="list-disc pl-4">
+          <ul className="mb-6 list-none fluid-text-base">
+            <li>Information Architecture</li>
+            <li>User Experience</li>
             <li>Agile methodogies</li>
             <li>Project and Resource Management</li>
-            <li>User Experience</li>
-            <li>Information Architecture</li>
-            <li>Digital Publishing Consultant</li>
           </ul>
         </div>
       </div>
       <div className={LeftSide}>
-        <h2 className={Label}>VISUAL Skills</h2>
+        <h2 className={Label}>
+          Design
+          <br /> Skills
+        </h2>
       </div>
       <div className={`${LeftContent} `}>
         <div className="">
-          <ul className="list-disc pl-4">
+          <ul className="mb-6 list-none fluid-text-base">
             <li>Web and Mobile Design</li>
-            <li>Animation and Interactivity</li>
             <li>User Interface Design</li>
-            <li>Digital Media Editing</li>
-            <li>Print Design</li>
+            <li>Animation and Interactivity</li>
+            <li>3D and Digital Art</li>
           </ul>
         </div>
       </div>
       <div className={LeftSide}>
-        <h2 className={Label}>TECHNICAL Skills</h2>
+        <h2 className={Label}>
+          Code
+          <br />
+          Skills
+        </h2>
       </div>
       <div className={`${LeftContent} `}>
         <div className="">
-          <ul className="list-disc pl-4">
+          <ul className="mb-6 list-none fluid-text-base">
             <li>Javascript ES6, React.js</li>
-            <li>CSS, SASS, PostCSS, Styled Components</li>
-            <li>Usability and HTML5 Semantics</li>
-            <li>Git, Composer, Webpack, Node, NPM, Yarn</li>
-            <li>Wordpress API and PHP templating</li>
+            <li>CSS, SASS, PostCSS, Styled Components, NPM, Yarn</li>
+            <li>Accessibility and HTML5 Semantics</li>
+            <li>DevOps, Wordpress API and PHP templating, Git</li>
             {/* <li>Dev Ops on LAMP, LEMP, MERN stacks</li> */}
           </ul>
         </div>
@@ -134,10 +163,10 @@ const Cv = ({ transitionStatus }) => {
             </ul>
           </div>
         </div> */}
-      <div className={LeftSide}>
+      {/* <div className={LeftSide}>
         <h2 className={Label}>RECENT PROJECTS</h2>
-      </div>
-      <div className={LeftContent}>
+      </div> */}
+      {/* <div className={LeftContent}>
         <p className="">
           In recent years I have been working exclusively for Raconteur Media
           and alan. agency. <br /> I have been ideating, planning and developing
@@ -162,250 +191,353 @@ const Cv = ({ transitionStatus }) => {
             here.
           </TransitionLink>{" "}
         </p>
+      </div> */}
+      <div className="heading mt-16 mb-16 block w-full ">
+        <h2 className={`${Label} fluid-text-xl`}>Employment History</h2>
       </div>
       <div className={LeftSide}>
-        <h2 className={Label}>EMPLOYMENT HISTORY</h2>
+        <p className={Label}>2020 ~ 2022</p>
       </div>
       <div className={LeftContent}>
-        <div className="job-history">
-          <div className={Job}>
-            <h3>Digital Product Engineer</h3>
-            <p className="job__company">
-              alan. agency - London , United Kingdom
-            </p>
-            <p className="job__date text-gray-500">2020 - Present</p>
-            <p>
-              Conveying modern software development processes with tools and
-              frameworks to build, launch, and scale cuttingedge digital
-              solutions for our clients.
-            </p>
-          </div>
-          <div className={Job}>
-            <h3>Full Stack Development and Design</h3>
-            <p className="job__company">
-              Raconteur Media Ltd. - London , United Kingdom
-            </p>
-            <p className="job__date text-gray-500">2016 - 2019</p>
-            <p>
-              I have been hired at Raconteur to completely redesign the main
-              site and create a new one for the company’s main branch, the
-              custom publishing division. Both products received astonishing
-              feedback from readers, clients and whiting the company. I then led
-              a digital transformation process to enable the company to develop
-              developing and mobile products for their clients.
-            </p>
-          </div>
-          <div className={Job}>
-            <h3>Co-founder, Full-stack Development and Design</h3>
-            <p className="job__company">
-              thePrintLabs Ltd. - London , United Kingdom
-            </p>
-            <p className="job__date text-gray-500">2011 - 2016</p>
-            <p>
-              I co-founded thePrintLbas in 2011 to serve the Publishing Industry
-              with a unique approach to making digital publishing agile and
-              future-proof. My roles span from Project Management to Information
-              Architecture, Web and Mobile Design, UX/UI, and Front-end
-              Development.
-            </p>
-          </div>
-          <div className={Job}>
-            <h3>Web Designer</h3>
-            <p className="job__company">CDB//Agency srl - Catania, Italy</p>
-            <p className="job__date text-gray-500">2008 - 2011</p>{" "}
-            <p>
-              At the CDB//Agency, I had the chance to start following complete
-              projects from the early concept to the final deliverables. In
-              addition, I also started my training in DevOps (server-side, setup
-              and deployment operations) and Front-End Development. As a result,
-              I could cover the bridge between creatives and coders for the
-              company while also holding the responsibility of remotely managing
-              outsourcing partners.
-            </p>
-          </div>
-          <div className={Job}>
-            <h3>Freelance Web Designer</h3>
-            <p className="job__company">Self employed - Rome, Italy</p>
-            <p className="job__date text-gray-500">2000 - 2007</p>{" "}
-            <p>
-              In 2000, I saw the opportunity to specialise in the web industry,
-              which was rapidly expanding. In the following years on, I
-              concentrated on this field. Since the competitive quality of the
-              web drives the need for constant innovation, research and daily
-              learning of new trends and technologies became one of my most
-              important skills. A skill I paired with a firm belief in
-              typography and usability and a natural aptitude for maths and
-              code.
-            </p>
-          </div>
-          <div className={Job}>
-            <h3>Freelance Graphic Designer</h3>
-            <p className="job__company">Self employed - Catania, Italy</p>
-            <p className="job__date text-gray-500">1994 - 1999</p>{" "}
-            <p>
-              1994 was the formal year when I realised my vocation for digital
-              design. It fitted with my natural talents so perfectly that it
-              should have been the job of my life, despite coming from an
-              entirely different background.
-            </p>
-          </div>
+        <div className={Job}>
+          <h3 className="fluid-text-lg">Digital Product Engineer</h3>
+          <p className="job__company">alan. agency - London , United Kingdom</p>
+          <p>
+            Conveying modern software development processes with tools and
+            frameworks to build, launch, and scale cuttingedge digital solutions
+            for our clients.
+          </p>
         </div>
       </div>
       <div className={LeftSide}>
-        <h2 className={Label}>SOCIAL PROFILES</h2>
+        <p className={Label}>2016 ~ 2019</p>
       </div>
       <div className={LeftContent}>
-        <ul>
-          <li>
-            Behance:{" "}
-            <a href="https://behance.net/kairos" alt="">
-              behance.net/kairos
-            </a>
-          </li>
-          <li>
-            Twitter:{" "}
-            <a href="https://twitter.com/kdsign" alt="">
-              twitter.com/kdsign
-            </a>
-          </li>
-          <li>
-            LinkedIn:{" "}
-            <a href="https://linkedin.com/in/nicola-pernice" alt="">
-              linkedin.com/in/nico-pernice
-            </a>
-          </li>
-          <li>
-            GitHub:{" "}
-            <a href="https://github.com/yumyo" alt="">
-              github.com/yumyo
-            </a>
-          </li>
-          <li>
-            StackOverflow:{" "}
-            <a
-              href="https://stackoverflow.com/story/nicola-giulia-pernice"
-              alt=""
-            >
-              stackoverflow.com/story/nicola-giulia-pernice
-            </a>
-          </li>
-        </ul>
+        <div className={Job}>
+          <h3 className="fluid-text-lg">Full Stack Development and Design</h3>
+          <p className="job__company">
+            Raconteur Media Ltd. - London , United Kingdom
+          </p>
+          <p>
+            I have been hired at Raconteur to completely redesign the main site
+            and create a new one for the company’s main branch, the custom
+            publishing division. Both products received astonishing feedback
+            from readers, clients and whiting the company. I then led a digital
+            transformation process to enable the company to develop developing
+            and mobile products for their clients.
+          </p>
+        </div>
       </div>
       <div className={LeftSide}>
-        <h2 className={Label}>CERTIFICATIONS</h2>
+        <p className={Label}>2011 ~ 2016</p>
+      </div>
+      <div className={LeftContent}>
+        <div className={Job}>
+          <h3 className="fluid-text-lg">Co-founder, Full-stack Development and Design</h3>
+          <p className="job__company">
+            thePrintLabs Ltd. - London , United Kingdom
+          </p>
+          <p>
+            I co-founded thePrintLbas in 2011 to serve the Publishing Industry
+            with a unique approach to making digital publishing agile and
+            future-proof. My roles span from Project Management to Information
+            Architecture, Web and Mobile Design, UX/UI, and Front-end
+            Development.
+          </p>
+        </div>
+      </div>
+      <div className={LeftSide}>
+        <p className={Label}>2008 ~ 2011</p>  
+      </div>
+      <div className={LeftContent}>
+        <div className={Job}>
+          <h3 className="fluid-text-lg">Web Designer</h3>
+          <p className="job__company">CDB//Agency srl - Catania, Italy</p>
+          <p>
+            At the CDB//Agency, I had the chance to start following complete
+            projects from the early concept to the final deliverables. In
+            addition, I also started my training in DevOps (server-side, setup
+            and deployment operations) and Front-End Development. As a result, I
+            could cover the bridge between creatives and coders for the company
+            while also holding the responsibility of remotely managing
+            outsourcing partners.
+          </p>
+        </div>
+      </div>
+      <div className={LeftSide}>
+        <p className={Label}>2000 ~ 2007</p>
+      </div>
+      <div className={LeftContent}>
+        <div className={Job}>
+          <h3 className="fluid-text-lg">Freelance Web Designer</h3>
+          <p className="job__company">Self employed - Rome, Italy</p>
+          <p>
+            In 2000, I saw the opportunity to specialise in the web industry,
+            which was rapidly expanding. In the following years on, I
+            concentrated on this field. Since the competitive quality of the web
+            drives the need for constant innovation, research and daily learning
+            of new trends and technologies became one of my most important
+            skills. A skill I paired with a firm belief in typography and
+            usability and a natural aptitude for maths and code.
+          </p>
+        </div>
+      </div>
+      <div className={LeftSide}>
+        <p className={Label}>1994 ~ 1999</p>
+      </div>
+      <div className={LeftContent}>
+        <div className={Job}>
+          <h3 className="fluid-text-lg">Freelance Graphic Designer</h3>
+          <p className="job__company">Self employed - Catania, Italy</p>
+          <p>
+            1994 was the formal year when I realised my vocation for digital
+            design. It fitted with my natural talents so perfectly that it
+            should have been the job of my life, despite coming from an entirely
+            different background.
+          </p>
+        </div>
+      </div>
+      <div className="heading mt-16 mb-16 block w-full ">
+        <h2 className={`${Label} fluid-text-xl`}>Certifications</h2>
+      </div>
+      <div className={LeftSide}>
+        <p className={Label}>2019</p>
       </div>
       <div className={LeftContent}>
         <ul className="edu-history">
-          <li className={Job}>
-            <p className="edu__date text-gray-500">2019</p>
-            <p className="edu__name">Certified ScrumMaster® (CSM®)</p>
+          <li className={Job}>  
+            <h3 className="fluid-text-lg">Certified ScrumMaster® (CSM®)</h3>
             <p className="edu__place">
               Scrum Alliance, Inc. - London, United Kingdom
             </p>
           </li>
-          <li className={Job}>
-            <p className="edu__date text-gray-500">2018</p>
-            <p className="edu__name">React, Redux, GraphQL</p>
-            <p className="edu__place">
-              ReactJS Academy - London, United Kingdom
-            </p>
-          </li>
-          <li className={Job}>
-            <p className="edu__date text-gray-500">2016</p>
-            <p className="edu__name">User Experience Design</p>
-            <p className="edu__place">
-              General Assembly - London, United Kingdom
-            </p>
-          </li>
-          <li className={Job}>
-            <p className="edu__date text-gray-500">1997 - 1998</p>
-            <p className="edu__name">
-              Digital/Multimedia and Information Resources Design
-            </p>
-            <p className="edu__place">Cormorano Felix - Catania, Italy</p>
-          </li>
-          <li className={Job}>
-            <p className="edu__date text-gray-500">1992 - 1994</p>
-            <p className="edu__name">PPLH, Helicopter Private Pilot License</p>
-            <p className="edu__place">COMAER - Catania, Italy</p>
-          </li>
         </ul>
       </div>
       <div className={LeftSide}>
-        <h2 className={Label}>EDUCATION HISTORY</h2>
+        <p className={Label}>2018</p>
       </div>
       <div className={LeftContent}>
         <ul className="edu-history">
           <li className={Job}>
-            <p className="edu__date text-gray-500">2015 - 2016</p>
-            <p className="edu__name">ESOL Level 2 qualification </p>
+            <h3 className="fluid-text-lg">React, Redux, GraphQL</h3>
+            <p className="edu__place">
+              ReactJS Academy - London, United Kingdom
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div className={LeftSide}>
+        <p className={Label}>2016</p>
+      </div>
+      <div className={LeftContent}>
+        <ul className="edu-history">
+          <li className={Job}>
+            <h3 className="fluid-text-lg">User Experience Design</h3>
+            <p className="edu__place">
+              General Assembly - London, United Kingdom
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div className={LeftSide}>
+        <p className={Label}>1997 ~ 1998</p>
+      </div>
+      <div className={LeftContent}>
+        <ul className="edu-history">
+          <li className={Job}>
+            <h3 className="fluid-text-lg">
+              Digital/Multimedia and Information Resources Design
+            </h3>
+            <p className="edu__place">Cormorano Felix - Catania, Italy</p>
+          </li>
+        </ul>
+      </div>
+      <div className={LeftSide}>
+        <p className={Label}>1992 ~ 1994</p>
+      </div>
+      <div className={LeftContent}>
+        <ul className="edu-history">
+          <li className={Job}>
+            <h3 className="fluid-text-lg">PPLH, Helicopter Private Pilot License</h3>
+            <p className="edu__place">COMAER - Catania, Italy</p>
+          </li>
+        </ul>
+      </div>
+      <div className="heading mt-16 mb-16 block w-full ">
+        <h2 className={`${Label} fluid-text-xl`}>Education History</h2>
+      </div>
+      <div className={LeftSide}>
+      <p className={Label}>2015 ~ 2016</p>
+      </div>
+      <div className={LeftContent}>
+        <ul className="edu-history">
+          <li className={Job}>
+            <h3 className="fluid-text-lg">ESOL Level 2 qualification </h3>
             <p className="edu__place">
               Tower Hamlets College - London, United Kingdom
             </p>
           </li>
+        </ul>
+      </div>
+      <div className={LeftSide}>
+      <p className={Label}>1994 ~ 1996</p>
+      </div>
+      <div className={LeftContent}>
+        <ul className="edu-history">
           <li className={Job}>
-            <p className="edu__date text-gray-500">1994 - 1996</p>
-            <p className="edu__name">
+            <h3 className="fluid-text-lg">
               Foreign Languages and Literatures (English and Spanish)
-            </p>
+            </h3>
             <p className="edu__place">University of Catania - Catania, Italy</p>
           </li>
+        </ul>
+      </div>
+      <div className={LeftSide}>
+      <p className={Label}>1988 ~ 1992</p>
+      </div>
+      <div className={LeftContent}>
+        <ul className="edu-history">
           <li className={Job}>
-            <p className="edu__date text-gray-500">1988 - 1992</p>
-            <p className="edu__name">
+            <p className="edu__date text-gray-500"></p>
+            <h3 className="fluid-text-lg">
               A Level. Aeronautical Expert Technician Diploma
-            </p>
+            </h3>
             <p className="edu__place">
               Istituto Tecnico Aeronautico “A. Ferrarin” - Catania, Italy
             </p>
           </li>
         </ul>
       </div>
-      <div className={LeftSide}>
-        <h2 className={Label}>LANGUAGES</h2>
+      <div className="heading mt-16 mb-16 block w-full ">
+        <h2 className={`${Label} fluid-text-xl`}>Languages</h2>
       </div>
-      <div className={`${LeftContent} mb-16`}>
-        <ul className="flex flex-wrap overflow-hidden">
-          <li className="lang w-full overflow-hidden lg:w-1/3">
-            <p className="lang__name text-gray-500">Italian</p>
-            <p className="lang__level">Native speaker</p>
-          </li>
-          <li className="lang w-full overflow-hidden lg:w-1/3">
-            <p className="lang__name text-gray-500">English</p>
-            <p className="lang__level">Fluent</p>
-          </li>
-          <li className="lang w-full overflow-hidden lg:w-1/3">
-            <p className="lang__name text-gray-500">Spanish</p>
-            <p className="lang__level">Basic to Intermidiate</p>
-          </li>
-        </ul>
+      <div className="flex flex-row w-full pl-k25 mb-k4">
+        <div className={`${LeftContent} mb-0 w-full overflow-hidden lg:w-1/3`}>
+          <ul className="flex flex-wrap overflow-hidden">
+            <li className="lang">
+              <p className="mb-0">Italian</p>
+              <div className="block w-full">Native speaker</div>
+            </li>
+          </ul>
+        </div>
+        
+        <div className={`${LeftContent} mb-0 w-full overflow-hidden lg:w-1/3`}>
+          <ul className="flex flex-wrap overflow-hidden">
+            <li className="lang">
+              <p className="mb-0">English</p>
+              <div className="block w-full">Fluent</div>
+              </li>
+          </ul>
+        </div>
+        
+        <div className={`${LeftContent} mb-0 w-full overflow-hidden lg:w-1/3`}>
+          <ul className="flex flex-wrap overflow-hidden">
+            <li className="lang">
+              <p className="mb-0">Spanish</p>
+              <div className="block w-full">Intermidiate</div>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className={LeftSide}>
-        <h2 className={Label}>SOME PERSONAL INTERESTS</h2>
+      {/* <div className={LeftSide}>
+      Related interests
       </div>
       <div className={`${LeftContent} mb-16`}>
         <p>
-          Geometry, Interactivity, Animations, 3D, Typography, Calligraphy,
-          Photography, Art, Theater, Opera, Novels and Literary Essays
-          <br />
-          Travels, Music, Dance, Spirituality, Yoga, Tantra, Buddhism,
-          Philosophy.
+          Math & Geometry, Calligraphy, Photography, Anthropology, Design History, Philosophy.
         </p>
-      </div>
+      </div> */}
       <div className={LeftSide}>
-        <h2 className={Label}>Other Links</h2>
+        <h2 className={Label}></h2>
       </div>
       <div className={`${LeftContent} mb-0`}>
-        <p>
+        <p className="mb-0">
           <a
             href="https://short.kdsign.com/cv"
             alt="Download CV"
             targte="_blank"
+            className="fluid-text-lg"
           >
             Download this CV as PDF
           </a>
         </p>
       </div>
+      <div
+      className={`sm:mb-20 lg:mb-0 mx-auto w-full mt-k4  `}
+    >
+      <div className="lg:flex">
+        <div className="flex-auto lg:w-k4 xlw-k2 2xl:w-k1 pr-k0 2xl:pr-k1 flex flex-col">
+          <div className="">
+            <h1 className="fluid-text-xl leading-snug">Let's get in touch!</h1>
+            <p className="fluid-text-base mt-8">Here's where your idea gets the spotlight it deserves. Tell me about your project, and let's chart a course to realization. </p>
+            <p className="fluid-text-base mt-8">Excited to see where we can go together.</p>
+          </div>
+        </div>
+        <div className="flex-auto lgw-k7 xl:w-k5 2xl:w-k25 lg:ml-k1 3xlml-k">
+          <div className="">
+            <ContactForm className="flex flex-col w-full" />
+          </div>
+        </div>
+      </div>
+      <div className="lg:flex">
+        <div className="flex-auto lg:w-k4 xlw-k2 2xl:w-k1 pr-k0 2xl:pr-k1 flex flex-col">
+          <div className="mt-16 lg:mt-auto">
+            <h2 className="text-base mb-2">Social networks</h2>
+            <ul className="flex flex-row gap-6">
+              <li>
+                <a href={twitter} target="_blank" rel="noreferrer" title="">
+                  <Twitter size="32" />
+                </a>
+              </li>
+              <li>
+                <a href={github} target="_blank" rel="noreferrer" title="">
+                  <Github size="32" />
+                </a>
+              </li>
+              <li>
+                <a href={stackoverflow} target="_blank" rel="noreferrer" title="">
+                  <StackOverflow size="32" />
+                </a>
+              </li>
+              <li>
+                <a href={behance} target="_blank" rel="noreferrer" title="">
+                  <Behance size="32" />
+                </a>
+              </li>
+              <li>
+                <a href={pinterest} target="_blank" rel="noreferrer" title="">
+                  <Pinterest size="32" />
+                </a>
+              </li>
+              <li>
+                <a href={tumblrJournal} target="_blank" rel="noreferrer" title="">
+                  <Tumblr size="32" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="flex-auto lgw-k7 xl:w-k5 2xl:w-k25 lg:ml-k1 3xlml-k">
+          <div className="mt-14">
+            <p className="text-base mb-0">
+              For an encrypted service you can send your message at my Mailfence
+              account:{" "}
+              <a
+                className="block mt-2 mb-2 font-normal whitespace-nowrap"
+                href={`mailto:${secureEmail}?subject=Message from the portfolio website`}
+                title=""
+              >
+                <ShieldCheckmark size="36" /> {secureEmail}
+              </a>
+              OpenPGP key: <br />
+              <strong className="break-all">
+                78C7EC3BEF2627F387CD523C868EFEEEBAB47896
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   )
 }
