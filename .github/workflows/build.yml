@@ -43,4 +43,4 @@ jobs:
           port: ${{ secrets.SS_PORT }}
           dry-run: true
           local-dir: './public/'
-          server-dir: 'public_html/'
+          server-dir: '/home/nicolapernice.com/public_html/'
