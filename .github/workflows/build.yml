@@ -35,12 +35,11 @@ jobs:
       - name: Verify build
         run: ls -la public
       - name: Deploying via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: sebastianpopp/ftp-action@releases/v2
         with:
-          server: 164.90.233.208
-          username: admin_giulianicola
+          host: 164.90.233.208
+          user: admin_giulianicola
           password: ${{ secrets.SS_FTP }}
-          port: ${{ secrets.SS_PORT }}
-          dry-run: true
-          local-dir: './public/'
-          server-dir: '/home/nicolapernice.com/public_html/'
+          options: '--dry-run'
+          localDir: './public/'
+          remoteDir: '/home/nicolapernice.com/public_html/'
