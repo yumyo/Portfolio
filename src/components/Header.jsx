@@ -81,13 +81,14 @@ export default function Header(props) {
           small ? "opacity-0" : "opacity-1"
         }`}
       >
-        <ThemeToggle />
+        {process.env.NODE_ENV === "development" && <ThemeToggle />}
       </CtrlTC>
       <div
         className={`hidden fixed lg:block z-40 text-right ${TopPos} ${RightPos}`}
         // fixed
       >
-        <MenuLink
+        
+        {process.env.NODE_ENV === "development" && <MenuLink
           to="/cases"
           exit={{
             length: 0.5,
@@ -99,8 +100,8 @@ export default function Header(props) {
           preventScrollJump
         >
           Case Histories
-        </MenuLink>
-        <MenuLink
+        </MenuLink>}
+        {process.env.NODE_ENV === "development" && <MenuLink
           to="/works"
           exit={{
             length: 0.5,
@@ -112,7 +113,7 @@ export default function Header(props) {
           preventScrollJump
         >
           Works Archive
-        </MenuLink>
+        </MenuLink>}
         {/* <MenuLink
           to="/labs"
           exit={{

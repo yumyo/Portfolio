@@ -73,7 +73,7 @@ w-screen h-screen fixed top-0 left-0 z-0 text-white dark:text-black dark:sm:text
 const Layout = ({ children }) => {
   // const { title } = useSiteMetadata()
   const [isActive, setActive] = useState("false")
-  const [isBGVisible, setBGVisible] = useState(true)
+  const [isBGVisible, setBGVisible] = useState(false)
   const location = useLocation()
   const prevLocation = usePrevious(location)
 
@@ -116,7 +116,7 @@ const Layout = ({ children }) => {
       </ContentWrapper>
       {/* <Middle /> */}
       <Footer />
-      <button className={`fixed bottom-k1 z-50 left-1/2 -translate-x-1/2`} onClick={toggleBGVisibility}> <EyeOutline size="24" className="transition-colors hover:text-violet-600" /></button>
+     {process.env.NODE_ENV === "development" && <button className={`fixed bottom-k1 z-50 left-1/2 -translate-x-1/2`} onClick={toggleBGVisibility}> <EyeOutline size="24" className="transition-colors hover:text-violet-600" /></button>}
       {isBGVisible && <GeometriCBG />}
     </MainContainer>
   )
