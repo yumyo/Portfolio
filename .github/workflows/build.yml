@@ -23,7 +23,7 @@ jobs:
       - name: Run install
         uses: borales/actions-yarn@v4
         with:
-          cmd: add gatsby-cli
+          cmd: add gatsby-cli@3.5.0
       - name: Install Gatsby CLI
         uses: borales/actions-yarn@v4
         with:
