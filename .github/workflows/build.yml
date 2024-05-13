@@ -42,4 +42,4 @@ jobs:
           password: ${{ secrets.SS_FTP }}
           options: '--delete'
           localDir: './public/'
-          remoteDir: '/home/nicolapernice.com/public_html/'
+          remoteDir: 'public_html/'
