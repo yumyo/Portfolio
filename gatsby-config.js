@@ -12,7 +12,7 @@ module.exports = {
     description: `Product Designer and Full Stack Developer`,
     lastBuildDate: new Date(Date.now()).toISOString(),
     siteUrl: `https://nicolapernice.com`,
-    authorName: `Nicola Giulia Pernice`,
+    authorName: `Giulia Nicole Pernice`,
     socialimage: `/exness_cover_social.jpeg`,
     twitter: `https://twitter.com/KdSign`,
     github: `https://github.com/yumyo`,
@@ -145,28 +145,54 @@ module.exports = {
         short_name: `Studio Pernice`,
         start_url: `/`,
         background_color: `#3A3A3B`,
-        theme_color: `#fab62d`,
+        theme_color: `#FC00BD`,
         display: `standalone`,
-        icon: `./src/images/icons/icon-512x512.png`,
+        icons: [
+          {
+            "src": "./src/images/favicons/favicon.ico",
+            "sizes": "16x16",
+            "type": "image/ico"
+          },
+          {
+            "src": "./src/images/favicons/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+          },
+          {
+            "src": "./src/images/favicons/icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+          },
+          {
+            "src": "./src/images/favicons/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+          },
+          {
+            "src": "./src/images/favicons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "./src/images/favicons/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+          },
+          {
+            "src": "./src/images/favicons/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+          },
+          {
+            "src": "./src/images/favicons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ], 
+        theme_color_in_head: false,
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: `Exness: Psychology of Trading`,
-        short_name: `Exness`,
-        description: `Psychology of Trading`,
-        start_url: `/`,
-        background_color: `#000000`,
-        theme_color: `#FFCF01`,
-        display: `standalone`,
-        icon: `./src/images/icons/icon-512x512.png`,
-        // https://www.simicart.com/manifest-generator.html/
-        // https://github.com/onderceylan/pwa-asset-generator
-      },
-    },
     {
       resolve: "gatsby-plugin-transition-link",
       options: {
