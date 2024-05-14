@@ -95,6 +95,7 @@ const Layout = ({ children }) => {
     <MainContainer
       className={`${isActive ? "is-locked" : ""} flex flex-col min-h-screen`}
     >
+      
       <Header />
       <div
         className={`flex lg:hidden flex-row fixed top-k1 z-50 text-violet-400 right-k1 md:-mr-4`}

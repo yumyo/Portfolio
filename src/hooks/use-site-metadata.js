@@ -5,15 +5,26 @@ export const useSiteMetadata = () => {
       query SITE_METADATA_QUERY {
         site {
           siteMetadata {
+            siteUrl
             title
             description
+            author
+            keywords
+            socialimage
+            lastBuildDate
+            codepen
             twitter
             github
+            linkedin
             stackoverflow
             secureEmail
             behance
             pinterest
+            flickr
             tumblrJournal
+            tumblrDesign
+            dribble
+            siteLanguage
           }
         }
       }

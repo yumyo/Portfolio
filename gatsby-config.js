@@ -8,12 +8,14 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    title: `Giulia Nicole Pernice`,
-    description: `Product Designer and Full Stack Developer`,
-    lastBuildDate: new Date(Date.now()).toISOString(),
     siteUrl: `https://nicolapernice.com`,
-    authorName: `Giulia Nicole Pernice`,
-    socialimage: `/exness_cover_social.jpeg`,
+    title: `Giulia Nicole Pernice || Design Engineering Portfolio`,
+    description: `A Digital Product Engineer blending design and technology to create innovative solutions. Based in London, Giulia specialises in  digital product design and full-stack development. Connect to bring your project to life.`,
+    author: `Giulia Nicole Pernice`,
+    keywords: `product design, design technologist, front-end engineer, full-stack developer, ui/ux, web design, javascript, react, wordpress, hubspot, creative coding, design systems, threejs`,
+    socialimage: `./src/images/media/about-g.png`,
+    lastBuildDate: new Date(Date.now()).toISOString(),
+    codepen: `https://codepen.io/yumyo`,
     twitter: `https://twitter.com/KdSign`,
     github: `https://github.com/yumyo`,
     gitlab: `https://gitlab.com/k30`,

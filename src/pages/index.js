@@ -3,6 +3,7 @@ import { gsap } from "gsap"
 import TransitionLink from "gatsby-plugin-transition-link"
 import tw from "twin.macro"
 import { Lead } from "../components/theme"
+import SEO from "../components/Seo"
 // PageDefault
 const IndexPage = ({ transitionStatus }) => {
   useEffect(() => {
@@ -36,6 +37,7 @@ const IndexPage = ({ transitionStatus }) => {
 
   return (
     <div className="flex flex-col justify-center  ">
+      <SEO />
       <div className="anim-home opacity-0 mx-auto w-k8 md:w-k7 2xl:w-k5 mt-k5v">
         <Title>
           Hi, my name is{" "}
