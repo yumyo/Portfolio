@@ -196,6 +196,18 @@ const Cv = ({ transitionStatus }) => {
         <h2 className={`${Label} fluid-text-xl`}>Employment History</h2>
       </div>
       <div className={LeftSide}>
+        <p className={Label}>2023 ~ Present</p>
+      </div>
+      <div className={LeftContent}>
+        <div className={Job}>
+          <h3 className="fluid-text-lg">Lead Design Technologist</h3>
+          <p className="job__company">DMI, Digital Management, LLC - London , United Kingdom</p>
+          <p>
+          Designing and developing comprehensive design systems with a focus on inclusive and human-centered design principles. Exploring web 3D technologies and integrating AI into our practice. Ensuring all designs meet high standards of accessibility, creating digital experiences usable by everyone.
+          </p>
+        </div>
+      </div>
+      <div className={LeftSide}>
         <p className={Label}>2020 ~ 2022</p>
       </div>
       <div className={LeftContent}>

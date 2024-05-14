@@ -40,7 +40,7 @@ const AboutPage = ({ transitionStatus }) => {
       <div className="bio">
         <h1 className={`${About_Title}`}>Giulia Nicole Pernice</h1>
         </div>
-        <div className="sm:ml-k1 md:ml-k25 mb-k3v flex flex-row flex-wrap items-baseline">
+        <div className="sm:ml-k1 md:ml-k25 flex flex-row flex-wrap items-baseline">
         <p className={`${About_SF}`}>
           I'm a multidisciplinary Digital Product Engineer working at the intersection of design&nbsp;and&nbsp;technology.
         </p>
