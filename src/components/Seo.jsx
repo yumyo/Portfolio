@@ -28,7 +28,7 @@ function SEO({ metaTitle, metaDescription, metaImage, lang, meta, pathname }) {
 
   const seoTitle = metaTitle || title;
   const seoDescription = metaDescription || description;
-  const seoImage = metaImage || socialimage;
+  const seoImage = metaImage || `${siteUrl}${socialimage}`;
 
   return (
     <Helmet
