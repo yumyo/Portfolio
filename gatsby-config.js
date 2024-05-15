@@ -13,7 +13,7 @@ module.exports = {
     description: `A Digital Product Engineer blending design and technology to create innovative solutions. Based in London, Giulia specialises in  digital product design and full-stack development. Connect to bring your project to life.`,
     author: `Giulia Nicole Pernice`,
     keywords: `product design, design technologist, front-end engineer, full-stack developer, ui/ux, web design, javascript, react, wordpress, hubspot, creative coding, design systems, threejs`,
-    socialimage: `./src/images/media/about-g.png`,
+    socialimage: `./og.png`,
     lastBuildDate: new Date(Date.now()).toISOString(),
     codepen: `https://codepen.io/yumyo`,
     twitter: `https://twitter.com/KdSign`,
