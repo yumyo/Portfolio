@@ -49,7 +49,7 @@ export default function Contact(props) {
             <h2 className="text-base mb-2">Social networks</h2>
             <ul className="flex flex-row gap-6">
               <li>
-                <a href='https://www.linkedin.com/in/pernice' target="_blank" rel="noreferrer" title="">
+                <a href={linkedin} target="_blank" rel="noreferrer" title="">
                   <LinkedinSquare size="32" />
                 </a>
               </li>

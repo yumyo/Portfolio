@@ -84,7 +84,7 @@ export default function Header(props) {
         {process.env.NODE_ENV === "development" && <ThemeToggle />}
       </CtrlTC>
       <div
-        className={`hidden fixed lg:block z-40 text-right ${TopPos} ${RightPos}`}
+        className={`block fixed z-40 text-right ${TopPos} ${RightPos}`}
         // fixed
       >
         

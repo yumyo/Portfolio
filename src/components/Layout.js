@@ -98,7 +98,7 @@ const Layout = ({ children }) => {
       
       <Header />
       <div
-        className={`flex lg:hidden flex-row fixed top-k1 z-50 text-violet-400 right-k1 md:-mr-4`}
+        className={`flex hidden flex-row fixed top-k1 z-50 text-violet-400 right-k1 md:-mr-4`}
       >
         <Minus
           active={isActive}

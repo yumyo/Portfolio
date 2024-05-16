@@ -10,7 +10,11 @@ export default function ContactForm(props) {
       method="POST"
       action={FORMSPARK_ACTION_URL}
     >
-      {/* <h2 className="text-xxs leading-none uppercase mb-4 ">Contact</h2> */}
+      <input
+        type="hidden"
+        name="_redirect"
+        value="https://nicolapernice.com//thank-you"
+      />
       <input type="hidden" name="_feedback.dark" value="true" />
       <div className="xs:gap-8 xs:columns-2 mt-4 ">
         <div className="flex flex-col">
