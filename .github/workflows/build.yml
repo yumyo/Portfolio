@@ -38,7 +38,7 @@ jobs:
         uses: sebastianpopp/ftp-action@releases/v2
         with:
           host: 164.90.233.208
-          user: admin_giulianicola
+          user: admin_kdsigner
           password: ${{ secrets.SS_FTP }}
           options: '--only-newer --delete'
           localDir: './public/'

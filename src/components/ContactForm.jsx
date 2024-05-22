@@ -1,4 +1,5 @@
 import React from "react"
+import ReCAPTCHA from "react-google-recaptcha"
 import { GhostButton } from "./theme"
 
 const FORMSPARK_ACTION_URL = "https://submit-form.com/0VlKJYuD"
@@ -10,6 +11,7 @@ export default function ContactForm(props) {
       method="POST"
       action={FORMSPARK_ACTION_URL}
     >
+
       <input
         type="hidden"
         name="_redirect"
@@ -42,6 +44,7 @@ export default function ContactForm(props) {
         </label>
         <textarea name="message" id="message" placeholder="Your awesome message!" required />
       </div>
+      <ReCAPTCHA sitekey="6LdG6tcdAAAAAB7yrhfhB7hsIy735tBG2iV43HiX" />
       <button className={GhostButton} type="submit">
         Send
       </button>
