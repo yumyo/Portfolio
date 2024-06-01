@@ -29,7 +29,7 @@ const AboutPage = ({ transitionStatus }) => {
   useEffect(() => {
     if (transitionStatus === "exiting") {
       gsap.to(".anim-about", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        window.scrollTo(0, 0)
+        // window.scrollTo(0, 0)
       } })
     }
   }, [transitionStatus])
