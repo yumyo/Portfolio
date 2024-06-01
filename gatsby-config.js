@@ -8,7 +8,7 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://nicolapernice.com`,
+    siteUrl: `https://kdsign.com`,
     title: `Giulia Nicole Pernice || Design Engineering Portfolio`,
     description: `A Digital Product Engineer blending design and technology to create innovative solutions. Based in London, Giulia specialises in  digital product design and full-stack development. Connect to bring your project to life.`,
     author: `Giulia Nicole Pernice`,
