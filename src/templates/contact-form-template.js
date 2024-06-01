@@ -87,8 +87,7 @@ export default function Contact(props) {
         <div className="flex-auto lg:w-k5 2xl:w-k25 lg:ml-k1 3xlml-k">
           <div className="mt-14">
             <p className="text-base mb-0">
-              For an encrypted service you can send your message at my Mailfence
-              account:{" "}
+              For a fully encrypted service you can send your message directly at:{" "}
               <a
                 className="block mt-2 mb-2 font-normal whitespace-nowrap"
                 href={`mailto:${secureEmail}?subject=Message from the portfolio website`}

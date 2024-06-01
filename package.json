@@ -16,7 +16,8 @@
     "start": "npm run dev",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "gatsby build && rsync -avz --checksum --delete -e 'ssh' --chown=kdsignc:kdsignc /Users/dsgncode/Sites/np-portfolio/public/ root@164.90.233.208:/home/kdsign.com/public_html"
   },
   "dependencies": {
     "@amcharts/amcharts5": "^5.8.7",

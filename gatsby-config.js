@@ -21,7 +21,7 @@ module.exports = {
     gitlab: `https://gitlab.com/k30`,
     linkedin: `https://www.linkedin.com/in/pernice`,
     stackoverflow: `https://stackoverflow.com/users/1214176/giulia-nicole-pernice`,
-    secureEmail: `ekrypt@mailfence.com`,
+    secureEmail: `info@kdsign.com`,
     behance: `https://www.behance.net/kairos`,
     pinterest: `https://www.pinterest.co.uk/kdsign`,
     flickr: `https://www.flickr.com/photos/k_d_sign`,
