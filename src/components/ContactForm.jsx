@@ -55,6 +55,9 @@ export default function ContactForm(props) {
       <button className={GhostButton} type="submit">
         Send
       </button>
+      <input type="hidden" name="_email.subject" value="New message: kdsign.com " />
+      <input type="hidden" name="_email.from" value="kdsign.com" />
+      <input type="hidden" name="_email.template.footer" value="false" />
     </form>
   )
 }
