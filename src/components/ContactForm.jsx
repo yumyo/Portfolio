@@ -24,16 +24,16 @@ export default function ContactForm(props) {
       <input type="hidden" name="_feedback.dark" value="true" />
       <div className="xs:gap-8 xs:columns-2 mt-4 ">
         <div className="flex flex-col">
-          <label htmlFor="first-name" className="required mb-2">
+          <label htmlFor="name" className="required mb-2">
             First name
           </label>
-          <input id="first-name" name="first-name" className="first-name" type="text" required />
+          <input id="name" name="name" className="name" type="text" required />
         </div>
         <div className="flex flex-col mt-4 xs:mt-0">
-          <label htmlFor="last-name" className="required mb-2">
+          <label htmlFor="surname" className="required mb-2">
             Last name
           </label>
-          <input id="last-name" name="last-name"  className="last-name" type="text" required />
+          <input id="surname" name="surname"  className="surname" type="text" required />
         </div>
       </div>
       <div className="flex flex-col mt-4">
@@ -55,7 +55,7 @@ export default function ContactForm(props) {
       <button className={GhostButton} type="submit">
         Send
       </button>
-      <input type="hidden" name="_email.subject" value="New message: kdsign.com " />
+      <input type="hidden" name="_email.subject" value="New message from the website " />
       <input type="hidden" name="_email.from" value="kdsign.com" />
       <input type="hidden" name="_email.template.footer" value="false" />
     </form>
