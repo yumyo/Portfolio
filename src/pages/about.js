@@ -35,7 +35,7 @@ const AboutPage = ({ transitionStatus }) => {
   }, [transitionStatus])
   return (
     // min-h-screen
-    <div className="anim-about mx-auto mt-k5v mb-k3v flex w-k8 sm:w-k8 flex-row flex-wrap items-baseline opacity-0 lg:w-k7  xl:w-k5 xl:pl-0 ">
+    <div className="anim-about mx-auto mt-k5v mb-k3v flex w-k8 sm:w-k8 flex-row flex-wrap items-baseline opacity-0 lg:w-k7 xl:w-k5 xl:pl-0 ">
       <SEO metaTitle="Giulia Nicole Pernice || Design Engineering Portfolio || About" />
       <div className="bio">
         <h1 className={`${About_Title}`}>Giulia Nicole Pernice</h1>

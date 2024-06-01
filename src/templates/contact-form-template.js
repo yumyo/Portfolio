@@ -27,24 +27,24 @@ export default function Contact(props) {
   return (
     // h-k100v t-0  ${PageDefault} md:mb-0
     <div
-      className={`anim-about opacity-0 sm:mb-20 lg:mb-0 mx-auto w-k75 md:w-k8 3xl:w-k5 mt-k3v `}
+      className={`anim-about opacity-0 mb-k3v lg:mb-0 mx-auto w-k8 md:w-k8 3xl:w-k5 mt-k5v lg:mt-k3v `}
     >
       <div className="lg:flex">
-        <div className="flex-auto lg:w-k4 xlw-k2 2xl:w-k1 pr-k0 2xl:pr-k1 flex flex-col">
+        <div className="flex-auto lg:w-k4 xlw-k2 2xl:w-k1  2xl:pr-k1 flex flex-col">
           <div className="">
-            <h1 className="fluid-text-xl leading-snug">Let's get in touch!</h1>
+            <h1 className="-mt-16 lg:mt-0 fluid-text-2xl lg:fluid-text-xl leading-snug">Let's get in touch!</h1>
             <p className="fluid-text-base mt-8">Here's where your idea gets the spotlight it deserves. Tell me about your project, and let's chart a course to realization. </p>
             <p className="fluid-text-base mt-8">Excited to see where we can go together.</p>
           </div>
         </div>
-        <div className="flex-auto lgw-k7 xl:w-k5 2xl:w-k25 lg:ml-k1 3xlml-k">
+        <div className="flex-auto lg:w-k5 2xl:w-k25 lg:ml-k1 3xlml-k">
           <div className="">
             <ContactForm className="flex flex-col w-full" />
           </div>
         </div>
       </div>
       <div className="lg:flex items-stretch mt-8">
-        <div className="flex-auto lg:w-k4 xlw-k2 2xl:w-k1 pr-k0 2xl:pr-k1 flex flex-col">
+        <div className="flex-auto lg:w-k4 xlw-k2 2xl:w-k1 2xl:pr-k1 flex flex-col">
           <div className="mt-16 lg:mt-auto">
             <h2 className="text-base mb-2">Social networks</h2>
             <ul className="flex flex-row gap-6">
@@ -86,7 +86,7 @@ export default function Contact(props) {
             </ul>
           </div>
         </div>
-        <div className="flex-auto lgw-k7 xl:w-k5 2xl:w-k25 lg:ml-k1 3xlml-k">
+        <div className="flex-auto lg:w-k5 2xl:w-k25 lg:ml-k1 3xlml-k">
           <div className="mt-14">
             <p className="text-base mb-0">
               For an encrypted service you can send your message at my Mailfence
@@ -100,7 +100,7 @@ export default function Contact(props) {
               </a>
               OpenPGP key: <br />
               <strong className="break-all">
-                78C7EC3BEF2627F387CD523C868EFEEEBAB47896
+              0D6581E7FE7D224014E0AE64F5CF1D5DBC61CC14
               </strong>
             </p>
           </div>

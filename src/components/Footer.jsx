@@ -7,7 +7,7 @@ export default function Footer(props) {
   const today = new Date()
   const year = today.getFullYear()
   return (
-    <div className="md:bottom static bottom-0 mx-auto flex w-k8 shrink-0 transform-gpu items-end justify-between pb-k1v leading-none md:z-50 md:pb-k1v lg:fixed lg:w-full">
+    <div className="md:bottom static bottom-0 mx-auto flex w-k8 shrink-0 transform-gpu items-end justify-between pb-k1v leading-none md:z-50 md:pb-k1v xl:fixed lg:w-full">
       <div className={`static left-k1 z-40 flex lg:fixed`}>
         ©{year}
         {/* <TransitionLink

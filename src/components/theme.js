@@ -17,7 +17,7 @@ export const PageTitle = "fluid-text-3xl"
 export const TopPos = "top-k1 mt-0"
 export const LeftPos = "left-k1v  " // lg:left-k0 2xl:left-k1
 export const MidPos = "top-1/2"
-export const RightPos = "right-k2 xs:right-k1 " // lg:right-k0 2xl:right-k1
+export const RightPos = "right-k1" // lg:right-k0 2xl:right-k1
 export const BottomPos = "2xl:mb-0 bottom-k0 2xl:bottom-k1"
 // Grid
 export const LeftSide = "block w-full md:w-k25"
