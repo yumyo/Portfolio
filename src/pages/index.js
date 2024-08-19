@@ -1,11 +1,15 @@
 import React, { useEffect } from "react"
 import { gsap } from "gsap"
 import TransitionLink from "gatsby-plugin-transition-link"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import tw from "twin.macro"
 import { Lead } from "../components/theme"
 import SEO from "../components/Seo"
 // PageDefault
-const IndexPage = ({ transitionStatus }) => {
+const IndexPage = () => {
+
+  const transitionState = useTransitionState()
+
   useEffect(() => {
     console.log("Home Page", transitionStatus)
   }, [transitionStatus])
@@ -18,7 +22,7 @@ const IndexPage = ({ transitionStatus }) => {
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-home", { autoAlpha: 0, duration: 0.25, delay: 0,  onComplete: () => {
         window.scrollTo(0, 0)
       } })

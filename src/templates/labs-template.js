@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 // import { PageDefault } from "../components/theme"
 import tw from "twin.macro"
 import { gsap } from "gsap"
@@ -19,7 +20,6 @@ text-sm font-medium uppercase inline-block mr-4
 const ItemLayout = tw.div`mx-auto w-6/12 mt-k2v`
 
 const LabsTemplate = ({
-  transitionStatus,
   data: {
     mdx: {
       excerpt,
@@ -29,6 +29,9 @@ const LabsTemplate = ({
     },
   },
 }) => {
+
+  const transitionState = useTransitionState()
+
   useEffect(() => {
     gsap.to(".lab-project", {
       autoAlpha: 1,
@@ -38,7 +41,7 @@ const LabsTemplate = ({
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       gsap.to(".lab-project", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)
       } })

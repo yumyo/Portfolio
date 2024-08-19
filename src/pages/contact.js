@@ -10,6 +10,7 @@ import { Github } from "@styled-icons/boxicons-logos/Github"
 import { Behance } from "@styled-icons/boxicons-logos/Behance"
 import { Tumblr } from "@styled-icons/boxicons-logos/Tumblr"
 import { ShieldCheckmark } from "@styled-icons/fluentui-system-regular/ShieldCheckmark"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import Contact from '../templates/contact-form-template.js'
 // import { PageDefault } from "../components/theme"
 // Assets
@@ -28,6 +29,8 @@ const ContactPage = ({ transitionStatus }) => {
     tumblrJournal,
   } = useSiteMetadata()
 
+  const transitionState = useTransitionState()
+
   useEffect(() => {
     // console.log('About Page', transitionStatus);
   }, [transitionStatus])
@@ -40,7 +43,7 @@ const ContactPage = ({ transitionStatus }) => {
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-about", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         // window.scrollTo(0, 0)
       } })

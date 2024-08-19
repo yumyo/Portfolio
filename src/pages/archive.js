@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { graphql, Link as GatsbyLink } from "gatsby"
 import { gsap } from "gsap"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import tw from "twin.macro"
 
 const ListItem = tw.div`
@@ -21,7 +22,10 @@ text-sm font-medium uppercase inline-block mr-4
 
 const ArchiveLayout = tw.div`mx-auto w-6/12 mt-k2v`
 
-const Archive = ({ data, transitionStatus }) => {
+const Archive = ({ data }) => {
+
+  const transitionState = useTransitionState()
+
   let nodes = data.allFile.nodes
   nodes.sort(
     (d1, d2) =>
@@ -38,7 +42,7 @@ const Archive = ({ data, transitionStatus }) => {
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-archive", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)
       } })

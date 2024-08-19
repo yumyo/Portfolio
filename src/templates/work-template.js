@@ -3,7 +3,8 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import { gsap } from "gsap"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
-import ReactHtmlParser from "react-html-parser"
+// import ReactHtmlParser from "react-html-parser"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import moment from "moment"
 import tw from "twin.macro"
 
@@ -20,7 +21,6 @@ text-sm font-medium uppercase inline-block mr-4
 // `
 
 const PostTemplate = ({
-  transitionStatus,
   data: {
     mdx: {
       excerpt,
@@ -41,6 +41,9 @@ const PostTemplate = ({
     },
   },
 }) => {
+
+  const transitionState = useTransitionState()
+
   let projectDate = moment(date).format("MMM YYYY")
   // const year = date.slice(-4)
   useEffect(() => {
@@ -52,7 +55,7 @@ const PostTemplate = ({
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+     if (transitionState.transitionStatus === "exiting") {
       gsap.to(".work-project", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)
       } })

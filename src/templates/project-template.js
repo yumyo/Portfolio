@@ -4,6 +4,7 @@ import { MDXProvider } from "@mdx-js/react"
 import { gsap } from "gsap"
 import ReactHtmlParser from "react-html-parser"
 import moment from "moment"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
 // import { Navigation, Pagination, A11y } from 'swiper/modules';
 // import { Swiper, SwiperSlide } from 'swiper/react'
@@ -24,7 +25,6 @@ import {
 } from "../components/theme"
 
 const ProjectTemplate = ({
-  transitionStatus,
   data: {
     mdx: {
       excerpt,
@@ -45,6 +45,9 @@ const ProjectTemplate = ({
     },
   },
 }) => {
+
+  const transitionState = useTransitionState()
+
   let projectDate = moment(date).format("MMM YYYY")
   const shortcodes = { getImage, GatsbyImage, StaticImage, Slider }
   // console.log("embeddedImagesRemote")
@@ -62,7 +65,7 @@ const ProjectTemplate = ({
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       console.log('exiting')
       gsap.to(".anim-project", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)

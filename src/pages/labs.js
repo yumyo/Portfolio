@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { graphql, Link as GatsbyLink } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import { GhostButton } from "../components/theme"
 import { gsap } from "gsap"
 import tw from "twin.macro"
@@ -24,7 +25,10 @@ text-sm font-medium uppercase inline-block mr-4
 
 const LabsLayout = tw.div`mx-auto w-6/12 mt-k2v`
 
-const Labs = ({ data, transitionStatus }) => {
+const Labs = ({ data }) => {
+
+  const transitionState = useTransitionState()
+
   let nodes = data.allFile.nodes
   nodes.sort(
     (d1, d2) =>
@@ -40,7 +44,7 @@ const Labs = ({ data, transitionStatus }) => {
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-labs", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)
       } })

@@ -7,6 +7,7 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
 // import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 // gsap.registerPlugin(ScrollToPlugin);
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 
 const ListItem = tw.div`
 mb-24 mt-k3v
@@ -18,8 +19,10 @@ text-xl font-medium mt-2
 
 // const CasesLayout = tw.div``
 
-const Cases = ({ data, transitionStatus, entry, exit }) => {
-  console.log('transitionStatus cases', transitionStatus)
+const Cases = ({ data }) => {
+
+  const transitionState = useTransitionState()
+
   let nodes = data.allFile.nodes
   // const [currentTransitionStatus, setCurrentTransitionStatus] = useState('');
   // console.log(nodes)
@@ -38,7 +41,7 @@ const Cases = ({ data, transitionStatus, entry, exit }) => {
     
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-case", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         // window.scrollTo(0, 0)
         console.log('fuck')

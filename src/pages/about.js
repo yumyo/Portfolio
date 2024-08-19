@@ -5,6 +5,7 @@ import tw from "twin.macro"
 import { StaticImage } from "gatsby-plugin-image"
 import { PageTitle } from "../components/theme"
 import SEO from "../components/Seo"
+import Contact from '../templates/contact-form-template.js'
 
 const AboutLayout = tw.div``
 
@@ -14,7 +15,10 @@ const About_SF =
   "relative z-10 mb-12 fluid-text-lg  max-w-[25em]"
 const About_P = "mb-4 mb-4 fluid-text-base max-w-[34em]"
 
-const AboutPage = ({ transitionStatus }) => {
+const AboutPage = () => {
+
+  const transitionState = useTransitionState()
+
   useEffect(() => {
     console.log("About Page", transitionStatus)
   }, [transitionStatus])
@@ -27,7 +31,7 @@ const AboutPage = ({ transitionStatus }) => {
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-about", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         // window.scrollTo(0, 0)
       } })

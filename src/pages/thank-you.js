@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import { gsap } from "gsap"
 // import tw from "twin.macro"
 import ContactForm from "../components/ContactForm"
@@ -16,7 +17,7 @@ import { ShieldCheckmark } from "@styled-icons/fluentui-system-regular/ShieldChe
 
 // const ContactLayout = tw.div`mx-auto w-k5 mt-k3v`
 
-const ContactPage = ({ transitionStatus }) => {
+const ContactPage = () => {
   const {
     twitter,
     linkedin,
@@ -27,6 +28,8 @@ const ContactPage = ({ transitionStatus }) => {
     pinterest,
     tumblrJournal,
   } = useSiteMetadata()
+
+  const transitionState = useTransitionState()
 
   useEffect(() => {
     // console.log('About Page', transitionStatus);
@@ -40,7 +43,7 @@ const ContactPage = ({ transitionStatus }) => {
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-about", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)
       } })

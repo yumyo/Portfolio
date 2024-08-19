@@ -5,6 +5,7 @@ import tw from "twin.macro"
 import { CasesLayout, GhostButton } from "../components/theme"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 
 const ListItem = tw.div`
 mb-24
@@ -16,7 +17,10 @@ text-xl font-medium mt-2
 
 const WorksLayout = tw.div`mx-auto w-6/12 mt-k2v`
 
-const Works = ({ data, transitionStatus }) => {
+const Works = ({ data }) => {
+
+  const transitionState = useTransitionState()
+
   let nodes = data.allFile.nodes
   nodes.sort(
     (d1, d2) =>
@@ -32,7 +36,7 @@ const Works = ({ data, transitionStatus }) => {
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       // console.log("Works", transitionStatus)
       gsap.to(".anim-works", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)
