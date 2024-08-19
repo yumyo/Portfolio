@@ -42,7 +42,7 @@ const Works = ({ data }) => {
         window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   return (
     <div className={`anim-works opacity-0 ${CasesLayout} lg:mt-k3v mb-k2v`}>
       {nodes.map(({ childMdx }) => (

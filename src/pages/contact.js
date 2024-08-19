@@ -33,7 +33,7 @@ const ContactPage = ({ transitionStatus }) => {
 
   useEffect(() => {
     // console.log('About Page', transitionStatus);
-  }, [transitionStatus])
+  }, [transitionState])
   useEffect(() => {
     gsap.to(".anim-about", {
       autoAlpha: 1,
@@ -45,10 +45,10 @@ const ContactPage = ({ transitionStatus }) => {
   useEffect(() => {
     if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-about", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        // window.scrollTo(0, 0)
+        window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   return (
     <div
       className={`anim-about opacity-0 mb-k3v lg:mb-0 mx-auto w-k8 md:w-k8 3xl:w-k5 mt-k5v lg:mt-k3v `}

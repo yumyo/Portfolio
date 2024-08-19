@@ -47,7 +47,7 @@ const Archive = ({ data }) => {
         window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   return (
     <ArchiveLayout className="anim-archive opacity-0">
       {nodes.map(({ childMdx }) => (

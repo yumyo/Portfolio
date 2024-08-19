@@ -49,7 +49,7 @@ const Labs = ({ data }) => {
         window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   return (
     <LabsLayout className="anim-labs opacity-0 lg:mt-k3v mb-k2v">
       {nodes.map(({ childMdx }) => (

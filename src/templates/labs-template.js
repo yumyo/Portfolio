@@ -46,7 +46,7 @@ const LabsTemplate = ({
         window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   return (
     <ItemLayout className={`lab-project opacity-0`}>
       <h1>{`${title}`}</h1>

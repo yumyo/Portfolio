@@ -71,7 +71,7 @@ const ProjectTemplate = ({
         window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
 
   // 2xl:w-k6
   return (

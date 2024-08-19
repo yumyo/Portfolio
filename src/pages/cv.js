@@ -35,7 +35,7 @@ const Cv = () => {
     tumblrJournal,
   } = useSiteMetadata()
 
-  const transitionState = useTransitionState();
+  const transitionState = useTransitionState()
   console.log ('transitionStatus hook', transitionState);
     
   useEffect(() => {
@@ -55,7 +55,7 @@ const Cv = () => {
         duration: 0.25,
         delay: 0,
         onComplete: () => {
-          // window.scrollTo(0, 0)
+          window.scrollTo(0, 0)
         },
       })
     }

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import { gsap } from "gsap"
 import tw from "twin.macro"
 // import { Label } from "../../components/theme"
@@ -10,10 +11,10 @@ const SGLabel = tw.div`text-xs 2xl:text-sm uppercase tracking-widest text-black-
 
 const SGLayout = tw.div`mx-auto w-k75 md:w-k6 lg:w-6/12 mt-k3v md:mt-k2v`
 
-const StyleGuide = ({ transitionStatus }) => {
-  useEffect(() => {
-    console.log("Style Guide Page", transitionStatus)
-  }, [transitionStatus])
+const StyleGuide = () => {
+
+  const transitionState = useTransitionState()
+
   useEffect(() => {
     gsap.to(".anim-sg", {
       autoAlpha: 1,
@@ -23,12 +24,12 @@ const StyleGuide = ({ transitionStatus }) => {
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-sg", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   return (
     <SGLayout className="anim-sg opacity-0 mb-k1v">
       <SGLabel>Logo</SGLabel>

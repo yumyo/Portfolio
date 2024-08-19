@@ -60,7 +60,7 @@ const PostTemplate = ({
         window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   return (
     <div className={`work-project opacity-0 mb-k1v`}>
       <GatsbyImage

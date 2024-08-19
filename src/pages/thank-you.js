@@ -33,7 +33,7 @@ const ContactPage = () => {
 
   useEffect(() => {
     // console.log('About Page', transitionStatus);
-  }, [transitionStatus])
+  }, [transitionState])
   useEffect(() => {
     gsap.to(".anim-about", {
       autoAlpha: 1,
@@ -48,7 +48,7 @@ const ContactPage = () => {
         window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   return (
     // h-k100v t-0  ${PageDefault} md:mb-0
     <div

@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { gsap } from "gsap"
 import tw from "twin.macro"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import { StaticImage } from "gatsby-plugin-image"
 import { PageTitle } from "../components/theme"
 import SEO from "../components/Seo"
@@ -20,9 +21,6 @@ const AboutPage = () => {
   const transitionState = useTransitionState()
 
   useEffect(() => {
-    console.log("About Page", transitionStatus)
-  }, [transitionStatus])
-  useEffect(() => {
     gsap.to(".anim-about", {
       autoAlpha: 1,
       duration: 0.5,
@@ -33,10 +31,10 @@ const AboutPage = () => {
   useEffect(() => {
     if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-about", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        // window.scrollTo(0, 0)
+        window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   return (
     // min-h-screen
     <div className="anim-about mx-auto mt-k5v mb-k3v flex w-k8 sm:w-k8 flex-row flex-wrap items-baseline opacity-0 lg:w-k7 xl:w-k5 xl:pl-0 ">

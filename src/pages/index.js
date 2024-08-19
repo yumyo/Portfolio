@@ -11,9 +11,6 @@ const IndexPage = () => {
   const transitionState = useTransitionState()
 
   useEffect(() => {
-    console.log("Home Page", transitionStatus)
-  }, [transitionStatus])
-  useEffect(() => {
     gsap.to(".anim-home", {
       autoAlpha: 1,
       duration: 0.5,
@@ -27,7 +24,7 @@ const IndexPage = () => {
         window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   const Title = tw.h2`
     fluid-text-2xl
     mb-2

@@ -16,9 +16,6 @@ const StyleGuide = () => {
   const transitionState = useTransitionState()
 
   useEffect(() => {
-    console.log("Style Guide Page", transitionStatus)
-  }, [transitionStatus])
-  useEffect(() => {
     gsap.to(".anim-sg", {
       autoAlpha: 1,
       duration: 0.5,
@@ -32,7 +29,7 @@ const StyleGuide = () => {
         window.scrollTo(0, 0)
       } })
     }
-  }, [transitionStatus])
+  }, [transitionState])
   return (
     <SGLayout className="anim-sg opacity-0 mb-k1v">
       <SGLabel>Logo</SGLabel>

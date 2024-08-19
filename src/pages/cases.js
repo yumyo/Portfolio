@@ -43,12 +43,11 @@ const Cases = ({ data }) => {
   useEffect(() => {
     if (transitionState.transitionStatus === "exiting") {
       gsap.to(".anim-case", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        // window.scrollTo(0, 0)
-        console.log('fuck')
+        window.scrollTo(0, 0)
       }});
       
     }
-  }, [transitionStatus])
+  }, [transitionState])
   
   return (
     <div className={`anim-case opacity-0  mb-k2v`}>
