@@ -142,6 +142,7 @@ export default function Header(props) {
         <TransitionLink
           to="/cv/"
           exit={{
+            trigger: ({ node, e, exit, entry }) => console.log(node, e, exit, entry),
             length: 0.5,
           }}
           entry={{ length: 0.5 }}

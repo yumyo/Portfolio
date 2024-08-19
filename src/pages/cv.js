@@ -11,6 +11,7 @@ import { Behance } from "@styled-icons/boxicons-logos/Behance"
 import { Tumblr } from "@styled-icons/boxicons-logos/Tumblr"
 import { ShieldCheckmark } from "@styled-icons/fluentui-system-regular/ShieldCheckmark"
 import Contact from '../templates/contact-form-template.js'
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 // import tw from "twin.macro"
 import {
   Lead,
@@ -21,7 +22,9 @@ import {
   Job,
 } from "../components/theme"
 
-const Cv = ({ transitionStatus }) => {
+
+
+const Cv = () => {
   const {
     twitter,
     github,
@@ -32,7 +35,11 @@ const Cv = ({ transitionStatus }) => {
     tumblrJournal,
   } = useSiteMetadata()
 
+  const transitionState = useTransitionState();
+  console.log ('transitionStatus hook', transitionState);
+    
   useEffect(() => {
+    // console.log ('transitionStatus', transitionStatus);
     gsap.to(".anim-cv", {
       autoAlpha: 1,
       duration: 0.5,
@@ -41,7 +48,8 @@ const Cv = ({ transitionStatus }) => {
     })
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
-    if (transitionStatus === "exiting") {
+    if (transitionState.transitionStatus === "exiting") {
+      console.log('banana')
       gsap.to(".anim-cv", {
         autoAlpha: 0,
         duration: 0.25,
@@ -51,13 +59,15 @@ const Cv = ({ transitionStatus }) => {
         },
       })
     }
-  }, [transitionStatus])
+  }, [transitionState.transitionStatus])
   // const ref = useRef(null)
-
+  
   return (
     <div className="anim-cv m-auto mt-k5v mb-k3v flex min-h-screen w-k8 flex-row flex-wrap items-baseline opacity-0 xl:ml-k2 xl:w-k7 2xl:ml-k3 2xl:w-k5">
+      
       <div className="w-full mb-8">
         <div className={LeftSide}></div>
+
         <div className={LeftContent}>
           <h1 className={`${PageTitle} mb-2 -mt-16 font-extralight`}>Curriculum Vitae</h1>
         </div>
@@ -459,7 +469,7 @@ const Cv = ({ transitionStatus }) => {
         <p>
           Math & Geometry, Calligraphy, Photography, Anthropology, Design History, Philosophy.
         </p>
-      </div> */}
+      </div> 
       <div className={LeftSide}>
         <h2 className={Label}></h2>
       </div>
@@ -475,8 +485,9 @@ const Cv = ({ transitionStatus }) => {
           </a>
         </p>
       </div>
+      */}
       <div
-      className={`sm:mb-20 lg:mb-0 mx-auto w-full mt-k4  `}
+      className={`sm:mb-20 lg:mb-0 mx-auto w-full mt-k2  `}
     >
       <Contact />
     </div>

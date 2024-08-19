@@ -23,6 +23,7 @@ import tw, { styled, css } from "twin.macro"
 // import { renderToStaticMarkup } from "react-dom/server"
 import { EyeOutline } from '@styled-icons/evaicons-outline/'
 
+
 const usePrevious = value => {
   const ref = useRef()
   useEffect(() => {
@@ -71,6 +72,7 @@ w-screen h-screen fixed top-0 left-0 z-0 text-white dark:text-black dark:sm:text
 `
 
 const Layout = ({ children }) => {
+
   // const { title } = useSiteMetadata()
   const [isActive, setActive] = useState("false")
   const [isBGVisible, setBGVisible] = useState(false)

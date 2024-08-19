@@ -2,7 +2,7 @@
   "name": "giulia-nicola-pernice-design-studio",
   "private": true,
   "description": "Design Studio System",
-  "version": "0.2.0",
+  "version": "2.0.0",
   "license": "",
   "babelMacros": {
     "twin": {
@@ -17,7 +17,10 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
-    "deploy": "gatsby build && rsync -avz --checksum --delete -e 'ssh' --chown=kdsignc:kdsignc /Users/dsgncode/Sites/np-portfolio/public/ root@164.90.233.208:/home/kdsign.com/public_html"
+    "deploy": "./deploy.sh",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog:release": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "release": "npm run changelog && git add CHANGELOG.md && git commit -m \"docs(changelog): update changelog\" && npm version patch && git push --follow-tags origin main"
   },
   "dependencies": {
     "@amcharts/amcharts5": "^5.8.7",
@@ -30,6 +33,7 @@
     "@mdx-js/react": "^1.6.22",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
+    "dotenv": "^16.4.5",
     "gatsby": "^3.5.0",
     "gatsby-background-image": "^1.6.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
@@ -75,6 +79,9 @@
     "babel-jest": "^26.6.3",
     "babel-plugin-styled-components": "^1.12.0",
     "babel-preset-gatsby": "^1.4.0",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-cli": "^5.0.0",
+    "cz-conventional-changelog": "^3.3.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.32",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",

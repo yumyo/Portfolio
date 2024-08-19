@@ -198,6 +198,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-transition-link",
       options: {
+        injectPageProps: true,
         layout: require.resolve(`./src/components/Layout.js`),
       },
     },
