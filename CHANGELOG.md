@@ -1,3 +1,9 @@
+## v1.0.1 (2024-08-19)
+
+### Refactor
+
+- **Git**: Conventional Commits setup refinements
+
 # 1.0.0 (2024-08-19)
 
 
