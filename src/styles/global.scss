@@ -133,14 +133,14 @@ body.light {
   > p,
   > ul,
   > ol {
-    @apply w-k7;
+    @apply w-k8;
     @apply mx-auto;
-    @apply xs:w-k8;
+    // @apply xs:w-k8;
     @apply md:w-k7;
     @apply lg:w-k5;
-    @apply 3xl:w-k4;
-    @apply pl-4;
-    @apply pr-4;
+    @apply 2xl:w-k4;
+    // @apply pl-4;
+    // @apply pr-4;
   }
   p + p,
   p + ul,

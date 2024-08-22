@@ -27,6 +27,6 @@ export const LeftContent =
 export const Job = "mb-16"
 // Project Page
 export const Project_Detail =
-  "flex flex-row items-baseline mx-auto w-k7 xs:w-k8 md:w-k7 lg:w-k6 xl:w-k5 3xl:w-k4"
-export const Project_Detail_Label = "mt-0 w-k25 pl-4"
-export const Project_Detail_Content = "w-k100 "
+  "flex flex-col md:flex-row items-baseline mx-auto w-k7 xs:w-k8 md:w-k7 lg:w-k6 xl:w-k5 3xl:w-k4"
+export const Project_Detail_Label = "mt-0 w-full md:w-k25 mb-4 md:mb-0"
+export const Project_Detail_Content = "w-full "

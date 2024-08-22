@@ -11,12 +11,12 @@ const SGLabel = tw.div`text-xs 2xl:text-sm uppercase tracking-widest text-black-
 
 const SGLayout = tw.div`mx-auto w-k75 md:w-k6 lg:w-6/12 mt-k3v md:mt-k2v`
 
-const StyleGuide = () => {
+const Raconteur = () => {
 
   const transitionState = useTransitionState()
 
   useEffect(() => {
-    gsap.to(".anim-sg", {
+    gsap.to(".trans", {
       autoAlpha: 1,
       duration: 0.5,
       ease: "sine.inOut",
@@ -25,13 +25,13 @@ const StyleGuide = () => {
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
     if (transitionState.transitionStatus === "exiting") {
-      gsap.to(".anim-sg", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
+      gsap.to(".trans", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)
       } })
     }
   }, [transitionState])
   return (
-    <SGLayout className="anim-sg opacity-0 mb-k1v">
+    <SGLayout className="trans opacity-0 mb-k1v">
       <SGLabel>Logo</SGLabel>
       <div>
         <SGLabel>Typography</SGLabel>
@@ -97,6 +97,6 @@ const StyleGuide = () => {
   )
 }
 
-// StyleGuide.Layout = Layout
+// Raconteur.Layout = Layout
 
-export default StyleGuide
+export default Raconteur

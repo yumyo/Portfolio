@@ -8,7 +8,7 @@ tags: [UI Design, UX, Full Stack Development, Digital Transformation Consulting]
 template: cases
 date: "2019-06-03"
 client: Raconteur Media Ltd.
-profile: "<strong>Raconteur Media</strong> is an award-winning publishing house and content marketing agency based in London with the freshest ideas and most decisive momentum in the market. <br /><br />From printed reports in The Times and The Sunday Times to digital publishing and demand generation solutions, Raconteur helps B2B brands stand out as thought leaders, differentiate themselves from the competition and deliver results."
+profile: "<strong>Raconteur Media</strong> is an award-winning publishing house and content marketing agency based in London with the freshest ideas and most decisive momentum in the market.<br />From printed reports in The Times and The Sunday Times to digital publishing and demand generation solutions, Raconteur helps B2B brands stand out as thought leaders, differentiate themselves from the competition and deliver results."
 banner: ../images/media/wide-banner-raconteur.jpg
 video:
 embeddedImagesLocal:
@@ -35,6 +35,12 @@ import Heading from"../components/Heading"
 import { DeviceFrameset } from "../components/DeviceFrameSet/DeviceFrameset"
 import { ParallaxRouteUpdate } from "../components/parallax-route-update"
 import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-parallax"
+import 'photoswipe/dist/photoswipe.css'
+import { Gallery, Item } from 'react-photoswipe-gallery'
+import Slider from "react-slick";
+import RatingPieChart from "../components/charts/RatingPieChart"
+import HorizontalBarChart from "../components/charts/HorizontalBarChart"
+import LineChart from "../components/charts/LineChart"
 
 <ParallaxRouteUpdate />
 
@@ -56,13 +62,14 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
       image={getImage(props.remoteImages[8])}
     />
   </div>
+  {console.log(props.remoteImages[8])}
 </Parallax>
 
 <Heading 
   data-sal="fade" 
   data-sal-duration={900}
   level={3}
-  className="mt-16">
+  className="mt-k1v">
   Process and Insights
 </Heading>
 
@@ -76,26 +83,25 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
   data-sal="fade" 
   data-sal-duration={900}
   content="
-  <p>Content</p>
-  <br /><ul><li>Analyse the content structure and define a new information architecture.</li><li>Leverage the power of storytelling.</li><li>Define clear goals for each significant target group.</li></ul>"
+  <p class='mb-0'>Content</p>
+  <ul class='fluid-text-base'><li>Analyse the content structure and define a new information architecture.</li><li>Leverage the power of storytelling.</li><li>Define clear goals for each significant target group.</li></ul>"
+/>
+
+
+<ProjectDetail
+  data-sal="fade" 
+  data-sal-duration={900}
+  content="
+  <p class='mb-0'>Design</p>
+  <ul class='fluid-text-base'><li>Channel the value of the design found in the printed products lineup</li><li>Account for subtle variation according to audience/objectives</li><li>Build Design System, to act asd shared vocabulary and living library of Raconteur styles &amp; patterns</li></ul>"
 />
 
 <ProjectDetail
   data-sal="fade" 
   data-sal-duration={900}
   content="
-  <p>Design</p>
-  <br />
-  <ul><li>Channel the value of the design found in the printed products lineup</li><li>Account for subtle variation according to audience/objectives</li><li>Build Design System, to act asd shared vocabulary and living library of Raconteur styles &amp; patterns</li></ul>"
-/>
-
-<ProjectDetail
-  data-sal="fade" 
-  data-sal-duration={900}
-  content="
-  <p>Technology</p>
-  <br />
-  <ul><li>Rebuild for high performance and mobile-first</li><li>Progressively enhance the experience for desktop and modern browsers</li><li>Move to a cloud infrastructure and define an efficient DevOps workflow</li></ul>"
+  <p class='mb-0'>Technology</p>
+  <ul class='fluid-text-base'><li>Rebuild for high performance and mobile-first</li><li>Progressively enhance the experience for desktop and modern browsers</li><li>Move to a cloud infrastructure and define an efficient DevOps workflow</li></ul>"
 />
 
 <img
@@ -110,8 +116,8 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
   data-sal="fade" 
   data-sal-duration={900}
   level={3}
-  className="mt-16">
-  A Reader Oriented IAss
+  className="mt-k1v">
+  A Reader Oriented IA
 </Heading>
 
 <ProjectDetail
@@ -122,18 +128,10 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
     content="<p>I used Googles Analytics to identifyss the best performing content, common entrance and exit pages and, recurring patterns in the user navigation flow.<br /><br />Together with the head of marketing, we later compared the evidence gathered with the current data on the website. This process led to deciding to shift the pivot from 'products' to 'content' to develop a structure around our reader's interests.<br /><br />We then merged our findings with an Extensive Competitive analysis to gather valuable insights on content and features and better understand Raconteur's unique selling proposition.</p>"
   />
 
-## Chart
-
-<div className="mx-auto text-center">
-<div className="mx-aut inline-block">
-{/* <Chart /> */}
-</div>
-</div>
-
 <div 
   data-sal="fade" 
   data-sal-duration={900} 
-  className="pr-4 pl-4 mt-24 mb-32 text-center">
+  className="w-k8 mx-auto mt-k1v mb-k1v text-center">
   <GatsbyImage
     alt="green doggo"
     placeholder="blurred"
@@ -146,7 +144,7 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
   data-sal="fade" 
   data-sal-duration={900}
   level={3}
-  className="mt-16">
+  className="mt-k1v">
   Hosting and Dev Ops
 </Heading>
 
@@ -168,7 +166,7 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
   data-sal="fade" 
   data-sal-duration={900}
   level={3}
-  className="mt-16">
+  className="mt-k1v">
   Wireframings
 </Heading>
 
@@ -180,11 +178,11 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
   <p> The process continued “wireframing in the browser”, outlining the website's structure, content and features, with actual code and live dynamic data. Then progressively starting to add semantics, ARIA rules and schema metadata relevant to search engines and assistive devices. A crucial step to ensure compliance with content discovery, consumption and syndication's web services.</p>"
 />
 
-<div class="w-k7 mx-auto mt-16 mb-32">
-  <div class="flex flex-row flex-wrap items-center overflow-hidden xl:-mx-8">
-    <div class="w-full overflow-hidden md:my-8 md:px-8 md:w-1/2">
+<div class="w-k8 md:w-k7 mx-auto mt-k1v mb-k1v">
+  <div class="flex flex-row flex-wrap">
+    <div class="w-full overflow-hidden md:pr-8 md:w-1/2">
         <div>
-          <div className="text-center aspect-w-16 aspect-h-9">
+          <div className="text-center aspect-w-16 aspect-h-9 overflow-hidden">
             <img
               data-sal="fade" 
               data-sal-duration={900}
@@ -194,9 +192,9 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
           </div>
         </div>
     </div>
-    <div class="w-full overflow-hidden md:my-8 md:px-8 md:w-1/2">
+    <div class="w-full overflow-hidden mt-k1v md:mt-0 md:pl-8 md:w-1/2">
         <div>
-          <div className="text-center aspect-w-16 aspect-h-9">
+          <div className="text-center aspect-w-16 aspect-h-9 overflow-hidden">
             <img
               data-sal="fade" 
               data-sal-duration={900}
@@ -213,7 +211,7 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
   data-sal="fade" 
   data-sal-duration={900}
   level={3}
-  className="mt-16">
+  className="mt-k1v">
   Final Design
 </Heading>
 
@@ -230,7 +228,7 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
 <div 
   data-sal="fade" 
   data-sal-duration={900}
-  className="mx-auto w-k7 block mt-32 mb-8 text-center">
+  className="mx-auto w-k8 md:w-k7 block mt-k1v mb-k1v text-center">
   <div className="text-center  overflow-hidden aspect-w-16 aspect-h-9">
     <div>
         <GatsbyImage
@@ -246,7 +244,25 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
   data-sal="fade" 
   data-sal-duration={900}
   level={3}
-  className="mt-16">
+  className="mt-k1v">
+  Final Design
+</Heading>
+
+<ProjectDetail
+  data-sal="fade" 
+  data-sal-duration={900}
+  label=""
+  content="<p>
+  Slicing the spectrum into eight hues to differentiate the primary topics with distinctive colours, loosely following some basic principles of colour psychology common to our European/Western heritage:
+  The last colour iteration aimed to address visual imparities, with rich tonal variations and correction for UI design.
+</p>"
+/>
+
+<Heading 
+  data-sal="fade" 
+  data-sal-duration={900}
+  level={3}
+  className="mt-k1v">
   A different Home every day
 </Heading>
 
@@ -264,7 +280,7 @@ import { Parallax, ParallaxBanner, useParallaxController } from "react-scroll-pa
   data-sal="fade" 
   data-sal-duration={900}
   level={3}
-  className="mt-16">
+  className="mt-k1v">
   Outcomes
 </Heading>
 
@@ -278,10 +294,26 @@ Live for three years, seven months, and 22 days, gathered tremendous positive fe
 </p>"
 />
 
-Performance
+<Heading 
+  data-sal="fade" 
+  data-sal-duration={900}
+  level={3}
+  className="mt-k1v">
+  HotJar
+</Heading>
 
-HotJar
-4.1 out of 5
+<ProjectDetail
+  data-sal="fade" 
+  data-sal-duration={900}
+  label=""
+  content="<p>4.1 out of 5
+</p>"
+/>
+
+
+<div className="mx-auto w-k8 md:w-k7 lg:w-k5 2xl:w-k4 block mt-k1v">
+  <RatingPieChart />
+</div>
 
 Total Pageviews
 12,765,007
@@ -289,30 +321,24 @@ Total Pageviews
 New Users -
 7,038,019
 
-| Year | Users     |
-| ---- | --------- |
-| 2016 | 127,115   |
-| 2017 | 155,300   |
-| 2018 | 183,908   |
-| 2019 | 201,774   |
-| 2020 | 243,369\* |
+## Total Pageviews
+
+<div className="mx-auto w-k8 md:w-k7 lg:w-k5 2xl:w-k4 block mt-k1v">
+  <HorizontalBarChart category="" value={12765007} barColor="#ffd700" maxValue={13000000} />
+</div>
+
+## New Users
+
+<div className="mx-auto w-k8 md:w-k7 lg:w-k5 2xl:w-k4 block mt-k1v">
+  <HorizontalBarChart category="" value={7038019} barColor="#a78bfa" maxValue={7100000} />
+</div>
+
+<div className="mx-auto w-k8 md:w-k7 lg:w-k5 2xl:w-k4 block mt-k1v">
+  <LineChart />
+</div>
+
+From 127,115 in 2016 to 243,369 in 2020
 
 projection for the entire year based on data from Jan 2020 to Sept 2020
 
-The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
-
-The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
-
-The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
-
-The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
-
-The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
-
-The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
-
-The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
-
-The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
-
-The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess.
+The Custom Publishing section would have been developed as a stand-alone website to support the division's specific needs and objectivess

@@ -14,10 +14,10 @@ import ReactHtmlParser from "react-html-parser"
 
 const ProjectDetail = (props) => {
   return (
-    <div {...props} className={`mx-auto w-k100 mt-16 project-detail`}>
+    <div {...props} className={`mx-auto w-k100 mt-k0v project-detail`}>
       {props.label && <div className={`mt-0 w-k100`}>{props.label}</div>}
       <div className={`w-k100`}>
-        <div className="text-base mt-8 pl-4 pr-4">
+        <div className="text-base mt-8">
           {ReactHtmlParser(props.content)}
         </div>
       </div>
