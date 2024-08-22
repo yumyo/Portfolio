@@ -1,3 +1,9 @@
+## v1.1.0 (2024-08-22)
+
+### Feat
+
+- **components**: Complete the setup of project components (chart, carousel, lightbox)
+
 ## v1.0.1 (2024-08-19)
 
 ### Refactor
