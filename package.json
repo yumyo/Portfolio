@@ -9,6 +9,9 @@
       "preset": "emotion"
     }
   },
+  "engines": {
+    "node": "18.20.1"
+  },
   "scripts": {
     "build": "gatsby build",
     "dev": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
