@@ -1,17 +1,5 @@
-# NGP Portfolio
+# Portfolio of a Design Engineer 
 
-## Font Scale
+This portfolio is a living document, and I’ll be updating it regularly with new projects and experiences. If you have any feedback or just want to connect, don’t hesitate to reach out!
 
-with base = 16px
-
-xxs: ["0.7058rem"] => 11.29px
-xs: ["0.8235rem"] => 13.176
-sm: ["0.8823rem"] => 14.11px
-base: ["1rem"] => 16px
-lg: ["1.2352rem"] => 19.7632
-xl: ["1.5882rem"] => 25.4112
-"2xl": ["1.9411rem"] => 31.0576
-"3xl": ["2.5294rem"] => 40.4704
-"4xl": ["3.0588rem"] => 48.9408
-"5xl": ["3.82353rem"] => 61.17648
-"6xl": ["4.7647rem"] => 76.2352
+Thank you for visiting!
