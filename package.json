@@ -2,7 +2,7 @@
   "name": "giulia-nicola-pernice-design-studio",
   "private": true,
   "description": "Design Studio System",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "",
   "babelMacros": {
     "twin": {

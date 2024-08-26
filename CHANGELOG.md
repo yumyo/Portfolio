@@ -1,3 +1,9 @@
+## v1.2.0 (2024-08-26)
+
+### Feat
+
+- **Content**: Initial draft for Case Histories, Works and Labs
+
 ## v1.1.0 (2024-08-22)
 
 ### Feat
