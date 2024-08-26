@@ -10,7 +10,7 @@
     }
   },
   "engines": {
-    "node": "18.20.1"
+    "node": "18.20.4"
   },
   "scripts": {
     "build": "gatsby build",
