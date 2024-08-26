@@ -15,21 +15,48 @@ embeddedImagesLocal:
   - ../images/media/about-g.png
 embeddedImagesRemote:
   - https://res.cloudinary.com/yumyo/image/upload/v1645457314/media/folio/prj/pr/PR-github.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1724406713/media/folio/prj/pr/pr-outputs.jpg
+  - https://res.cloudinary.com/yumyo/image/upload/v1724406720/media/folio/prj/pr/pr-editorial-projects.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1724405115/media/folio/prj/pr/iApp_Showcase.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1645457372/media/folio/prj/pr/pr-plans.jpg
+  - https://res.cloudinary.com/yumyo/image/upload/v1645457446/media/folio/prj/pr/delightful-apps-fx.jpg
+
 published: true
 ---
 
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import Heading from"../components/Heading"
 import ProjectDetail from "../components/ProjectDetail"
+import Video from "../components/Video"
 
-<GatsbyImage
-  alt="green doggo"
-  placeholder="blurred"
-  layout="fixed"
-  image={getImage(props.remoteImages[0])}
-/>
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-k8 md:w-k5 block mt-k1v mb-k1v text-center">
+  <div className="">
+    <div>
+        <GatsbyImage
+          alt="green doggo"
+          placeholder="blurred"
+          layout="fixed"
+          image={getImage(props.remoteImages[0])}
+        />
+    </div>
+  </div>
+</div>
+
+<Heading 
+  data-sal="fade" 
+  data-sal-duration={900}
+  level={3}
+  className="mt-k1v">
+  Process and Insights
+</Heading>
+
 
 <ProjectDetail
-  label="Process and Insight"
+  data-sal="fade" 
+  data-sal-duration={900}
   content="PressRoom is the result of three years of experience obtained through research and development about technologies, content structures, management, distribution and metrics.
 Experimenting with new business models and still optimizing legacy revenue sources
 Help editorial teams evolve toward an editorial process where structured content is delivered to the audience across multiple channels and multiple reading routines from one central source.
@@ -38,21 +65,148 @@ Having an agile approach to conceiving and launching new editorial products"
 />
 
 <ProjectDetail
+  data-sal="fade" 
+  data-sal-duration={900}
   label=""
   content="Although the development of PressRoon ended in 2016, I firmly believe much of its core concepts and motivations behind its development are still highly relevant today."
 />
 
-<ProjectDetail
-  label="Solution"
-  content="A tool for modern storytellers.<br /><br />PressRoom is a simple, elegant solution for publishers of any size desiring to experiment with new business models and engage readers with diverse reading habits, better understand their audiences, meet them wherever they are and offer a beautiful, uninterrupted reading experience."
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-k8 md:w-k5 block mt-k1v mb-k1v">
+ <Video
+  videoSrcURL="https://player.vimeo.com/video/1002032568"
+  videoTitle="Home page FUllscreen slider"
 />
+</div>
+
+<Heading 
+  data-sal="fade" 
+  data-sal-duration={900}
+  level={3}
+  className="mt-k1v">
+  A tool for modern storytellers
+</Heading>
 
 <ProjectDetail
+  data-sal="fade" 
+  data-sal-duration={900}
+  content="PressRoom is a simple, elegant solution for publishers of any size desiring to experiment with new business models and engage readers with diverse reading habits, better understand their audiences, meet them wherever they are and offer a beautiful, uninterrupted reading experience."
+/>
+
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-k8 md:w-k5 block mt-k1v mb-k1v text-center">
+  <div className="">
+    <div>
+        <GatsbyImage
+          alt="green doggo"
+          placeholder="blurred"
+          layout="fixed"
+          image={getImage(props.remoteImages[1])}
+        />
+    </div>
+  </div>
+</div>
+
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-k8 md:w-k4 block mt-k1v mb-k1v text-center">
+  <div className="">
+    <div>
+        <GatsbyImage
+          alt="green doggo"
+          placeholder="blurred"
+          layout="fixed"
+          image={getImage(props.remoteImages[2])}
+        />
+    </div>
+  </div>
+</div>
+
+<ProjectDetail
+  data-sal="fade" 
+  data-sal-duration={900}
   label=""
-  content="Although its core concepts and architecture are modular, agnostic, and portative, we chose to bring PressRoom to work with the WordPress CMS for its ease of use, widespread adoption, and ability to scale.<br /><br />The system is essentially condensed in a WordPress plugin, a set of themes and a hybrid iOS and Android client built on top of the Baker Framework.<br /><br />Everything is structured around the concept of Editorial Projects; they are containers for an unlimited number of issues, which are containers for any kind of content that you can add and manage in WordPress.<br /><br />Issues can be exported at the same time to native clients, to the web as a standalone microsite, to ePub, Amazon’s Mobi or plain old paper as pdf files. Issues will also be available as a structured feed.<br /><br />PressRoom is a WordPress plugin that frees publishers to focus on their content. It allows them to publish to iOS and Android\* Apps, the Web and even plain old paper — all at the same time and from within a single WordPress site. That means small- and mid-size publishers can experiment with new business models, engage readers with diverse reading habits, and gain a better understanding of the audience to meet them wherever they are. Readers benefit from a beautiful, uninterrupted reading experience."
+  content="Although its core concepts and architecture are modular, agnostic, and portative, we chose to bring PressRoom to work with the WordPress CMS for its ease of use, widespread adoption, and ability to scale."
 />
 
 <ProjectDetail
-  label="Who is PressRoom for?"
+  data-sal="fade" 
+  data-sal-duration={900}
+  label=""
+  content="The system is essentially condensed in a WordPress plugin, a set of themes and a hybrid iOS and Android client built on top of the Baker Framework.<br /><br />Everything is structured around the concept of Editorial Projects; they are containers for an unlimited number of issues, which are containers for any kind of content that you can add and manage in WordPress.<br /><br />Issues can be exported at the same time to native clients, to the web as a standalone microsite, to ePub, Amazon’s Mobi or plain old paper as pdf files. Issues will also be available as a structured feed."
+/>
+
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-k8 md:w-k5 block mt-k1v mb-k1v text-center">
+  <div className="">
+    <div>
+        <GatsbyImage
+          alt="green doggo"
+          placeholder="blurred"
+          layout="fixed"
+          image={getImage(props.remoteImages[4])}
+        />
+    </div>
+  </div>
+</div>
+
+
+<ProjectDetail
+  data-sal="fade" 
+  data-sal-duration={900}
+  label=""
+  content="PressRoom is a WordPress plugin that frees publishers to focus on their content. It allows them to publish to iOS and Android\* Apps, the Web and even plain old paper — all at the same time and from within a single WordPress site. That means small- and mid-size publishers can experiment with new business models, engage readers with diverse reading habits, and gain a better understanding of the audience to meet them wherever they are. Readers benefit from a beautiful, uninterrupted reading experience."
+/>
+
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-k8 md:w-k5 block mt-k1v mb-k1v text-center">
+  <div className="">
+    <div>
+        <GatsbyImage
+          alt="green doggo"
+          placeholder="blurred"
+          layout="fixed"
+          image={getImage(props.remoteImages[3])}
+        />
+    </div>
+  </div>
+</div>
+
+<Heading 
+  data-sal="fade" 
+  data-sal-duration={900}
+  level={3}
+  className="mt-k1v">
+  Who is was PressRoom for?
+</Heading>
+
+<ProjectDetail
+  data-sal="fade" 
+  data-sal-duration={900}
   content="Pressroom is perfect for indie publishers and bloggers with a large following seeking an innovative monetization tool. It is also great for corporate brands and retailers; PressRoom enables in-app e-commerce, straight from your catalogue or content marketing. But most importantly, PressRoom is for readers. PressRoom provides a simple, uninterrupted reading experience."
 />
+
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-k8 md:w-k4 block mt-k1v mb-k1v text-center">
+  <div className="">
+    <div>
+        <GatsbyImage
+          alt="green doggo"
+          placeholder="blurred"
+          layout="fixed"
+          image={getImage(props.remoteImages[5])}
+        />
+    </div>
+  </div>
+</div>

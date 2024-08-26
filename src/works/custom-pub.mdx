@@ -8,11 +8,289 @@ tags: [Design, Front-end, WordPress]
 template: works
 date: "2018-06-01"
 client: Raconteur Media
-profile: Test
+profile: 
 banner: ../images/media/wide-banner-rac-cp-alt.jpg
 embeddedImagesLocal:
 embeddedImagesRemote:
+  - https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto/v1724401069/media/folio/prj/cus/Home-slider-1st.png
+  - https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto/v1724401082/media/folio/prj/cus/Home-slider-2nd.png
+  - https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto/v1724401071/media/folio/prj/cus/Home-slider-3rd.png
+  - https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto/v1724401077/media/folio/prj/cus/Home-slider-4th.png
+  - https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto/v1724401073/media/folio/prj/cus/Our-Work-Alt.png
+  - https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto/v1724401070/media/folio/prj/cus/Collateral-Alt-2.png
+  - https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto/v1724401090/media/folio/prj/cus/Event-Colour-2.png
+  - https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto/v1724401085/media/folio/prj/cus/Home-Alt-2.png
+  - https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto/v1724401080/media/folio/prj/cus/Project.png
+  - https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto/v1724401068/media/folio/prj/cus/Showreel-Placeholder-01.png
+
 published: true
 ---
 
-Archive content here.
+import { Gallery, Item } from 'react-photoswipe-gallery'
+import Video from "../components/Video"
+
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-k8 md:w-k7 xl:w-k5 block mt-k1v text-center">
+  <div className="">
+    <div>
+        <GatsbyImage
+          alt="All site templates"
+          layout="fixed"
+          image={getImage(props.remoteImages[9])}
+        />
+    </div>
+  </div>
+</div>
+
+<div className="sm:flex mt-k1v 2xl:mt-0 flex justify-center w-full">
+  <div
+    data-sal="fade" 
+    data-sal-duration={900}
+    data-sal-delay={200}
+    className="w-full md:w-k8 sm:mt-0  flex flex-row flex-wrap -mx-8">
+    <Gallery
+    
+    options={{ initialZoomLevel: 1, secondaryZoomLevel: 'fit', maxZoomLevel: 1, showHideAnimationType: 'fade' }}
+    >
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724401069/media/folio/prj/cus/Home-slider-1st.png"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560/v1724401069/media/folio/prj/cus/Home-slider-1st.png"
+        width="1680"
+        height="1134"
+        className=""
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="w-full sm:w-1/2 xl:w-1/4 px-8 cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401069/media/folio/prj/cus/Home-slider-1st.png"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401069/media/folio/prj/cus/Home-slider-1st.png 380w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401069/media/folio/prj/cus/Home-slider-1st.png 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724401069/media/folio/prj/cus/Home-slider-1st.png 580w" 
+          sizes="(max-width: 480px) 380px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724401082/media/folio/prj/cus/Home-slider-2nd.png"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560/v1724401082/media/folio/prj/cus/Home-slider-2nd.png"
+        width="1680"
+        height="1134"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="w-full mt-k1v sm:mt-0 sm:w-1/2 xl:w-1/4 px-8 cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401082/media/folio/prj/cus/Home-slider-2nd.png"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401082/media/folio/prj/cus/Home-slider-2nd.png 380w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401082/media/folio/prj/cus/Home-slider-2nd.png 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724401082/media/folio/prj/cus/Home-slider-2nd.png 580w" 
+          sizes="(max-width: 480px) 380px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724401071/media/folio/prj/cus/Home-slider-3rd.png"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560/v1724401071/media/folio/prj/cus/Home-slider-3rd.png"
+        width="1680"
+        height="1134"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="w-full  mt-k1v xl:mt-0 sm:w-1/2 xl:w-1/4 px-8 cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401071/media/folio/prj/cus/Home-slider-3rd.png"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401071/media/folio/prj/cus/Home-slider-3rd.png 380w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401071/media/folio/prj/cus/Home-slider-3rd.png 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724401071/media/folio/prj/cus/Home-slider-3rd.png 580w" 
+          sizes="(max-width: 480px) 380px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724401077/media/folio/prj/cus/Home-slider-4th.png"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560/v1724401077/media/folio/prj/cus/Home-slider-4th.png"
+        width="1680"
+        height="1134"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="w-full  mt-k1v xl:mt-0 sm:w-1/2 xl:w-1/4 px-8 cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401077/media/folio/prj/cus/Home-slider-4th.png"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401077/media/folio/prj/cus/Home-slider-4th.png 380w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401077/media/folio/prj/cus/Home-slider-4th.png 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724401077/media/folio/prj/cus/Home-slider-4th.png 580w" 
+          sizes="(max-width: 480px) 380px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+    </Gallery>
+  </div>
+</div>
+
+<div className="sm:flex mt-k1v flex justify-center">
+  <div
+    data-sal="fade" 
+    data-sal-duration={900}
+    data-sal-delay={200}
+    className="w-full md:w-k8 xl:w-k5 sm:mt-0  flex flex-row flex-wrap -mx-8">
+    <Gallery
+    
+    options={{ initialZoomLevel: 1, secondaryZoomLevel: 'fit', maxZoomLevel: 1, showHideAnimationType: 'fade' }}
+    >
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724401073/media/folio/prj/cus/Our-Work-Alt.png"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560/v1724401073/media/folio/prj/cus/Our-Work-Alt.png"
+        width="1680"
+        height="1386"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="w-full sm:w-1/2 px-8 cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401073/media/folio/prj/cus/Our-Work-Alt.png"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401073/media/folio/prj/cus/Our-Work-Alt.png 380w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401073/media/folio/prj/cus/Our-Work-Alt.png 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724401073/media/folio/prj/cus/Our-Work-Alt.png 580w" 
+          sizes="(max-width: 480px) 380px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724401070/media/folio/prj/cus/Collateral-Alt-2.png"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560/v1724401070/media/folio/prj/cus/Collateral-Alt-2.png"
+        width="1680"
+        height="1370"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="w-full mt-k1v sm:mt-0  sm:w-1/2 px-8 cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401070/media/folio/prj/cus/Collateral-Alt-2.png"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401070/media/folio/prj/cus/Collateral-Alt-2.png 380w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401070/media/folio/prj/cus/Collateral-Alt-2.png 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724401070/media/folio/prj/cus/Collateral-Alt-2.png 580w" 
+          sizes="(max-width: 480px) 380px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+    </Gallery>
+  </div>
+</div>
+
+<div className="sm:flex mt-k1v flex justify-center">
+  <div
+    data-sal="fade" 
+    data-sal-duration={900}
+    data-sal-delay={200}
+    className="w-full md:w-k8 xl:w-k5 sm:mt-0  flex flex-row flex-wrap -mx-8">
+    <Gallery
+    
+    options={{ initialZoomLevel: 1, secondaryZoomLevel: 'fit', maxZoomLevel: 1, showHideAnimationType: 'fade' }}
+    >
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724401090/media/folio/prj/cus/Event-Colour-2.png"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560/v1724401090/media/folio/prj/cus/Event-Colour-2.png"
+        width="1680"
+        height="4059"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="w-full sm:w-1/3 px-8 cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401090/media/folio/prj/cus/Event-Colour-2.png"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401090/media/folio/prj/cus/Event-Colour-2.png 380w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401090/media/folio/prj/cus/Event-Colour-2.png 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724401090/media/folio/prj/cus/Event-Colour-2.png 580w" 
+          sizes="(max-width: 480px) 380px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724401085/media/folio/prj/cus/Home-Alt-2.png"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560/v1724401085/media/folio/prj/cus/Home-Alt-2.png"
+        width="1680"
+        height="1134"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="w-full mt-k1v sm:mt-0 sm:w-1/3 px-8 cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401085/media/folio/prj/cus/Home-Alt-2.png"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401085/media/folio/prj/cus/Home-Alt-2.png 380w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401085/media/folio/prj/cus/Home-Alt-2.png 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724401085/media/folio/prj/cus/Home-Alt-2.png 580w" 
+          sizes="(max-width: 480px) 380px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724401080/media/folio/prj/cus/Project.png"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560/v1724401080/media/folio/prj/cus/Project.png"
+        width="1680"
+        height="5040"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="w-full mt-k1v sm:mt-0 sm:w-1/3 px-8 cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401080/media/folio/prj/cus/Project.png"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401080/media/folio/prj/cus/Project.png 380w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724401080/media/folio/prj/cus/Project.png 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724401080/media/folio/prj/cus/Project.png 580w" 
+          sizes="(max-width: 480px) 380px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+    </Gallery>
+  </div>
+</div>
+
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-full xl:w-k5 block mt-k1v mb-k1v">
+ <Video
+  videoSrcURL="https://player.vimeo.com/video/1001946425?h=a79d09d451"
+  videoTitle="Home page FUllscreen slider"
+/>
+</div>

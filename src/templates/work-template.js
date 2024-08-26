@@ -2,11 +2,12 @@ import React, { useEffect } from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import { gsap } from "gsap"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
 // import ReactHtmlParser from "react-html-parser"
 import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import moment from "moment"
 import tw from "twin.macro"
+import Slider from "react-slick"
 
 const List = tw.ul`
 list-none
@@ -43,6 +44,7 @@ const PostTemplate = ({
 }) => {
 
   const transitionState = useTransitionState()
+  const shortcodes = { getImage, GatsbyImage, StaticImage, Slider }
 
   let projectDate = moment(date).format("MMM YYYY")
   // const year = date.slice(-4)
@@ -62,16 +64,18 @@ const PostTemplate = ({
     }
   }, [transitionState])
   return (
-    <div className={`work-project opacity-0 mb-k1v`}>
-      <GatsbyImage
-        className="mx-auto md:w-k6 mt-k2v"
-        image={getImage(banner)}
-        alt={title}
-      />
+    <div className={`work-project opacity-0 mb-k3v`}>
+      <div className={`h-k625v relative overflow-hidden mx-auto md:w-k8 lg:w-k8 3xl:w-k7 mt-k3v lg:mt-k3v`}>
+        <GatsbyImage
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          image={getImage(banner)}
+          alt={title}
+        />
+      </div>
       <div className="mx-auto w-k7 xs:w-k8 md:w-k5 mt-k1 flex flex-row items-baseline">
         <div className="mt-0 w-k25 pl-4">Project</div>
         <div className=" w-k7">
-          <h1 className="leading-none text-2xl pl-4 ">{`${title}`}</h1>
+          <h1 className="fluid-text-2xl pl-4 ">{`${title}`}</h1>
           <p className=" mt-8 pl-4 pr-4">{`${mission}`}</p>
         </div>
       </div>
@@ -88,9 +92,12 @@ const PostTemplate = ({
           <p className="text-base pl-4 pr-4">{`${services.join(", ")}`}</p>
         </div>
       </div>
-      <div className="mx-auto w-k7 xs:w-k8 md:w-k5 mt-k1 pl-4 pr-4">
-        <MDXProvider>
-          <MDXRenderer>{body}</MDXRenderer>
+      <div className=" mt-k1 project-content">
+        <MDXProvider components={shortcodes}>
+          <MDXRenderer
+          remoteImages={embeddedImagesRemote}
+          localImages={embeddedImagesLocal}
+          >{body}</MDXRenderer>
         </MDXProvider>
       </div>
     </div>

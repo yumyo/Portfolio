@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import { gsap } from "gsap"
@@ -46,16 +46,17 @@ const ProjectTemplate = ({
   },
 }) => {
 
+  const [svgContent, setSvgContent] = useState(null);
   const transitionState = useTransitionState()
-
   let projectDate = moment(date).format("MMM YYYY")
   const shortcodes = { getImage, GatsbyImage, StaticImage, Slider }
-  // console.log("embeddedImagesRemote")
-  // console.log(embeddedImagesRemote)
-  // console.log("embeddedImagesLocal")
-  // console.log(embeddedImagesLocal)
-  // console.log("transitionStatus 1st")
-  // console.log(transitionStatus)
+
+  const svgMap = {
+    "Raconteur Media": "https://res.cloudinary.com/yumyo/image/upload/v1724319223/media/folio/prj/rac/Raconteur.svg",
+    "PressRoom": "https://res.cloudinary.com/yumyo/image/upload/v1724319408/media/folio/prj/pr/Pressrooom-logo.svg",
+    "Il manifesto": "https://res.cloudinary.com/yumyo/image/upload/v1724319375/media/folio/prj/man/logo-il-manifesto.svg",
+  }
+
   useEffect(() => {
     gsap.to(".anim-project", {
       autoAlpha: 1,
@@ -73,10 +74,31 @@ const ProjectTemplate = ({
     }
   }, [transitionState])
 
+  useEffect(() => {
+    const fetchSvg = async () => {
+      if(svgMap[title]) {
+        const response = await fetch(svgMap[title])
+        if(response.ok) {
+          const svgText = await response.text();
+          setSvgContent(svgText)
+        } else {
+          console.error(`Failed to fetch SVG for ${title}`)
+        }
+      }
+    }
+    fetchSvg()
+  }, [title])
+
   // 2xl:w-k6
   return (
-    <div className={`anim-project opacity-0 mb-k1v`}>
-      <div className={`h-k625v relative overflow-hidden mx-auto md:w-k8 lg:w-k7 xl:w-k7 mt-k3v lg:mt-k3v`}>
+    <div className={`anim-project opacity-0 mb-k2v`}>
+      <div className={`h-k625v relative overflow-hidden mx-auto md:w-k8 lg:w-k8 3xl:w-k7 mt-k3v lg:mt-k3v`}>
+        {svgContent && (
+          <div
+            className="svg-container"
+            dangerouslySetInnerHTML={{ __html: svgContent }}
+          />
+        )}
         <GatsbyImage
           className="absolute top-0 left-0 w-full h-full object-cover"
           image={getImage(banner)}

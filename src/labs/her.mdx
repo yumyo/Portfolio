@@ -1,19 +1,415 @@
 ---
-title: H.E.R.
+title: H.E.R. Human and Earth Rights
 slug: her
-description: Human and Earth RIghts
-tags: [Concept, Brand Identity, Design, Digital Publishing, Human Rights, App]
+description: A blog post outlining the process of building this website
+mission: Redesign the main website, establishing in house infrastructures and processes, preparing the ground for a wider digital offering.
+services: [Web Design, Front-end Development, Digital Transformation Consulting]
+tags: [Design, Front-end, WordPress]
 template: labs
-date: "2015-01-01"
-client:
-profile:
-services:
+date: "2018-06-01"
+client: Raconteur Media
+profile: 
 banner: ../images/media/wide-banner-her.jpg
 embeddedImagesLocal:
   - ../images/media/about-g.png
 embeddedImagesRemote:
-  - https://res.cloudinary.com/yumyo/image/upload/v1640539607/media/about-g.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1724403322/media/folio/prj/her/H.E.R.-logo-cutout.png
+  - https://res.cloudinary.com/yumyo/image/upload/v1724403328/media/folio/prj/her/poster-making.jpg
+  
 published: true
 ---
 
-Archive content here.
+import { Gallery, Item } from 'react-photoswipe-gallery'
+import Video from "../components/Video"
+
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-k8 md:w-k7 xl:w-k5 block mt-k1v text-center">
+  <div className="">
+    <div>
+        <GatsbyImage
+          alt="All site templates"
+          layout="fixed"
+          image={getImage(props.remoteImages[0])}
+        />
+    </div>
+  </div>
+</div>
+
+<div className="sm:flex mt-k1v flex justify-center w-full">
+  <div className="w-k8 md:w-k8 sm:mt-0 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-8">
+    <Gallery
+    options={{ initialZoomLevel: 1, secondaryZoomLevel: 'fit', maxZoomLevel: 1, showHideAnimationType: 'fade' }}
+    >
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403378/media/folio/prj/her/HER-04.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403378/media/folio/prj/her/HER-04.jpg"
+        width="768"
+        height="1024"
+        className=""
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403378/media/folio/prj/her/HER-04.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403378/media/folio/prj/her/HER-04.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403378/media/folio/prj/her/HER-04.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403378/media/folio/prj/her/HER-04.jpg 580w" 
+          sizes="(max-width: 480px) 4800px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403361/media/folio/prj/her/HER-17.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403361/media/folio/prj/her/HER-17.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403361/media/folio/prj/her/HER-17.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403361/media/folio/prj/her/HER-17.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403361/media/folio/prj/her/HER-17.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403361/media/folio/prj/her/HER-17.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403358/media/folio/prj/her/HER-13.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403358/media/folio/prj/her/HER-13.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403358/media/folio/prj/her/HER-13.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403358/media/folio/prj/her/HER-13.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403358/media/folio/prj/her/HER-13.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403358/media/folio/prj/her/HER-13.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403367/media/folio/prj/her/HER-14.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403367/media/folio/prj/her/HER-14.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403367/media/folio/prj/her/HER-14.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403367/media/folio/prj/her/HER-14.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403367/media/folio/prj/her/HER-14.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403367/media/folio/prj/her/HER-14.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403390/media/folio/prj/her/HER-31.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403390/media/folio/prj/her/HER-31.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403390/media/folio/prj/her/HER-31.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403390/media/folio/prj/her/HER-31.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403390/media/folio/prj/her/HER-31.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403390/media/folio/prj/her/HER-31.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403396/media/folio/prj/her/HER-30.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403396/media/folio/prj/her/HER-30.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403396/media/folio/prj/her/HER-30.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403396/media/folio/prj/her/HER-30.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403396/media/folio/prj/her/HER-30.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403396/media/folio/prj/her/HER-30.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403395/media/folio/prj/her/HER-32.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403395/media/folio/prj/her/HER-32.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403395/media/folio/prj/her/HER-32.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403395/media/folio/prj/her/HER-32.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403395/media/folio/prj/her/HER-32.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403395/media/folio/prj/her/HER-32.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403392/media/folio/prj/her/HER-33.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403392/media/folio/prj/her/HER-33.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403392/media/folio/prj/her/HER-33.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403392/media/folio/prj/her/HER-33.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403392/media/folio/prj/her/HER-33.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403392/media/folio/prj/her/HER-33.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403400/media/folio/prj/her/HER-34.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403400/media/folio/prj/her/HER-34.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403400/media/folio/prj/her/HER-34.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403400/media/folio/prj/her/HER-34.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403400/media/folio/prj/her/HER-34.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403400/media/folio/prj/her/HER-34.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403397/media/folio/prj/her/HER-35.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403397/media/folio/prj/her/HER-35.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403397/media/folio/prj/her/HER-35.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403397/media/folio/prj/her/HER-35.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403397/media/folio/prj/her/HER-35.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403397/media/folio/prj/her/HER-35.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403350/media/folio/prj/her/HER-09.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403350/media/folio/prj/her/HER-09.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403350/media/folio/prj/her/HER-09.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403350/media/folio/prj/her/HER-09.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403350/media/folio/prj/her/HER-09.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403350/media/folio/prj/her/HER-09.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403353/media/folio/prj/her/HER-11.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403353/media/folio/prj/her/HER-11.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403353/media/folio/prj/her/HER-11.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403353/media/folio/prj/her/HER-11.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403353/media/folio/prj/her/HER-11.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403353/media/folio/prj/her/HER-11.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403368/media/folio/prj/her/HER-10.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403368/media/folio/prj/her/HER-10.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403368/media/folio/prj/her/HER-10.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403368/media/folio/prj/her/HER-10.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403368/media/folio/prj/her/HER-10.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403368/media/folio/prj/her/HER-10.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403363/media/folio/prj/her/HER-02.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403363/media/folio/prj/her/HER-02.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403363/media/folio/prj/her/HER-02.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403363/media/folio/prj/her/HER-02.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403363/media/folio/prj/her/HER-02.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403363/media/folio/prj/her/HER-02.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403365/media/folio/prj/her/HER-27.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403365/media/folio/prj/her/HER-27.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403365/media/folio/prj/her/HER-27.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403365/media/folio/prj/her/HER-27.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403365/media/folio/prj/her/HER-27.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560/v1724403365/media/folio/prj/her/HER-27.jpg 580w" 
+          sizes="(max-width: 480px) 380px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+      <Item
+        original="https://res.cloudinary.com/yumyo/image/upload/f_auto,q_auto:best/v1724403381/media/folio/prj/her/HER-24.jpg"
+        thumbnail="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403381/media/folio/prj/her/HER-24.jpg"
+        width="768"
+        height="1024"
+      >
+        {({ ref, open }) => (
+          <img 
+          ref={ref} 
+          className="cursor-pointer"
+          onClick={open} 
+          src="https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403381/media/folio/prj/her/HER-24.jpg"
+          srcset="
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_480/v1724403381/media/folio/prj/her/HER-24.jpg 480w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_380/v1724403381/media/folio/prj/her/HER-24.jpg 430w, 
+            https://res.cloudinary.com/yumyo/image/upload/c_pad,f_auto,g_north_west,q_auto,w_560//v1724403381/media/folio/prj/her/HER-24.jpg 580w" 
+          sizes="(max-width: 480px) 480px, 
+                (max-width: 1200px) 430px, 
+                560px" 
+          /> 
+        )}
+      </Item>
+    </Gallery>
+  </div>
+</div>
+
+<div 
+  data-sal="fade" 
+  data-sal-duration={900}
+  className="mx-auto w-k8 md:w-k7 xl:w-k5 block mt-k1v text-center">
+  <div className="">
+    <div>
+        <GatsbyImage
+          alt="All site templates"
+          layout="fixed"
+          image={getImage(props.remoteImages[1])}
+        />
+    </div>
+  </div>
+</div>

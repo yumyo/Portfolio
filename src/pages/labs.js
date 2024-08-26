@@ -8,28 +8,20 @@ import { gsap } from "gsap"
 import tw from "twin.macro"
 
 const ListItem = tw.div`
-mb-24
+mt-k3v
 `
 
 const Title = tw.p`
-text-3xl font-medium
+fluid-text-xl font-medium
 `
-
-const List = tw.ul`
-list-none
-`
-
-const Tag = tw.li`
-text-sm font-medium uppercase inline-block mr-4
-`
-
-const LabsLayout = tw.div`mx-auto w-6/12 mt-k2v`
 
 const Labs = ({ data }) => {
 
   const transitionState = useTransitionState()
 
-  let nodes = data.allFile.nodes
+  // Filter out nodes that are not published
+  let nodes = data.allFile.nodes.filter(node => node.childMdx.frontmatter.published)
+
   nodes.sort(
     (d1, d2) =>
       new Date(d2.childMdx.frontmatter.date).getTime() -
@@ -51,11 +43,11 @@ const Labs = ({ data }) => {
     }
   }, [transitionState])
   return (
-    <LabsLayout className="anim-labs opacity-0 lg:mt-k3v mb-k2v">
+    <div className="anim-labs opacity-0 mb-k2v">
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink
-            className={`block`}
+            className={`relative mx-auto block w-full md:w-k8 lg:w-k7 xl:w-k7`}
             partiallyActive={true}
             activeClassName="active"
             to={`${childMdx.slug}`}
@@ -67,47 +59,25 @@ const Labs = ({ data }) => {
               length: 0.5,
             }}
           >
-            <GatsbyImage
-              image={getImage(childMdx.frontmatter.banner)}
-              alt={childMdx.frontmatter.title}
-            />
-          </TransitionLink>
-          <div className="mx-auto w-k8 md:w-full flex flex-row justify-between items-center">
-            <div className="">
-              <Title>{childMdx.frontmatter.title}</Title>
-              <p className="mb-0">
-                {childMdx.frontmatter.description}{" "}
-                {/* <List>
-                  {childMdx.frontmatter.tags
-                    ? childMdx.frontmatter.tags.map((tag, index) => {
-                        return (
-                          <Tag key={index}>
-                            <span className="text-gray-500">#</span>
-                            {tag}
-                          </Tag>
-                        )
-                      })
-                    : null}
-                </List> */}
-              </p>
+            <div className={`h-k625v relative overflow-hidden mx-auto w-full`}>
+              <GatsbyImage
+                image={getImage(childMdx.frontmatter.banner)}
+                alt={childMdx.frontmatter.title}
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              />
             </div>
-            <div className="">
-              <TransitionLink
-                exit={{
-                  length: 0.5,
-                }}
-                entry={{ length: 0.5, appearAfter: 0.5 }}
-                partiallyActive={true}
-                className={`mt-4 inline-block ${GhostButton}`}
-                to={`${childMdx.slug}`}
-              >
-                View Project
-              </TransitionLink>
-            </div>
+        </TransitionLink>
+          <div className="mx-auto w-k7 xs:w-k8 md:w-k7 lg:w-k6 xl:w-k5  flex flex-row justify-between items-center mt-k0v">
+          <div className="">
+            <Title>{childMdx.frontmatter.title}</Title>
+            {/* <p className="mb-0">
+              {childMdx.frontmatter.description}{" "}
+            </p> */}
           </div>
-        </ListItem>
+        </div>
+      </ListItem>
       ))}
-    </LabsLayout>
+    </div>
   )
 }
 
@@ -118,11 +88,22 @@ export const query = graphql`
         childMdx {
           id
           slug
+          embeddedImagesRemote {
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FIXED)
+            }
+          }
           frontmatter {
             title
+            published
+            embeddedImagesLocal {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH)
+              }
+            }
             description
             tags
-            date(formatString: "YYYY MM DD")
+            date(formatString: "YYYY-MM-DD")
             banner {
               childImageSharp {
                 gatsbyImageData(
@@ -133,13 +114,12 @@ export const query = graphql`
                 )
               }
             }
+            video
           }
         }
       }
     }
   }
 `
-
-// Works.Layout = Layout
 
 export default Labs

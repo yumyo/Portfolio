@@ -40,6 +40,7 @@ exports.onCreateNode = async ({
   if (
     node.internal.type === "Mdx" &&
     node.frontmatter &&
+    node.frontmatter.published &&
     node.frontmatter.embeddedImagesRemote
   ) {
     let embeddedImagesRemote = await Promise.all(

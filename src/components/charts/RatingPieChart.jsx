@@ -33,15 +33,15 @@ const RatingPieChart = () => {
         am5.color("#4db6ac"), // Teal
       ]);
 
+      // Remove the border from the slices
+      series.slices.template.setAll({
+        strokeWidth: 0, // Remove border
+      });
+
       series.data.setAll([
         { category: "Rating", value: 4.1 },
         { category: "Remaining", value: 0.9 },
       ]);
-
-      series.slices.template.setAll({
-        stroke: am5.color(0xffffff),
-        strokeWidth: 2,
-      });
 
       return () => {
         root.dispose();

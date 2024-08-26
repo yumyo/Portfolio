@@ -207,11 +207,23 @@ const Cv = () => {
         <h2 className={`${Label} fluid-text-xl`}>Employment History</h2>
       </div>
       <div className={LeftSide}>
-        <p className={Label}>2023 ~ Present</p>
+        <p className={Label}>Jan 2024 ~ Present</p>
       </div>
       <div className={LeftContent}>
         <div className={Job}>
           <h3 className="fluid-text-lg">Lead Design Technologist</h3>
+          <p className="job__company">DMI, Digital Management, LLC - London , United Kingdom</p>
+          <p>
+          Strategic direction of our design system governance, fostering best practices, and orchestrating seamless design-to-development handoffs. Figma plugin development and Three.js implementations to push the boundaries of interactive digital experiences. R&D efforts to integrate AI into customer experiences. 
+          </p>
+        </div>
+      </div>
+      <div className={LeftSide}>
+        <p className={Label}>2022 ~ 2023</p>
+      </div>
+      <div className={LeftContent}>
+        <div className={Job}>
+          <h3 className="fluid-text-lg">Senior Design Technologist</h3>
           <p className="job__company">DMI, Digital Management, LLC - London , United Kingdom</p>
           <p>
           Designing and developing comprehensive design systems with a focus on inclusive and human-centered design principles. Exploring web 3D technologies and integrating AI into our practice. Ensuring all designs meet high standards of accessibility, creating digital experiences usable by everyone.
