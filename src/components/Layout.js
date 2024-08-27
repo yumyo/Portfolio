@@ -119,7 +119,7 @@ const Layout = ({ children }) => {
       </ContentWrapper>
       {/* <Middle /> */}
       <Footer />
-     {(process.env.NODE_ENV === "development" || process.env.NODE_ENV === "preview") && <button className={`fixed bottom-k1 z-50 left-1/2 -translate-x-1/2`} onClick={toggleBGVisibility}> <EyeOutline size="24" className="transition-colors hover:text-violet-600" /></button>}
+     {(process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV === "preview") && <button className={`fixed bottom-k1 z-50 left-1/2 -translate-x-1/2`} onClick={toggleBGVisibility}> <EyeOutline size="24" className="transition-colors hover:text-violet-600" /></button>}
       {isBGVisible && <GeometriCBG />}
     </MainContainer>
   )
