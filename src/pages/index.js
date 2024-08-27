@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useEffect } from "react"
 import TransitionLink from "gatsby-plugin-transition-link"
 import tw from "twin.macro"
 import { Lead } from "../components/theme"
 import SEO from "../components/Seo"
+import { gsap } from "gsap"
 
 const IndexPage = () => {
 
@@ -14,6 +15,15 @@ const IndexPage = () => {
     -mt-12
   `
 
+  useEffect(() => {
+    gsap.to(".page-trans", {
+      autoAlpha: 1,
+      duration: 0.5,
+      ease: "sine.inOut",
+      delay: 0.5,
+    })
+  }, [])
+
   return (
     <div className="flex flex-col justify-center  ">
       <SEO />
@@ -24,8 +34,32 @@ const IndexPage = () => {
             to="/about"
             exit={{
               length: 0.5,
+              trigger: ({ node }) => {
+                return new Promise(resolve => {
+                  gsap.to(node, {
+                    autoAlpha: 0,
+                    duration: 0.5,
+                    ease: "sine.inOut",
+                    onComplete: () => {
+                      window.scrollTo(0, 0)
+                      resolve()
+                    },
+                  })
+                })
+              },
+              delay:0.5
             }}
-            entry={{ length: 0.5 }}
+            entry={{
+              length: 0.5,
+              trigger: ({ node }) => {
+                gsap.from(node, {
+                  autoAlpha: 0,
+                  duration: 0.5,
+                  ease: "sine.inOut",
+                })
+              },
+              delay:0.5
+            }}
             className="font-normal"
             activeClassName="text-violet-600 dark:text-violet-400"
           >
@@ -40,8 +74,32 @@ const IndexPage = () => {
               to="/contact"
               exit={{
                 length: 0.5,
+                trigger: ({ node }) => {
+                  return new Promise(resolve => {
+                    gsap.to(node, {
+                      autoAlpha: 0,
+                      duration: 0.5,
+                      ease: "sine.inOut",
+                      onComplete: () => {
+                        window.scrollTo(0, 0)
+                        resolve()
+                      },
+                    })
+                  })
+                },
+                delay:0.5
               }}
-              entry={{ length: 0.5 }}
+              entry={{
+                length: 0.5,
+                trigger: ({ node }) => {
+                  gsap.from(node, {
+                    autoAlpha: 0,
+                    duration: 0.5,
+                    ease: "sine.inOut",
+                  })
+                },
+                delay:0.5
+              }}
               className="font-normal sm:ml-k1v"
               activeClassName="text-violet-600 dark:text-violet-400"
             >

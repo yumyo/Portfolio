@@ -45,8 +45,7 @@ const Cv = () => {
         I’m a Digital Product Designer and Front-End Developer, passionate about creating innovative projects that span a wide range of media, platforms, <br/>and devices.
         </p>
         <p className="2xl:pr-k25">
-          From strategic master plans to the finer details, I have a wealth of
-          experience across all research, design and development phases.
+        From crafting strategic master plans to refining the finer details, I have experience and enjoy contributing across all phases of research, design, and development.
         </p>
       </div>
       <div className={LeftSide}>
