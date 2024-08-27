@@ -1,3 +1,18 @@
+## v1.3.0 (2024-08-27)
+
+### Feat
+
+- **env**: Add preview to match Vercel preview env
+- **package.json**: Set Node version to 18
+
+### Fix
+
+- **content**: minor amends
+- **env**: amend VERCEL_ENV
+- **content**: amend CV entry
+- **package.json**: Amend to support private gsap
+- **package.json**: amend node version to v18.20.4
+
 ## v1.2.0 (2024-08-26)
 
 ### Feat
