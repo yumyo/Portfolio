@@ -114,7 +114,7 @@ export default function Header(props) {
         >
           Works Archive
         </MenuLink>}
-        <MenuLink
+        {process.env.NODE_ENV === "development" && <MenuLink
           to="/labs"
           exit={{
             length: 0.5,
@@ -126,7 +126,7 @@ export default function Header(props) {
           preventScrollJump
         >
           Creative Labs
-        </MenuLink>
+        </MenuLink>}
         <MenuLink
           to="/about/"
           exit={{

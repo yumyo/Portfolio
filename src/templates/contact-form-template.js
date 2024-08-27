@@ -8,7 +8,8 @@ import { Twitter } from "@styled-icons/boxicons-logos/Twitter"
 import { Github } from "@styled-icons/boxicons-logos/Github"
 import { Behance } from "@styled-icons/boxicons-logos/Behance"
 import { LinkedinSquare } from "@styled-icons/boxicons-logos/LinkedinSquare"
-// import { Tumblr } from "@styled-icons/boxicons-logos/Tumblr"
+import { Codepen } from "@styled-icons/boxicons-logos/Codepen"
+import { Tumblr } from "@styled-icons/boxicons-logos/Tumblr"
 import { ShieldCheckmark } from "@styled-icons/fluentui-system-regular/ShieldCheckmark"
 
 
@@ -20,8 +21,8 @@ export default function Contact(props) {
     secureEmail,
     behance,
     linkedin,
-    pinterest,
-    tumblrJournal,
+    codepen,
+    tumblrDesign,
   } = useSiteMetadata()
 
   return (
@@ -46,14 +47,9 @@ export default function Contact(props) {
           <div className="mt-16 lg:mt-auto">
             <h2 className="text-base mb-2">Social networks</h2>
             <ul className="flex flex-row gap-6">
-              <li>
+            <li>
                 <a href={linkedin} target="_blank" rel="noreferrer" title="">
                   <LinkedinSquare size="32" />
-                </a>
-              </li>
-              <li>
-                <a href={twitter} target="_blank" rel="noreferrer" title="">
-                  <Twitter size="32" />
                 </a>
               </li>
               <li>
@@ -62,8 +58,8 @@ export default function Contact(props) {
                 </a>
               </li>
               <li>
-                <a href={stackoverflow} target="_blank" rel="noreferrer" title="">
-                  <StackOverflow size="32" />
+                <a href={codepen} target="_blank" rel="noreferrer" title="">
+                  <Codepen size="32" />
                 </a>
               </li>
               <li>
@@ -71,16 +67,21 @@ export default function Contact(props) {
                   <Behance size="32" />
                 </a>
               </li>
-              {/* <li>
-                <a href={pinterest} target="_blank" rel="noreferrer" title="">
-                  <Pinterest size="32" />
+              <li>
+                <a href={twitter} target="_blank" rel="noreferrer" title="">
+                  <Twitter size="32" />
                 </a>
               </li>
               <li>
-                <a href={tumblrJournal} target="_blank" rel="noreferrer" title="">
+                <a href={tumblrDesign} target="_blank" rel="noreferrer" title="">
                   <Tumblr size="32" />
                 </a>
-              </li> */}
+              </li> 
+              <li>
+                <a href={stackoverflow} target="_blank" rel="noreferrer" title="">
+                  <StackOverflow size="32" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
