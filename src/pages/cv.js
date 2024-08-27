@@ -112,7 +112,7 @@ const Cv = () => {
           <ul className="mb-6 list-none fluid-text-base">
             <li>Information Architecture</li>
             <li>User Experience</li>
-            <li>Agile methodogies</li>
+            <li>Agile methodologies</li>
             <li>Project and Resource Management</li>
           </ul>
         </div>
@@ -154,7 +154,7 @@ const Cv = () => {
             <li>Javascript ES6, React.js</li>
             <li>CSS, SASS, PostCSS, Styled Components, NPM, Yarn</li>
             <li>Accessibility and HTML5 Semantics</li>
-            <li>DevOps, Wordpress API and PHP templating, Git</li>
+            <li>DevOps, WordPress API and PHP templating, Git</li>
             {/* <li>Dev Ops on LAMP, LEMP, MERN stacks</li> */}
           </ul>
         </div>

@@ -33,9 +33,6 @@ const IndexPage = () => {
     -mt-12
   `
 
-  // const Intro = tw.div``;
-  // min-h-screen
-
   return (
     <div className="flex flex-col justify-center  ">
       <SEO />
@@ -56,43 +53,6 @@ const IndexPage = () => {
           <br /> welcome to my Design&nbsp;Engineering portfolio
         </Title>
         <div className={`md:ml-k2v ${Lead}`}>
-        {/* Within these pages lies a curated selection of {" "}
-          <TransitionLink
-            to="/cases"
-            exit={{
-              length: 0.5,
-            }}
-            entry={{ length: 0.5 }}
-            className=""
-            activeClassName="text-violet-600 dark:text-violet-400"
-          >
-            case&nbsp;studies, 
-          </TransitionLink>{" "}
-          {" "}
-          <TransitionLink
-            to="/works"
-            exit={{
-              length: 0.5,
-            }}
-            entry={{ length: 0.5 }}
-            className=""
-            activeClassName="text-violet-600 dark:text-violet-400"
-          >
-            recent&nbsp;works 
-          </TransitionLink>
-          , and {" "}
-          <TransitionLink
-            to="/labs"
-            exit={{
-              length: 0.5,
-            }}
-            entry={{ length: 0.5 }}
-            className=""
-            activeClassName="text-violet-600 dark:text-violet-400"
-          >
-            creative&nbsp;explorations.
-          </TransitionLink>{" "}
-          <br /> */}
           <div className='pl-8 mt-12'>
             Have an inspiring project in mind? <br />
             <TransitionLink
@@ -105,7 +65,7 @@ const IndexPage = () => {
               activeClassName="text-violet-600 dark:text-violet-400"
             >
               Let’s connect and bring your vision to life
-            </TransitionLink>{" "}
+            </TransitionLink>
           </div>
         </div>
       </div>
