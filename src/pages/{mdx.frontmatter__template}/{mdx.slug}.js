@@ -7,9 +7,9 @@ import WorkTemplate from "../../templates/work-template"
 import ArchiveTemplate from "../../templates/archive-template"
 import LabsTemplate from "../../templates/labs-template"
 import PropTypes from "prop-types"
+import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 
 const MdxPage = ({
-  transitionStatus,
   data,
   data: {
     mdx: {
@@ -17,14 +17,15 @@ const MdxPage = ({
     },
   },
 }) => {
+  const transitionState = useTransitionState()
   const templates = {
-    posts: <PostTemplate data={data} transitionStatus={transitionStatus} />,
-    works: <WorkTemplate data={data} transitionStatus={transitionStatus} />,
+    posts: <PostTemplate data={data} transitionStatus={transitionState.transitionStatus} />,
+    works: <WorkTemplate data={data} transitionStatus={transitionState.transitionStatus} />,
     archive: (
-      <ArchiveTemplate data={data} transitionStatus={transitionStatus} />
+      <ArchiveTemplate data={data} transitionStatus={transitionState.transitionStatus} />
     ),
-    cases: <ProjectTemplate data={data} transitionStatus={transitionStatus} />,
-    labs: <LabsTemplate data={data} transitionStatus={transitionStatus} />,
+    cases: <ProjectTemplate data={data} transitionStatus={transitionState.transitionStatus} />,
+    labs: <LabsTemplate data={data} transitionStatus={transitionState.transitionStatus} />,
   }
   return <Fragment>{templates[template] ? templates[template] : null}</Fragment>
 }
