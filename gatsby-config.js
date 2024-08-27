@@ -133,8 +133,8 @@ module.exports = {
         ],
         // develop: true,
         tailwind: true,
-        whitelist: ["aspect-[8/5]", "max-w-2xl", "max-w-4xl"],
-        ignore: ["sal.js/", "slick-carousel/", "global.scss"],
+        whitelist: ["aspect-[8/5]", "max-w-2xl", "max-w-4xl", "pswp"],
+        ignore: ["sal.js/", "slick-carousel/", "global.scss", "photoswipe"],
         // purgeOnly: ['node_modules/bootstrap']
       },
     },

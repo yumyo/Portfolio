@@ -78,9 +78,7 @@ const Cv = () => {
       </div>
       <div className={LeftContent} data-sal="fade" data-sal-duration={900}>
         <p className={` ${Lead} 2xl:pr-k25`}>
-          I'm a Digital Product Designer and Front-End Developer, passionate
-          about the publishing industry and innovative projects spanning a wide
-          range of media, platforms and devices. <br />
+        I’m a Digital Product Designer and Front-End Developer, passionate about creating innovative projects that span a wide range of media, platforms, <br/>and devices.
         </p>
         <p className="2xl:pr-k25">
           From strategic master plans to the finer details, I have a wealth of
