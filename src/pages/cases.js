@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
-import { gsap } from "gsap"
 import tw from "twin.macro"
-import { CasesLayout, GhostButton } from "../components/theme"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
-// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-// gsap.registerPlugin(ScrollToPlugin);
-import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 
 const ListItem = tw.div`
 mb-k1v mt-k3v
@@ -21,8 +16,6 @@ fluid-text-xl font-medium mt-2
 
 const Cases = ({ data }) => {
 
-  const transitionState = useTransitionState()
-
   const svgMap = {
     "Raconteur Media": "https://res.cloudinary.com/yumyo/image/upload/v1724319223/media/folio/prj/rac/Raconteur.svg",
     "PressRoom": "https://res.cloudinary.com/yumyo/image/upload/v1724319408/media/folio/prj/pr/Pressrooom-logo.svg",
@@ -31,34 +24,14 @@ const Cases = ({ data }) => {
 
   // Filter out nodes that are not published
   let nodes = data.allFile.nodes.filter(node => node.childMdx.frontmatter.published)
-  // const [currentTransitionStatus, setCurrentTransitionStatus] = useState('');
-  // console.log(nodes)
+
   nodes.sort(
     // prettier-ignore
     (d1, d2) =>
       new Date(d2.childMdx.frontmatter.date).getTime() - new Date(d1.childMdx.frontmatter.date).getTime()
   )
 
-    // State to hold the SVG content for each title
     const [svgContentMap, setSvgContentMap] = useState({})
-
-  useEffect(() => {
-    gsap.to(".anim-case", {
-      autoAlpha: 1,
-      duration: 0.5,
-      ease: "sine.inOut",
-      delay: 0.5,
-    })
-    
-  }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
-  useEffect(() => {
-    if (transitionState.transitionStatus === "exiting") {
-      gsap.to(".anim-case", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        window.scrollTo(0, 0)
-      }});
-      
-    }
-  }, [transitionState])
   
   useEffect(() => {
     const fetchSvgContent = async (title) => {
@@ -77,7 +50,6 @@ const Cases = ({ data }) => {
       }
     }
 
-    // Fetch SVG content for each title
     nodes.forEach(({ childMdx }) => {
       const { title } = childMdx.frontmatter
       if (!svgContentMap[title]) {
@@ -87,7 +59,7 @@ const Cases = ({ data }) => {
   }, [nodes, svgMap, svgContentMap])
 
   return (
-    <div className={`anim-case opacity-0  mb-k2v`}>
+    <div className={`page-trans mb-k2v`}>
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink
@@ -201,7 +173,5 @@ export const query = graphql`
     }
   }
 `
-
-// Cases.Layout = Layout
 
 export default Cases

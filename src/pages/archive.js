@@ -1,7 +1,5 @@
 import React, { useEffect } from "react"
 import { graphql, Link as GatsbyLink } from "gatsby"
-import { gsap } from "gsap"
-import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import tw from "twin.macro"
 
 const ListItem = tw.div`
@@ -24,32 +22,15 @@ const ArchiveLayout = tw.div`mx-auto w-6/12 mt-k2v`
 
 const Archive = ({ data }) => {
 
-  const transitionState = useTransitionState()
-
   let nodes = data.allFile.nodes
   nodes.sort(
     (d1, d2) =>
       new Date(d2.childMdx.frontmatter.date).getTime() -
       new Date(d1.childMdx.frontmatter.date).getTime()
   )
-  // console.log(data.allFile.nodes)
-  useEffect(() => {
-    gsap.to(".anim-archive", {
-      autoAlpha: 1,
-      duration: 0.5,
-      ease: "sine.inOut",
-      delay: 0.5,
-    })
-  }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
-  useEffect(() => {
-    if (transitionState.transitionStatus === "exiting") {
-      gsap.to(".anim-archive", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        window.scrollTo(0, 0)
-      } })
-    }
-  }, [transitionState])
+
   return (
-    <ArchiveLayout className="anim-archive opacity-0">
+    <ArchiveLayout className="page-trans">
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <Title>{childMdx.frontmatter.title}</Title>
@@ -86,7 +67,5 @@ export const query = graphql`
     }
   }
 `
-
-// Archive.Layout = Layout
 
 export default Archive

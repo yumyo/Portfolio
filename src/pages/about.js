@@ -1,8 +1,5 @@
 import React, { useEffect } from "react"
-import { Link as GatsbyLink } from "gatsby"
-import { gsap } from "gsap"
 import tw from "twin.macro"
-import { useTransitionState } from "gatsby-plugin-transition-link/hooks"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import SEO from "../components/Seo"
 import { StackOverflow } from "@styled-icons/boxicons-logos/StackOverflow"
@@ -33,31 +30,8 @@ const AboutPage = props => {
     codepen,
   } = useSiteMetadata()
 
-  const transitionState = useTransitionState()
-
-  useEffect(() => {
-    gsap.to(".anim-about", {
-      autoAlpha: 1,
-      duration: 0.5,
-      ease: "sine.inOut",
-      delay: 0.5,
-    })
-  }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
-  useEffect(() => {
-    if (transitionState.transitionStatus === "exiting") {
-      gsap.to(".anim-about", {
-        autoAlpha: 0,
-        duration: 0.25,
-        delay: 0,
-        onComplete: () => {
-          window.scrollTo(0, 0)
-        },
-      })
-    }
-  }, [transitionState])
   return (
-    // min-h-screen
-    <div className="anim-about mx-auto mb-k3v mt-k5v flex w-k8 flex-row flex-wrap items-baseline opacity-0 sm:w-k8 lg:w-k7 xl:w-k5 xl:pl-0 ">
+    <div className="page-trans mx-auto mb-k3v mt-k5v flex w-k8 flex-row flex-wrap items-baseline sm:w-k8 lg:w-k7 xl:w-k5 xl:pl-0 ">
       <SEO metaTitle="Giulia Nicole Pernice || Design Engineering Portfolio || About" />
       <div className="bio">
         <h1 className={`${About_Title}`}>Giulia Nicole Pernice</h1>
@@ -168,7 +142,5 @@ const AboutPage = props => {
     </div>
   )
 }
-
-// AboutPage.Layout = Layout
 
 export default AboutPage

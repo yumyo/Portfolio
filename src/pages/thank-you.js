@@ -1,21 +1,5 @@
 import React, { useEffect } from "react"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
-import { gsap } from "gsap"
-// import tw from "twin.macro"
-import ContactForm from "../components/ContactForm"
-import { Pinterest } from "@styled-icons/entypo-social/Pinterest"
-import { StackOverflow } from "@styled-icons/boxicons-logos/StackOverflow"
-import { Twitter } from "@styled-icons/boxicons-logos/Twitter"
-import { Github } from "@styled-icons/boxicons-logos/Github"
-import { Behance } from "@styled-icons/boxicons-logos/Behance"
-import { Tumblr } from "@styled-icons/boxicons-logos/Tumblr"
-import { ShieldCheckmark } from "@styled-icons/fluentui-system-regular/ShieldCheckmark"
-// import { PageDefault } from "../components/theme"
-// Assets
-// import selfie from "../../about.png"
-
-// const ContactLayout = tw.div`mx-auto w-k5 mt-k3v`
 
 const ContactPage = () => {
   const {
@@ -29,30 +13,9 @@ const ContactPage = () => {
     tumblrJournal,
   } = useSiteMetadata()
 
-  const transitionState = useTransitionState()
-
-  useEffect(() => {
-    // console.log('About Page', transitionStatus);
-  }, [transitionState])
-  useEffect(() => {
-    gsap.to(".anim-about", {
-      autoAlpha: 1,
-      duration: 0.5,
-      ease: "sine.inOut",
-      delay: 0.5,
-    })
-  }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
-  useEffect(() => {
-    if (transitionState.transitionStatus === "exiting") {
-      gsap.to(".anim-about", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        window.scrollTo(0, 0)
-      } })
-    }
-  }, [transitionState])
   return (
-    // h-k100v t-0  ${PageDefault} md:mb-0
     <div
-    className={`anim-about opacity-0 sm:mb-20 lg:mb-0 mx-auto w-k8 sm:w-k75 md:w-k7 lg:w-k5 mt-k5v `}
+    className={`page-trans sm:mb-20 lg:mb-0 mx-auto w-k8 sm:w-k75 md:w-k7 lg:w-k5 mt-k5v `}
   >
     <div className="-translate-y-2/4 ">
       <header className=" inline-block text-right mb-4">
@@ -69,7 +32,5 @@ const ContactPage = () => {
 
   )
 }
-
-// AboutPage.Layout = Layout
 
 export default ContactPage

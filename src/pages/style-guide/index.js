@@ -16,7 +16,7 @@ const StyleGuide = ({ transitionStatus }) => {
   const transitionState = useTransitionState()
   
   useEffect(() => {
-    gsap.to(".anim-sg", {
+    gsap.to(".page-trans", {
       autoAlpha: 1,
       duration: 0.5,
       ease: "sine.inOut",
@@ -25,13 +25,13 @@ const StyleGuide = ({ transitionStatus }) => {
   }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
   useEffect(() => {
     if (transitionState.transitionStatus === "exiting") {
-      gsap.to(".anim-sg", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
+      gsap.to(".page-trans", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
         window.scrollTo(0, 0)
       } })
     }
   }, [transitionState])
   return (
-    <SGLayout className="anim-sg opacity-0 mb-k1v">
+    <SGLayout className="page-trans opacity-0 mb-k1v">
       <SGLabel>Logo</SGLabel>
       <div>
         <SGLabel>Typography</SGLabel>
@@ -96,7 +96,5 @@ const StyleGuide = ({ transitionStatus }) => {
     </SGLayout>
   )
 }
-
-// StyleGuide.Layout = Layout
 
 export default StyleGuide

@@ -3,11 +3,8 @@ import tw, { styled, css } from "twin.macro"
 import TransitionLink from "gatsby-plugin-transition-link"
 import Logo from "./Logo"
 import ThemeToggle from "./themeToggle"
-// import {KeyboardArrowLeft} from "@styled-icons/material/KeyboardArrowLeft"
-
+import { gsap } from "gsap"
 import { TopPos, RightPos, LeftPos } from "../components/theme"
-// import { InView } from 'react-intersection-observer'
-// import { MenuAltLeft } from "@styled-icons/boxicons-regular/MenuAltLeft"
 
 const KKLogo = styled(Logo)([
   css`
@@ -56,14 +53,43 @@ export default function Header(props) {
       window.addEventListener("scroll", () => setSmall(window.pageYOffset > 20))
     }
   }, [setSmall])
+
+  const exitAnimation = ({ node }) => {
+    return new Promise(resolve => {
+      gsap.to(node, {
+        autoAlpha: 0,
+        duration: 0.5,
+        ease: "sine.inOut",
+        onComplete: () => {
+          window.scrollTo(0, 0)  // Scroll to the top
+          resolve()
+        },
+      })
+    })
+  }
+
+  const entryAnimation = ({ node }) => {
+    gsap.from(node, {
+      autoAlpha: 0,
+      duration: 0.5,
+      ease: "sine.inOut",
+    })
+  }
+
   return (
     <HeaderWrapper>
       <TransitionLink
         to="/"
         exit={{
           length: 0.5,
+          trigger: exitAnimation,
+          delay:0.5
         }}
-        entry={{ length: 0.5 }}
+        entry={{
+          length: 0.5,
+          trigger: entryAnimation,
+          delay:0.5
+        }}
         className="block"
         activeClassName="text-violet-600 dark:text-violet-400"
       >
@@ -92,11 +118,16 @@ export default function Header(props) {
           to="/cases"
           exit={{
             length: 0.5,
+            trigger: exitAnimation,
+            delay:0.5
           }}
-          entry={{ length: 0.5 }}
+          entry={{
+            length: 0.5,
+            trigger: entryAnimation,
+            delay:0.5
+          }}
           className="block"
           activeClassName="active"
-          partiallyActive={true}
           preventScrollJump
         >
           Case Histories
@@ -105,11 +136,16 @@ export default function Header(props) {
           to="/works"
           exit={{
             length: 0.5,
+            trigger: exitAnimation,
+            delay:0.5
           }}
-          entry={{ length: 0.5 }}
+          entry={{
+            length: 0.5,
+            trigger: entryAnimation,
+            delay:0.5
+          }}
           className="block"
           activeClassName="active"
-          partiallyActive={true}
           preventScrollJump
         >
           Works Archive
@@ -118,11 +154,16 @@ export default function Header(props) {
           to="/labs"
           exit={{
             length: 0.5,
+            trigger: exitAnimation,
+            delay:0.5
           }}
-          entry={{ length: 0.5 }}
+          entry={{
+            length: 0.5,
+            trigger: entryAnimation,
+            delay:0.5
+          }}
           className="block"
           activeClassName="active"
-          partiallyActive={true}
           preventScrollJump
         >
           Creative Labs
@@ -131,8 +172,14 @@ export default function Header(props) {
           to="/about/"
           exit={{
             length: 0.5,
+            trigger: exitAnimation,
+            delay:0.5
           }}
-          entry={{ length: 0.5 }}
+          entry={{
+            length: 0.5,
+            trigger: entryAnimation,
+            delay:0.5
+          }}
           className="block"
           activeClassName="active"
           preventScrollJump
@@ -142,10 +189,15 @@ export default function Header(props) {
         <TransitionLink
           to="/cv/"
           exit={{
-            trigger: ({ node, e, exit, entry }) => console.log(node, e, exit, entry),
             length: 0.5,
+            trigger: exitAnimation,
+            delay:0.5
           }}
-          entry={{ length: 0.5 }}
+          entry={{
+            length: 0.5,
+            trigger: entryAnimation,
+            delay:0.5
+          }}
           className="block"
           activeClassName="active"
           preventScrollJump

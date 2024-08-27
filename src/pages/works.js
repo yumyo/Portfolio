@@ -1,11 +1,8 @@
 import React, { useEffect } from "react"
 import { graphql } from "gatsby"
-import { gsap } from "gsap"
 import tw from "twin.macro"
-import { CasesLayout, GhostButton } from "../components/theme"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
-import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 
 const ListItem = tw.div`
 mb-k1v mt-k3v
@@ -19,8 +16,6 @@ const WorksLayout = tw.div`mx-auto w-6/12 mt-k2v`
 
 const Works = ({ data }) => {
 
-  const transitionState = useTransitionState()
-
   // Filter out nodes that are not published
   let nodes = data.allFile.nodes.filter(node => node.childMdx.frontmatter.published)
 
@@ -29,24 +24,9 @@ const Works = ({ data }) => {
       new Date(d2.childMdx.frontmatter.date).getTime() -
       new Date(d1.childMdx.frontmatter.date).getTime()
   )
-  useEffect(() => {
-    gsap.to(".anim-works", {
-      autoAlpha: 1,
-      duration: 0.5,
-      ease: "sine.inOut",
-      delay: 0.5,
-    })
-  }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
-  useEffect(() => {
-    if (transitionState.transitionStatus === "exiting") {
-      // console.log("Works", transitionStatus)
-      gsap.to(".anim-works", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        window.scrollTo(0, 0)
-      } })
-    }
-  }, [transitionState])
+
   return (
-    <div className={`anim-works opacity-0  mb-k1v`}>
+    <div className={`page-trans mb-k1v`}>
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink
@@ -132,7 +112,5 @@ export const query = graphql`
     }
   }
 `
-
-// Works.Layout = Layout
 
 export default Works

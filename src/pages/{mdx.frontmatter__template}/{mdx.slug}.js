@@ -1,6 +1,5 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
-// import { gsap } from "gsap"
 import PostTemplate from "../../templates/post-template"
 import ProjectTemplate from "../../templates/project-template"
 import WorkTemplate from "../../templates/work-template"
@@ -81,7 +80,5 @@ MdxPage.propTypes = {
     }).isRequired,
   }).isRequired,
 }
-
-// MdxPage.Layout = Layout
 
 export default MdxPage

@@ -1,10 +1,7 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql, Link as GatsbyLink } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import TransitionLink from "gatsby-plugin-transition-link"
-import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
-import { GhostButton } from "../components/theme"
-import { gsap } from "gsap"
 import tw from "twin.macro"
 
 const ListItem = tw.div`
@@ -17,9 +14,6 @@ fluid-text-xl font-medium
 
 const Labs = ({ data }) => {
 
-  const transitionState = useTransitionState()
-
-  // Filter out nodes that are not published
   let nodes = data.allFile.nodes.filter(node => node.childMdx.frontmatter.published)
 
   nodes.sort(
@@ -27,23 +21,9 @@ const Labs = ({ data }) => {
       new Date(d2.childMdx.frontmatter.date).getTime() -
       new Date(d1.childMdx.frontmatter.date).getTime()
   )
-  useEffect(() => {
-    gsap.to(".anim-labs", {
-      autoAlpha: 1,
-      duration: 0.5,
-      ease: "sine.inOut",
-      delay: 0.5,
-    })
-  }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
-  useEffect(() => {
-    if (transitionState.transitionStatus === "exiting") {
-      gsap.to(".anim-labs", { autoAlpha: 0, duration: 0.25, delay: 0, onComplete: () => {
-        window.scrollTo(0, 0)
-      } })
-    }
-  }, [transitionState])
+
   return (
-    <div className="anim-labs opacity-0 mb-k2v">
+    <div className="page-trans mb-k2v">
       {nodes.map(({ childMdx }) => (
         <ListItem key={childMdx.id}>
           <TransitionLink

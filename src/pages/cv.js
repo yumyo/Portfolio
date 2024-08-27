@@ -1,17 +1,7 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { gsap } from "gsap"
-import TransitionLink from "gatsby-plugin-transition-link"
-import ContactForm from "../components/ContactForm"
-import { Pinterest } from "@styled-icons/entypo-social/Pinterest"
-import { StackOverflow } from "@styled-icons/boxicons-logos/StackOverflow"
-import { Twitter } from "@styled-icons/boxicons-logos/Twitter"
-import { Github } from "@styled-icons/boxicons-logos/Github"
-import { Behance } from "@styled-icons/boxicons-logos/Behance"
-import { Tumblr } from "@styled-icons/boxicons-logos/Tumblr"
-import { ShieldCheckmark } from "@styled-icons/fluentui-system-regular/ShieldCheckmark"
 import Contact from "../templates/contact-form-template.js"
-import { useTransitionState } from "gatsby-plugin-transition-link/hooks"
+// import { useTransitionState } from "gatsby-plugin-transition-link/hooks"
 // import tw from "twin.macro"
 import {
   Lead,
@@ -33,35 +23,9 @@ const Cv = () => {
     tumblrJournal,
   } = useSiteMetadata()
 
-  const transitionState = useTransitionState()
-  console.log("transitionStatus hook", transitionState)
-
-  useEffect(() => {
-    // console.log ('transitionStatus', transitionStatus);
-    gsap.to(".anim-cv", {
-      autoAlpha: 1,
-      duration: 0.5,
-      ease: "sine.inOut",
-      delay: 0.5,
-    })
-  }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
-  useEffect(() => {
-    if (transitionState.transitionStatus === "exiting") {
-      console.log("banana")
-      gsap.to(".anim-cv", {
-        autoAlpha: 0,
-        duration: 0.25,
-        delay: 0,
-        onComplete: () => {
-          window.scrollTo(0, 0)
-        },
-      })
-    }
-  }, [transitionState.transitionStatus])
-  // const ref = useRef(null)
 
   return (
-    <div className="anim-cv m-auto mb-k3v mt-k5v flex min-h-screen w-k8 flex-row flex-wrap items-baseline opacity-0 xl:ml-k2 xl:w-k7 2xl:ml-k3 2xl:w-k5">
+    <div className="page-trans m-auto mb-k3v mt-k5v flex min-h-screen w-k8 flex-row flex-wrap items-baseline xl:ml-k2 xl:w-k7 2xl:ml-k3 2xl:w-k5">
       <div className="mb-8 w-full">
         <div className={LeftSide}></div>
 
@@ -539,7 +503,5 @@ const Cv = () => {
     </div>
   )
 }
-
-// Cv.Layout = Layout
 
 export default Cv

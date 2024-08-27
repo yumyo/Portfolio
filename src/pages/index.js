@@ -1,30 +1,11 @@
-import React, { useEffect } from "react"
-import { gsap } from "gsap"
+import React from "react"
 import TransitionLink from "gatsby-plugin-transition-link"
-import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import tw from "twin.macro"
 import { Lead } from "../components/theme"
 import SEO from "../components/Seo"
-// PageDefault
+
 const IndexPage = () => {
 
-  const transitionState = useTransitionState()
-
-  useEffect(() => {
-    gsap.to(".anim-home", {
-      autoAlpha: 1,
-      duration: 0.5,
-      ease: "sine.inOut",
-      delay: 0.5,
-    })
-  }, []) //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
-  useEffect(() => {
-    if (transitionState.transitionStatus === "exiting") {
-      gsap.to(".anim-home", { autoAlpha: 0, duration: 0.25, delay: 0,  onComplete: () => {
-        window.scrollTo(0, 0)
-      } })
-    }
-  }, [transitionState])
   const Title = tw.h2`
     fluid-text-2xl
     mb-2
@@ -36,7 +17,7 @@ const IndexPage = () => {
   return (
     <div className="flex flex-col justify-center  ">
       <SEO />
-      <div className="anim-home opacity-0 mx-auto w-k8 md:w-k7 2xl:w-k5 mt-k5v">
+      <div className="page-trans mx-auto w-k8 md:w-k7 2xl:w-k5 mt-k5v">
         <Title>
           Hi, my name is{" "}
           <TransitionLink
@@ -72,7 +53,5 @@ const IndexPage = () => {
     </div>
   )
 }
-
-// IndexPage.Layout = Layout
 
 export default IndexPage
