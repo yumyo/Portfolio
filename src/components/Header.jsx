@@ -81,14 +81,14 @@ export default function Header(props) {
           small ? "opacity-0" : "opacity-1"
         }`}
       >
-        {(process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV === "preview") && <ThemeToggle />}
+        {(process.env.SITE_BUILD === "preview" || process.env.NODE_ENV === "development") && <ThemeToggle />}
       </CtrlTC>
       <div
         className={`block fixed z-40 text-right ${TopPos} ${RightPos}`}
         // fixed
       >
         
-        {(process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV === "preview") && <MenuLink
+        {(process.env.SITE_BUILD === "preview" || process.env.NODE_ENV === "development") && <MenuLink
           to="/cases"
           exit={{
             length: 0.5,
@@ -101,7 +101,7 @@ export default function Header(props) {
         >
           Case Histories
         </MenuLink>}
-        {(process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV === "preview") && <MenuLink
+        {(process.env.SITE_BUILD === "preview" || process.env.NODE_ENV === "development") && <MenuLink
           to="/works"
           exit={{
             length: 0.5,
@@ -114,7 +114,7 @@ export default function Header(props) {
         >
           Works Archive
         </MenuLink>}
-        {(process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV === "preview") && <MenuLink
+        {(process.env.SITE_BUILD === "preview" || process.env.NODE_ENV === "development") && <MenuLink
           to="/labs"
           exit={{
             length: 0.5,
