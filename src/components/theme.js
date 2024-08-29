@@ -14,7 +14,7 @@ export const GhostButton = `button px-4 mt-4 leading-none py-3 border text-viole
 // export const MenuLabel = `text-xs 2xl:text-sm uppercase tracking-widest block ${Label}`;
 export const PageTitle = "fluid-text-3xl"
 // INterface
-export const TopPos = "top-k1 mt-0"
+export const TopPos = "top-k1v mt-0"
 export const LeftPos = "left-k1v  " // lg:left-k0 2xl:left-k1
 export const MidPos = "top-1/2"
 export const RightPos = "right-k1" // lg:right-k0 2xl:right-k1

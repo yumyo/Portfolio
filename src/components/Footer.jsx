@@ -29,8 +29,8 @@ export default function Footer(props) {
   }
 
   return (
-    <div className="md:bottom static bottom-0 mx-auto flex w-k8 shrink-0 transform-gpu items-end justify-between pb-k1v leading-none md:z-50 md:pb-k1v xl:fixed lg:w-full">
-      <div className={`static left-k1 z-40 flex lg:fixed`}>
+    <div className="md:bottom fixed bottom-0 mx-auto flex w-full shrink-0 transform-gpu items-end justify-between pb-k1v leading-none md:z-50 md:pb-k1v ">
+      <div className={`fixed left-k1 z-40 flex`}>
         ©{year}
         {/* <TransitionLink
           to="/style-guide/"
@@ -45,7 +45,7 @@ export default function Footer(props) {
           <span className={`mt-1 ml-4 -mb-4 ${MenuLabel}`}>w/Love</span>
         </TransitionLink> */}
       </div>
-      <div className={`z-30 text-right right-k1 flex static lg:fixed`}>
+      <div className={`z-30 text-right right-k1 flex fixed`}>
         <TransitionLink
           to="/contact/"
           exit={{

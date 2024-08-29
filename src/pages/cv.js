@@ -184,7 +184,7 @@ const Cv = () => {
             Applying modern software development processes to build and scale
             marketer tools, design infographics, create long-form scrollytelling
             content, develop microsites, and architect solutions for data
-            visualization and reportin
+            visualization and reporting.
           </p>
         </div>
       </div>
@@ -200,12 +200,7 @@ const Cv = () => {
             Raconteur Media Ltd. - London , United Kingdom
           </p>
           <p>
-            I have been hired at Raconteur to completely redesign the main site
-            and create a new one for the company’s main branch, the custom
-            publishing division. Both products received astonishing feedback
-            from readers, clients and whiting the company. I then led a digital
-            transformation process to enable the company to develop developing
-            and mobile products for their clients.
+            Led raconteur.net’s redesign, doubling views to 400k and improving client interaction. Designed and developed business-owned and client sites, including multilingual solutions. Trained design team in advanced web technologies and animated content creation, significantly enhancing our B2B digital offerings.
           </p>
         </div>
       </div>

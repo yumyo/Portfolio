@@ -138,7 +138,7 @@ module.exports = {
         // purgeOnly: ['node_modules/bootstrap']
       },
     },
-    `gatsby-plugin-dark-mode`,
+    // `gatsby-plugin-dark-mode`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-plugin-manifest",

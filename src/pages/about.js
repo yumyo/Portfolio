@@ -88,7 +88,7 @@ const AboutPage = props => {
               connect with me on my social media channels.
             </p>
             <div className="mt-k0v" data-sal="fade" data-sal-duration={900}>
-              <ul className="flex flex-row gap-6">
+              <ul className="flex flex-row flex-wrap gap-6">
                 <li>
                   <a href={linkedin} target="_blank" rel="noreferrer" title="">
                     <LinkedinSquare size="32" />

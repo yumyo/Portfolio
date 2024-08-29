@@ -22,7 +22,8 @@ import "@fontsource/ibm-plex-sans/700.css" // Weight 500.
 import tw, { styled, css } from "twin.macro"
 // import { renderToStaticMarkup } from "react-dom/server"
 import { EyeOutline } from '@styled-icons/evaicons-outline/'
-
+import  Headroom from "react-headroom"
+import { TopPos, RightPos, LeftPos } from "../components/theme"
 
 const usePrevious = value => {
   const ref = useRef()
@@ -95,12 +96,14 @@ const Layout = ({ children }) => {
 
   return (
     <MainContainer
-      className={`${isActive ? "is-locked" : ""} flex flex-col min-h-screen`}
+      className={`${isActive ? "is-locked" : ""} flex min-h-screen flex-col`}
     >
-      
-      <Header />
+      <Headroom disableInlineStyles>
+        <Header />
+      </Headroom>
+
       <div
-        className={`flex hidden flex-row fixed top-k1 z-50 text-violet-400 right-k1 md:-mr-4`}
+        className={`fixed right-k1 top-k1 z-50 flex hidden flex-row text-violet-400 md:-mr-4`}
       >
         <Minus
           active={isActive}
@@ -114,12 +117,26 @@ const Layout = ({ children }) => {
         // className={`${isActive ? "is-active" : ""} `}
         isActive={isActive}
       />
-      <ContentWrapper className="grow shrink-0 basis-auto content">
+      <ContentWrapper className="content shrink-0 grow basis-auto">
         {children}
       </ContentWrapper>
       {/* <Middle /> */}
-      <Footer />
-     {(process.env.SITE_BUILD === "preview" || process.env.NODE_ENV === "development") && <button className={`fixed bottom-k1 z-50 left-1/2 -translate-x-1/2`} onClick={toggleBGVisibility}> <EyeOutline size="24" className="transition-colors hover:text-violet-600" /></button>}
+      <Headroom disableInlineStyles>
+        <Footer />
+      </Headroom>
+      {(process.env.SITE_BUILD === "preview" ||
+        process.env.NODE_ENV === "development") && (
+        <button
+          className={`fixed bottom-k1 left-1/2 z-50 -translate-x-1/2`}
+          onClick={toggleBGVisibility}
+        >
+          {" "}
+          <EyeOutline
+            size="24"
+            className="transition-colors hover:text-violet-600"
+          />
+        </button>
+      )}
       {isBGVisible && <GeometriCBG />}
     </MainContainer>
   )

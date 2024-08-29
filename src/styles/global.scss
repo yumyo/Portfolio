@@ -221,3 +221,32 @@ body,
   margin: 0 20px;
   text-align: center;
 }
+
+/* headroom.js */
+
+// Assuming you are using a custom Tailwind setup with Sass
+
+.headroom-wrapper {
+  z-index: 10000;
+}
+.headroom {
+  @apply transition-opacity; // Use Tailwind's transition utility
+  will-change: opacity;
+
+  &--pinned {
+      @apply opacity-100;
+  }
+
+  &--unpinned {
+      @apply opacity-0;
+  } 
+  // @media (min-width: @screen-lg) {
+  //     &--pinned {
+  //         @apply opacity-100;
+  //     }
+
+  //     &--unpinned {
+  //         @apply opacity-0;
+  //     }
+  // }
+}

@@ -1,5 +1,5 @@
 import React from "react"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
+// import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import { Sun } from '@styled-icons/boxicons-regular'
 import { Moon } from '@styled-icons/boxicons-solid'
 import { styled } from 'twin.macro'
@@ -24,8 +24,8 @@ const LabelIcon = styled.label`
 
 export default function ThemeToggle() {
     return (
-      <ThemeToggler>
-      {({ theme, toggleTheme }) => (
+      <>
+      {/* {({ theme, toggleTheme }) => (
         <LabelIcon>
             <ModeToggle type="checkbox" className=""
               onChange={e => 
@@ -40,8 +40,8 @@ export default function ThemeToggle() {
             )}         
         </LabelIcon>    
         
-        )}
-      </ThemeToggler>
+        )} */}
+      </>
     )
 }
 
