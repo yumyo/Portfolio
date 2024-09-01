@@ -1,7 +1,6 @@
 import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
-import moment from "moment"
 import tw from "twin.macro"
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
@@ -37,7 +36,7 @@ const LabsTemplate = ({
 
   const shortcodes = { getImage, GatsbyImage, StaticImage }
 
-  let projectDate = moment(date).format("MMM YYYY")
+  const projectDate = new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
 
   return (
     <div className={`page-trans mb-k3v`}>

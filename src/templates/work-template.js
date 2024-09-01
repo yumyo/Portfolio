@@ -3,7 +3,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import { gsap } from "gsap"
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
-import moment from "moment"
 import tw from "twin.macro"
 import Slider from "react-slick"
 
@@ -39,7 +38,7 @@ const PostTemplate = ({
 
   const shortcodes = { getImage, GatsbyImage, StaticImage, Slider }
 
-  let projectDate = moment(date).format("MMM YYYY")
+  const projectDate = new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
 
   return (
     <div className={`page-trans mb-k3v`}>

@@ -3,7 +3,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import { gsap } from "gsap"
 import ReactHtmlParser from "react-html-parser"
-import moment from "moment"
 import { useTransitionState } from 'gatsby-plugin-transition-link/hooks'
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import Slider from "react-slick"
@@ -39,7 +38,7 @@ const ProjectTemplate = ({
 }) => {
 
   const [svgContent, setSvgContent] = useState(null);
-  let projectDate = moment(date).format("MMM YYYY")
+  const projectDate = new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
   const shortcodes = { getImage, GatsbyImage, StaticImage, Slider }
 
   const svgMap = {
