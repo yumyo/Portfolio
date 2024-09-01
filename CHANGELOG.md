@@ -1,3 +1,17 @@
+## v1.4.0 (2024-09-01)
+
+### Feat
+
+- **UI**: Add gradient and scroll based show/hide
+
+### Fix
+
+- **content**: clean up and refine
+- **home**: fix in-page link
+- **package.json**: amend repo
+- **transition**: typo
+- **env**: amend
+
 ## v1.3.0 (2024-08-27)
 
 ### Feat

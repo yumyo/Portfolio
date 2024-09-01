@@ -2,7 +2,7 @@
   "name": "giulia-nicola-pernice-design-studio",
   "private": true,
   "description": "Giulia Nicole Pernice Portfolio",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "license": "",
   "babelMacros": {
     "twin": {
