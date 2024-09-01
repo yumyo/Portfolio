@@ -43,7 +43,7 @@ absolute right-k1 bottom-k1`;
 const CtrlBL = tw.div`
 absolute left-k1 bottom-k1`;
 */
-const HeaderWrapper = tw.div`w-full mx-auto top-0 z-50`
+const HeaderWrapper = tw.div`w-full mx-auto top-0 z-[1000] bg-fade-to-bottom fixed h-k25v sm:h-k3v`
 
 export default function Header(props) {
   const [small, setSmall] = useState(false)
@@ -93,9 +93,9 @@ export default function Header(props) {
         className="block"
         activeClassName="text-violet-600 dark:text-violet-400"
       >
-        <KKLogo className="fixed -left-k1 sm:left-0 md:left-k top-kv z-50 block transform cursor-pointer text-black-shade-200 dark:text-black-shade-800 2xl:left-k0" />
+        <KKLogo className="fixed -left-k1 sm:left-0 md:left-k top-0 sm:top-kv  z-50 block transform cursor-pointer text-black-shade-200 dark:text-black-shade-800 2xl:left-k0" />
         <h1
-          className={`nav-link text-base leading-normal top-k1v fixed left-k1 pl-1 z-50 cursor-pointer transition-colors hover:text-violet-600 dark:hover:text-violet-400 transform -translate-x-1`}
+          className={`nav-link text-base leading-normal top-k0v sm:top-k1v fixed left-k1 pl-1 z-50 cursor-pointer transition-colors hover:text-violet-600 dark:hover:text-violet-400 transform -translate-x-1`}
         >
           Giulia Nicole 
           <br />

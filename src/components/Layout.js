@@ -69,7 +69,7 @@ const MainContainer = styled.div(
 // ])
 
 const GeometriCBG = tw(GridBg)`
-w-screen h-screen fixed top-0 left-0 z-0 text-white dark:text-black dark:sm:text-black-shade-950
+w-screen h-screen fixed top-0 left-0 z-0 text-white dark:text-black dark:text-black-shade-950
 `
 
 const Layout = ({ children }) => {
@@ -127,7 +127,7 @@ const Layout = ({ children }) => {
       {(process.env.SITE_BUILD === "preview" ||
         process.env.NODE_ENV === "development") && (
         <button
-          className={`fixed bottom-k1 left-1/2 z-50 -translate-x-1/2`}
+          className={`fixed bottom-k1 left-1/2 z-[10002] -translate-x-1/2`}
           onClick={toggleBGVisibility}
         >
           {" "}

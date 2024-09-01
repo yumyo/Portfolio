@@ -29,7 +29,7 @@ export default function Footer(props) {
   }
 
   return (
-    <div className="md:bottom fixed bottom-0 mx-auto flex w-full shrink-0 transform-gpu items-end justify-between pb-k1v leading-none md:z-50 md:pb-k1v ">
+    <div className="md:bottom fixed bottom-0 mx-auto flex w-full shrink-0 transform-gpu items-end justify-between leading-none md:z-50 h-k2v pb-k0v sm:pb-k1v bg-fade-to-top">
       <div className={`fixed left-k1 z-40 flex`}>
         ©{year}
         {/* <TransitionLink

@@ -108,6 +108,10 @@ module.exports = {
       screens: {
         "3xl": "1920px",
       },
+      backgroundImage: {
+        'fade-to-top': 'linear-gradient(to top, #111111 0%, rgba(17, 17, 17, 0) 100%)',
+        'fade-to-bottom': 'linear-gradient(to bottom, #111111 10%, rgba(17, 17, 17, 0) 100%)',
+      },
       colors: {
         transparent: "transparent",
         current: "currentColor",
@@ -233,6 +237,7 @@ module.exports = {
         k0v: "3.125vh",
         k1v: "6.25vh",
         k2v: "12.5vh",
+        k25v: "17vh",
         k3v: "25vh",
         k35v: "27.5vh",
         k4v: "33.3333vh",

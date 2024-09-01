@@ -12,7 +12,7 @@ import { Tumblr } from "@styled-icons/boxicons-logos/Tumblr"
 
 const AboutLayout = tw.div``
 
-const About_Title = `mb-12 fluid-text-3xl -mt-14 leading-tight xs:leading-tight font-extralight`
+const About_Title = `mb-12 fluid-text-3xl -mt-14 font-normal sm:font-extralight`
 const About_SF = "relative z-10 mb-12 fluid-text-lg  max-w-[25em]"
 const About_P = "mb-4 mb-4 fluid-text-base max-w-[34em]"
 

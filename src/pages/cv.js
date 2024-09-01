@@ -30,7 +30,7 @@ const Cv = () => {
         <div className={LeftSide}></div>
 
         <div className={LeftContent} data-sal="fade" data-sal-duration={900}>
-          <h1 className={`${PageTitle} -mt-16 mb-2 font-extralight`}>
+          <h1 className={`${PageTitle} -mt-16 mb-2 font-normal sm:font-extralight`}>
             Curriculum Vitae
           </h1>
         </div>
@@ -62,8 +62,8 @@ const Cv = () => {
           data-sal-duration={900}
           className={Label}
         >
-          Strategic
-          <br /> Skills
+          Strategic{' '} 
+          <br className="hidden md:block" />Skills
         </h2>
       </div>
       <div
@@ -72,7 +72,7 @@ const Cv = () => {
         data-sal-duration={900}
       >
         <div className="">
-          <ul className="mb-6 list-none fluid-text-base">
+          <ul className="mb-6 list-disc pl-4 md:pl-0 md:list-none fluid-text-base">
             <li>Information Architecture</li>
             <li>User Experience</li>
             <li>Agile methodologies</li>
@@ -82,8 +82,8 @@ const Cv = () => {
       </div>
       <div className={LeftSide}>
         <h2 className={Label} data-sal="fade" data-sal-duration={900}>
-          Design
-          <br /> Skills
+          Design{' '} 
+          <br className="hidden md:block" />Skills
         </h2>
       </div>
       <div
@@ -92,7 +92,7 @@ const Cv = () => {
         data-sal-duration={900}
       >
         <div className="">
-          <ul className="mb-6 list-none fluid-text-base">
+          <ul className="mb-6 list-disc pl-4 md:pl-0 md:list-none fluid-text-base">
             <li>Web and Mobile Design</li>
             <li>User Interface Design</li>
             <li>Animation and Interactivity</li>
@@ -102,9 +102,8 @@ const Cv = () => {
       </div>
       <div className={LeftSide}>
         <h2 className={Label} data-sal="fade" data-sal-duration={900}>
-          Code
-          <br />
-          Skills
+          Code{' '} 
+          <br className="hidden md:block" />Skills
         </h2>
       </div>
       <div
@@ -113,7 +112,7 @@ const Cv = () => {
         data-sal-duration={900}
       >
         <div className="">
-          <ul className="mb-6 list-none fluid-text-base">
+          <ul className="mb-6 list-disc pl-4 md:pl-0 md:list-none fluid-text-base">
             <li>Javascript ES6, React.js</li>
             <li>CSS, SASS, PostCSS, Styled Components, NPM, Yarn</li>
             <li>Accessibility and HTML5 Semantics</li>
