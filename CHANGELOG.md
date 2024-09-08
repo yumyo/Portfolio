@@ -1,3 +1,13 @@
+## v1.5.0 (2024-09-08)
+
+### Feat
+
+- **package.json**: Remove moment.js
+
+### Fix
+
+- **typography**: Adjust typography scaling and spacing in mobile
+
 ## v1.4.0 (2024-09-01)
 
 ### Feat
