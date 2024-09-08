@@ -67,8 +67,8 @@ const IndexPage = () => {
           </TransitionLink>
           <br /> welcome to my Design&nbsp;Engineering portfolio
         </Title>
-        <div className={`md:ml-k2v ${Lead}`}>
-          <div className='pl-8 mt-12'>
+        <div className={`md:ml-k1v lg:ml-k2v ${Lead}`}>
+          <div className='md:pl-4 lg:pl-8 mt-12'>
             Have an inspiring project in mind? <br />
             <TransitionLink
               to="/contact"

@@ -121,7 +121,7 @@ const Cv = () => {
           </ul>
         </div>
       </div>
-      <div className="heading mb-16 mt-16 block w-full ">
+      <div className="heading my-6 sm:my-16 block w-full ">
         <h2
           className={`${Label} fluid-text-xl`}
           data-sal="fade"
@@ -282,7 +282,7 @@ const Cv = () => {
           </p>
         </div>
       </div>
-      <div className="heading mb-16 mt-16 block w-full ">
+      <div className="heading my-6 sm:my-16 block w-full ">
         <h2
           className={`${Label} fluid-text-xl`}
           data-sal="fade"
@@ -366,7 +366,7 @@ const Cv = () => {
           </li>
         </ul>
       </div>
-      <div className="heading mb-16 mt-16 block w-full ">
+      <div className="heading my-6 sm:my-16 block w-full ">
         <h2
           className={`${Label} fluid-text-xl`}
           data-sal="fade"
@@ -423,7 +423,7 @@ const Cv = () => {
           </li>
         </ul>
       </div>
-      <div className="heading mb-16 mt-16 block w-full ">
+      <div className="heading my-6 sm:my-16 block w-full ">
         <h2
           className={`${Label} fluid-text-xl`}
           data-sal="fade"
@@ -432,14 +432,14 @@ const Cv = () => {
           Languages
         </h2>
       </div>
-      <div className="mb-k4 flex w-full flex-row pl-k25"
+      <div className="mb-k4 xs:flex w-full flex-row md:pl-k25"
       data-sal="fade" 
       data-sal-duration={900}>
         <div className={`${LeftContent} mb-0 w-full overflow-hidden lg:w-1/3`}>
           <ul className="flex flex-wrap overflow-hidden">
             <li className="lang">
-              <p className="mb-0">Italian</p>
-              <div className="block w-full">Native speaker</div>
+              <p className="mb-0 fluid-text-sm">Italian</p>
+              <div className="block w-full fluid-text-base">Native</div>
             </li>
           </ul>
         </div>
@@ -447,8 +447,8 @@ const Cv = () => {
         <div className={`${LeftContent} mb-0 w-full overflow-hidden lg:w-1/3`}>
           <ul className="flex flex-wrap overflow-hidden">
             <li className="lang">
-              <p className="mb-0">English</p>
-              <div className="block w-full">Fluent</div>
+              <p className="mb-0 fluid-text-sm">English</p>
+              <div className="block w-full fluid-text-base">Fluent</div>
             </li>
           </ul>
         </div>
@@ -456,8 +456,8 @@ const Cv = () => {
         <div className={`${LeftContent} mb-0 w-full overflow-hidden lg:w-1/3`}>
           <ul className="flex flex-wrap overflow-hidden">
             <li className="lang">
-              <p className="mb-0">Spanish</p>
-              <div className="block w-full">Intermidiate</div>
+              <p className="mb-0 fluid-text-sm">Spanish</p>
+              <div className="block w-full fluid-text-base">Intermidiate</div>
             </li>
           </ul>
         </div>

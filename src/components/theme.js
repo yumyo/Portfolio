@@ -24,7 +24,7 @@ export const LeftSide = "block w-full md:w-k25"
 export const LeftContent =
   "block  w-full md:w-k75 2xl:w-k75 2xl:pr-0 mb-7"
 // Content
-export const Job = "mb-16"
+export const Job = "mb-6 sm:mb-16"
 // Project Page
 export const Project_Detail =
   "flex flex-col md:flex-row items-baseline mx-auto w-k7 xs:w-k8 md:w-k7 lg:w-k6 xl:w-k5 3xl:w-k4"
