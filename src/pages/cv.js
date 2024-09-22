@@ -457,7 +457,7 @@ const Cv = () => {
           <ul className="flex flex-wrap overflow-hidden">
             <li className="lang">
               <p className="mb-0 fluid-text-sm">Spanish</p>
-              <div className="block w-full fluid-text-base">Intermidiate</div>
+              <div className="block w-full fluid-text-base">Intermediate</div>
             </li>
           </ul>
         </div>
