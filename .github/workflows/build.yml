@@ -24,7 +24,7 @@ jobs:
       - name: Install Gatsby CLI
         run: npm install -g gatsby-cli@3.5.0
       - name: Install All Dependencies
-        run: npm i
+        run: npm i --legacy-peer-deps
       - name: Build production bundle
         run: npm run build
       - name: Verify build
